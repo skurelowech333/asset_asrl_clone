@@ -4,12 +4,12 @@
 {
     "distutils": {
         "language": "c++",
-        "name": "asset_asrl.Forces.DynamicsKernel",
+        "name": "asset_asrl.Forces.CentralGravityKernel",
         "sources": [
-            "C:\\Users\\Sarah\\Documents\\Research\\asset_personal\\ASSET\\asset_asrl\\Forces\\DynamicsKernel.pyx"
+            "C:\\Users\\Sarah\\Documents\\Research\\asset_personal\\ASSET\\asset_asrl\\Forces\\CentralGravityKernel.pyx"
         ]
     },
-    "module_name": "asset_asrl.Forces.DynamicsKernel"
+    "module_name": "asset_asrl.Forces.CentralGravityKernel"
 }
 END: Cython Metadata */
 
@@ -1139,8 +1139,8 @@ static int __Pyx_init_co_variables(void) {
     #define __PYX_EXTERN_C extern "C++"
 #endif
 
-#define __PYX_HAVE__asset_asrl__Forces__DynamicsKernel
-#define __PYX_HAVE_API__asset_asrl__Forces__DynamicsKernel
+#define __PYX_HAVE__asset_asrl__Forces__CentralGravityKernel
+#define __PYX_HAVE_API__asset_asrl__Forces__CentralGravityKernel
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -1358,7 +1358,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char* const __pyx_f[] = {
-  "asset_asrl/Forces/DynamicsKernel.pyx",
+  "asset_asrl/Forces/CentralGravityKernel.pyx",
   "<stringsource>",
 };
 /* #### Code section: utility_code_proto_before_types ### */
@@ -1536,102 +1536,29 @@ static const char* const __pyx_f[] = {
 /* #### Code section: type_declarations ### */
 
 /*--- Type declarations ---*/
-struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF;
-struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF;
-struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel;
+struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
 
-/* "asset_asrl/Forces/DynamicsKernel.pyx":17
- * # GRAVITY FORCE
- * # =========================================================
- * cdef class GravityVF:             # <<<<<<<<<<<<<<
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":21
+ * 
+ * 
+ * cdef class CentralGravityKernel:             # <<<<<<<<<<<<<<
  * 
  *     cdef double mu
 */
-struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF {
+struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel {
   PyObject_HEAD
-  struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_vtab;
+  struct __pyx_vtabstruct_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_vtab;
   double mu;
   PyObject *_vf;
 };
 
 
-/* "asset_asrl/Forces/DynamicsKernel.pyx":40
- * # DRAG FORCE (simple quadratic model)
- * # =========================================================
- * cdef class DragVF:             # <<<<<<<<<<<<<<
- * 
- *     cdef double Cd
-*/
-struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF {
-  PyObject_HEAD
-  struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_vtab;
-  double Cd;
-  double A;
-  double rho;
-  PyObject *_vf;
+
+struct __pyx_vtabstruct_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel {
+  PyObject *(*_build)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *);
+  PyObject *(*vf)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *, int __pyx_skip_dispatch);
 };
-
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":77
- * # COMBINED DYNAMICS BUILDER (KEY SPEEDUP POINT)
- * # =========================================================
- * cdef class DynamicsModel:             # <<<<<<<<<<<<<<
- * 
- *     cdef object grav
-*/
-struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel {
-  PyObject_HEAD
-  struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_vtab;
-  PyObject *grav;
-  PyObject *drag;
-  PyObject *_vf;
-};
-
-
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":17
- * # GRAVITY FORCE
- * # =========================================================
- * cdef class GravityVF:             # <<<<<<<<<<<<<<
- * 
- *     cdef double mu
-*/
-
-struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_GravityVF {
-  PyObject *(*_build)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *);
-  PyObject *(*vf)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *, int __pyx_skip_dispatch);
-};
-static struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_GravityVF;
-
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":40
- * # DRAG FORCE (simple quadratic model)
- * # =========================================================
- * cdef class DragVF:             # <<<<<<<<<<<<<<
- * 
- *     cdef double Cd
-*/
-
-struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DragVF {
-  PyObject *(*_build)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *);
-  PyObject *(*vf)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *, int __pyx_skip_dispatch);
-};
-static struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_DragVF;
-
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":77
- * # COMBINED DYNAMICS BUILDER (KEY SPEEDUP POINT)
- * # =========================================================
- * cdef class DynamicsModel:             # <<<<<<<<<<<<<<
- * 
- *     cdef object grav
-*/
-
-struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel {
-  PyObject *(*_build)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *);
-  PyObject *(*vf)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *, int __pyx_skip_dispatch);
-};
-static struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel;
+static struct __pyx_vtabstruct_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_vtabptr_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
 /* #### Code section: utility_code_proto ### */
 
 /* --- Runtime support code (head) --- */
@@ -2028,14 +1955,6 @@ static void __Pyx_RejectKeywords(const char* function_name, PyObject *kwds);
 /* RaiseException.export */
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
 
-/* ArgTypeTestFunc.export */
-static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
-
-/* ArgTypeTest.proto */
-#define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
-    ((likely(__Pyx_IS_TYPE(obj, type) | (none_allowed && (obj == Py_None)))) ? 1 :\
-        __Pyx__ArgTypeTest(obj, type, name, exact))
-
 /* AllocateExtensionType.proto */
 static PyObject *__Pyx_AllocateExtensionType(PyTypeObject *t, int is_final);
 
@@ -2400,41 +2319,30 @@ static int __Pyx_State_RemoveModule(void*);
 #define __PYX_ABI_MODULE_NAME "_cython_" CYTHON_ABI
 #define __PYX_TYPE_MODULE_PREFIX __PYX_ABI_MODULE_NAME "."
 
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self); /* proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_6DragVF__build(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self); /* proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel__build(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self); /* proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel__build(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto*/
+static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from "cython" */
 
-/* Module declarations from "asset_asrl.Forces.DynamicsKernel" */
+/* Module declarations from "asset_asrl.Forces.CentralGravityKernel" */
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "asset_asrl.Forces.DynamicsKernel"
-extern int __pyx_module_is_main_asset_asrl__Forces__DynamicsKernel;
-int __pyx_module_is_main_asset_asrl__Forces__DynamicsKernel = 0;
+#define __Pyx_MODULE_NAME "asset_asrl.Forces.CentralGravityKernel"
+extern int __pyx_module_is_main_asset_asrl__Forces__CentralGravityKernel;
+int __pyx_module_is_main_asset_asrl__Forces__CentralGravityKernel = 0;
 
-/* Implementation of "asset_asrl.Forces.DynamicsKernel" */
+/* Implementation of "asset_asrl.Forces.CentralGravityKernel" */
 /* #### Code section: global_var ### */
 /* #### Code section: string_decls ### */
+static const char __pyx_k_Created_on_Fri_May_22_15_40_57[] = "\nCreated on Fri May 22 15:40:57 2026\n\n@author: Sarah\n";
 /* #### Code section: decls ### */
-static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF___cinit__(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self, double __pyx_v_mu); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_2vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF___cinit__(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self, double __pyx_v_Cd, double __pyx_v_A, double __pyx_v_rho); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_2vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel___cinit__(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self, struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_grav, struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_drag); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_2vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_GravityVF(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_DragVF(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel___cinit__(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, double __pyx_v_mu); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_2vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_4__call__(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_6__repr__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_tp_new_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 /* SmallCodeConfig */
@@ -2455,18 +2363,14 @@ typedef struct {
   PyObject *__pyx_empty_tuple;
   PyObject *__pyx_empty_bytes;
   PyObject *__pyx_empty_unicode;
-  PyObject *__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF;
-  PyObject *__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF;
-  PyObject *__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel;
-  PyTypeObject *__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF;
-  PyTypeObject *__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF;
-  PyTypeObject *__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel;
+  PyObject *__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
+  PyTypeObject *__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_items;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_pop;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_values;
-  PyObject *__pyx_codeobj_tab[9];
-  PyObject *__pyx_string_tab[67];
-  PyObject *__pyx_number_tab[2];
+  PyObject *__pyx_codeobj_tab[3];
+  PyObject *__pyx_string_tab[48];
+  PyObject *__pyx_number_tab[1];
 /* #### Code section: module_state_contents ### */
 /* CommonTypesMetaclass.module_state_decls */
 PyTypeObject *__pyx_CommonTypesMetaclassType;
@@ -2508,74 +2412,54 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #endif
 /* #### Code section: constant_name_defines ### */
 #define __pyx_kp_u_ __pyx_string_tab[0]
-#define __pyx_kp_u_Note_that_Cython_is_deliberately __pyx_string_tab[1]
-#define __pyx_kp_u_add_note __pyx_string_tab[2]
-#define __pyx_kp_u_asset_asrl_Forces_DynamicsKernel_2 __pyx_string_tab[3]
-#define __pyx_kp_u_disable __pyx_string_tab[4]
-#define __pyx_kp_u_enable __pyx_string_tab[5]
-#define __pyx_kp_u_gc __pyx_string_tab[6]
-#define __pyx_kp_u_isenabled __pyx_string_tab[7]
-#define __pyx_kp_u_no_default___reduce___due_to_non __pyx_string_tab[8]
-#define __pyx_kp_u_stringsource __pyx_string_tab[9]
-#define __pyx_n_u_A __pyx_string_tab[10]
-#define __pyx_n_u_Args __pyx_string_tab[11]
-#define __pyx_n_u_Arguments __pyx_string_tab[12]
-#define __pyx_n_u_Cd __pyx_string_tab[13]
-#define __pyx_n_u_DragVF __pyx_string_tab[14]
-#define __pyx_n_u_DragVF___reduce_cython __pyx_string_tab[15]
-#define __pyx_n_u_DragVF___setstate_cython __pyx_string_tab[16]
-#define __pyx_n_u_DragVF_vf __pyx_string_tab[17]
-#define __pyx_n_u_DynamicsModel __pyx_string_tab[18]
-#define __pyx_n_u_DynamicsModel___reduce_cython __pyx_string_tab[19]
-#define __pyx_n_u_DynamicsModel___setstate_cython __pyx_string_tab[20]
-#define __pyx_n_u_DynamicsModel_vf __pyx_string_tab[21]
-#define __pyx_n_u_GravityVF __pyx_string_tab[22]
-#define __pyx_n_u_GravityVF___reduce_cython __pyx_string_tab[23]
-#define __pyx_n_u_GravityVF___setstate_cython __pyx_string_tab[24]
-#define __pyx_n_u_GravityVF_vf __pyx_string_tab[25]
-#define __pyx_n_u_Pyx_PyDict_NextRef __pyx_string_tab[26]
-#define __pyx_n_u_VectorFunctions __pyx_string_tab[27]
-#define __pyx_n_u_asset_asrl __pyx_string_tab[28]
-#define __pyx_n_u_asset_asrl_Forces_DynamicsKernel __pyx_string_tab[29]
-#define __pyx_n_u_ast __pyx_string_tab[30]
-#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[31]
-#define __pyx_n_u_cline_in_traceback __pyx_string_tab[32]
-#define __pyx_n_u_dot __pyx_string_tab[33]
-#define __pyx_n_u_drag __pyx_string_tab[34]
-#define __pyx_n_u_func __pyx_string_tab[35]
-#define __pyx_n_u_getstate __pyx_string_tab[36]
-#define __pyx_n_u_grav __pyx_string_tab[37]
-#define __pyx_n_u_head3 __pyx_string_tab[38]
-#define __pyx_n_u_is_coroutine __pyx_string_tab[39]
-#define __pyx_n_u_items __pyx_string_tab[40]
-#define __pyx_n_u_main __pyx_string_tab[41]
-#define __pyx_n_u_module __pyx_string_tab[42]
-#define __pyx_n_u_mu __pyx_string_tab[43]
-#define __pyx_n_u_name __pyx_string_tab[44]
-#define __pyx_n_u_normalized __pyx_string_tab[45]
-#define __pyx_n_u_normalized_power3 __pyx_string_tab[46]
-#define __pyx_n_u_pop __pyx_string_tab[47]
-#define __pyx_n_u_pyx_state __pyx_string_tab[48]
-#define __pyx_n_u_pyx_vtable __pyx_string_tab[49]
-#define __pyx_n_u_qualname __pyx_string_tab[50]
-#define __pyx_n_u_reduce __pyx_string_tab[51]
-#define __pyx_n_u_reduce_cython __pyx_string_tab[52]
-#define __pyx_n_u_reduce_ex __pyx_string_tab[53]
-#define __pyx_n_u_rho __pyx_string_tab[54]
-#define __pyx_n_u_segment3 __pyx_string_tab[55]
-#define __pyx_n_u_self __pyx_string_tab[56]
-#define __pyx_n_u_set_name __pyx_string_tab[57]
-#define __pyx_n_u_setdefault __pyx_string_tab[58]
-#define __pyx_n_u_setstate __pyx_string_tab[59]
-#define __pyx_n_u_setstate_cython __pyx_string_tab[60]
-#define __pyx_n_u_stack __pyx_string_tab[61]
-#define __pyx_n_u_test __pyx_string_tab[62]
-#define __pyx_n_u_values __pyx_string_tab[63]
-#define __pyx_n_u_vf __pyx_string_tab[64]
-#define __pyx_kp_b_iso88591_A_t1 __pyx_string_tab[65]
-#define __pyx_kp_b_iso88591_Q __pyx_string_tab[66]
-#define __pyx_int_3 __pyx_number_tab[0]
-#define __pyx_int_6 __pyx_number_tab[1]
+#define __pyx_kp_u_asset_asrl_Forces_CentralGravity_2 __pyx_string_tab[1]
+#define __pyx_kp_u_disable __pyx_string_tab[2]
+#define __pyx_kp_u_enable __pyx_string_tab[3]
+#define __pyx_kp_u_gc __pyx_string_tab[4]
+#define __pyx_kp_u_isenabled __pyx_string_tab[5]
+#define __pyx_kp_u_no_default___reduce___due_to_non __pyx_string_tab[6]
+#define __pyx_kp_u_stringsource __pyx_string_tab[7]
+#define __pyx_n_u_Args __pyx_string_tab[8]
+#define __pyx_n_u_Arguments __pyx_string_tab[9]
+#define __pyx_n_u_CentralGravityKernel __pyx_string_tab[10]
+#define __pyx_n_u_CentralGravityKernel___reduce_cy __pyx_string_tab[11]
+#define __pyx_n_u_CentralGravityKernel___setstate __pyx_string_tab[12]
+#define __pyx_n_u_CentralGravityKernel_vf __pyx_string_tab[13]
+#define __pyx_n_u_Pyx_PyDict_NextRef __pyx_string_tab[14]
+#define __pyx_n_u_VectorFunctions __pyx_string_tab[15]
+#define __pyx_n_u_asset_asrl __pyx_string_tab[16]
+#define __pyx_n_u_asset_asrl_Forces_CentralGravity __pyx_string_tab[17]
+#define __pyx_n_u_ast __pyx_string_tab[18]
+#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[19]
+#define __pyx_n_u_cline_in_traceback __pyx_string_tab[20]
+#define __pyx_n_u_func __pyx_string_tab[21]
+#define __pyx_n_u_getstate __pyx_string_tab[22]
+#define __pyx_n_u_head3 __pyx_string_tab[23]
+#define __pyx_n_u_is_coroutine __pyx_string_tab[24]
+#define __pyx_n_u_items __pyx_string_tab[25]
+#define __pyx_n_u_main __pyx_string_tab[26]
+#define __pyx_n_u_module __pyx_string_tab[27]
+#define __pyx_n_u_mu __pyx_string_tab[28]
+#define __pyx_n_u_name __pyx_string_tab[29]
+#define __pyx_n_u_normalized_power3 __pyx_string_tab[30]
+#define __pyx_n_u_pop __pyx_string_tab[31]
+#define __pyx_n_u_pyx_state __pyx_string_tab[32]
+#define __pyx_n_u_pyx_vtable __pyx_string_tab[33]
+#define __pyx_n_u_qualname __pyx_string_tab[34]
+#define __pyx_n_u_reduce __pyx_string_tab[35]
+#define __pyx_n_u_reduce_cython __pyx_string_tab[36]
+#define __pyx_n_u_reduce_ex __pyx_string_tab[37]
+#define __pyx_n_u_self __pyx_string_tab[38]
+#define __pyx_n_u_set_name __pyx_string_tab[39]
+#define __pyx_n_u_setdefault __pyx_string_tab[40]
+#define __pyx_n_u_setstate __pyx_string_tab[41]
+#define __pyx_n_u_setstate_cython __pyx_string_tab[42]
+#define __pyx_n_u_test __pyx_string_tab[43]
+#define __pyx_n_u_values __pyx_string_tab[44]
+#define __pyx_n_u_vf __pyx_string_tab[45]
+#define __pyx_kp_b_iso88591_A_t1 __pyx_string_tab[46]
+#define __pyx_kp_b_iso88591_Q __pyx_string_tab[47]
+#define __pyx_int_6 __pyx_number_tab[0]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
 static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
@@ -2590,15 +2474,11 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   __Pyx_State_RemoveModule(NULL);
   #endif
-  Py_CLEAR(clear_module_state->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF);
-  Py_CLEAR(clear_module_state->__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF);
-  Py_CLEAR(clear_module_state->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF);
-  Py_CLEAR(clear_module_state->__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF);
-  Py_CLEAR(clear_module_state->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel);
-  Py_CLEAR(clear_module_state->__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel);
-  for (int i=0; i<9; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<67; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
-  for (int i=0; i<2; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
+  Py_CLEAR(clear_module_state->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
+  Py_CLEAR(clear_module_state->__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
+  for (int i=0; i<3; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<48; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_clear_contents ### */
 /* CommonTypesMetaclass.module_state_clear */
 Py_CLEAR(clear_module_state->__pyx_CommonTypesMetaclassType);
@@ -2621,15 +2501,11 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_empty_tuple);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_empty_bytes);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_empty_unicode);
-  Py_VISIT(traverse_module_state->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF);
-  Py_VISIT(traverse_module_state->__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF);
-  Py_VISIT(traverse_module_state->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF);
-  Py_VISIT(traverse_module_state->__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF);
-  Py_VISIT(traverse_module_state->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel);
-  Py_VISIT(traverse_module_state->__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel);
-  for (int i=0; i<9; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<67; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
-  for (int i=0; i<2; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
+  Py_VISIT(traverse_module_state->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
+  Py_VISIT(traverse_module_state->__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
+  for (int i=0; i<3; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<48; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_traverse_contents ### */
 /* CommonTypesMetaclass.module_state_traverse */
 Py_VISIT(traverse_module_state->__pyx_CommonTypesMetaclassType);
@@ -2643,7 +2519,7 @@ return 0;
 #endif
 /* #### Code section: module_code ### */
 
-/* "asset_asrl/Forces/DynamicsKernel.pyx":22
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":26
  *     cdef object _vf
  * 
  *     def __cinit__(self, double mu):             # <<<<<<<<<<<<<<
@@ -2652,8 +2528,8 @@ return 0;
 */
 
 /* Python wrapper */
-static int __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   double __pyx_v_mu;
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
@@ -2673,43 +2549,43 @@ static int __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_1__cinit__(
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_mu,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_VARARGS(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 22, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 26, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 22, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 26, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__cinit__", 0) < (0)) __PYX_ERR(0, 22, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__cinit__", 0) < (0)) __PYX_ERR(0, 26, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, i); __PYX_ERR(0, 22, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, i); __PYX_ERR(0, 26, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 22, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 26, __pyx_L3_error)
     }
-    __pyx_v_mu = __Pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mu == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
+    __pyx_v_mu = __Pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mu == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 26, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 22, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 26, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.GravityVF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF___cinit__(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)__pyx_v_self), __pyx_v_mu);
+  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel___cinit__(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self), __pyx_v_mu);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -2719,7 +2595,7 @@ static int __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_1__cinit__(
   return __pyx_r;
 }
 
-static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF___cinit__(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self, double __pyx_v_mu) {
+static int __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel___cinit__(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, double __pyx_v_mu) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2728,7 +2604,7 @@ static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF___cinit__(s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":23
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":27
  * 
  *     def __cinit__(self, double mu):
  *         self.mu = mu             # <<<<<<<<<<<<<<
@@ -2737,14 +2613,14 @@ static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF___cinit__(s
 */
   __pyx_v_self->mu = __pyx_v_mu;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":24
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":28
  *     def __cinit__(self, double mu):
  *         self.mu = mu
  *         self._vf = self._build()             # <<<<<<<<<<<<<<
  * 
  *     cdef object _build(self):
 */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)__pyx_v_self->__pyx_vtab)->_build(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self->__pyx_vtab)->_build(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->_vf);
@@ -2752,7 +2628,7 @@ static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF___cinit__(s
   __pyx_v_self->_vf = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":22
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":26
  *     cdef object _vf
  * 
  *     def __cinit__(self, double mu):             # <<<<<<<<<<<<<<
@@ -2765,24 +2641,24 @@ static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF___cinit__(s
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.GravityVF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "asset_asrl/Forces/DynamicsKernel.pyx":26
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":30
  *         self._vf = self._build()
  * 
  *     cdef object _build(self):             # <<<<<<<<<<<<<<
  * 
- *         cdef object X = Args(6)
+ *         X = Args(6)
 */
 
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self) {
-  PyObject *__pyx_v_X = 0;
-  PyObject *__pyx_v_r = 0;
+static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel__build(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
+  PyObject *__pyx_v_X = NULL;
+  PyObject *__pyx_v_r = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2794,15 +2670,15 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_build", 0);
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":28
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":32
  *     cdef object _build(self):
  * 
- *         cdef object X = Args(6)             # <<<<<<<<<<<<<<
- *         cdef object r = X.head3()
+ *         X = Args(6)             # <<<<<<<<<<<<<<
+ *         r = X.head3()
  * 
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -2821,16 +2697,16 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build
     __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_X = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":29
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":33
  * 
- *         cdef object X = Args(6)
- *         cdef object r = X.head3()             # <<<<<<<<<<<<<<
+ *         X = Args(6)
+ *         r = X.head3()             # <<<<<<<<<<<<<<
  * 
  *         return (-self.mu) * r.normalized_power3()
 */
@@ -2841,21 +2717,21 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_head3, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_r = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":31
- *         cdef object r = X.head3()
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":35
+ *         r = X.head3()
  * 
  *         return (-self.mu) * r.normalized_power3()             # <<<<<<<<<<<<<<
  * 
  *     cpdef object vf(self):
 */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble((-__pyx_v_self->mu)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((-__pyx_v_self->mu)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = __pyx_v_r;
   __Pyx_INCREF(__pyx_t_2);
@@ -2864,10 +2740,10 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_normalized_power3, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
-  __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -2875,12 +2751,12 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":26
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":30
  *         self._vf = self._build()
  * 
  *     cdef object _build(self):             # <<<<<<<<<<<<<<
  * 
- *         cdef object X = Args(6)
+ *         X = Args(6)
 */
 
   /* function exit code */
@@ -2888,7 +2764,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.GravityVF._build", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel._build", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_X);
@@ -2898,7 +2774,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build
   return __pyx_r;
 }
 
-/* "asset_asrl/Forces/DynamicsKernel.pyx":33
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":37
  *         return (-self.mu) * r.normalized_power3()
  * 
  *     cpdef object vf(self):             # <<<<<<<<<<<<<<
@@ -2906,14 +2782,14 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build
  * 
 */
 
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_3vf(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self, int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2930,7 +2806,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf(str
   /* Check if overridden in Python */
   else if (
   #if !CYTHON_USE_TYPE_SLOTS
-  unlikely(Py_TYPE(((PyObject *)__pyx_v_self)) != __pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF &&
+  unlikely(Py_TYPE(((PyObject *)__pyx_v_self)) != __pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel &&
   __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), Py_TPFLAGS_HAVE_GC))
   #else
   unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0 || __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))
@@ -2941,9 +2817,9 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf(str
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_3vf)) {
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf)) {
         __Pyx_XDECREF(__pyx_r);
         __pyx_t_3 = NULL;
         __Pyx_INCREF(__pyx_t_1);
@@ -2965,7 +2841,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf(str
           __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
         }
         __pyx_r = __pyx_t_2;
@@ -2986,19 +2862,19 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf(str
     #endif
   }
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":34
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":38
  * 
  *     cpdef object vf(self):
  *         return self._vf             # <<<<<<<<<<<<<<
  * 
- * 
+ *     def __call__(self):
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_self->_vf);
   __pyx_r = __pyx_v_self->_vf;
   goto __pyx_L0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":33
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":37
  *         return (-self.mu) * r.normalized_power3()
  * 
  *     cpdef object vf(self):             # <<<<<<<<<<<<<<
@@ -3012,7 +2888,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf(str
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.GravityVF.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3021,15 +2897,15 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf(str
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_3vf(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_3vf = {"vf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_3vf, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_3vf(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf = {"vf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3055,14 +2931,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
   if (unlikely(__pyx_kwds_len < 0)) return NULL;
   if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("vf", __pyx_kwds); return NULL;}
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_2vf(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_2vf(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_2vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self) {
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_2vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3071,7 +2947,7 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_2vf(s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("vf", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3080,7 +2956,7 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_2vf(s
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.GravityVF.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3088,1500 +2964,116 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_2vf(s
   return __pyx_r;
 }
 
-/* "(tree fragment)":1
- * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):
-*/
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_5__reduce_cython__(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_5__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_5__reduce_cython__(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-) {
-  #if !CYTHON_METH_FASTCALL
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
-  #endif
-  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  #if !CYTHON_METH_FASTCALL
-  #if CYTHON_ASSUME_SAFE_SIZE
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
-  #endif
-  #endif
-  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("__reduce_cython__", 1, 0, 0, __pyx_nargs); return NULL; }
-  const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-  if (unlikely(__pyx_kwds_len < 0)) return NULL;
-  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("__reduce_cython__", __pyx_kwds); return NULL;}
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_4__reduce_cython__(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("__reduce_cython__", 0);
-
-  /* "(tree fragment)":2
- * def __reduce_cython__(self):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"             # <<<<<<<<<<<<<<
- * def __setstate_cython__(self, __pyx_state):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
-*/
-  __Pyx_Raise(((PyObject *)(((PyTypeObject*)PyExc_TypeError))), __pyx_mstate_global->__pyx_kp_u_no_default___reduce___due_to_non, 0, 0);
-  __PYX_ERR(1, 2, __pyx_L1_error)
-
-  /* "(tree fragment)":1
- * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):
-*/
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.GravityVF.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "(tree fragment)":3
- * def __reduce_cython__(self):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
-*/
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_7__setstate_cython__(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_7__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_7__setstate_cython__(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-) {
-  CYTHON_UNUSED PyObject *__pyx_v___pyx_state = 0;
-  #if !CYTHON_METH_FASTCALL
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
-  #endif
-  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject* values[1] = {0};
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  #if !CYTHON_METH_FASTCALL
-  #if CYTHON_ASSUME_SAFE_SIZE
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
-  #endif
-  #endif
-  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  {
-    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_pyx_state,0};
-    const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(1, 3, __pyx_L3_error)
-    if (__pyx_kwds_len > 0) {
-      switch (__pyx_nargs) {
-        case  1:
-        values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(1, 3, __pyx_L3_error)
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__setstate_cython__", 0) < (0)) __PYX_ERR(1, 3, __pyx_L3_error)
-      for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__setstate_cython__", 1, 1, 1, i); __PYX_ERR(1, 3, __pyx_L3_error) }
-      }
-    } else if (unlikely(__pyx_nargs != 1)) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(1, 3, __pyx_L3_error)
-    }
-    __pyx_v___pyx_state = values[0];
-  }
-  goto __pyx_L6_skip;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__setstate_cython__", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 3, __pyx_L3_error)
-  __pyx_L6_skip:;
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-    Py_XDECREF(values[__pyx_temp]);
-  }
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.GravityVF.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_6__setstate_cython__(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)__pyx_v_self), __pyx_v___pyx_state);
-
-  /* function exit code */
-  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-    Py_XDECREF(values[__pyx_temp]);
-  }
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("__setstate_cython__", 0);
-
-  /* "(tree fragment)":4
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"             # <<<<<<<<<<<<<<
-*/
-  __Pyx_Raise(((PyObject *)(((PyTypeObject*)PyExc_TypeError))), __pyx_mstate_global->__pyx_kp_u_no_default___reduce___due_to_non, 0, 0);
-  __PYX_ERR(1, 4, __pyx_L1_error)
-
-  /* "(tree fragment)":3
- * def __reduce_cython__(self):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
-*/
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.GravityVF.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":47
- *     cdef object _vf
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":40
+ *         return self._vf
  * 
- *     def __cinit__(self, double Cd, double A, double rho):             # <<<<<<<<<<<<<<
- * 
- *         self.Cd = Cd
-*/
-
-/* Python wrapper */
-static int __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  double __pyx_v_Cd;
-  double __pyx_v_A;
-  double __pyx_v_rho;
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
-  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject* values[3] = {0,0,0};
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  int __pyx_r;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
-  #if CYTHON_ASSUME_SAFE_SIZE
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return -1;
-  #endif
-  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  {
-    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_Cd,&__pyx_mstate_global->__pyx_n_u_A,&__pyx_mstate_global->__pyx_n_u_rho,0};
-    const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_VARARGS(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 47, __pyx_L3_error)
-    if (__pyx_kwds_len > 0) {
-      switch (__pyx_nargs) {
-        case  3:
-        values[2] = __Pyx_ArgRef_VARARGS(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 47, __pyx_L3_error)
-        CYTHON_FALLTHROUGH;
-        case  2:
-        values[1] = __Pyx_ArgRef_VARARGS(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 47, __pyx_L3_error)
-        CYTHON_FALLTHROUGH;
-        case  1:
-        values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 47, __pyx_L3_error)
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__cinit__", 0) < (0)) __PYX_ERR(0, 47, __pyx_L3_error)
-      for (Py_ssize_t i = __pyx_nargs; i < 3; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, i); __PYX_ERR(0, 47, __pyx_L3_error) }
-      }
-    } else if (unlikely(__pyx_nargs != 3)) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 47, __pyx_L3_error)
-      values[1] = __Pyx_ArgRef_VARARGS(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 47, __pyx_L3_error)
-      values[2] = __Pyx_ArgRef_VARARGS(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 47, __pyx_L3_error)
-    }
-    __pyx_v_Cd = __Pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_Cd == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
-    __pyx_v_A = __Pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_A == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
-    __pyx_v_rho = __Pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_rho == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L3_error)
-  }
-  goto __pyx_L6_skip;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 47, __pyx_L3_error)
-  __pyx_L6_skip:;
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-    Py_XDECREF(values[__pyx_temp]);
-  }
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DragVF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return -1;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF___cinit__(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)__pyx_v_self), __pyx_v_Cd, __pyx_v_A, __pyx_v_rho);
-
-  /* function exit code */
-  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-    Py_XDECREF(values[__pyx_temp]);
-  }
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF___cinit__(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self, double __pyx_v_Cd, double __pyx_v_A, double __pyx_v_rho) {
-  int __pyx_r;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("__cinit__", 0);
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":49
- *     def __cinit__(self, double Cd, double A, double rho):
- * 
- *         self.Cd = Cd             # <<<<<<<<<<<<<<
- *         self.A = A
- *         self.rho = rho
-*/
-  __pyx_v_self->Cd = __pyx_v_Cd;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":50
- * 
- *         self.Cd = Cd
- *         self.A = A             # <<<<<<<<<<<<<<
- *         self.rho = rho
- * 
-*/
-  __pyx_v_self->A = __pyx_v_A;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":51
- *         self.Cd = Cd
- *         self.A = A
- *         self.rho = rho             # <<<<<<<<<<<<<<
- * 
- *         self._vf = self._build()
-*/
-  __pyx_v_self->rho = __pyx_v_rho;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":53
- *         self.rho = rho
- * 
- *         self._vf = self._build()             # <<<<<<<<<<<<<<
- * 
- *     cdef object _build(self):
-*/
-  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)__pyx_v_self->__pyx_vtab)->_build(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_1);
-  __Pyx_GOTREF(__pyx_v_self->_vf);
-  __Pyx_DECREF(__pyx_v_self->_vf);
-  __pyx_v_self->_vf = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":47
- *     cdef object _vf
- * 
- *     def __cinit__(self, double Cd, double A, double rho):             # <<<<<<<<<<<<<<
- * 
- *         self.Cd = Cd
-*/
-
-  /* function exit code */
-  __pyx_r = 0;
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DragVF.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = -1;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":55
- *         self._vf = self._build()
- * 
- *     cdef object _build(self):             # <<<<<<<<<<<<<<
- * 
- *         cdef object X = Args(6)
-*/
-
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_6DragVF__build(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self) {
-  PyObject *__pyx_v_X = 0;
-  CYTHON_UNUSED PyObject *__pyx_v_r = 0;
-  PyObject *__pyx_v_v = 0;
-  PyObject *__pyx_v_v2 = 0;
-  PyObject *__pyx_v_drag_dir = 0;
-  PyObject *__pyx_v_mag = 0;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  size_t __pyx_t_4;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("_build", 0);
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":57
- *     cdef object _build(self):
- * 
- *         cdef object X = Args(6)             # <<<<<<<<<<<<<<
- *         cdef object r = X.head3()
- *         cdef object v = X.segment3(3)
-*/
-  __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = 1;
-  #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
-    assert(__pyx_t_2);
-    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_3);
-    __Pyx_INCREF(__pyx_t_2);
-    __Pyx_INCREF(__pyx__function);
-    __Pyx_DECREF_SET(__pyx_t_3, __pyx__function);
-    __pyx_t_4 = 0;
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_mstate_global->__pyx_int_6};
-    __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  }
-  __pyx_v_X = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":58
- * 
- *         cdef object X = Args(6)
- *         cdef object r = X.head3()             # <<<<<<<<<<<<<<
- *         cdef object v = X.segment3(3)
- * 
-*/
-  __pyx_t_3 = __pyx_v_X;
-  __Pyx_INCREF(__pyx_t_3);
-  __pyx_t_4 = 0;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
-    __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_head3, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  }
-  __pyx_v_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":59
- *         cdef object X = Args(6)
- *         cdef object r = X.head3()
- *         cdef object v = X.segment3(3)             # <<<<<<<<<<<<<<
- * 
- *         cdef object v2 = v.dot(v)
-*/
-  __pyx_t_3 = __pyx_v_X;
-  __Pyx_INCREF(__pyx_t_3);
-  __pyx_t_4 = 0;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_mstate_global->__pyx_int_3};
-    __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_segment3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  }
-  __pyx_v_v = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":61
- *         cdef object v = X.segment3(3)
- * 
- *         cdef object v2 = v.dot(v)             # <<<<<<<<<<<<<<
- * 
- *         # drag direction: -v normalized scaled
-*/
-  __pyx_t_3 = __pyx_v_v;
-  __Pyx_INCREF(__pyx_t_3);
-  __pyx_t_4 = 0;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_v};
-    __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_dot, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  }
-  __pyx_v_v2 = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":64
- * 
- *         # drag direction: -v normalized scaled
- *         cdef object drag_dir = -v.normalized()             # <<<<<<<<<<<<<<
- * 
- *         cdef object mag = 0.5 * self.rho * self.Cd * self.A * v2
-*/
-  __pyx_t_3 = __pyx_v_v;
-  __Pyx_INCREF(__pyx_t_3);
-  __pyx_t_4 = 0;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
-    __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_normalized, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  }
-  __pyx_t_3 = PyNumber_Negative(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_drag_dir = __pyx_t_3;
-  __pyx_t_3 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":66
- *         cdef object drag_dir = -v.normalized()
- * 
- *         cdef object mag = 0.5 * self.rho * self.Cd * self.A * v2             # <<<<<<<<<<<<<<
- * 
- *         return mag * drag_dir
-*/
-  __pyx_t_3 = PyFloat_FromDouble((((0.5 * __pyx_v_self->rho) * __pyx_v_self->Cd) * __pyx_v_self->A)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = PyNumber_Multiply(__pyx_t_3, __pyx_v_v2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_mag = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":68
- *         cdef object mag = 0.5 * self.rho * self.Cd * self.A * v2
- * 
- *         return mag * drag_dir             # <<<<<<<<<<<<<<
- * 
- *     cpdef object vf(self):
-*/
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyNumber_Multiply(__pyx_v_mag, __pyx_v_drag_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":55
- *         self._vf = self._build()
- * 
- *     cdef object _build(self):             # <<<<<<<<<<<<<<
- * 
- *         cdef object X = Args(6)
-*/
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DragVF._build", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_X);
-  __Pyx_XDECREF(__pyx_v_r);
-  __Pyx_XDECREF(__pyx_v_v);
-  __Pyx_XDECREF(__pyx_v_v2);
-  __Pyx_XDECREF(__pyx_v_drag_dir);
-  __Pyx_XDECREF(__pyx_v_mag);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":70
- *         return mag * drag_dir
- * 
- *     cpdef object vf(self):             # <<<<<<<<<<<<<<
+ *     def __call__(self):             # <<<<<<<<<<<<<<
  *         return self._vf
  * 
 */
 
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_3vf(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self, int __pyx_skip_dispatch) {
+/* Python wrapper */
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__call__ (wrapper)", 0);
+  #if CYTHON_ASSUME_SAFE_SIZE
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("__call__", 1, 0, 0, __pyx_nargs); return NULL; }
+  const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_VARARGS(__pyx_kwds) : 0;
+  if (unlikely(__pyx_kwds_len < 0)) return NULL;
+  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("__call__", __pyx_kwds); return NULL;}
+  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_4__call__(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_4__call__(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  size_t __pyx_t_5;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("vf", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (
-  #if !CYTHON_USE_TYPE_SLOTS
-  unlikely(Py_TYPE(((PyObject *)__pyx_v_self)) != __pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF &&
-  __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), Py_TPFLAGS_HAVE_GC))
-  #else
-  unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0 || __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))
-  #endif
-  ) {
-    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
-      PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_3vf)) {
-        __Pyx_XDECREF(__pyx_r);
-        __pyx_t_3 = NULL;
-        __Pyx_INCREF(__pyx_t_1);
-        __pyx_t_4 = __pyx_t_1; 
-        __pyx_t_5 = 1;
-        #if CYTHON_UNPACK_METHODS
-        if (unlikely(PyMethod_Check(__pyx_t_4))) {
-          __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-          assert(__pyx_t_3);
-          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_3);
-          __Pyx_INCREF(__pyx__function);
-          __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
-          __pyx_t_5 = 0;
-        }
-        #endif
-        {
-          PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
-          __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-          __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 70, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-        }
-        __pyx_r = __pyx_t_2;
-        __pyx_t_2 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        goto __pyx_L0;
-      }
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
-      if (unlikely(__pyx_typedict_guard != __pyx_tp_dict_version)) {
-        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-      }
-      #endif
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    }
-    #endif
-  }
+  __Pyx_RefNannySetupContext("__call__", 0);
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":71
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":41
  * 
- *     cpdef object vf(self):
+ *     def __call__(self):
  *         return self._vf             # <<<<<<<<<<<<<<
  * 
- * 
+ *     def __repr__(self):
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_self->_vf);
   __pyx_r = __pyx_v_self->_vf;
   goto __pyx_L0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":70
- *         return mag * drag_dir
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":40
+ *         return self._vf
  * 
- *     cpdef object vf(self):             # <<<<<<<<<<<<<<
+ *     def __call__(self):             # <<<<<<<<<<<<<<
  *         return self._vf
  * 
 */
 
   /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DragVF.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_3vf(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_3vf = {"vf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_3vf, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_3vf(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-) {
-  #if !CYTHON_METH_FASTCALL
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
-  #endif
-  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("vf (wrapper)", 0);
-  #if !CYTHON_METH_FASTCALL
-  #if CYTHON_ASSUME_SAFE_SIZE
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
-  #endif
-  #endif
-  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("vf", 1, 0, 0, __pyx_nargs); return NULL; }
-  const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-  if (unlikely(__pyx_kwds_len < 0)) return NULL;
-  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("vf", __pyx_kwds); return NULL;}
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_2vf(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_2vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("vf", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_vf(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DragVF.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "(tree fragment)":1
- * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):
-*/
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_5__reduce_cython__(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_5__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_5__reduce_cython__(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-) {
-  #if !CYTHON_METH_FASTCALL
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
-  #endif
-  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  #if !CYTHON_METH_FASTCALL
-  #if CYTHON_ASSUME_SAFE_SIZE
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
-  #endif
-  #endif
-  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("__reduce_cython__", 1, 0, 0, __pyx_nargs); return NULL; }
-  const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-  if (unlikely(__pyx_kwds_len < 0)) return NULL;
-  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("__reduce_cython__", __pyx_kwds); return NULL;}
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_4__reduce_cython__(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("__reduce_cython__", 0);
-
-  /* "(tree fragment)":2
- * def __reduce_cython__(self):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"             # <<<<<<<<<<<<<<
- * def __setstate_cython__(self, __pyx_state):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
-*/
-  __Pyx_Raise(((PyObject *)(((PyTypeObject*)PyExc_TypeError))), __pyx_mstate_global->__pyx_kp_u_no_default___reduce___due_to_non, 0, 0);
-  __PYX_ERR(1, 2, __pyx_L1_error)
-
-  /* "(tree fragment)":1
- * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):
-*/
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DragVF.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "(tree fragment)":3
- * def __reduce_cython__(self):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
-*/
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_7__setstate_cython__(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_7__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_7__setstate_cython__(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-) {
-  CYTHON_UNUSED PyObject *__pyx_v___pyx_state = 0;
-  #if !CYTHON_METH_FASTCALL
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
-  #endif
-  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject* values[1] = {0};
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  #if !CYTHON_METH_FASTCALL
-  #if CYTHON_ASSUME_SAFE_SIZE
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
-  #endif
-  #endif
-  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  {
-    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_pyx_state,0};
-    const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(1, 3, __pyx_L3_error)
-    if (__pyx_kwds_len > 0) {
-      switch (__pyx_nargs) {
-        case  1:
-        values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(1, 3, __pyx_L3_error)
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__setstate_cython__", 0) < (0)) __PYX_ERR(1, 3, __pyx_L3_error)
-      for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__setstate_cython__", 1, 1, 1, i); __PYX_ERR(1, 3, __pyx_L3_error) }
-      }
-    } else if (unlikely(__pyx_nargs != 1)) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(1, 3, __pyx_L3_error)
-    }
-    __pyx_v___pyx_state = values[0];
-  }
-  goto __pyx_L6_skip;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__setstate_cython__", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 3, __pyx_L3_error)
-  __pyx_L6_skip:;
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-    Py_XDECREF(values[__pyx_temp]);
-  }
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DragVF.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_6__setstate_cython__(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)__pyx_v_self), __pyx_v___pyx_state);
-
-  /* function exit code */
-  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-    Py_XDECREF(values[__pyx_temp]);
-  }
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("__setstate_cython__", 0);
-
-  /* "(tree fragment)":4
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"             # <<<<<<<<<<<<<<
-*/
-  __Pyx_Raise(((PyObject *)(((PyTypeObject*)PyExc_TypeError))), __pyx_mstate_global->__pyx_kp_u_no_default___reduce___due_to_non, 0, 0);
-  __PYX_ERR(1, 4, __pyx_L1_error)
-
-  /* "(tree fragment)":3
- * def __reduce_cython__(self):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
-*/
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DragVF.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":83
- *     cdef object _vf
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":43
+ *         return self._vf
  * 
- *     def __cinit__(self, GravityVF grav, DragVF drag):             # <<<<<<<<<<<<<<
- * 
- *         self.grav = grav
+ *     def __repr__(self):             # <<<<<<<<<<<<<<
+ *         return "CentralGravityKernel"
 */
 
 /* Python wrapper */
-static int __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_grav = 0;
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_drag = 0;
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__repr__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__repr__(PyObject *__pyx_v_self) {
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject* values[2] = {0,0};
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  int __pyx_r;
+  PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
-  #if CYTHON_ASSUME_SAFE_SIZE
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return -1;
-  #endif
+  __Pyx_RefNannySetupContext("__repr__ (wrapper)", 0);
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  {
-    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_grav,&__pyx_mstate_global->__pyx_n_u_drag,0};
-    const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_VARARGS(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 83, __pyx_L3_error)
-    if (__pyx_kwds_len > 0) {
-      switch (__pyx_nargs) {
-        case  2:
-        values[1] = __Pyx_ArgRef_VARARGS(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 83, __pyx_L3_error)
-        CYTHON_FALLTHROUGH;
-        case  1:
-        values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 83, __pyx_L3_error)
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__cinit__", 0) < (0)) __PYX_ERR(0, 83, __pyx_L3_error)
-      for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, i); __PYX_ERR(0, 83, __pyx_L3_error) }
-      }
-    } else if (unlikely(__pyx_nargs != 2)) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 83, __pyx_L3_error)
-      values[1] = __Pyx_ArgRef_VARARGS(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 83, __pyx_L3_error)
-    }
-    __pyx_v_grav = ((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)values[0]);
-    __pyx_v_drag = ((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)values[1]);
-  }
-  goto __pyx_L6_skip;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 83, __pyx_L3_error)
-  __pyx_L6_skip:;
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-    Py_XDECREF(values[__pyx_temp]);
-  }
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DynamicsModel.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return -1;
-  __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_grav), __pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF, 1, "grav", 0))) __PYX_ERR(0, 83, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_drag), __pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF, 1, "drag", 0))) __PYX_ERR(0, 83, __pyx_L1_error)
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel___cinit__(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *)__pyx_v_self), __pyx_v_grav, __pyx_v_drag);
+  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_6__repr__(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self));
 
   /* function exit code */
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __pyx_r = -1;
-  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-    Py_XDECREF(values[__pyx_temp]);
-  }
-  goto __pyx_L7_cleaned_up;
-  __pyx_L0:;
-  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
-    Py_XDECREF(values[__pyx_temp]);
-  }
-  __pyx_L7_cleaned_up:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel___cinit__(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self, struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *__pyx_v_grav, struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *__pyx_v_drag) {
-  int __pyx_r;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("__cinit__", 0);
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":85
- *     def __cinit__(self, GravityVF grav, DragVF drag):
- * 
- *         self.grav = grav             # <<<<<<<<<<<<<<
- *         self.drag = drag
- * 
-*/
-  __Pyx_INCREF((PyObject *)__pyx_v_grav);
-  __Pyx_GIVEREF((PyObject *)__pyx_v_grav);
-  __Pyx_GOTREF(__pyx_v_self->grav);
-  __Pyx_DECREF(__pyx_v_self->grav);
-  __pyx_v_self->grav = ((PyObject *)__pyx_v_grav);
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":86
- * 
- *         self.grav = grav
- *         self.drag = drag             # <<<<<<<<<<<<<<
- * 
- *         self._vf = self._build()
-*/
-  __Pyx_INCREF((PyObject *)__pyx_v_drag);
-  __Pyx_GIVEREF((PyObject *)__pyx_v_drag);
-  __Pyx_GOTREF(__pyx_v_self->drag);
-  __Pyx_DECREF(__pyx_v_self->drag);
-  __pyx_v_self->drag = ((PyObject *)__pyx_v_drag);
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":88
- *         self.drag = drag
- * 
- *         self._vf = self._build()             # <<<<<<<<<<<<<<
- * 
- *     cdef object _build(self):
-*/
-  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *)__pyx_v_self->__pyx_vtab)->_build(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_1);
-  __Pyx_GOTREF(__pyx_v_self->_vf);
-  __Pyx_DECREF(__pyx_v_self->_vf);
-  __pyx_v_self->_vf = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":83
- *     cdef object _vf
- * 
- *     def __cinit__(self, GravityVF grav, DragVF drag):             # <<<<<<<<<<<<<<
- * 
- *         self.grav = grav
-*/
-
-  /* function exit code */
-  __pyx_r = 0;
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DynamicsModel.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = -1;
-  __pyx_L0:;
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":90
- *         self._vf = self._build()
- * 
- *     cdef object _build(self):             # <<<<<<<<<<<<<<
- * 
- *         cdef object X = Args(6)
-*/
-
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel__build(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self) {
-  PyObject *__pyx_v_X = 0;
-  PyObject *__pyx_v_v = 0;
-  PyObject *__pyx_v_acc = 0;
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_6__repr__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  size_t __pyx_t_4;
-  PyObject *__pyx_t_5 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("_build", 0);
+  __Pyx_RefNannySetupContext("__repr__", 0);
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":92
- *     cdef object _build(self):
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":44
  * 
- *         cdef object X = Args(6)             # <<<<<<<<<<<<<<
- *         cdef object v = X.segment3(3)
- * 
-*/
-  __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = 1;
-  #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
-    assert(__pyx_t_2);
-    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_3);
-    __Pyx_INCREF(__pyx_t_2);
-    __Pyx_INCREF(__pyx__function);
-    __Pyx_DECREF_SET(__pyx_t_3, __pyx__function);
-    __pyx_t_4 = 0;
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_mstate_global->__pyx_int_6};
-    __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  }
-  __pyx_v_X = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":93
- * 
- *         cdef object X = Args(6)
- *         cdef object v = X.segment3(3)             # <<<<<<<<<<<<<<
- * 
- *         # -------------------------------------------------
-*/
-  __pyx_t_3 = __pyx_v_X;
-  __Pyx_INCREF(__pyx_t_3);
-  __pyx_t_4 = 0;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_mstate_global->__pyx_int_3};
-    __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_segment3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  }
-  __pyx_v_v = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":99
- *         # -------------------------------------------------
- *         cdef object acc = (
- *             self.grav.vf() +             # <<<<<<<<<<<<<<
- *             self.drag.vf()
- *         )
-*/
-  __pyx_t_3 = __pyx_v_self->grav;
-  __Pyx_INCREF(__pyx_t_3);
-  __pyx_t_4 = 0;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
-    __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_vf, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-  }
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":100
- *         cdef object acc = (
- *             self.grav.vf() +
- *             self.drag.vf()             # <<<<<<<<<<<<<<
- *         )
- * 
-*/
-  __pyx_t_2 = __pyx_v_self->drag;
-  __Pyx_INCREF(__pyx_t_2);
-  __pyx_t_4 = 0;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
-    __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_vf, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-  }
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":99
- *         # -------------------------------------------------
- *         cdef object acc = (
- *             self.grav.vf() +             # <<<<<<<<<<<<<<
- *             self.drag.vf()
- *         )
-*/
-  __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_acc = __pyx_t_2;
-  __pyx_t_2 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":103
- *         )
- * 
- *         return vf.stack(v, acc)             # <<<<<<<<<<<<<<
- * 
- *     cpdef object vf(self):
+ *     def __repr__(self):
+ *         return "CentralGravityKernel"             # <<<<<<<<<<<<<<
 */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_stack); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = 1;
-  #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_5))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_5);
-    assert(__pyx_t_3);
-    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_5);
-    __Pyx_INCREF(__pyx_t_3);
-    __Pyx_INCREF(__pyx__function);
-    __Pyx_DECREF_SET(__pyx_t_5, __pyx__function);
-    __pyx_t_4 = 0;
-  }
-  #endif
-  {
-    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_v_v, __pyx_v_acc};
-    __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_5, __pyx_callargs+__pyx_t_4, (3-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-  }
-  __pyx_r = __pyx_t_2;
-  __pyx_t_2 = 0;
+  __Pyx_INCREF(__pyx_mstate_global->__pyx_n_u_CentralGravityKernel);
+  __pyx_r = __pyx_mstate_global->__pyx_n_u_CentralGravityKernel;
   goto __pyx_L0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":90
- *         self._vf = self._build()
- * 
- *     cdef object _build(self):             # <<<<<<<<<<<<<<
- * 
- *         cdef object X = Args(6)
-*/
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DynamicsModel._build", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_X);
-  __Pyx_XDECREF(__pyx_v_v);
-  __Pyx_XDECREF(__pyx_v_acc);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "asset_asrl/Forces/DynamicsKernel.pyx":105
- *         return vf.stack(v, acc)
- * 
- *     cpdef object vf(self):             # <<<<<<<<<<<<<<
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":43
  *         return self._vf
-*/
-
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_3vf(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self, int __pyx_skip_dispatch) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  size_t __pyx_t_5;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("vf", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (
-  #if !CYTHON_USE_TYPE_SLOTS
-  unlikely(Py_TYPE(((PyObject *)__pyx_v_self)) != __pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel &&
-  __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), Py_TPFLAGS_HAVE_GC))
-  #else
-  unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0 || __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))
-  #endif
-  ) {
-    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
-      PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_3vf)) {
-        __Pyx_XDECREF(__pyx_r);
-        __pyx_t_3 = NULL;
-        __Pyx_INCREF(__pyx_t_1);
-        __pyx_t_4 = __pyx_t_1; 
-        __pyx_t_5 = 1;
-        #if CYTHON_UNPACK_METHODS
-        if (unlikely(PyMethod_Check(__pyx_t_4))) {
-          __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-          assert(__pyx_t_3);
-          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_3);
-          __Pyx_INCREF(__pyx__function);
-          __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
-          __pyx_t_5 = 0;
-        }
-        #endif
-        {
-          PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
-          __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-          __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-        }
-        __pyx_r = __pyx_t_2;
-        __pyx_t_2 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        goto __pyx_L0;
-      }
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
-      if (unlikely(__pyx_typedict_guard != __pyx_tp_dict_version)) {
-        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-      }
-      #endif
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    }
-    #endif
-  }
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":106
  * 
- *     cpdef object vf(self):
- *         return self._vf             # <<<<<<<<<<<<<<
-*/
-  __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_v_self->_vf);
-  __pyx_r = __pyx_v_self->_vf;
-  goto __pyx_L0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":105
- *         return vf.stack(v, acc)
- * 
- *     cpdef object vf(self):             # <<<<<<<<<<<<<<
- *         return self._vf
+ *     def __repr__(self):             # <<<<<<<<<<<<<<
+ *         return "CentralGravityKernel"
 */
 
   /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DynamicsModel.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_3vf(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_3vf = {"vf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_3vf, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_3vf(PyObject *__pyx_v_self, 
-#if CYTHON_METH_FASTCALL
-PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
-#else
-PyObject *__pyx_args, PyObject *__pyx_kwds
-#endif
-) {
-  #if !CYTHON_METH_FASTCALL
-  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
-  #endif
-  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("vf (wrapper)", 0);
-  #if !CYTHON_METH_FASTCALL
-  #if CYTHON_ASSUME_SAFE_SIZE
-  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
-  #else
-  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
-  #endif
-  #endif
-  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("vf", 1, 0, 0, __pyx_nargs); return NULL; }
-  const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-  if (unlikely(__pyx_kwds_len < 0)) return NULL;
-  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("vf", __pyx_kwds); return NULL;}
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_2vf(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_2vf(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("vf", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_vf(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DynamicsModel.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -4595,15 +3087,15 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_5__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_9__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_5__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_5__reduce_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_9__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_9__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_9__reduce_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4629,14 +3121,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
   if (unlikely(__pyx_kwds_len < 0)) return NULL;
   if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("__reduce_cython__", __pyx_kwds); return NULL;}
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_4__reduce_cython__(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_8__reduce_cython__(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self) {
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_lineno = 0;
@@ -4661,7 +3153,7 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DynamicsModel.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -4676,15 +3168,15 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_7__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_11__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_7__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_7__setstate_cython__(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_11__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_11__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_11__setstate_cython__(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4746,11 +3238,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DynamicsModel.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_6__setstate_cython__(((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *)__pyx_v_self), __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_10__setstate_cython__(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self), __pyx_v___pyx_state);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -4760,7 +3252,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_lineno = 0;
@@ -4785,35 +3277,35 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("asset_asrl.Forces.DynamicsKernel.DynamicsModel.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 /* #### Code section: module_exttypes ### */
-static struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_GravityVF __pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_GravityVF;
+static struct __pyx_vtabstruct_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel __pyx_vtable_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
 
-static PyObject *__pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_GravityVF(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *p;
+static PyObject *__pyx_tp_new_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel(PyTypeObject *t, PyObject *a, PyObject *k) {
+  struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *p;
   PyObject *o;
   o = __Pyx_AllocateExtensionType(t, 0);
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)o);
-  p->__pyx_vtab = __pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_GravityVF;
+  p = ((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)o);
+  p->__pyx_vtab = __pyx_vtabptr_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
   p->_vf = Py_None; Py_INCREF(Py_None);
-  if (unlikely(__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_1__cinit__(o, a, k) < 0)) goto bad;
+  if (unlikely(__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_GravityVF(PyObject *o) {
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *p = (struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)o;
+static void __pyx_tp_dealloc_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel(PyObject *o) {
+  struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *p = (struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)o;
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely(__Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
-    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_GravityVF) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) {
       if (PyObject_CallFinalizerFromDealloc(o)) return;
     }
   }
@@ -4834,9 +3326,9 @@ static void __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_GravityVF(PyO
   #endif
 }
 
-static int __pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_GravityVF(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *p = (struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)o;
+  struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *p = (struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)o;
   {
     e = __Pyx_call_type_traverse(o, 1, v, a);
     if (e) return e;
@@ -4847,67 +3339,69 @@ static int __pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_GravityVF(PyO
   return 0;
 }
 
-static int __pyx_tp_clear_10asset_asrl_6Forces_14DynamicsKernel_GravityVF(PyObject *o) {
+static int __pyx_tp_clear_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *p = (struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *)o;
+  struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *p = (struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)o;
   tmp = ((PyObject*)p->_vf);
   p->_vf = Py_None; Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   return 0;
 }
 
-static PyMethodDef __pyx_methods_10asset_asrl_6Forces_14DynamicsKernel_GravityVF[] = {
-  {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+static PyMethodDef __pyx_methods_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel[] = {
+  {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_9__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_11__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 #if CYTHON_USE_TYPE_SPECS
-static PyType_Slot __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF_slots[] = {
-  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_GravityVF},
-  {Py_tp_traverse, (void *)__pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_GravityVF},
-  {Py_tp_clear, (void *)__pyx_tp_clear_10asset_asrl_6Forces_14DynamicsKernel_GravityVF},
-  {Py_tp_methods, (void *)__pyx_methods_10asset_asrl_6Forces_14DynamicsKernel_GravityVF},
-  {Py_tp_new, (void *)__pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_GravityVF},
+static PyType_Slot __pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel},
+  {Py_tp_repr, (void *)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__repr__},
+  {Py_tp_call, (void *)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5__call__},
+  {Py_tp_traverse, (void *)__pyx_tp_traverse_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel},
+  {Py_tp_clear, (void *)__pyx_tp_clear_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel},
+  {Py_tp_methods, (void *)__pyx_methods_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel},
+  {Py_tp_new, (void *)__pyx_tp_new_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel},
   {0, 0},
 };
-static PyType_Spec __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF_spec = {
-  "asset_asrl.Forces.DynamicsKernel.GravityVF",
-  sizeof(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF),
+static PyType_Spec __pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_spec = {
+  "asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel",
+  sizeof(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
-  __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF_slots,
+  __pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_slots,
 };
 #else
 
-static PyTypeObject __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF = {
+static PyTypeObject __pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel = {
   PyVarObject_HEAD_INIT(0, 0)
-  "asset_asrl.Forces.DynamicsKernel.""GravityVF", /*tp_name*/
-  sizeof(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF), /*tp_basicsize*/
+  "asset_asrl.Forces.CentralGravityKernel.""CentralGravityKernel", /*tp_name*/
+  sizeof(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_GravityVF, /*tp_dealloc*/
+  __pyx_tp_dealloc_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, /*tp_dealloc*/
   0, /*tp_vectorcall_offset*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
   0, /*tp_as_async*/
-  0, /*tp_repr*/
+  __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__repr__, /*tp_repr*/
   0, /*tp_as_number*/
   0, /*tp_as_sequence*/
   0, /*tp_as_mapping*/
   0, /*tp_hash*/
-  0, /*tp_call*/
+  __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5__call__, /*tp_call*/
   0, /*tp_str*/
   0, /*tp_getattro*/
   0, /*tp_setattro*/
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_GravityVF, /*tp_traverse*/
-  __pyx_tp_clear_10asset_asrl_6Forces_14DynamicsKernel_GravityVF, /*tp_clear*/
+  __pyx_tp_traverse_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, /*tp_traverse*/
+  __pyx_tp_clear_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_10asset_asrl_6Forces_14DynamicsKernel_GravityVF, /*tp_methods*/
+  __pyx_methods_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -4919,341 +3413,7 @@ static PyTypeObject __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF =
   #endif
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_GravityVF, /*tp_new*/
-  0, /*tp_free*/
-  0, /*tp_is_gc*/
-  0, /*tp_bases*/
-  0, /*tp_mro*/
-  0, /*tp_cache*/
-  0, /*tp_subclasses*/
-  0, /*tp_weaklist*/
-  0, /*tp_del*/
-  0, /*tp_version_tag*/
-  #if CYTHON_USE_TP_FINALIZE
-  0, /*tp_finalize*/
-  #else
-  NULL, /*tp_finalize*/
-  #endif
-  #if !CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM >= 0x07030800
-  0, /*tp_vectorcall*/
-  #endif
-  #if __PYX_NEED_TP_PRINT_SLOT == 1
-  0, /*tp_print*/
-  #endif
-  #if PY_VERSION_HEX >= 0x030C0000
-  0, /*tp_watched*/
-  #endif
-  #if PY_VERSION_HEX >= 0x030d00A4
-  0, /*tp_versions_used*/
-  #endif
-  #if CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX >= 0x03090000 && PY_VERSION_HEX < 0x030a0000
-  0, /*tp_pypy_flags*/
-  #endif
-};
-#endif
-static struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DragVF __pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_DragVF;
-
-static PyObject *__pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_DragVF(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *p;
-  PyObject *o;
-  o = __Pyx_AllocateExtensionType(t, 0);
-  if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)o);
-  p->__pyx_vtab = __pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_DragVF;
-  p->_vf = Py_None; Py_INCREF(Py_None);
-  if (unlikely(__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_1__cinit__(o, a, k) < 0)) goto bad;
-  return o;
-  bad:
-  Py_DECREF(o); o = 0;
-  return NULL;
-}
-
-static void __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_DragVF(PyObject *o) {
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *p = (struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)o;
-  #if CYTHON_USE_TP_FINALIZE
-  if (unlikely(__Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
-    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_DragVF) {
-      if (PyObject_CallFinalizerFromDealloc(o)) return;
-    }
-  }
-  #endif
-  PyObject_GC_UnTrack(o);
-  Py_CLEAR(p->_vf);
-  PyTypeObject *tp = Py_TYPE(o);
-  #if CYTHON_USE_TYPE_SLOTS
-  (*tp->tp_free)(o);
-  #else
-  {
-    freefunc tp_free = (freefunc)PyType_GetSlot(tp, Py_tp_free);
-    if (tp_free) tp_free(o);
-  }
-  #endif
-  #if CYTHON_USE_TYPE_SPECS
-  Py_DECREF(tp);
-  #endif
-}
-
-static int __pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_DragVF(PyObject *o, visitproc v, void *a) {
-  int e;
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *p = (struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)o;
-  {
-    e = __Pyx_call_type_traverse(o, 1, v, a);
-    if (e) return e;
-  }
-  if (p->_vf) {
-    e = (*v)(p->_vf, a); if (e) return e;
-  }
-  return 0;
-}
-
-static int __pyx_tp_clear_10asset_asrl_6Forces_14DynamicsKernel_DragVF(PyObject *o) {
-  PyObject* tmp;
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *p = (struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *)o;
-  tmp = ((PyObject*)p->_vf);
-  p->_vf = Py_None; Py_INCREF(Py_None);
-  Py_XDECREF(tmp);
-  return 0;
-}
-
-static PyMethodDef __pyx_methods_10asset_asrl_6Forces_14DynamicsKernel_DragVF[] = {
-  {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {0, 0, 0, 0}
-};
-#if CYTHON_USE_TYPE_SPECS
-static PyType_Slot __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF_slots[] = {
-  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_DragVF},
-  {Py_tp_traverse, (void *)__pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_DragVF},
-  {Py_tp_clear, (void *)__pyx_tp_clear_10asset_asrl_6Forces_14DynamicsKernel_DragVF},
-  {Py_tp_methods, (void *)__pyx_methods_10asset_asrl_6Forces_14DynamicsKernel_DragVF},
-  {Py_tp_new, (void *)__pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_DragVF},
-  {0, 0},
-};
-static PyType_Spec __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF_spec = {
-  "asset_asrl.Forces.DynamicsKernel.DragVF",
-  sizeof(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF),
-  0,
-  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
-  __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF_slots,
-};
-#else
-
-static PyTypeObject __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF = {
-  PyVarObject_HEAD_INIT(0, 0)
-  "asset_asrl.Forces.DynamicsKernel.""DragVF", /*tp_name*/
-  sizeof(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF), /*tp_basicsize*/
-  0, /*tp_itemsize*/
-  __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_DragVF, /*tp_dealloc*/
-  0, /*tp_vectorcall_offset*/
-  0, /*tp_getattr*/
-  0, /*tp_setattr*/
-  0, /*tp_as_async*/
-  0, /*tp_repr*/
-  0, /*tp_as_number*/
-  0, /*tp_as_sequence*/
-  0, /*tp_as_mapping*/
-  0, /*tp_hash*/
-  0, /*tp_call*/
-  0, /*tp_str*/
-  0, /*tp_getattro*/
-  0, /*tp_setattro*/
-  0, /*tp_as_buffer*/
-  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
-  0, /*tp_doc*/
-  __pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_DragVF, /*tp_traverse*/
-  __pyx_tp_clear_10asset_asrl_6Forces_14DynamicsKernel_DragVF, /*tp_clear*/
-  0, /*tp_richcompare*/
-  0, /*tp_weaklistoffset*/
-  0, /*tp_iter*/
-  0, /*tp_iternext*/
-  __pyx_methods_10asset_asrl_6Forces_14DynamicsKernel_DragVF, /*tp_methods*/
-  0, /*tp_members*/
-  0, /*tp_getset*/
-  0, /*tp_base*/
-  0, /*tp_dict*/
-  0, /*tp_descr_get*/
-  0, /*tp_descr_set*/
-  #if !CYTHON_USE_TYPE_SPECS
-  0, /*tp_dictoffset*/
-  #endif
-  0, /*tp_init*/
-  0, /*tp_alloc*/
-  __pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_DragVF, /*tp_new*/
-  0, /*tp_free*/
-  0, /*tp_is_gc*/
-  0, /*tp_bases*/
-  0, /*tp_mro*/
-  0, /*tp_cache*/
-  0, /*tp_subclasses*/
-  0, /*tp_weaklist*/
-  0, /*tp_del*/
-  0, /*tp_version_tag*/
-  #if CYTHON_USE_TP_FINALIZE
-  0, /*tp_finalize*/
-  #else
-  NULL, /*tp_finalize*/
-  #endif
-  #if !CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM >= 0x07030800
-  0, /*tp_vectorcall*/
-  #endif
-  #if __PYX_NEED_TP_PRINT_SLOT == 1
-  0, /*tp_print*/
-  #endif
-  #if PY_VERSION_HEX >= 0x030C0000
-  0, /*tp_watched*/
-  #endif
-  #if PY_VERSION_HEX >= 0x030d00A4
-  0, /*tp_versions_used*/
-  #endif
-  #if CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX >= 0x03090000 && PY_VERSION_HEX < 0x030a0000
-  0, /*tp_pypy_flags*/
-  #endif
-};
-#endif
-static struct __pyx_vtabstruct_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel __pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel;
-
-static PyObject *__pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel(PyTypeObject *t, PyObject *a, PyObject *k) {
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *p;
-  PyObject *o;
-  o = __Pyx_AllocateExtensionType(t, 0);
-  if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *)o);
-  p->__pyx_vtab = __pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel;
-  p->grav = Py_None; Py_INCREF(Py_None);
-  p->drag = Py_None; Py_INCREF(Py_None);
-  p->_vf = Py_None; Py_INCREF(Py_None);
-  if (unlikely(__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_1__cinit__(o, a, k) < 0)) goto bad;
-  return o;
-  bad:
-  Py_DECREF(o); o = 0;
-  return NULL;
-}
-
-static void __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel(PyObject *o) {
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *p = (struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *)o;
-  #if CYTHON_USE_TP_FINALIZE
-  if (unlikely(__Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
-    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel) {
-      if (PyObject_CallFinalizerFromDealloc(o)) return;
-    }
-  }
-  #endif
-  PyObject_GC_UnTrack(o);
-  Py_CLEAR(p->grav);
-  Py_CLEAR(p->drag);
-  Py_CLEAR(p->_vf);
-  PyTypeObject *tp = Py_TYPE(o);
-  #if CYTHON_USE_TYPE_SLOTS
-  (*tp->tp_free)(o);
-  #else
-  {
-    freefunc tp_free = (freefunc)PyType_GetSlot(tp, Py_tp_free);
-    if (tp_free) tp_free(o);
-  }
-  #endif
-  #if CYTHON_USE_TYPE_SPECS
-  Py_DECREF(tp);
-  #endif
-}
-
-static int __pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel(PyObject *o, visitproc v, void *a) {
-  int e;
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *p = (struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *)o;
-  {
-    e = __Pyx_call_type_traverse(o, 1, v, a);
-    if (e) return e;
-  }
-  if (p->grav) {
-    e = (*v)(p->grav, a); if (e) return e;
-  }
-  if (p->drag) {
-    e = (*v)(p->drag, a); if (e) return e;
-  }
-  if (p->_vf) {
-    e = (*v)(p->_vf, a); if (e) return e;
-  }
-  return 0;
-}
-
-static int __pyx_tp_clear_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel(PyObject *o) {
-  PyObject* tmp;
-  struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *p = (struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *)o;
-  tmp = ((PyObject*)p->grav);
-  p->grav = Py_None; Py_INCREF(Py_None);
-  Py_XDECREF(tmp);
-  tmp = ((PyObject*)p->drag);
-  p->drag = Py_None; Py_INCREF(Py_None);
-  Py_XDECREF(tmp);
-  tmp = ((PyObject*)p->_vf);
-  p->_vf = Py_None; Py_INCREF(Py_None);
-  Py_XDECREF(tmp);
-  return 0;
-}
-
-static PyMethodDef __pyx_methods_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel[] = {
-  {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_5__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_7__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
-  {0, 0, 0, 0}
-};
-#if CYTHON_USE_TYPE_SPECS
-static PyType_Slot __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel_slots[] = {
-  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel},
-  {Py_tp_traverse, (void *)__pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel},
-  {Py_tp_clear, (void *)__pyx_tp_clear_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel},
-  {Py_tp_methods, (void *)__pyx_methods_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel},
-  {Py_tp_new, (void *)__pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel},
-  {0, 0},
-};
-static PyType_Spec __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel_spec = {
-  "asset_asrl.Forces.DynamicsKernel.DynamicsModel",
-  sizeof(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel),
-  0,
-  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
-  __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel_slots,
-};
-#else
-
-static PyTypeObject __pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel = {
-  PyVarObject_HEAD_INIT(0, 0)
-  "asset_asrl.Forces.DynamicsKernel.""DynamicsModel", /*tp_name*/
-  sizeof(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel), /*tp_basicsize*/
-  0, /*tp_itemsize*/
-  __pyx_tp_dealloc_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel, /*tp_dealloc*/
-  0, /*tp_vectorcall_offset*/
-  0, /*tp_getattr*/
-  0, /*tp_setattr*/
-  0, /*tp_as_async*/
-  0, /*tp_repr*/
-  0, /*tp_as_number*/
-  0, /*tp_as_sequence*/
-  0, /*tp_as_mapping*/
-  0, /*tp_hash*/
-  0, /*tp_call*/
-  0, /*tp_str*/
-  0, /*tp_getattro*/
-  0, /*tp_setattro*/
-  0, /*tp_as_buffer*/
-  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
-  0, /*tp_doc*/
-  __pyx_tp_traverse_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel, /*tp_traverse*/
-  __pyx_tp_clear_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel, /*tp_clear*/
-  0, /*tp_richcompare*/
-  0, /*tp_weaklistoffset*/
-  0, /*tp_iter*/
-  0, /*tp_iternext*/
-  __pyx_methods_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel, /*tp_methods*/
-  0, /*tp_members*/
-  0, /*tp_getset*/
-  0, /*tp_base*/
-  0, /*tp_dict*/
-  0, /*tp_descr_get*/
-  0, /*tp_descr_set*/
-  #if !CYTHON_USE_TYPE_SPECS
-  0, /*tp_dictoffset*/
-  #endif
-  0, /*tp_init*/
-  0, /*tp_alloc*/
-  __pyx_tp_new_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel, /*tp_new*/
+  __pyx_tp_new_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5339,84 +3499,32 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  __pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_GravityVF = &__pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_GravityVF;
-  __pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_GravityVF._build = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *))__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF__build;
-  __pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_GravityVF.vf = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_GravityVF *, int __pyx_skip_dispatch))__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_vf;
+  __pyx_vtabptr_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel = &__pyx_vtable_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
+  __pyx_vtable_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel._build = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *))__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel__build;
+  __pyx_vtable_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel.vf = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *, int __pyx_skip_dispatch))__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF)) __PYX_ERR(0, 17, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF_spec, __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel)) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_spec, __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
   #else
-  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF = &__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_GravityVF;
+  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel = &__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
   #endif
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
-  PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF);
+  PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF->tp_dictoffset && __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF->tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF->tp_getattro = PyObject_GenericGetAttr;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel->tp_dictoffset && __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel->tp_getattro = PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF, __pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_GravityVF) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
-  if (__Pyx_MergeVtables(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_GravityVF, (PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
-  __pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_DragVF = &__pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_DragVF;
-  __pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_DragVF._build = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *))__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_6DragVF__build;
-  __pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_DragVF.vf = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DragVF *, int __pyx_skip_dispatch))__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_vf;
-  #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF)) __PYX_ERR(0, 40, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF_spec, __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
-  #else
-  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF = &__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DragVF;
-  #endif
-  #if !CYTHON_COMPILING_IN_LIMITED_API
-  #endif
-  #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
-  #endif
-  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
-  PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF);
-  #endif
-  #if !CYTHON_COMPILING_IN_LIMITED_API
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF->tp_dictoffset && __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF->tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF->tp_getattro = PyObject_GenericGetAttr;
-  }
-  #endif
-  if (__Pyx_SetVtable(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF, __pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_DragVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
-  if (__Pyx_MergeVtables(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_DragVF, (PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
-  __pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel = &__pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel;
-  __pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel._build = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *))__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel__build;
-  __pyx_vtable_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel.vf = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel *, int __pyx_skip_dispatch))__pyx_f_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_vf;
-  #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel)) __PYX_ERR(0, 77, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel_spec, __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel) < (0)) __PYX_ERR(0, 77, __pyx_L1_error)
-  #else
-  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel = &__pyx_type_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel;
-  #endif
-  #if !CYTHON_COMPILING_IN_LIMITED_API
-  #endif
-  #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel) < (0)) __PYX_ERR(0, 77, __pyx_L1_error)
-  #endif
-  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
-  PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel);
-  #endif
-  #if !CYTHON_COMPILING_IN_LIMITED_API
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel->tp_dictoffset && __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel->tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel->tp_getattro = PyObject_GenericGetAttr;
-  }
-  #endif
-  if (__Pyx_SetVtable(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel, __pyx_vtabptr_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel) < (0)) __PYX_ERR(0, 77, __pyx_L1_error)
-  if (__Pyx_MergeVtables(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel) < (0)) __PYX_ERR(0, 77, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_DynamicsModel, (PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel) < (0)) __PYX_ERR(0, 77, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel) < (0)) __PYX_ERR(0, 77, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, __pyx_vtabptr_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel, (PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -5453,10 +3561,10 @@ static int __Pyx_modinit_function_import_code(__pyx_mstatetype *__pyx_mstate) {
 
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec_DynamicsKernel(PyObject* module); /*proto*/
+static int __pyx_pymod_exec_CentralGravityKernel(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec_DynamicsKernel},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_CentralGravityKernel},
   #if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
   {Py_mod_gil, __Pyx_FREETHREADING_COMPATIBLE},
   #endif
@@ -5475,8 +3583,8 @@ namespace {
   #endif
   {
       PyModuleDef_HEAD_INIT,
-      "DynamicsKernel",
-      0, /* m_doc */
+      "CentralGravityKernel",
+      __pyx_k_Created_on_Fri_May_22_15_40_57, /* m_doc */
     #if CYTHON_USE_MODULE_STATE
       sizeof(__pyx_mstatetype), /* m_size */
     #else
@@ -5513,8 +3621,8 @@ namespace {
   #endif
 #endif
 
-__Pyx_PyMODINIT_FUNC PyInit_DynamicsKernel(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_DynamicsKernel(void)
+__Pyx_PyMODINIT_FUNC PyInit_CentralGravityKernel(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_CentralGravityKernel(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -5621,7 +3729,7 @@ bad:
 }
 
 
-static CYTHON_SMALL_CODE int __pyx_pymod_exec_DynamicsKernel(PyObject *__pyx_pyinit_module)
+static CYTHON_SMALL_CODE int __pyx_pymod_exec_CentralGravityKernel(PyObject *__pyx_pyinit_module)
 #endif
 {
   int stringtab_initialized = 0;
@@ -5639,7 +3747,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_DynamicsKernel(PyObject *__pyx_pyi
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
     if (__pyx_m == __pyx_pyinit_module) return 0;
-    PyErr_SetString(PyExc_RuntimeError, "Module 'DynamicsKernel' has already been imported. Re-initialisation is not supported.");
+    PyErr_SetString(PyExc_RuntimeError, "Module 'CentralGravityKernel' has already been imported. Re-initialisation is not supported.");
     return -1;
   }
   #else
@@ -5655,7 +3763,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_DynamicsKernel(PyObject *__pyx_pyi
   #if CYTHON_USE_MODULE_STATE
   {
     int add_module_result = __Pyx_State_AddModule(__pyx_t_1, &__pyx_moduledef);
-    __pyx_t_1 = 0; /* transfer ownership from __pyx_t_1 to "DynamicsKernel" pseudovariable */
+    __pyx_t_1 = 0; /* transfer ownership from __pyx_t_1 to "CentralGravityKernel" pseudovariable */
     if (unlikely((add_module_result < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     pystate_addmodule_run = 1;
   }
@@ -5683,7 +3791,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_DynamicsKernel(PyObject *__pyx_pyi
   }
   #endif
   
-__Pyx_RefNannySetupContext("PyInit_DynamicsKernel", 0);
+__Pyx_RefNannySetupContext("PyInit_CentralGravityKernel", 0);
   __Pyx_init_runtime_version();
   if (__Pyx_check_binary_version(__PYX_LIMITED_VERSION_HEX, __Pyx_get_runtime_version(), CYTHON_COMPILING_IN_LIMITED_API) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_mstate->__pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_mstate->__pyx_empty_tuple)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -5694,13 +3802,13 @@ __Pyx_RefNannySetupContext("PyInit_DynamicsKernel", 0);
   if (__Pyx_InitConstants(__pyx_mstate) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   stringtab_initialized = 1;
   if (__Pyx_InitGlobals() < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (__pyx_module_is_main_asset_asrl__Forces__DynamicsKernel) {
+  if (__pyx_module_is_main_asset_asrl__Forces__CentralGravityKernel) {
     if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_name, __pyx_mstate_global->__pyx_n_u_main) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "asset_asrl.Forces.DynamicsKernel")) {
-      if (unlikely((PyDict_SetItemString(modules, "asset_asrl.Forces.DynamicsKernel", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "asset_asrl.Forces.CentralGravityKernel")) {
+      if (unlikely((PyDict_SetItemString(modules, "asset_asrl.Forces.CentralGravityKernel", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   /*--- Builtin init code ---*/
@@ -5718,62 +3826,62 @@ __Pyx_RefNannySetupContext("PyInit_DynamicsKernel", 0);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":7
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":14
  * # cython: nonecheck=False
  * 
  * import asset_asrl as ast             # <<<<<<<<<<<<<<
  * cimport cython
  * 
 */
-  __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_asset_asrl, 0, 0, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_asset_asrl, 0, 0, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
   __pyx_t_2 = __pyx_t_1;
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ast, __pyx_t_2) < (0)) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ast, __pyx_t_2) < (0)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":10
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":17
  * cimport cython
  * 
  * vf = ast.VectorFunctions             # <<<<<<<<<<<<<<
  * Args = vf.Arguments
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ast); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ast); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_VectorFunctions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_VectorFunctions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_3) < (0)) __PYX_ERR(0, 10, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_3) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":11
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":18
  * 
  * vf = ast.VectorFunctions
  * Args = vf.Arguments             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Arguments); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Arguments); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Args, __pyx_t_2) < (0)) __PYX_ERR(0, 11, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Args, __pyx_t_2) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":33
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":37
  *         return (-self.mu) * r.normalized_power3()
  * 
  *     cpdef object vf(self):             # <<<<<<<<<<<<<<
  *         return self._vf
  * 
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_3vf, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_GravityVF_vf, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_DynamicsKernel, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel_vf, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
   #endif
-  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_GravityVF, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_2) < (0)) __PYX_ERR(0, 33, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_2) < (0)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "(tree fragment)":1
@@ -5781,7 +3889,7 @@ __Pyx_RefNannySetupContext("PyInit_DynamicsKernel", 0);
  *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
  * def __setstate_cython__(self, __pyx_state):
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_5__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_GravityVF___reduce_cython, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_DynamicsKernel, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_9__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel___reduce_cy, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
@@ -5795,7 +3903,7 @@ __Pyx_RefNannySetupContext("PyInit_DynamicsKernel", 0);
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_9GravityVF_7__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_GravityVF___setstate_cython, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_DynamicsKernel, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 3, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_11__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel___setstate, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
@@ -5803,93 +3911,10 @@ __Pyx_RefNannySetupContext("PyInit_DynamicsKernel", 0);
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_setstate_cython, __pyx_t_2) < (0)) __PYX_ERR(1, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":70
- *         return mag * drag_dir
- * 
- *     cpdef object vf(self):             # <<<<<<<<<<<<<<
- *         return self._vf
- * 
-*/
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_3vf, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_DragVF_vf, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_DynamicsKernel, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 70, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
-  PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
-  #endif
-  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DragVF, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_2) < (0)) __PYX_ERR(0, 70, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "(tree fragment)":1
- * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):
-*/
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_5__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_DragVF___reduce_cython, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_DynamicsKernel, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
-  PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
-  #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_reduce_cython, __pyx_t_2) < (0)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "(tree fragment)":3
- * def __reduce_cython__(self):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
-*/
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_6DragVF_7__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_DragVF___setstate_cython, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_DynamicsKernel, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[5])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 3, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
-  PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
-  #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_setstate_cython, __pyx_t_2) < (0)) __PYX_ERR(1, 3, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":105
- *         return vf.stack(v, acc)
- * 
- *     cpdef object vf(self):             # <<<<<<<<<<<<<<
- *         return self._vf
-*/
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_3vf, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_DynamicsModel_vf, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_DynamicsKernel, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[6])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
-  PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
-  #endif
-  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_14DynamicsKernel_DynamicsModel, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_2) < (0)) __PYX_ERR(0, 105, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "(tree fragment)":1
- * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):
-*/
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_5__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_DynamicsModel___reduce_cython, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_DynamicsKernel, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[7])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
-  PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
-  #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_reduce_cython, __pyx_t_2) < (0)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "(tree fragment)":3
- * def __reduce_cython__(self):
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
- * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
- *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
-*/
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_14DynamicsKernel_13DynamicsModel_7__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_DynamicsModel___setstate_cython, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_DynamicsKernel, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[8])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 3, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
-  PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
-  #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_setstate_cython, __pyx_t_2) < (0)) __PYX_ERR(1, 3, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "asset_asrl/Forces/DynamicsKernel.pyx":1
- * # cython: language_level=3             # <<<<<<<<<<<<<<
- * # cython: boundscheck=False
- * # cython: wraparound=False
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":1
+ * # -*- coding: utf-8 -*-             # <<<<<<<<<<<<<<
+ * """
+ * Created on Fri May 22 15:40:57 2026
 */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5904,7 +3929,7 @@ __Pyx_RefNannySetupContext("PyInit_DynamicsKernel", 0);
   __Pyx_XDECREF(__pyx_t_3);
   if (__pyx_m) {
     if (__pyx_mstate->__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init asset_asrl.Forces.DynamicsKernel", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init asset_asrl.Forces.CentralGravityKernel", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -5918,7 +3943,7 @@ __Pyx_RefNannySetupContext("PyInit_DynamicsKernel", 0);
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init asset_asrl.Forces.DynamicsKernel");
+    PyErr_SetString(PyExc_ImportError, "init asset_asrl.Forces.CentralGravityKernel");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -5957,34 +3982,34 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 8; } index[] = {{1},{179},{8},{36},{7},{6},{2},{9},{50},{14},{1},{4},{9},{2},{6},{24},{26},{9},{13},{31},{33},{16},{9},{27},{29},{12},{20},{15},{10},{32},{3},{18},{18},{3},{4},{8},{12},{4},{5},{13},{5},{8},{10},{2},{8},{10},{17},{3},{11},{14},{12},{10},{17},{13},{3},{8},{4},{12},{10},{12},{19},{5},{8},{6},{2},{9},{9}};
-    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (597 bytes) */
-const char* const cstring = "BZh91AY&SY\275@c4\000\000%\337\342dP\300\213\254E\257\253q\000\277\377\377\360@@@\000\000@@\002\006]\267f\347a\242\004\003Si0\232jbhz\231\006\2322\036\241\340\240\322\0235G\221\244i\246\201\240h\000\000\000\001\210D\032(\332\231=\021\220\000\000\000\000\tB\005M\217J\231\032\036\243L\200\3204\000\320\3203y\026\031\205\263\215\335e\353\321T\362e\332Z\377\342\326|\325\202\207\353cJ\003\031\027MYr[\341\334L\301\234-JL\324\214\343k{\267Q<|\355\341&\303\236\247@4w\331\245B\272\276\000\020\261\352!|W;\201~~\250q\243F\254\022I+$I\217\326\000g}@\312\t\364y\024\255\261\257[\313\351K)\272\221t\033~\\\013\3512\003\005\326\306\026\320@\233Ua4=GBn\202%\020\277\370\303\265c\t\001~\2362\225\033\211\256C\2372-\007HA\0064Kx\017Y\311\022,<o\211\214\254\261\330\005-H\200\315O~\010A\366\373A\213\344qI\211\211e\214\371ri\030\355\264\303\273'd\222Id\255\337\036\017\275o\353T\211\261\3773\006\275KPA\203J\"\021\246\t\002\263\327\200`\332\341\023\323,\213a\201fUc\250Js\2401.\234\204\035\020\271\226\207\221\240\020JiJ\013\334\025\030\352f\241#$\n\026'4\301\023\336\001\327h\211\212C\200\223\206loE\204H\010\033\355\027T\034\3436\007bs|\317[\022\220I\205$9A\255*\252\301P \037\010U`\251A\222\020\257\364\r\2334\315\000\026({\304,N\030\211+D\332\346\020\313\"\307\t\212\332\247\017:\3004*\274\200\255\341LV*)_\"\027&\342P\264Si\243\026\013a\276%\3637\247\223\006\354\254\035R\341*\371\020,\213Te\n\177\251)\0273\365\341y<\303\221\2200\301L\010\212\263\243\332\013$\003e\006\300\262C\0329\251\360\202p\006}b\257\371\302\320\002:\023\030\233]\r(_\264\242}&\002\227C\214\216N\232\300\334\n\031\3229T\000f\362h\316lr\203<\355\377\027rE8P\220\275@c4";
-    PyObject *data = __Pyx_DecompressString(cstring, 597, 2);
+    const struct { const unsigned int length: 6; } index[] = {{1},{42},{7},{6},{2},{9},{50},{14},{4},{9},{20},{38},{40},{23},{20},{15},{10},{38},{3},{18},{18},{8},{12},{5},{13},{5},{8},{10},{2},{8},{17},{3},{11},{14},{12},{10},{17},{13},{4},{12},{10},{12},{19},{8},{6},{2},{9},{9}};
+    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (408 bytes) */
+const char* const cstring = "BZh91AY&SY\303UG\214\000\000\021\337\342dP\300\013\250\005\255\211q\000\277\357\377\360@@@\000\000@0\001l\332k\006IL1I\3555F\324f\215O@#@\323L\237\243\325\006\200Q\350\220\324\362\203#\365@4\000\003@\031 Bm&\020\320\000\320\000\003\020\324\000\222\211\350\345\323\356\224\343\217\347\365&t\014E\370\352\347q\271\261u\026\244\326\342\223>\200f\005\305\363uX\005_T@\272\271\303X\000\354\266\224D\313\351r\245\211Z6w\306\307\261\000|L!A*QbR\204\010dR\230\270\022\2171W[\001T\326\300c4\361\215O\006q@X}\001+R\n\202\215\271\250\331\352\211`!7\360\311A/6\215c\034\322\360\252\207\221\210\211\226L\222\323\230\204\302\320\306\223c\322\276\200\324\262\006\001\255\213\201\320\203\323\017\013\240\201\225<\262\251\275@\215\334m.#HF\315f\264\005u\357*\340\031\240$N|L\221\3340:B\022\350\207\330V0j(\3026\233\211\004e\246\3212E\253\033\270\226\300.\246\330\033@\303t:=\222\035w\345k\311\264\033\313\0209\020Z\034\036[\010(\020Y\263\310o=\026\362@)~\260Pr\034\307\3436\315\274\025Z\300\026@Iq\007\303\220\017 \355)\010\202\3713(\017\007\236e\274\037\024\210\363\345~\203^\250\324\320f\236\312\320\242\351\005\266\001\222\362\365\206\030\271Woqw$S\205\t\0145Tx\300";
+    PyObject *data = __Pyx_DecompressString(cstring, 408, 2);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (511 bytes) */
-const char* const cstring = "x\332mRMo\0231\020\025\022\007\304\205\277\340[\017\250[\241\364\300\001\201\242\206 \204\250\002\207\\G\216=\2731\365\332\213g\274d9\365\330c\177^\177\016\343|\207\324\222\255g\317\314\233\361\314\373t\033\031\025/5\253\233\201\2271(G\312\242w\013L\232\321\017\21289\303\230\212SP\263\317\263\313\353\367\327J\007\253\022\376B\303\244(/\214\327DH*\326j\221\235g\027\024\017\035R\245\276\326j\210Y\005D\2538\252N\374\216\003x\211A\021r\001\352B\207\020Y\263\213\001$\334\205\346BY\227$\211\353\261DO\265'\254\264\265 ~X\030\0304%\1775\215\311 ]M\206\240[g\350\033\246\200\276\352\206\225u\244\027\0361\224\2631\2166\310\206(\277\254u\366\254\000\022\332l\020@\331\274N\023b\270\224_\367N{\261\032\027\034\003|(\215\010\r\305,\251>\216\307\251!\331\271\305\300tc'I7\363\351\346\254\366\214f\335R\200\375\273\024L\362\3013K_\357J\377\036\245\373'\227g\350\3763\237\263\2368\364\365\227\244{\307\303|\272\007\347\244\307\2463\302\203\261\257\001f\303J\366Dd\001\267\270\342\237X\317eF1Ms0ext\230\314\001U\233\031U\2473\322\222\207\206`\\\254LL1\213r\220\214\227\023\234\210 i\203\013m\356ld+\235\002\250%\005\310jv\025B#\245-Q\333\0218\202=\207cl\t\240\325\302\"\253\2156{qn3\200\244\027\024bj\265w\177\213\024v\010\272\370\007\323\250\213\035\200h\007\266\031\n\354\271\310\246P\375\316\332o(\016\3029k\346\376\001W\002\227\221\260)B\031\021\372z\335\336m\025\202\2662<j:<3\000\271\231;\000F\022\317^\373\214\324\327\367\343\247Wo\036\370\361\335\375\213\247\227\257\037\336>\376\370\007\230\333|\314";
-    PyObject *data = __Pyx_DecompressString(cstring, 511, 1);
+    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (339 bytes) */
+const char* const cstring = "x\332\205Q\301J\003A\014E\360 ^\374\205\275\213[\244WQ\212R\017\202\250\007\257!\235\315\256\203\2633\353$\263\356z\352\261\307~^?\307\254\255\255`\305\201\014\217\314K^\346\345\n\231I\0009\272\3214DC<\272&/\021\335m\304\326J\177G\321\223\313\233\276+,\343\314\021\371\341\256\214\3455*|\310\n*19\311\000\"\025\311\020@V$\312$d>\3703\211\266\265\350\364\325Xo\005\340\2025\345+\016I\005/'\261b\215T\253.\357\023\337;\320V\312\364\362\022<\300\037,\375\035\013\312?\274\266\004x\350;\215\033k\004\356\251\223'*\237\311H\210\323\344\215\330\340yg\325\016\345k\323\362}]Q\205\271\367\306\206\334\204\030\222XOl\234\336`=(\335\320\014\315+@\251\n\240\247\372\236\025^\010\2131X\206m\241\025\252\031\240F-\325S\207\"9%\326\t\300c\255\310\207X\243\263\037T@\023\336)\216\233\320\000\350\336`\323s\200\255\014+\033\032\274%t\353\302\335\322~y\272MP78\351\312/?7\202\2126{\377\3412\354q\034@\210\225\324\242K\304m9\237\254\216N\026\262<\237\037\254\016\217\027\247\313\307O\365\254\002\002";
+    PyObject *data = __Pyx_DecompressString(cstring, 339, 1);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (975 bytes) */
-const char* const bytes = "?Note that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the 'annotation_typing' directive to False.add_noteasset_asrl/Forces/DynamicsKernel.pyxdisableenablegcisenabledno default __reduce__ due to non-trivial __cinit__<stringsource>AArgsArgumentsCdDragVFDragVF.__reduce_cython__DragVF.__setstate_cython__DragVF.vfDynamicsModelDynamicsModel.__reduce_cython__DynamicsModel.__setstate_cython__DynamicsModel.vfGravityVFGravityVF.__reduce_cython__GravityVF.__setstate_cython__GravityVF.vf__Pyx_PyDict_NextRefVectorFunctionsasset_asrlasset_asrl.Forces.DynamicsKernelastasyncio.coroutinescline_in_tracebackdotdrag__func____getstate__gravhead3_is_coroutineitems__main____module__mu__name__normalizednormalized_power3pop__pyx_state__pyx_vtable____qualname____reduce____reduce_cython____reduce_ex__rhosegment3self__set_name__setdefault__setstate____setstate_cython__stack__test__valuesvf\200A\330\010\017\210t\2201\200\001\330\004\n\210+\220Q";
+    #else /* compression: none (646 bytes) */
+const char* const bytes = "?asset_asrl/Forces/CentralGravityKernel.pyxdisableenablegcisenabledno default __reduce__ due to non-trivial __cinit__<stringsource>ArgsArgumentsCentralGravityKernelCentralGravityKernel.__reduce_cython__CentralGravityKernel.__setstate_cython__CentralGravityKernel.vf__Pyx_PyDict_NextRefVectorFunctionsasset_asrlasset_asrl.Forces.CentralGravityKernelastasyncio.coroutinescline_in_traceback__func____getstate__head3_is_coroutineitems__main____module__mu__name__normalized_power3pop__pyx_state__pyx_vtable____qualname____reduce____reduce_cython____reduce_ex__self__set_name__setdefault__setstate____setstate_cython____test__valuesvf\200A\330\010\017\210t\2201\200\001\330\004\n\210+\220Q";
     PyObject *data = NULL;
     CYTHON_UNUSED_VAR(__Pyx_DecompressString);
     #endif
     PyObject **stringtab = __pyx_mstate->__pyx_string_tab;
     Py_ssize_t pos = 0;
-    for (int i = 0; i < 65; i++) {
+    for (int i = 0; i < 46; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyUnicode_DecodeUTF8(bytes + pos, bytes_length, NULL);
-      if (likely(string) && i >= 10) PyUnicode_InternInPlace(&string);
+      if (likely(string) && i >= 8) PyUnicode_InternInPlace(&string);
       if (unlikely(!string)) {
         Py_XDECREF(data);
         __PYX_ERR(0, 1, __pyx_L1_error)
@@ -5992,7 +4017,7 @@ const char* const bytes = "?Note that Cython is deliberately stricter than PEP-4
       stringtab[i] = string;
       pos += bytes_length;
     }
-    for (int i = 65; i < 67; i++) {
+    for (int i = 46; i < 48; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyBytes_FromStringAndSize(bytes + pos, bytes_length);
       stringtab[i] = string;
@@ -6003,14 +4028,14 @@ const char* const bytes = "?Note that Cython is deliberately stricter than PEP-4
       }
     }
     Py_XDECREF(data);
-    for (Py_ssize_t i = 0; i < 67; i++) {
+    for (Py_ssize_t i = 0; i < 48; i++) {
       if (unlikely(PyObject_Hash(stringtab[i]) == -1)) {
         __PYX_ERR(0, 1, __pyx_L1_error)
       }
     }
     #if CYTHON_IMMORTAL_CONSTANTS
     {
-      PyObject **table = stringtab + 65;
+      PyObject **table = stringtab + 46;
       for (Py_ssize_t i=0; i<2; ++i) {
         #if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
         #if PY_VERSION_HEX < 0x030E0000
@@ -6030,8 +4055,8 @@ const char* const bytes = "?Note that Cython is deliberately stricter than PEP-4
   }
   {
     PyObject **numbertab = __pyx_mstate->__pyx_number_tab + 0;
-    int8_t const cint_constants_1[] = {3,6};
-    for (int i = 0; i < 2; i++) {
+    int8_t const cint_constants_1[] = {6};
+    for (int i = 0; i < 1; i++) {
       numbertab[i] = PyLong_FromLong(cint_constants_1[i - 0]);
       if (unlikely(!numbertab[i])) __PYX_ERR(0, 1, __pyx_L1_error)
     }
@@ -6039,7 +4064,7 @@ const char* const bytes = "?Note that Cython is deliberately stricter than PEP-4
   #if CYTHON_IMMORTAL_CONSTANTS
   {
     PyObject **table = __pyx_mstate->__pyx_number_tab;
-    for (Py_ssize_t i=0; i<2; ++i) {
+    for (Py_ssize_t i=0; i<1; ++i) {
       #if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
       #if PY_VERSION_HEX < 0x030E0000
       if (_Py_IsOwnedByCurrentThread(table[i]) && Py_REFCNT(table[i]) == 1)
@@ -6066,7 +4091,7 @@ typedef struct {
     unsigned int num_kwonly_args : 1;
     unsigned int nlocals : 2;
     unsigned int flags : 10;
-    unsigned int first_line : 7;
+    unsigned int first_line : 6;
 } __Pyx_PyCode_New_function_description;
 /* NewCodeObj.proto */
 static PyObject* __Pyx_PyCode_New(
@@ -6083,9 +4108,9 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 33};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 37};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
-    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_Forces_DynamicsKernel_2, __pyx_mstate->__pyx_n_u_vf, __pyx_mstate->__pyx_kp_b_iso88591_A_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_Forces_CentralGravity_2, __pyx_mstate->__pyx_n_u_vf, __pyx_mstate->__pyx_kp_b_iso88591_A_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   {
     const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1};
@@ -6096,36 +4121,6 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
     const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 3};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_pyx_state};
     __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_setstate_cython, __pyx_mstate->__pyx_kp_b_iso88591_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
-  }
-  {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 70};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
-    __pyx_mstate_global->__pyx_codeobj_tab[3] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_Forces_DynamicsKernel_2, __pyx_mstate->__pyx_n_u_vf, __pyx_mstate->__pyx_kp_b_iso88591_A_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[3])) goto bad;
-  }
-  {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
-    __pyx_mstate_global->__pyx_codeobj_tab[4] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_reduce_cython, __pyx_mstate->__pyx_kp_b_iso88591_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[4])) goto bad;
-  }
-  {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 3};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_pyx_state};
-    __pyx_mstate_global->__pyx_codeobj_tab[5] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_setstate_cython, __pyx_mstate->__pyx_kp_b_iso88591_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[5])) goto bad;
-  }
-  {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 105};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
-    __pyx_mstate_global->__pyx_codeobj_tab[6] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_Forces_DynamicsKernel_2, __pyx_mstate->__pyx_n_u_vf, __pyx_mstate->__pyx_kp_b_iso88591_A_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[6])) goto bad;
-  }
-  {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
-    __pyx_mstate_global->__pyx_codeobj_tab[7] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_reduce_cython, __pyx_mstate->__pyx_kp_b_iso88591_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[7])) goto bad;
-  }
-  {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 3};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_pyx_state};
-    __pyx_mstate_global->__pyx_codeobj_tab[8] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_setstate_cython, __pyx_mstate->__pyx_kp_b_iso88591_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[8])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;
@@ -7590,54 +5585,6 @@ static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject 
 bad:
     Py_XDECREF(owned_instance);
     return;
-}
-
-/* ArgTypeTestFunc (used by ArgTypeTest) */
-static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact)
-{
-    __Pyx_TypeName type_name;
-    __Pyx_TypeName obj_type_name;
-    PyObject *extra_info = __pyx_mstate_global->__pyx_empty_unicode;
-    int from_annotation_subclass = 0;
-    if (unlikely(!type)) {
-        PyErr_SetString(PyExc_SystemError, "Missing type object");
-        return 0;
-    }
-    else if (!exact) {
-        if (likely(__Pyx_TypeCheck(obj, type))) return 1;
-    } else if (exact == 2) {
-        if (__Pyx_TypeCheck(obj, type)) {
-            from_annotation_subclass = 1;
-            extra_info = __pyx_mstate_global->__pyx_kp_u_Note_that_Cython_is_deliberately;
-        }
-    }
-    type_name = __Pyx_PyType_GetFullyQualifiedName(type);
-    obj_type_name = __Pyx_PyType_GetFullyQualifiedName(Py_TYPE(obj));
-    PyErr_Format(PyExc_TypeError,
-        "Argument '%.200s' has incorrect type (expected " __Pyx_FMT_TYPENAME
-        ", got " __Pyx_FMT_TYPENAME ")"
-#if __PYX_LIMITED_VERSION_HEX < 0x030C0000
-        "%s%U"
-#endif
-        , name, type_name, obj_type_name
-#if __PYX_LIMITED_VERSION_HEX < 0x030C0000
-        , (from_annotation_subclass ? ". " : ""), extra_info
-#endif
-        );
-#if __PYX_LIMITED_VERSION_HEX >= 0x030C0000
-    if (exact == 2 && from_annotation_subclass) {
-        PyObject *res;
-        PyObject *vargs[2];
-        vargs[0] = PyErr_GetRaisedException();
-        vargs[1] = extra_info;
-        res = PyObject_VectorcallMethod(__pyx_mstate_global->__pyx_kp_u_add_note, vargs, 2, NULL);
-        Py_XDECREF(res);
-        PyErr_SetRaisedException(vargs[0]);
-    }
-#endif
-    __Pyx_DECREF_TypeName(type_name);
-    __Pyx_DECREF_TypeName(obj_type_name);
-    return 0;
 }
 
 /* AllocateExtensionType */
