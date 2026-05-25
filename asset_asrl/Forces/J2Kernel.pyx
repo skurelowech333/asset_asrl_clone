@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri May 22 15:41:18 2026
-
-@author: Sarah
-"""
-
+# =========================================================
+# J2Kernel.pyx
+# =========================================================
 # cython: language_level=3
 # cython: boundscheck=False
 # cython: wraparound=False
@@ -20,10 +16,13 @@ Args = vf.Arguments
 
 cdef class J2Kernel:
 
-    cdef double mu, Re, J2
+    cdef double mu
+    cdef double Re
+    cdef double J2
     cdef object _vf
 
     def __cinit__(self, double mu, double Re, double J2):
+
         self.mu = mu
         self.Re = Re
         self.J2 = J2
@@ -42,7 +41,7 @@ cdef class J2Kernel:
 
         factor = (
             1.5 * self.J2 * self.mu * (self.Re * self.Re)
-            / (r2 * rnorm * rnorm * rnorm)
+            / (r2 * rnorm**3)
         )
 
         return vf.stack(
@@ -51,8 +50,8 @@ cdef class J2Kernel:
             factor * r[2] * (5*z2/r2 - 3),
         )
 
-    cpdef object vf(self):
+    cpdef object vf(self, object r, object v):
         return self._vf
 
-    def __repr__(self):
-        return "J2Kernel"
+    def __call__(self):
+        return self._vf

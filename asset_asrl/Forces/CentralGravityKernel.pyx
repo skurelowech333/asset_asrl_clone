@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri May 22 15:40:57 2026
-
-@author: Sarah
-"""
-
+# =========================================================
+# CentralGravityKernel.pyx
+# =========================================================
 # cython: language_level=3
 # cython: boundscheck=False
 # cython: wraparound=False
@@ -34,11 +30,11 @@ cdef class CentralGravityKernel:
 
         return (-self.mu) * r.normalized_power3()
 
-    cpdef object vf(self):
+    cpdef object vf(self, object r, object v):
+        return self._vf
+
+    cpdef object expr(self):
         return self._vf
 
     def __call__(self):
         return self._vf
-
-    def __repr__(self):
-        return "CentralGravityKernel"

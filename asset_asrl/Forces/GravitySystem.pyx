@@ -1,39 +1,61 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri May 22 15:42:48 2026
-
-@author: Sarah
-"""
+# =========================================================
+# GravitySystem.pyx
+# =========================================================
 
 import asset_asrl as ast
+cimport cython
 
 vf = ast.VectorFunctions
 Args = vf.Arguments
 
 
-class GravitySystem:
+cdef class GravitySystem:
 
-    def __init__(self, kernels):
+    cdef object kernels
+    cdef object _ode
+
+    def __cinit__(self, object kernels):
+
         self.kernels = kernels
-        self._ode = self._build()
+        self._ode = self._build_ode()
 
-    def _build(self):
+    # =====================================================
+    # BUILD FUSED ACCELERATION
+    # =====================================================
+    cdef object _build_acc(self):
+
+        X = Args(6)
+        r = X.head3()
+        v = X.tail3()
+
+        cdef object acc = None
+        cdef object term
+
+        for k in self.kernels:
+
+            # IMPORTANT: kernel returns VF expression
+            term = k.vf(r, v)
+
+            if acc is None:
+                acc = term
+            else:
+                acc = acc + term
+
+        return acc
+
+    # =====================================================
+    # FULL ODE
+    # =====================================================
+    cdef object _build_ode(self):
 
         X = Args(6)
         v = X.tail3()
 
-        acc = None
-
-        for k in self.kernels:
-
-            if acc is None:
-                acc = k.vf()
-            else:
-                acc = acc + k.vf()
+        acc = self._build_acc()
 
         return vf.stack(v, acc)
 
-    def ode(self):
+    cpdef object ode(self):
         return self._ode
 
     def __call__(self):

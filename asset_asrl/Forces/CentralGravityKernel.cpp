@@ -1538,7 +1538,7 @@ static const char* const __pyx_f[] = {
 /*--- Type declarations ---*/
 struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
 
-/* "asset_asrl/Forces/CentralGravityKernel.pyx":21
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":17
  * 
  * 
  * cdef class CentralGravityKernel:             # <<<<<<<<<<<<<<
@@ -1556,7 +1556,8 @@ struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKerne
 
 struct __pyx_vtabstruct_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel {
   PyObject *(*_build)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *);
-  PyObject *(*vf)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *, int __pyx_skip_dispatch);
+  PyObject *(*vf)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *, PyObject *, PyObject *, int __pyx_skip_dispatch);
+  PyObject *(*expr)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_vtabptr_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
 /* #### Code section: utility_code_proto ### */
@@ -2320,7 +2321,8 @@ static int __Pyx_State_RemoveModule(void*);
 #define __PYX_TYPE_MODULE_PREFIX __PYX_ABI_MODULE_NAME "."
 
 static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel__build(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_r, CYTHON_UNUSED PyObject *__pyx_v_v, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_expr(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from "cython" */
 
@@ -2334,12 +2336,11 @@ int __pyx_module_is_main_asset_asrl__Forces__CentralGravityKernel = 0;
 /* Implementation of "asset_asrl.Forces.CentralGravityKernel" */
 /* #### Code section: global_var ### */
 /* #### Code section: string_decls ### */
-static const char __pyx_k_Created_on_Fri_May_22_15_40_57[] = "\nCreated on Fri May 22 15:40:57 2026\n\n@author: Sarah\n";
 /* #### Code section: decls ### */
 static int __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel___cinit__(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, double __pyx_v_mu); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_2vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_4__call__(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_6__repr__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_2vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, PyObject *__pyx_v_r, PyObject *__pyx_v_v); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_4expr(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_6__call__(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_tp_new_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -2368,8 +2369,8 @@ typedef struct {
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_items;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_pop;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_values;
-  PyObject *__pyx_codeobj_tab[3];
-  PyObject *__pyx_string_tab[48];
+  PyObject *__pyx_codeobj_tab[4];
+  PyObject *__pyx_string_tab[53];
   PyObject *__pyx_number_tab[1];
 /* #### Code section: module_state_contents ### */
 /* CommonTypesMetaclass.module_state_decls */
@@ -2424,41 +2425,46 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_CentralGravityKernel __pyx_string_tab[10]
 #define __pyx_n_u_CentralGravityKernel___reduce_cy __pyx_string_tab[11]
 #define __pyx_n_u_CentralGravityKernel___setstate __pyx_string_tab[12]
-#define __pyx_n_u_CentralGravityKernel_vf __pyx_string_tab[13]
-#define __pyx_n_u_Pyx_PyDict_NextRef __pyx_string_tab[14]
-#define __pyx_n_u_VectorFunctions __pyx_string_tab[15]
-#define __pyx_n_u_asset_asrl __pyx_string_tab[16]
-#define __pyx_n_u_asset_asrl_Forces_CentralGravity __pyx_string_tab[17]
-#define __pyx_n_u_ast __pyx_string_tab[18]
-#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[19]
-#define __pyx_n_u_cline_in_traceback __pyx_string_tab[20]
-#define __pyx_n_u_func __pyx_string_tab[21]
-#define __pyx_n_u_getstate __pyx_string_tab[22]
-#define __pyx_n_u_head3 __pyx_string_tab[23]
-#define __pyx_n_u_is_coroutine __pyx_string_tab[24]
-#define __pyx_n_u_items __pyx_string_tab[25]
-#define __pyx_n_u_main __pyx_string_tab[26]
-#define __pyx_n_u_module __pyx_string_tab[27]
-#define __pyx_n_u_mu __pyx_string_tab[28]
-#define __pyx_n_u_name __pyx_string_tab[29]
-#define __pyx_n_u_normalized_power3 __pyx_string_tab[30]
-#define __pyx_n_u_pop __pyx_string_tab[31]
-#define __pyx_n_u_pyx_state __pyx_string_tab[32]
-#define __pyx_n_u_pyx_vtable __pyx_string_tab[33]
-#define __pyx_n_u_qualname __pyx_string_tab[34]
-#define __pyx_n_u_reduce __pyx_string_tab[35]
-#define __pyx_n_u_reduce_cython __pyx_string_tab[36]
-#define __pyx_n_u_reduce_ex __pyx_string_tab[37]
-#define __pyx_n_u_self __pyx_string_tab[38]
-#define __pyx_n_u_set_name __pyx_string_tab[39]
-#define __pyx_n_u_setdefault __pyx_string_tab[40]
-#define __pyx_n_u_setstate __pyx_string_tab[41]
-#define __pyx_n_u_setstate_cython __pyx_string_tab[42]
-#define __pyx_n_u_test __pyx_string_tab[43]
-#define __pyx_n_u_values __pyx_string_tab[44]
-#define __pyx_n_u_vf __pyx_string_tab[45]
-#define __pyx_kp_b_iso88591_A_t1 __pyx_string_tab[46]
-#define __pyx_kp_b_iso88591_Q __pyx_string_tab[47]
+#define __pyx_n_u_CentralGravityKernel_expr __pyx_string_tab[13]
+#define __pyx_n_u_CentralGravityKernel_vf __pyx_string_tab[14]
+#define __pyx_n_u_Pyx_PyDict_NextRef __pyx_string_tab[15]
+#define __pyx_n_u_VectorFunctions __pyx_string_tab[16]
+#define __pyx_n_u_asset_asrl __pyx_string_tab[17]
+#define __pyx_n_u_asset_asrl_Forces_CentralGravity __pyx_string_tab[18]
+#define __pyx_n_u_ast __pyx_string_tab[19]
+#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[20]
+#define __pyx_n_u_cline_in_traceback __pyx_string_tab[21]
+#define __pyx_n_u_expr __pyx_string_tab[22]
+#define __pyx_n_u_func __pyx_string_tab[23]
+#define __pyx_n_u_getstate __pyx_string_tab[24]
+#define __pyx_n_u_head3 __pyx_string_tab[25]
+#define __pyx_n_u_is_coroutine __pyx_string_tab[26]
+#define __pyx_n_u_items __pyx_string_tab[27]
+#define __pyx_n_u_main __pyx_string_tab[28]
+#define __pyx_n_u_module __pyx_string_tab[29]
+#define __pyx_n_u_mu __pyx_string_tab[30]
+#define __pyx_n_u_name __pyx_string_tab[31]
+#define __pyx_n_u_normalized_power3 __pyx_string_tab[32]
+#define __pyx_n_u_pop __pyx_string_tab[33]
+#define __pyx_n_u_pyx_state __pyx_string_tab[34]
+#define __pyx_n_u_pyx_vtable __pyx_string_tab[35]
+#define __pyx_n_u_qualname __pyx_string_tab[36]
+#define __pyx_n_u_r __pyx_string_tab[37]
+#define __pyx_n_u_reduce __pyx_string_tab[38]
+#define __pyx_n_u_reduce_cython __pyx_string_tab[39]
+#define __pyx_n_u_reduce_ex __pyx_string_tab[40]
+#define __pyx_n_u_self __pyx_string_tab[41]
+#define __pyx_n_u_set_name __pyx_string_tab[42]
+#define __pyx_n_u_setdefault __pyx_string_tab[43]
+#define __pyx_n_u_setstate __pyx_string_tab[44]
+#define __pyx_n_u_setstate_cython __pyx_string_tab[45]
+#define __pyx_n_u_test __pyx_string_tab[46]
+#define __pyx_n_u_v __pyx_string_tab[47]
+#define __pyx_n_u_values __pyx_string_tab[48]
+#define __pyx_n_u_vf __pyx_string_tab[49]
+#define __pyx_kp_b_iso88591_A_t1 __pyx_string_tab[50]
+#define __pyx_kp_b_iso88591_A_t1_2 __pyx_string_tab[51]
+#define __pyx_kp_b_iso88591_Q __pyx_string_tab[52]
 #define __pyx_int_6 __pyx_number_tab[0]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
@@ -2476,8 +2482,8 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   #endif
   Py_CLEAR(clear_module_state->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
   Py_CLEAR(clear_module_state->__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
-  for (int i=0; i<3; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<48; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<4; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<53; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_clear_contents ### */
 /* CommonTypesMetaclass.module_state_clear */
@@ -2503,8 +2509,8 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_empty_unicode);
   Py_VISIT(traverse_module_state->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
   Py_VISIT(traverse_module_state->__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
-  for (int i=0; i<3; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<48; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<4; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<53; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_traverse_contents ### */
 /* CommonTypesMetaclass.module_state_traverse */
@@ -2519,7 +2525,7 @@ return 0;
 #endif
 /* #### Code section: module_code ### */
 
-/* "asset_asrl/Forces/CentralGravityKernel.pyx":26
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":22
  *     cdef object _vf
  * 
  *     def __cinit__(self, double mu):             # <<<<<<<<<<<<<<
@@ -2549,32 +2555,32 @@ static int __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravity
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_mu,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_VARARGS(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 26, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 22, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 26, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 22, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__cinit__", 0) < (0)) __PYX_ERR(0, 26, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__cinit__", 0) < (0)) __PYX_ERR(0, 22, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, i); __PYX_ERR(0, 26, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, i); __PYX_ERR(0, 22, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 26, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 22, __pyx_L3_error)
     }
-    __pyx_v_mu = __Pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mu == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 26, __pyx_L3_error)
+    __pyx_v_mu = __Pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mu == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 26, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 22, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2604,7 +2610,7 @@ static int __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravity
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":27
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":23
  * 
  *     def __cinit__(self, double mu):
  *         self.mu = mu             # <<<<<<<<<<<<<<
@@ -2613,14 +2619,14 @@ static int __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravity
 */
   __pyx_v_self->mu = __pyx_v_mu;
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":28
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":24
  *     def __cinit__(self, double mu):
  *         self.mu = mu
  *         self._vf = self._build()             # <<<<<<<<<<<<<<
  * 
  *     cdef object _build(self):
 */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self->__pyx_vtab)->_build(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self->__pyx_vtab)->_build(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->_vf);
@@ -2628,7 +2634,7 @@ static int __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravity
   __pyx_v_self->_vf = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":26
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":22
  *     cdef object _vf
  * 
  *     def __cinit__(self, double mu):             # <<<<<<<<<<<<<<
@@ -2648,7 +2654,7 @@ static int __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravity
   return __pyx_r;
 }
 
-/* "asset_asrl/Forces/CentralGravityKernel.pyx":30
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":26
  *         self._vf = self._build()
  * 
  *     cdef object _build(self):             # <<<<<<<<<<<<<<
@@ -2670,7 +2676,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_build", 0);
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":32
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":28
  *     cdef object _build(self):
  * 
  *         X = Args(6)             # <<<<<<<<<<<<<<
@@ -2678,7 +2684,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
  * 
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -2697,13 +2703,13 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
     __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_X = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":33
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":29
  * 
  *         X = Args(6)
  *         r = X.head3()             # <<<<<<<<<<<<<<
@@ -2717,21 +2723,21 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_head3, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_r = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":35
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":31
  *         r = X.head3()
  * 
  *         return (-self.mu) * r.normalized_power3()             # <<<<<<<<<<<<<<
  * 
- *     cpdef object vf(self):
+ *     cpdef object vf(self, object r, object v):
 */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble((-__pyx_v_self->mu)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((-__pyx_v_self->mu)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = __pyx_v_r;
   __Pyx_INCREF(__pyx_t_2);
@@ -2740,10 +2746,10 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_normalized_power3, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
   }
-  __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -2751,7 +2757,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":30
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":26
  *         self._vf = self._build()
  * 
  *     cdef object _build(self):             # <<<<<<<<<<<<<<
@@ -2774,12 +2780,12 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
   return __pyx_r;
 }
 
-/* "asset_asrl/Forces/CentralGravityKernel.pyx":37
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":33
  *         return (-self.mu) * r.normalized_power3()
  * 
- *     cpdef object vf(self):             # <<<<<<<<<<<<<<
+ *     cpdef object vf(self, object r, object v):             # <<<<<<<<<<<<<<
+ *         # already symbolic-independent kernel
  *         return self._vf
- * 
 */
 
 static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf(PyObject *__pyx_v_self, 
@@ -2789,7 +2795,7 @@ PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_r, CYTHON_UNUSED PyObject *__pyx_v_v, int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2817,9 +2823,250 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf)) {
+        __Pyx_XDECREF(__pyx_r);
+        __pyx_t_3 = NULL;
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_4 = __pyx_t_1; 
+        __pyx_t_5 = 1;
+        #if CYTHON_UNPACK_METHODS
+        if (unlikely(PyMethod_Check(__pyx_t_4))) {
+          __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+          assert(__pyx_t_3);
+          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(__pyx__function);
+          __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
+          __pyx_t_5 = 0;
+        }
+        #endif
+        {
+          PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_v_r, __pyx_v_v};
+          __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_5, (3-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+          __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+        }
+        __pyx_r = __pyx_t_2;
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_typedict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":35
+ *     cpdef object vf(self, object r, object v):
+ *         # already symbolic-independent kernel
+ *         return self._vf             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef object expr(self):
+*/
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->_vf);
+  __pyx_r = __pyx_v_self->_vf;
+  goto __pyx_L0;
+
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":33
+ *         return (-self.mu) * r.normalized_power3()
+ * 
+ *     cpdef object vf(self, object r, object v):             # <<<<<<<<<<<<<<
+ *         # already symbolic-independent kernel
+ *         return self._vf
+*/
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf = {"vf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v_r = 0;
+  PyObject *__pyx_v_v = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[2] = {0,0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("vf (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_SIZE
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_r,&__pyx_mstate_global->__pyx_n_u_v,0};
+    const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 33, __pyx_L3_error)
+    if (__pyx_kwds_len > 0) {
+      switch (__pyx_nargs) {
+        case  2:
+        values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 33, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
+        case  1:
+        values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 33, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      const Py_ssize_t kwd_pos_args = __pyx_nargs;
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "vf", 0) < (0)) __PYX_ERR(0, 33, __pyx_L3_error)
+      for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("vf", 1, 2, 2, i); __PYX_ERR(0, 33, __pyx_L3_error) }
+      }
+    } else if (unlikely(__pyx_nargs != 2)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 33, __pyx_L3_error)
+      values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 33, __pyx_L3_error)
+    }
+    __pyx_v_r = values[0];
+    __pyx_v_v = values[1];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("vf", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 33, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+    Py_XDECREF(values[__pyx_temp]);
+  }
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_2vf(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self), __pyx_v_r, __pyx_v_v);
+
+  /* function exit code */
+  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+    Py_XDECREF(values[__pyx_temp]);
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_2vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, PyObject *__pyx_v_r, PyObject *__pyx_v_v) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("vf", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf(__pyx_v_self, __pyx_v_r, __pyx_v_v, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "asset_asrl/Forces/CentralGravityKernel.pyx":37
+ *         return self._vf
+ * 
+ *     cpdef object expr(self):             # <<<<<<<<<<<<<<
+ *         return self._vf
+ * 
+*/
+
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5expr(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_expr(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self, int __pyx_skip_dispatch) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  size_t __pyx_t_5;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("expr", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (
+  #if !CYTHON_USE_TYPE_SLOTS
+  unlikely(Py_TYPE(((PyObject *)__pyx_v_self)) != __pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel &&
+  __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), Py_TPFLAGS_HAVE_GC))
+  #else
+  unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0 || __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))
+  #endif
+  ) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_expr); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5expr)) {
         __Pyx_XDECREF(__pyx_r);
         __pyx_t_3 = NULL;
         __Pyx_INCREF(__pyx_t_1);
@@ -2864,7 +3111,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
 
   /* "asset_asrl/Forces/CentralGravityKernel.pyx":38
  * 
- *     cpdef object vf(self):
+ *     cpdef object expr(self):
  *         return self._vf             # <<<<<<<<<<<<<<
  * 
  *     def __call__(self):
@@ -2875,9 +3122,9 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
   goto __pyx_L0;
 
   /* "asset_asrl/Forces/CentralGravityKernel.pyx":37
- *         return (-self.mu) * r.normalized_power3()
+ *         return self._vf
  * 
- *     cpdef object vf(self):             # <<<<<<<<<<<<<<
+ *     cpdef object expr(self):             # <<<<<<<<<<<<<<
  *         return self._vf
  * 
 */
@@ -2888,7 +3135,7 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.expr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2897,15 +3144,15 @@ static PyObject *__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGr
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5expr(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf = {"vf", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf(PyObject *__pyx_v_self, 
+static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5expr = {"expr", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5expr, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5expr(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2918,7 +3165,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("vf (wrapper)", 0);
+  __Pyx_RefNannySetupContext("expr (wrapper)", 0);
   #if !CYTHON_METH_FASTCALL
   #if CYTHON_ASSUME_SAFE_SIZE
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
@@ -2927,27 +3174,27 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   #endif
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
-  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("vf", 1, 0, 0, __pyx_nargs); return NULL; }
+  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("expr", 1, 0, 0, __pyx_nargs); return NULL; }
   const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
   if (unlikely(__pyx_kwds_len < 0)) return NULL;
-  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("vf", __pyx_kwds); return NULL;}
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_2vf(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self));
+  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("expr", __pyx_kwds); return NULL;}
+  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_4expr(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_2vf(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_4expr(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("vf", 0);
+  __Pyx_RefNannySetupContext("expr", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_expr(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2956,7 +3203,7 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralG
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.vf", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Forces.CentralGravityKernel.CentralGravityKernel.expr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2969,12 +3216,11 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralG
  * 
  *     def __call__(self):             # <<<<<<<<<<<<<<
  *         return self._vf
- * 
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__call__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
   PyObject *__pyx_r = 0;
@@ -2990,14 +3236,14 @@ static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralG
   const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_VARARGS(__pyx_kwds) : 0;
   if (unlikely(__pyx_kwds_len < 0)) return NULL;
   if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("__call__", __pyx_kwds); return NULL;}
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_4__call__(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self));
+  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_6__call__(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_4__call__(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
+static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_6__call__(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__call__", 0);
@@ -3006,8 +3252,6 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralG
  * 
  *     def __call__(self):
  *         return self._vf             # <<<<<<<<<<<<<<
- * 
- *     def __repr__(self):
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_self->_vf);
@@ -3019,58 +3263,6 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralG
  * 
  *     def __call__(self):             # <<<<<<<<<<<<<<
  *         return self._vf
- * 
-*/
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "asset_asrl/Forces/CentralGravityKernel.pyx":43
- *         return self._vf
- * 
- *     def __repr__(self):             # <<<<<<<<<<<<<<
- *         return "CentralGravityKernel"
-*/
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__repr__(PyObject *__pyx_v_self); /*proto*/
-static PyObject *__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__repr__(PyObject *__pyx_v_self) {
-  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__repr__ (wrapper)", 0);
-  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_6__repr__(((struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_6__repr__(CYTHON_UNUSED struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *__pyx_v_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("__repr__", 0);
-
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":44
- * 
- *     def __repr__(self):
- *         return "CentralGravityKernel"             # <<<<<<<<<<<<<<
-*/
-  __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_mstate_global->__pyx_n_u_CentralGravityKernel);
-  __pyx_r = __pyx_mstate_global->__pyx_n_u_CentralGravityKernel;
-  goto __pyx_L0;
-
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":43
- *         return self._vf
- * 
- *     def __repr__(self):             # <<<<<<<<<<<<<<
- *         return "CentralGravityKernel"
 */
 
   /* function exit code */
@@ -3356,8 +3548,7 @@ static PyMethodDef __pyx_methods_10asset_asrl_6Forces_20CentralGravityKernel_Cen
 #if CYTHON_USE_TYPE_SPECS
 static PyType_Slot __pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_slots[] = {
   {Py_tp_dealloc, (void *)__pyx_tp_dealloc_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel},
-  {Py_tp_repr, (void *)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__repr__},
-  {Py_tp_call, (void *)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5__call__},
+  {Py_tp_call, (void *)__pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__call__},
   {Py_tp_traverse, (void *)__pyx_tp_traverse_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel},
   {Py_tp_clear, (void *)__pyx_tp_clear_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel},
   {Py_tp_methods, (void *)__pyx_methods_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel},
@@ -3383,12 +3574,12 @@ static PyTypeObject __pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_Centr
   0, /*tp_getattr*/
   0, /*tp_setattr*/
   0, /*tp_as_async*/
-  __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__repr__, /*tp_repr*/
+  0, /*tp_repr*/
   0, /*tp_as_number*/
   0, /*tp_as_sequence*/
   0, /*tp_as_mapping*/
   0, /*tp_hash*/
-  __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5__call__, /*tp_call*/
+  __pyx_pw_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_7__call__, /*tp_call*/
   0, /*tp_str*/
   0, /*tp_getattro*/
   0, /*tp_setattro*/
@@ -3501,17 +3692,18 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   /*--- Type init code ---*/
   __pyx_vtabptr_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel = &__pyx_vtable_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
   __pyx_vtable_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel._build = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *))__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel__build;
-  __pyx_vtable_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel.vf = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *, int __pyx_skip_dispatch))__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf;
+  __pyx_vtable_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel.vf = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *, PyObject *, PyObject *, int __pyx_skip_dispatch))__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_vf;
+  __pyx_vtable_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel.expr = (PyObject *(*)(struct __pyx_obj_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel *, int __pyx_skip_dispatch))__pyx_f_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_expr;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel)) __PYX_ERR(0, 21, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_spec, __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel)) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel_spec, __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel = &__pyx_type_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
   #endif
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel);
@@ -3521,10 +3713,10 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
     __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel->tp_getattro = PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, __pyx_vtabptr_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
-  if (__Pyx_MergeVtables(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel, (PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 21, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, __pyx_vtabptr_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel, (PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -3584,7 +3776,7 @@ namespace {
   {
       PyModuleDef_HEAD_INIT,
       "CentralGravityKernel",
-      __pyx_k_Created_on_Fri_May_22_15_40_57, /* m_doc */
+      0, /* m_doc */
     #if CYTHON_USE_MODULE_STATE
       sizeof(__pyx_mstatetype), /* m_size */
     #else
@@ -3826,62 +4018,77 @@ __Pyx_RefNannySetupContext("PyInit_CentralGravityKernel", 0);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":14
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":10
  * # cython: nonecheck=False
  * 
  * import asset_asrl as ast             # <<<<<<<<<<<<<<
  * cimport cython
  * 
 */
-  __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_asset_asrl, 0, 0, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_asset_asrl, 0, 0, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
   __pyx_t_2 = __pyx_t_1;
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ast, __pyx_t_2) < (0)) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ast, __pyx_t_2) < (0)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":17
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":13
  * cimport cython
  * 
  * vf = ast.VectorFunctions             # <<<<<<<<<<<<<<
  * Args = vf.Arguments
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ast); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ast); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_VectorFunctions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_VectorFunctions); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_3) < (0)) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_3) < (0)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":18
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":14
  * 
  * vf = ast.VectorFunctions
  * Args = vf.Arguments             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Arguments); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Arguments); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Args, __pyx_t_2) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Args, __pyx_t_2) < (0)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/Forces/CentralGravityKernel.pyx":37
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":33
  *         return (-self.mu) * r.normalized_power3()
  * 
- *     cpdef object vf(self):             # <<<<<<<<<<<<<<
+ *     cpdef object vf(self, object r, object v):             # <<<<<<<<<<<<<<
+ *         # already symbolic-independent kernel
  *         return self._vf
- * 
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel_vf, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_3vf, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel_vf, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
   #endif
-  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_2) < (0)) __PYX_ERR(0, 37, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_2) < (0)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "asset_asrl/Forces/CentralGravityKernel.pyx":37
+ *         return self._vf
+ * 
+ *     cpdef object expr(self):             # <<<<<<<<<<<<<<
+ *         return self._vf
+ * 
+*/
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_5expr, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel_expr, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
+  PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
+  #endif
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_6Forces_20CentralGravityKernel_CentralGravityKernel, __pyx_mstate_global->__pyx_n_u_expr, __pyx_t_2) < (0)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "(tree fragment)":1
@@ -3889,7 +4096,7 @@ __Pyx_RefNannySetupContext("PyInit_CentralGravityKernel", 0);
  *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
  * def __setstate_cython__(self, __pyx_state):
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_9__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel___reduce_cy, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_9__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel___reduce_cy, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
@@ -3903,7 +4110,7 @@ __Pyx_RefNannySetupContext("PyInit_CentralGravityKernel", 0);
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_11__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel___setstate, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 3, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_20CentralGravityKernel_20CentralGravityKernel_11__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_CentralGravityKernel___setstate, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_CentralGravity, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
@@ -3912,9 +4119,9 @@ __Pyx_RefNannySetupContext("PyInit_CentralGravityKernel", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "asset_asrl/Forces/CentralGravityKernel.pyx":1
- * # -*- coding: utf-8 -*-             # <<<<<<<<<<<<<<
- * """
- * Created on Fri May 22 15:40:57 2026
+ * # =========================================================             # <<<<<<<<<<<<<<
+ * # CentralGravityKernel.pyx
+ * # =========================================================
 */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -3982,31 +4189,31 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 6; } index[] = {{1},{42},{7},{6},{2},{9},{50},{14},{4},{9},{20},{38},{40},{23},{20},{15},{10},{38},{3},{18},{18},{8},{12},{5},{13},{5},{8},{10},{2},{8},{17},{3},{11},{14},{12},{10},{17},{13},{4},{12},{10},{12},{19},{8},{6},{2},{9},{9}};
-    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (408 bytes) */
-const char* const cstring = "BZh91AY&SY\303UG\214\000\000\021\337\342dP\300\013\250\005\255\211q\000\277\357\377\360@@@\000\000@0\001l\332k\006IL1I\3555F\324f\215O@#@\323L\237\243\325\006\200Q\350\220\324\362\203#\365@4\000\003@\031 Bm&\020\320\000\320\000\003\020\324\000\222\211\350\345\323\356\224\343\217\347\365&t\014E\370\352\347q\271\261u\026\244\326\342\223>\200f\005\305\363uX\005_T@\272\271\303X\000\354\266\224D\313\351r\245\211Z6w\306\307\261\000|L!A*QbR\204\010dR\230\270\022\2171W[\001T\326\300c4\361\215O\006q@X}\001+R\n\202\215\271\250\331\352\211`!7\360\311A/6\215c\034\322\360\252\207\221\210\211\226L\222\323\230\204\302\320\306\223c\322\276\200\324\262\006\001\255\213\201\320\203\323\017\013\240\201\225<\262\251\275@\215\334m.#HF\315f\264\005u\357*\340\031\240$N|L\221\3340:B\022\350\207\330V0j(\3026\233\211\004e\246\3212E\253\033\270\226\300.\246\330\033@\303t:=\222\035w\345k\311\264\033\313\0209\020Z\034\036[\010(\020Y\263\310o=\026\362@)~\260Pr\034\307\3436\315\274\025Z\300\026@Iq\007\303\220\017 \355)\010\202\3713(\017\007\236e\274\037\024\210\363\345~\203^\250\324\320f\236\312\320\242\351\005\266\001\222\362\365\206\030\271Woqw$S\205\t\0145Tx\300";
-    PyObject *data = __Pyx_DecompressString(cstring, 408, 2);
+    const struct { const unsigned int length: 6; } index[] = {{1},{42},{7},{6},{2},{9},{50},{14},{4},{9},{20},{38},{40},{25},{23},{20},{15},{10},{38},{3},{18},{18},{4},{8},{12},{5},{13},{5},{8},{10},{2},{8},{17},{3},{11},{14},{12},{1},{10},{17},{13},{4},{12},{10},{12},{19},{8},{1},{6},{2},{9},{9},{9}};
+    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (421 bytes) */
+const char* const cstring = "BZh91AY&SYf\270\333\260\000\000\023_\343dP\300\013\250\005\255\211q\000\277\357\377\360@@@\000\000@@\0000\001l\324\331\r\0253\005\r6\220\365\014M\000h\000\003d\032\010\325\036S\023@\001\220\000\000\000\014HF\231&\247\246MF&\232\000\001\246\203\3112\222/\317\020J\207/]\226u\277\277\265\022\014\256\034\007?\214eu.`\304\212\026\212\036q\306\222/&\203]\277.$7\373\000,vq\007\223\271\320\t-\223u\213%\212\020\205\265\316\025\275\001\\\236C\005\334\305\353\004H\216d\317u*[\352\307\371\344\265\274)28zM\244\005`D\212O\000Ak\020T\021w\227E\326\253\264\034\003%\271,\250%\242[\302s\250\032\366A\314\222\236-\217\032o!e\2504@\032$\271\267\223\233\216$\330#\033j\007J\027o\375\3715\023\240eN6\3457\312\003z\306\350<4\341\035qaZ$U*\276\n\362\006hD\211\226\311\222=\341\300\342\310K+?\021R`\324,M\264\233\304\010\214\246\245\241\000\004\255T\361h\002-\250\376\021\204O\200&\366\3516\003\024\271\252Q\242@\005\204X\320#%\016\002\201\230\302\242PCk\364^.\204\235\022\300J:\201\241T \207\007\277]\330M\323\240\r\214\013RD+\351\002\341V\265e\244\313&\230\022'p\277\216\320s\253F\036\273t\227gl\213\"\230%\31522\205\004Kp\021TW`%\261\341\202\020\326-\027rE8P\220f\270\333\260";
+    PyObject *data = __Pyx_DecompressString(cstring, 421, 2);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (339 bytes) */
-const char* const cstring = "x\332\205Q\301J\003A\014E\360 ^\374\205\275\213[\244WQ\212R\017\202\250\007\257!\235\315\256\203\2633\353$\263\356z\352\261\307~^?\307\254\255\255`\305\201\014\217\314K^\346\345\n\231I\0009\272\3214DC<\272&/\021\335m\304\326J\177G\321\223\313\233\276+,\343\314\021\371\341\256\214\3455*|\310\n*19\311\000\"\025\311\020@V$\312$d>\3703\211\266\265\350\364\325Xo\005\340\2025\345+\016I\005/'\261b\215T\253.\357\023\337;\320V\312\364\362\022<\300\037,\375\035\013\312?\274\266\004x\350;\215\033k\004\356\251\223'*\237\311H\210\323\344\215\330\340yg\325\016\345k\323\362}]Q\205\271\367\306\206\334\204\030\222XOl\234\336`=(\335\320\014\315+@\251\n\240\247\372\236\025^\010\2131X\206m\241\025\252\031\240F-\325S\207\"9%\326\t\300c\255\310\207X\243\263\037T@\023\336)\216\233\320\000\350\336`\323s\200\255\014+\033\032\274%t\353\302\335\322~y\272MP78\351\312/?7\202\2126{\377\3412\354q\034@\210\225\324\242K\304m9\237\254\216N\026\262<\237\037\254\016\217\027\247\313\307O\365\254\002\002";
-    PyObject *data = __Pyx_DecompressString(cstring, 339, 1);
+    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (354 bytes) */
+const char* const cstring = "x\332\205R\301J\0031\020E\360 ^\374\205\275\213[\244WQ\212R\017\202\250\007\257C\232\314\266\301l\262f&\353\256\247\036{\354\347\365\350\2478k\327Vp\305@\302c23o\362^\256\024\0212(\212n4\rQ#\215\256\321sT\3566\252\332r{\207\321\243\313\253\2661\226\324\314!\372\356\234kK[d|\310\014\026*9\316\000\"\232\244\021 3\t3\016\231\017\376\214\243\255\255rr\253\255\267\014pA\022\362s\nI\010/'qN\262S)\2744D>8\320\216J\267\274\010\036\340\217,y\035\261\342\177\362\260\251\342\340E]\000<\264\215\354\033\253\031\356\261\341',\236Qs\210\323\3445\333\340i\257\341\036\345[5\363\241\256J&\242\326k\033r\035bHl=\222vr\202\365 \351\032gJ\277tC\001\024\302\002\262\346\337\017\201\005*3\006K\260+\266\214%\001\224J\312e\225\301$'\211e\002\360\252\024\344C,\225\263\357h\240\no\030\307U\250\000\304T\350{v\260\346\316\317\256\301kRn[\030\367\226\376R|\027\300\246\323\331\025_j\367\214\202\372_\361\303\003\030\360\003\200\221$\251\256\225KHu\261\234|\034\235\254x}\276\234lzp\2609<^\235\256\037?\001\237\351\022\033";
+    PyObject *data = __Pyx_DecompressString(cstring, 354, 1);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (646 bytes) */
-const char* const bytes = "?asset_asrl/Forces/CentralGravityKernel.pyxdisableenablegcisenabledno default __reduce__ due to non-trivial __cinit__<stringsource>ArgsArgumentsCentralGravityKernelCentralGravityKernel.__reduce_cython__CentralGravityKernel.__setstate_cython__CentralGravityKernel.vf__Pyx_PyDict_NextRefVectorFunctionsasset_asrlasset_asrl.Forces.CentralGravityKernelastasyncio.coroutinescline_in_traceback__func____getstate__head3_is_coroutineitems__main____module__mu__name__normalized_power3pop__pyx_state__pyx_vtable____qualname____reduce____reduce_cython____reduce_ex__self__set_name__setdefault__setstate____setstate_cython____test__valuesvf\200A\330\010\017\210t\2201\200\001\330\004\n\210+\220Q";
+    #else /* compression: none (686 bytes) */
+const char* const bytes = "?asset_asrl/Forces/CentralGravityKernel.pyxdisableenablegcisenabledno default __reduce__ due to non-trivial __cinit__<stringsource>ArgsArgumentsCentralGravityKernelCentralGravityKernel.__reduce_cython__CentralGravityKernel.__setstate_cython__CentralGravityKernel.exprCentralGravityKernel.vf__Pyx_PyDict_NextRefVectorFunctionsasset_asrlasset_asrl.Forces.CentralGravityKernelastasyncio.coroutinescline_in_tracebackexpr__func____getstate__head3_is_coroutineitems__main____module__mu__name__normalized_power3pop__pyx_state__pyx_vtable____qualname__r__reduce____reduce_cython____reduce_ex__self__set_name__setdefault__setstate____setstate_cython____test__vvaluesvf\200A\340\010\017\210t\2201\200A\330\010\017\210t\2201\200\001\330\004\n\210+\220Q";
     PyObject *data = NULL;
     CYTHON_UNUSED_VAR(__Pyx_DecompressString);
     #endif
     PyObject **stringtab = __pyx_mstate->__pyx_string_tab;
     Py_ssize_t pos = 0;
-    for (int i = 0; i < 46; i++) {
+    for (int i = 0; i < 50; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyUnicode_DecodeUTF8(bytes + pos, bytes_length, NULL);
       if (likely(string) && i >= 8) PyUnicode_InternInPlace(&string);
@@ -4017,7 +4224,7 @@ const char* const bytes = "?asset_asrl/Forces/CentralGravityKernel.pyxdisableena
       stringtab[i] = string;
       pos += bytes_length;
     }
-    for (int i = 46; i < 48; i++) {
+    for (int i = 50; i < 53; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyBytes_FromStringAndSize(bytes + pos, bytes_length);
       stringtab[i] = string;
@@ -4028,15 +4235,15 @@ const char* const bytes = "?asset_asrl/Forces/CentralGravityKernel.pyxdisableena
       }
     }
     Py_XDECREF(data);
-    for (Py_ssize_t i = 0; i < 48; i++) {
+    for (Py_ssize_t i = 0; i < 53; i++) {
       if (unlikely(PyObject_Hash(stringtab[i]) == -1)) {
         __PYX_ERR(0, 1, __pyx_L1_error)
       }
     }
     #if CYTHON_IMMORTAL_CONSTANTS
     {
-      PyObject **table = stringtab + 46;
-      for (Py_ssize_t i=0; i<2; ++i) {
+      PyObject **table = stringtab + 50;
+      for (Py_ssize_t i=0; i<3; ++i) {
         #if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
         #if PY_VERSION_HEX < 0x030E0000
         if (_Py_IsOwnedByCurrentThread(table[i]) && Py_REFCNT(table[i]) == 1)
@@ -4108,19 +4315,24 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 33};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_r, __pyx_mstate->__pyx_n_u_v};
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_Forces_CentralGravity_2, __pyx_mstate->__pyx_n_u_vf, __pyx_mstate->__pyx_kp_b_iso88591_A_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+  }
+  {
     const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 37};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
-    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_Forces_CentralGravity_2, __pyx_mstate->__pyx_n_u_vf, __pyx_mstate->__pyx_kp_b_iso88591_A_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_Forces_CentralGravity_2, __pyx_mstate->__pyx_n_u_expr, __pyx_mstate->__pyx_kp_b_iso88591_A_t1_2, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
   }
   {
     const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
-    __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_reduce_cython, __pyx_mstate->__pyx_kp_b_iso88591_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_reduce_cython, __pyx_mstate->__pyx_kp_b_iso88591_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
   }
   {
     const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 3};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_pyx_state};
-    __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_setstate_cython, __pyx_mstate->__pyx_kp_b_iso88591_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[3] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_setstate_cython, __pyx_mstate->__pyx_kp_b_iso88591_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[3])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;
