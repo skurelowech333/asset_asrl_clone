@@ -1,0 +1,5 @@
+recursive-include asset_asrl *.pyx
+recursive-include asset_asrl *.pxd
+recursive-include asset_asrl *.cpp
+recursive-include asset_asrl *.h
+recursive-include asset_asrl *.py
