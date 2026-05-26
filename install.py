@@ -14,7 +14,7 @@ def run_command(cmd, description):
         result = subprocess.run(cmd, shell=True, check=True)
         return True
     except subprocess.CalledProcessError as e:
-        print(f"✗ Error: {e}")
+        print(f"Error: {e}")
         return False
 
 def main():
@@ -28,17 +28,18 @@ def main():
     
     # Install asset-asrl and dev dependencies
     if not run_command(f"{sys.executable} -m pip install asset-asrl", "Installing asset-asrl"):
-        return False
+        print("Error installing asset-asrl...")
+
     
     # Install local package in editable mode with dev dependencies
-    if not run_command(f"{sys.executable} -m pip install -e '.[dev]'", "Installing local package with dev dependencies"):
-        return False
+    if not run_command(f"{sys.executable} -m pip install -e .", "Installing local package"):
+        print("Error installing local package...")
     
     print("\n" + "=" * 50)
-    print("✓ Installation complete!")
+    print("Installation complete!")
     print("=" * 50)
     print("\nVerify installation:")
-    print("  python -c \"from asset_asrl.Forces import GravityVF; print('✓ Works')\"")
+    print("  python -c \"from asset_asrl.Forces import GravityVF; print('Works')\"")
     return True
 
 if __name__ == "__main__":

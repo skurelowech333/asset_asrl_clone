@@ -24,24 +24,36 @@ cdef class GravitySystem:
     # =====================================================
     cdef object _build_acc(self):
 
-        X = Args(6)
-        r = X.head3()
-        v = X.tail3()
+    X = Args(6)
+    r = X.head3()
+    v = X.tail3()
 
-        cdef object acc = None
-        cdef object term
+    cdef object acc = None
+    cdef object term
 
-        for k in self.kernels:
+    for k in self.kernels:
 
-            # IMPORTANT: kernel returns VF expression
-            term = k.vf(r, v)
+        # -------------------------------------------------
+        # CASE 1: k.vf(r, v) style kernel
+        # -------------------------------------------------
+        if hasattr(k.vf, "__call__"):
+            try:
+                term = k.vf(r, v)
+            except TypeError:
+                # -------------------------------------------------
+                # CASE 2: k.vf() style kernel (closure/factory)
+                # -------------------------------------------------
+                term = k.vf()
 
-            if acc is None:
-                acc = term
-            else:
-                acc = acc + term
+        else:
+            raise TypeError("Kernel must implement vf or be callable")
 
-        return acc
+        if acc is None:
+            acc = term
+        else:
+            acc = acc + term
+
+    return acc
 
     # =====================================================
     # FULL ODE
@@ -60,3 +72,6 @@ cdef class GravitySystem:
 
     def __call__(self):
         return self._ode
+    
+    def build_acc(self):
+        return self._build_acc()

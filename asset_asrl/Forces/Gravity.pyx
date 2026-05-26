@@ -1,6 +1,6 @@
 # =========================================================
 # FILE: Gravity.pyx
-# FULL ODE FACTORY VERSION
+# FULL ODE FACTORY VERSION (CLEAN + TESTABLE)
 # =========================================================
 # cython: language_level=3
 # cython: boundscheck=False
@@ -22,7 +22,6 @@ cdef class GravityVF:
 
     cdef:
         double mu
-
         object _acc_vf
         object _ode_vf
 
@@ -33,75 +32,44 @@ cdef class GravityVF:
 
         self.mu = mu
 
-        # ---------------------------------------------
-        # BUILD ONCE
-        # ---------------------------------------------
         self._acc_vf = self._build_acceleration()
-
         self._ode_vf = self._build_ode()
 
 
     # =====================================================
-    # BUILD ACCELERATION VF
-    # returns:
-    # [ax, ay, az]
+    # BUILD ACCELERATION VF (PRIMARY PUBLIC CONTRACT)
+    # =====================================================
+    cpdef object build_accel(self):
+        return self._acc_vf
+
+
+    # =====================================================
+    # BUILD ACCELERATION VF (internal)
     # =====================================================
     cdef object _build_acceleration(self):
 
-        cdef object X
-        cdef object r
-        cdef object acc
+        cdef object X = Args(6)
+        cdef object r = X.head3()
 
-        # ---------------------------------------------
-        # SYMBOLIC INPUT
-        # ---------------------------------------------
-        X = Args(6)
-
-        r = X.head3()
-
-        # ---------------------------------------------
-        # CENTRAL GRAVITY
-        # ---------------------------------------------
-        acc = (-self.mu) * r.normalized_power3()
-
-        return acc
+        # central gravity
+        return (-self.mu) * r.normalized_power3()
 
 
     # =====================================================
     # BUILD FULL ODE VF
-    # returns:
-    # [vx, vy, vz, ax, ay, az]
     # =====================================================
     cdef object _build_ode(self):
 
-        cdef object X
-        cdef object v
-        cdef object ode
+        cdef object X = Args(6)
+        cdef object v = X.tail3()
 
-        # ---------------------------------------------
-        # SYMBOLIC INPUT
-        # ---------------------------------------------
-        X = Args(6)
-
-        # velocity state
-        v = X.tail3()
-
-        # ---------------------------------------------
-        # FULL ODE
-        # ---------------------------------------------
-        ode = vf.stack(
-            v,
-            self._acc_vf
-        )
-
-        return ode
+        return vf.stack(v, self._acc_vf)
 
 
     # =====================================================
-    # RETURN ACCELERATION VF
+    # RETURN ACCELERATION VF (legacy alias)
     # =====================================================
     cpdef object vf(self):
-
         return self._acc_vf
 
 
@@ -109,7 +77,6 @@ cdef class GravityVF:
     # RETURN FULL ODE VF
     # =====================================================
     cpdef object ode(self):
-
         return self._ode_vf
 
 
@@ -117,13 +84,11 @@ cdef class GravityVF:
     # CALLABLE INTERFACE
     # =====================================================
     def __call__(self):
-
         return self._ode_vf
 
 
     # =====================================================
-    # DEBUG STRING
+    # DEBUG
     # =====================================================
     def __repr__(self):
-
         return f"GravityVF(mu={self.mu})"
