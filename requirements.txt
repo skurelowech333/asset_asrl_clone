@@ -1,7 +1,3 @@
-numpy
-pybind11
-sphinx
-furo
-spiceypy
-breathe
-exhale
+# Install the package in editable mode with all dependencies
+# This ensures Forces and other internal modules are properly included
+-e .[dev]
