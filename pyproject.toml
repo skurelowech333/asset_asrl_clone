@@ -7,22 +7,28 @@ requires = [
 ]
 build-backend = "scikit_build_core.build"
 
+
 [project]
-name = "asset-asrl"
+name = "asset-asrl-dev"
 version = "0.5.2"
 description = "Astrodynamics Software and Science Enabling Toolkit"
 readme = "README.md"
 requires-python = ">=3.7"
 license = {text = "Apache 2.0"}
 authors = [{name = "James B. Pezent et al."}]
+
+# Runtime dependencies ONLY (no self-reference)
 dependencies = [
+    "scipy",
     "numpy",
     "matplotlib",
     "spiceypy",
     "seaborn",
     "basemap",
-    "intel-openmp"
+    "intel-openmp",
+    "asset-asrl"
 ]
+
 
 [tool.scikit-build]
 cmake.minimum-version = "3.16"

@@ -1,25 +1,16 @@
 #!/usr/bin/env python3
-"""
-ASSET Conda Setup Script (Spyder AUTO-FIX VERSION)
-- Works from Spyder, CMD, PowerShell
-- No activation required
-- Auto-rebuilds broken envs
-- Auto-installs Spyder if missing
-"""
-
-import sys
 import subprocess
-import os
+import sys
 import shutil
+from pathlib import Path
 
-ENV_NAME = "upd_asset_env"
 PY_VERSION = "3.12"
 
+REPO_ROOT = Path(__file__).resolve().parent
+ENV_PATH = REPO_ROOT / "env"
 
-# =========================================================
-# Console
-# =========================================================
-class Color:
+
+class C:
     RESET = "\033[0m"
     BOLD = "\033[1m"
     RED = "\033[91m"
@@ -29,17 +20,23 @@ class Color:
     CYAN = "\033[96m"
 
 
-def success(msg): print(f"{Color.GREEN}[OK] {msg}{Color.RESET}")
-def warning(msg): print(f"{Color.YELLOW}[WARN] {msg}{Color.RESET}")
-def error(msg): print(f"{Color.RED}[ERROR] {msg}{Color.RESET}")
-def info(msg): print(f"{Color.CYAN}[INFO] {msg}{Color.RESET}")
-def header(msg): print(f"\n{Color.BOLD}{Color.BLUE}{msg}{Color.RESET}")
+def ok(msg): 
+    print(f"{C.GREEN}[OK]{C.RESET} {msg}")
+    
+def warn(msg): 
+    print(f"{C.YELLOW}[WARN]{C.RESET} {msg}")
+    
+def err(msg): 
+    print(f"{C.RED}[ERROR]{C.RESET} {msg}")
+    
+def info(msg): 
+    print(f"{C.CYAN}[INFO]{C.RESET} {msg}")
+    
+def title(msg): 
+    print(f"\n{C.BOLD}{C.BLUE}{msg}{C.RESET}")
 
 
-# =========================================================
-# RUN (LIVE OUTPUT)
-# =========================================================
-def run(cmd, desc=""):
+def run(cmd, desc=None):
     if desc:
         info(desc)
 
@@ -48,209 +45,107 @@ def run(cmd, desc=""):
         shell=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
-        text=True
+        text=True,
+        bufsize=1
     )
 
     for line in p.stdout:
-        print(line, end="")
+        print(line, end="")  # live stream
 
     return p.wait() == 0
 
 
-# =========================================================
-# CONDA HELPERS
-# =========================================================
 def conda_exists():
-    return subprocess.run(
-        "conda --version",
-        shell=True,
-        capture_output=True
-    ).returncode == 0
+    return run("conda --version")
 
 
 def env_exists():
-    try:
-        out = subprocess.check_output("conda env list", shell=True, text=True)
-        return ENV_NAME in out
-    except:
-        return False
+    return ENV_PATH.exists()
 
 
-def env_works():
-    try:
-        r = subprocess.run(
-            f'conda run -n {ENV_NAME} python -c "print(1)"',
-            shell=True,
-            capture_output=True,
-            text=True
-        )
-        return r.returncode == 0
-    except:
-        return False
-
-
-# =========================================================
-# ENV RESET
-# =========================================================
 def delete_env():
-    warning("Deleting broken environment")
+    warn("Deleting existing environment")
 
-    run(f"conda env remove -n {ENV_NAME} -y", "Conda remove")
-    run("conda clean -a -y", "Cleaning conda cache")
+    run(f'conda env remove -p "{ENV_PATH}" -y', "Removing conda env")
+    shutil.rmtree(ENV_PATH, ignore_errors=True)
 
-    base = os.path.expanduser("~\\anaconda3")
-    path = os.path.join(base, "envs", ENV_NAME)
-
-    if os.path.exists(path):
-        warning(f"Force removing: {path}")
-        shutil.rmtree(path, ignore_errors=True)
-
-    success("Environment deleted")
-
+    ok("Environment deleted")
+    
 
 def create_env():
-    header("Creating environment")
     return run(
-        f"conda create -y -n {ENV_NAME} python={PY_VERSION}",
-        "Creating conda env"
+        f'conda create -y --prefix "{ENV_PATH}" python={PY_VERSION}',
+        "Creating fresh environment"
     )
 
 
-def ensure_env():
-    header("Checking environment")
+def rebuild_env():
+    title("ENV REBUILD")
 
-    if env_exists() and env_works():
-        success("Environment OK")
-        return
+    if env_exists():
+        delete_env()
 
-    warning("Broken or missing env → rebuilding")
-    delete_env()
     create_env()
+    
 
-
-# =========================================================
-# SPYDER HANDLING (NEW FIX)
-# =========================================================
-def ensure_spyder():
-    header("Checking Spyder installation")
-
-    # test if spyder exists
-    test = subprocess.run(
-        f'conda run -n {ENV_NAME} python -c "import spyder"',
-        shell=True,
-        capture_output=True,
-        text=True
-    )
-
-    if test.returncode == 0:
-        success("Spyder already installed")
-        return
-
-    warning("Spyder missing → installing")
-
-    run(
-        f'conda run -n {ENV_NAME} pip install spyder',
-        "Installing Spyder"
+def pip(cmd, desc=None):
+    return run(
+        f'conda run -p "{ENV_PATH}" python -m pip {cmd}',
+        desc
     )
 
 
-def launch_spyder():
-    header("Launching Spyder")
+def print_interpreter_instructions():
+    title("PYTHON INTERPRETER SETUP (IMPORTANT)")
 
-    # MOST RELIABLE WAY ON WINDOWS
-    run(
-        f'conda run -n {ENV_NAME} python -m spyder',
-        "Starting Spyder"
-    )
+    python_path = ENV_PATH / "python.exe"
 
-
-# =========================================================
-# MODULE INSPECTION
-# =========================================================
-def print_installed_modules():
-    header("Installed Modules")
-
-    cmd = (
-        f'conda run -n {ENV_NAME} python -c "'
-        "import pkgutil;"
-        "mods = sorted([m.name for m in pkgutil.iter_modules()]);"
-        "print('\\n'.join(mods))"
-        '"'
-    )
-
-    run(cmd, "Listing modules")
-
-
-def print_asset_structure():
-    header("ASSET Structure")
-
-    cmd = (
-        f'conda run -n {ENV_NAME} python -c "'
-        "import asset_asrl;"
-        "import pkgutil;"
-        "mods = [m.name for m in pkgutil.iter_modules(asset_asrl.__path__)];"
-        "print('ASSET PATH:', asset_asrl.__file__);"
-        "print('\\n'.join(sorted(mods)))"
-        '"'
-    )
-
-    run(cmd, "Inspecting ASSET")
-
-
-# =========================================================
-# MAIN
-# =========================================================
-def main():
-    print(f"\n{Color.BOLD}{Color.BLUE}")
-    print("=" * 60)
-    print("ASSET Setup (Spyder AUTO-FIX)")
-    print("=" * 60)
-    print(Color.RESET)
-
-    if not conda_exists():
-        error("Conda not found")
-        sys.exit(1)
-
-    success("Conda detected")
-
-    ensure_env()
-
-    header("Installing dependencies")
-
-    run(f'conda run -n {ENV_NAME} python -m pip install --upgrade pip',
-        "Upgrading pip")
-
-    run(f'conda run -n {ENV_NAME} pip install numpy scipy',
-        "Installing core deps")
-
-    run(f'conda run -n {ENV_NAME} pip install asset-asrl',
-        "Installing ASSET")
-
-    run(f'conda run -n {ENV_NAME} pip install -e .',
-        "Editable install")
-
-    # IMPORTANT NEW STEP
-    ensure_spyder()
-
-    header("Verification")
-
-    run(f'conda run -n {ENV_NAME} python -c "import asset_asrl; print(asset_asrl.__file__)"',
-        "Import check")
-
-    run(f'conda run -n {ENV_NAME} python -c "import asset_asrl; print(\"ASSET OK\")"',
-        "Final test")
-
-    print_asset_structure()
-    print_installed_modules()
-
-    header("DONE")
-
-    print("\nNext step:")
-    print(f"{Color.CYAN}conda run -n {ENV_NAME} python -m spyder{Color.RESET}")
-
-    if "--spyder" in sys.argv:
-        launch_spyder()
-
+    print(f"""
+        {C.CYAN}STEP 1:{C.RESET}
+            Open Spyder
+        
+        {C.CYAN}STEP 2:{C.RESET}
+            Go to:
+                Tools → Preferences → Python Interpreter
+        
+        {C.CYAN}STEP 3:{C.RESET}
+            Select:
+                {python_path}
+        
+        {C.CYAN}STEP 4:{C.RESET}
+            Restart kernel
+        
+        {C.CYAN}STEP 5:{C.RESET}
+            Verify inside Spyder:
+                import sys
+                print(sys.executable)
+        
+            It MUST show:
+                {python_path}
+        """)
 
 if __name__ == "__main__":
-    main()
+
+    print(f"{C.BOLD}{C.BLUE}\nASSET Setup\n{C.RESET}")
+
+    if not conda_exists():
+        err("Conda not found")
+        sys.exit(1)
+
+    ok("Conda detected")
+
+    rebuild_env()
+
+    title("INSTALLING DEPENDENCIES")
+
+    pip("install --upgrade pip", "Upgrading pip")
+    pip("install -e .", "Installing repo (editable)")
+    
+    title("DONE")
+
+    ok("Setup complete")
+    
+    print_interpreter_instructions()
+
+    print(f"\nInterpreter:\n{ENV_PATH / 'python.exe'}\n")
+    
