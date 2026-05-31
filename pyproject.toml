@@ -3,7 +3,9 @@ requires = [
     "scikit-build-core",
     "cmake>=3.16",
     "ninja",
-    "pybind11"
+    "pybind11",
+    "setuptools>=62.0",
+    "wheel"
 ]
 build-backend = "scikit_build_core.build"
 
@@ -16,15 +18,61 @@ requires-python = ">=3.7"
 license = {text = "Apache 2.0"}
 authors = [{name = "James B. Pezent et al."}]
 dependencies = [
-    "numpy",
-    "matplotlib",
-    "spiceypy",
-    "seaborn",
-    "basemap",
-    "intel-openmp"
+    "numpy>=1.20.0",
+    "matplotlib>=3.3.0",
+    "spiceypy>=2.3.0",
+    "seaborn>=0.11.0",
+    "basemap>=1.1.0",
+    "intel-openmp>=2021.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.12.0",
+    "sphinx>=4.0.0",
+    "breathe>=4.26.0",
+    "furo>=2021.8.0",
+    "cython>=0.29.0",
+    "black>=21.0",
+    "flake8>=3.9.0",
+    "mypy>=0.900"
+]
+docs = [
+    "sphinx>=4.0.0",
+    "breathe>=4.26.0",
+    "furo>=2021.8.0"
+]
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.12.0"
+]
+cython = [
+    "cython>=0.29.0"
+]
+analysis = [
+    "scipy>=1.6.0",
+    "pandas>=1.2.0",
+    "scikit-learn>=0.24.0",
+    "jupyter>=1.0.0"
 ]
 
 [tool.scikit-build]
 cmake.minimum-version = "3.16"
 cmake.build-type = "Release"
 wheel.packages = ["asset_asrl"]
+
+[tool.pytest.ini_options]
+testpaths = ["asset_asrl/test"]
+python_files = ["test_*.py"]
+addopts = "--cov=asset_asrl --cov-report=html"
+
+[tool.black]
+line-length = 100
+target-version = ['py37', 'py38', 'py39', 'py310']
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
