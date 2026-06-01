@@ -139,8 +139,17 @@ if __name__ == "__main__":
     title("INSTALLING DEPENDENCIES")
 
     pip("install --upgrade pip", "Upgrading pip")
-    pip("install -e .", "Installing repo (editable)")
     
+    # Spyder support
+    pip(
+        "install spyder spyder-kernels",
+        "Installing Spyder and spyder-kernels"
+    )
+    
+    # ASSET
+    pip("install asset-asrl", "Installing compiled ASSET wheel")
+    pip("install -e .", "Installing repo (editable)")
+
     title("DONE")
 
     ok("Setup complete")
