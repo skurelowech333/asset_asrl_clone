@@ -59,6 +59,8 @@ def run(cmd, desc=None):
     
     if success and desc:
         ok(f"Completed in {elapsed:.1f}s")
+    elif not success:
+        err(f"Failed after {elapsed:.1f}s")
     
     return success
 
@@ -148,6 +150,28 @@ def init_submodules():
     return True
 
 
+def verify_installation():
+    """Verify that asset_asrl.Forces can be imported"""
+    title("VERIFYING INSTALLATION")
+    
+    verify_cmd = (
+        f'conda run -p "{ENV_PATH}" python -c '
+        '"from asset_asrl.Forces.Gravity import GravityVF; print(\'Forces module loaded successfully\')"'
+    )
+    
+    result = subprocess.run(verify_cmd, shell=True, capture_output=True, text=True)
+    
+    if result.returncode == 0:
+        ok("asset_asrl.Forces module verified")
+        return True
+    else:
+        warn("Asset Forces module verification failed")
+        warn("This may be due to missing build dependencies")
+        if result.stderr:
+            print(f"Error: {result.stderr}")
+        return False
+
+
 def print_interpreter_instructions():
     title("PYTHON INTERPRETER SETUP (IMPORTANT)")
 
@@ -199,16 +223,37 @@ if __name__ == "__main__":
     pip_install_batch([
         "--upgrade",
         "pip",
+        "setuptools>=62.0",
+        "wheel",
+        "ninja",
+        "cmake>=3.16",
+        "cython>=0.29.0",
         "spyder",
         "spyder-kernels",
         "asset-asrl",
     ], "Installing core dependencies")
     
-    pip("install -e .", "Installing repo (editable)")
-
-    title("DONE")
-
-    ok("Setup complete")
+    title("BUILDING AND INSTALLING LOCAL PACKAGE")
+    
+    # Install local package in editable mode with verbose output to catch build errors
+    if not pip("install -e . --verbose --no-cache-dir", "Installing repo (editable mode with build)"):
+        warn("Local package installation had issues, but continuing...")
+    
+    title("VERIFYING INSTALLATION")
+    
+    # Verify the installation
+    if verify_installation():
+        title("DONE")
+        ok("Setup complete - asset_asrl.Forces verified")
+    else:
+        title("SETUP COMPLETE (WITH WARNINGS)")
+        warn("Setup completed but asset_asrl.Forces could not be verified")
+        warn("This may require manual build steps or additional system dependencies")
+        print(f"\n{C.YELLOW}Troubleshooting steps:{C.RESET}")
+        print("1. Ensure you have a C++17 compiler installed (MSVC, GCC, or Clang)")
+        print("2. Verify CMake is installed: conda list cmake")
+        print("3. Check Intel MKL: conda list mkl")
+        print("4. Try manual rebuild: conda run -p <env_path> pip install -e . --verbose\n")
     
     print_interpreter_instructions()
 
