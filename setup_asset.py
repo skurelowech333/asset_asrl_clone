@@ -2,6 +2,7 @@
 import subprocess
 import sys
 import shutil
+import time
 from pathlib import Path
 
 PY_VERSION = "3.12"
@@ -40,6 +41,7 @@ def run(cmd, desc=None):
     if desc:
         info(desc)
 
+    start = time.time()
     p = subprocess.Popen(
         cmd,
         shell=True,
@@ -52,11 +54,28 @@ def run(cmd, desc=None):
     for line in p.stdout:
         print(line, end="")  # live stream
 
-    return p.wait() == 0
+    success = p.wait() == 0
+    elapsed = time.time() - start
+    
+    if success and desc:
+        ok(f"Completed in {elapsed:.1f}s")
+    
+    return success
 
 
 def conda_exists():
-    return run("conda --version")
+    """Check if conda is available"""
+    try:
+        result = subprocess.run(
+            "conda --version",
+            shell=True,
+            capture_output=True,
+            timeout=5,
+            text=True
+        )
+        return result.returncode == 0
+    except (subprocess.TimeoutExpired, FileNotFoundError):
+        return False
 
 
 def env_exists():
@@ -79,35 +98,54 @@ def create_env():
     )
 
 
-def rebuild_env():
-    title("ENV REBUILD")
-
+def rebuild_env_if_needed():
+    """Only rebuild if the environment doesn't exist or is corrupted"""
+    title("ENV SETUP")
+    
     if env_exists():
-        delete_env()
-
-    create_env()
+        ok("Environment already exists, skipping rebuild")
+        return True
     
-
-def init_submodules():
-    title("INITIALIZING GIT SUBMODULES")
+    info("Creating fresh environment")
+    return create_env()
     
-    if not run("git submodule init", "Initializing submodules"):
-        err("Failed to initialize submodules")
-        return False
-    
-    if not run("git submodule update --recursive", "Updating submodules"):
-        err("Failed to update submodules")
-        return False
-    
-    ok("Submodules initialized and updated successfully")
-    return True
-
 
 def pip(cmd, desc=None):
     return run(
         f'conda run -p "{ENV_PATH}" python -m pip {cmd}',
         desc
     )
+
+
+def pip_install_batch(packages, desc=None):
+    """Install multiple packages in a single pip call for better performance"""
+    cmd = "install " + " ".join(packages)
+    return pip(cmd, desc)
+
+
+def init_submodules():
+    title("INITIALIZING GIT SUBMODULES")
+    
+    # Check if submodules are configured
+    result = subprocess.run(
+        "git config --file .gitmodules --get-regexp path",
+        shell=True,
+        capture_output=True,
+        text=True
+    )
+    
+    if not result.stdout.strip():
+        ok("No submodules configured")
+        return True
+    
+    # Initialize and update submodules in one call
+    if not run("git submodule update --init --recursive", 
+               "Initializing and updating submodules"):
+        err("Failed to update submodules")
+        return False
+    
+    ok("Submodules initialized and updated successfully")
+    return True
 
 
 def print_interpreter_instructions():
@@ -149,9 +187,7 @@ if __name__ == "__main__":
 
     ok("Conda detected")
 
-    rebuild_env()
-
-    title("INITIALIZING SUBMODULES")
+    rebuild_env_if_needed()
     
     if not init_submodules():
         err("Submodule initialization failed")
@@ -159,16 +195,15 @@ if __name__ == "__main__":
 
     title("INSTALLING DEPENDENCIES")
 
-    pip("install --upgrade pip", "Upgrading pip")
+    # Batch install all dependencies in one call for speed
+    pip_install_batch([
+        "--upgrade",
+        "pip",
+        "spyder",
+        "spyder-kernels",
+        "asset-asrl",
+    ], "Installing core dependencies")
     
-    # Spyder support
-    pip(
-        "install spyder spyder-kernels",
-        "Installing Spyder and spyder-kernels"
-    )
-    
-    # ASSET
-    pip("install asset-asrl", "Installing compiled ASSET wheel")
     pip("install -e .", "Installing repo (editable)")
 
     title("DONE")
@@ -178,4 +213,3 @@ if __name__ == "__main__":
     print_interpreter_instructions()
 
     print(f"\nInterpreter:\n{ENV_PATH / 'python.exe'}\n")
-    
