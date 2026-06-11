@@ -88,6 +88,21 @@ def rebuild_env():
     create_env()
     
 
+def init_submodules():
+    title("INITIALIZING GIT SUBMODULES")
+    
+    if not run("git submodule init", "Initializing submodules"):
+        err("Failed to initialize submodules")
+        return False
+    
+    if not run("git submodule update --recursive", "Updating submodules"):
+        err("Failed to update submodules")
+        return False
+    
+    ok("Submodules initialized and updated successfully")
+    return True
+
+
 def pip(cmd, desc=None):
     return run(
         f'conda run -p "{ENV_PATH}" python -m pip {cmd}',
@@ -135,6 +150,12 @@ if __name__ == "__main__":
     ok("Conda detected")
 
     rebuild_env()
+
+    title("INITIALIZING SUBMODULES")
+    
+    if not init_submodules():
+        err("Submodule initialization failed")
+        sys.exit(1)
 
     title("INSTALLING DEPENDENCIES")
 
