@@ -1,12 +1,30 @@
 #!/usr/bin/env python
 """
-Setup script for ASSET
-Note: This project uses CMake for building the C++ extension.
-Install using: pip install -e . (for development) or pip install . (for installation)
-Requires: CMake, C++17 compiler, Intel MKL, Python development headers
+Setup script for ASSET with Cython compilation
 """
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, Extension
+from Cython.Build import cythonize
+import numpy as np
+import os
+
+# Get all .pyx files from asset_asrl/Forces
+cython_extensions = []
+forces_dir = "asset_asrl/Forces"
+
+if os.path.exists(forces_dir):
+    for pyx_file in os.listdir(forces_dir):
+        if pyx_file.endswith(".pyx"):
+            module_name = f"asset_asrl.Forces.{pyx_file[:-4]}"
+            ext_path = os.path.join(forces_dir, pyx_file)
+            cython_extensions.append(
+                Extension(
+                    module_name,
+                    [ext_path],
+                    include_dirs=[np.get_include()],
+                    extra_compile_args=["-O3"],
+                )
+            )
 
 setup(
     name="asset-asrl",
@@ -29,6 +47,16 @@ setup(
             "keplerprop.txt",
         ]
     },
+    ext_modules=cythonize(
+        cython_extensions,
+        language_level="3",
+        compiler_directives={
+            "boundscheck": False,
+            "wraparound": False,
+            "cdivision": True,
+            "nonecheck": False,
+        },
+    ),
     python_requires=">=3.7",
     install_requires=[
         "numpy",
@@ -36,7 +64,8 @@ setup(
         "spiceypy",
         "seaborn",
         "basemap",
-        "intel-openmp"
+        "intel-openmp",
+        "Cython>=0.29.0",
     ],
     zip_safe=False,
 )
