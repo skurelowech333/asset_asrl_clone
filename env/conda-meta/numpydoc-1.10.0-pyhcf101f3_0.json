@@ -1,0 +1,453 @@
+{
+  "name": "numpydoc",
+  "version": "1.10.0",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "numpydoc-1.10.0-pyhcf101f3_0.conda",
+  "md5": "3aa4b625f20f55cf68e92df5e5bf3c39",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/numpydoc-1.10.0-pyhcf101f3_0.conda",
+  "sha256": "482d94fce136c4352b18c6397b9faf0a3149bfb12499ab1ffebad8db0cb6678f",
+  "depends": [
+    "python >=3.10",
+    "sphinx >=6",
+    "tomli >=1.1.0",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1764715638000,
+  "size": 65801,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\numpydoc-1.10.0-pyhcf101f3_0.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\numpydoc-1.10.0-pyhcf101f3_0",
+  "files": [
+    "Lib/site-packages/numpydoc/__init__.py",
+    "Lib/site-packages/numpydoc/__main__.py",
+    "Lib/site-packages/numpydoc/_version.py",
+    "Lib/site-packages/numpydoc/cli.py",
+    "Lib/site-packages/numpydoc/docscrape.py",
+    "Lib/site-packages/numpydoc/docscrape_sphinx.py",
+    "Lib/site-packages/numpydoc/hooks/__init__.py",
+    "Lib/site-packages/numpydoc/hooks/utils.py",
+    "Lib/site-packages/numpydoc/hooks/validate_docstrings.py",
+    "Lib/site-packages/numpydoc/numpydoc.py",
+    "Lib/site-packages/numpydoc/templates/numpydoc_docstring.rst",
+    "Lib/site-packages/numpydoc/tests/hooks/test_utils.py",
+    "Lib/site-packages/numpydoc/tests/hooks/test_validate_hook.py",
+    "Lib/site-packages/numpydoc/tests/test_docscrape.py",
+    "Lib/site-packages/numpydoc/tests/test_full.py",
+    "Lib/site-packages/numpydoc/tests/test_main.py",
+    "Lib/site-packages/numpydoc/tests/test_numpydoc.py",
+    "Lib/site-packages/numpydoc/tests/test_validate.py",
+    "Lib/site-packages/numpydoc/tests/test_xref.py",
+    "Lib/site-packages/numpydoc/tests/tinybuild/Makefile",
+    "Lib/site-packages/numpydoc/tests/tinybuild/conf.py",
+    "Lib/site-packages/numpydoc/tests/tinybuild/index.rst",
+    "Lib/site-packages/numpydoc/tests/tinybuild/numpydoc_test_module.py",
+    "Lib/site-packages/numpydoc/validate.py",
+    "Lib/site-packages/numpydoc/xref.py",
+    "Lib/site-packages/numpydoc-1.10.0.dist-info/INSTALLER",
+    "Lib/site-packages/numpydoc-1.10.0.dist-info/METADATA",
+    "Lib/site-packages/numpydoc-1.10.0.dist-info/RECORD",
+    "Lib/site-packages/numpydoc-1.10.0.dist-info/REQUESTED",
+    "Lib/site-packages/numpydoc-1.10.0.dist-info/WHEEL",
+    "Lib/site-packages/numpydoc-1.10.0.dist-info/direct_url.json",
+    "Lib/site-packages/numpydoc-1.10.0.dist-info/entry_points.txt",
+    "Lib/site-packages/numpydoc-1.10.0.dist-info/licenses/LICENSE.txt",
+    "Lib/site-packages/numpydoc-1.10.0.dist-info/top_level.txt",
+    "Lib/site-packages/numpydoc/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/__pycache__/__main__.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/__pycache__/_version.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/__pycache__/cli.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/__pycache__/docscrape.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/__pycache__/docscrape_sphinx.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/hooks/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/hooks/__pycache__/utils.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/hooks/__pycache__/validate_docstrings.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/__pycache__/numpydoc.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/hooks/__pycache__/test_utils.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/hooks/__pycache__/test_validate_hook.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/__pycache__/test_docscrape.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/__pycache__/test_full.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/__pycache__/test_main.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/__pycache__/test_numpydoc.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/__pycache__/test_validate.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/__pycache__/test_xref.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/tinybuild/__pycache__/conf.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/tests/tinybuild/__pycache__/numpydoc_test_module.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/__pycache__/validate.cpython-312.pyc",
+    "Lib/site-packages/numpydoc/__pycache__/xref.cpython-312.pyc",
+    "Scripts/numpydoc-script.py",
+    "Scripts/numpydoc.exe"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/numpydoc/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "9bed355ec95977548201e9cda0393aaccc7a8e1fb8383d8c7cbf93d15a3db96f",
+        "size_in_bytes": 281,
+        "sha256_in_prefix": "9bed355ec95977548201e9cda0393aaccc7a8e1fb8383d8c7cbf93d15a3db96f"
+      },
+      {
+        "_path": "site-packages/numpydoc/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "69d03204ef598a933a725e0ba7d73e82cae7be6d443c4d8961dbffcd93a86c90",
+        "size_in_bytes": 162,
+        "sha256_in_prefix": "69d03204ef598a933a725e0ba7d73e82cae7be6d443c4d8961dbffcd93a86c90"
+      },
+      {
+        "_path": "site-packages/numpydoc/_version.py",
+        "path_type": "hardlink",
+        "sha256": "90b35d8dbf2ad4f17e9b6557068f989ab2b478c1547d8372b3493f4d5bcd987c",
+        "size_in_bytes": 23,
+        "sha256_in_prefix": "90b35d8dbf2ad4f17e9b6557068f989ab2b478c1547d8372b3493f4d5bcd987c"
+      },
+      {
+        "_path": "site-packages/numpydoc/cli.py",
+        "path_type": "hardlink",
+        "sha256": "fb9d0fa9c7895f359fcbed62339ed8f1f384315d8d9a36a838ab267b7c7c37e6",
+        "size_in_bytes": 4392,
+        "sha256_in_prefix": "fb9d0fa9c7895f359fcbed62339ed8f1f384315d8d9a36a838ab267b7c7c37e6"
+      },
+      {
+        "_path": "site-packages/numpydoc/docscrape.py",
+        "path_type": "hardlink",
+        "sha256": "5c3bf76322e7b641c6e994507568f878f570d5bd8f9233e0c951db43f4d1a091",
+        "size_in_bytes": 23692,
+        "sha256_in_prefix": "5c3bf76322e7b641c6e994507568f878f570d5bd8f9233e0c951db43f4d1a091"
+      },
+      {
+        "_path": "site-packages/numpydoc/docscrape_sphinx.py",
+        "path_type": "hardlink",
+        "sha256": "141f0bfbdc5887a9178bc9a7ff4c40bc0cf0b8494419d33bb742efb8b898bdc1",
+        "size_in_bytes": 15208,
+        "sha256_in_prefix": "141f0bfbdc5887a9178bc9a7ff4c40bc0cf0b8494419d33bb742efb8b898bdc1"
+      },
+      {
+        "_path": "site-packages/numpydoc/hooks/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "c75c1e4a5279b6ae9cb8194c1c1b72aee83484971cb4c5ad26bbdb0be8ea8cb6",
+        "size_in_bytes": 39,
+        "sha256_in_prefix": "c75c1e4a5279b6ae9cb8194c1c1b72aee83484971cb4c5ad26bbdb0be8ea8cb6"
+      },
+      {
+        "_path": "site-packages/numpydoc/hooks/utils.py",
+        "path_type": "hardlink",
+        "sha256": "20c591812d25673a9d41f7fd465592a9a5a4b823c239e49bc98f473ef8bee6b4",
+        "size_in_bytes": 1393,
+        "sha256_in_prefix": "20c591812d25673a9d41f7fd465592a9a5a4b823c239e49bc98f473ef8bee6b4"
+      },
+      {
+        "_path": "site-packages/numpydoc/hooks/validate_docstrings.py",
+        "path_type": "hardlink",
+        "sha256": "b30d964b021fe3601da3abf385f0d84209953a8a4a0f4489ae2030bdb8cc3f6f",
+        "size_in_bytes": 13154,
+        "sha256_in_prefix": "b30d964b021fe3601da3abf385f0d84209953a8a4a0f4489ae2030bdb8cc3f6f"
+      },
+      {
+        "_path": "site-packages/numpydoc/numpydoc.py",
+        "path_type": "hardlink",
+        "sha256": "3194f72f7ed22b626067f3139c221f49890edf1836d33306cca096c8e4786030",
+        "size_in_bytes": 19958,
+        "sha256_in_prefix": "3194f72f7ed22b626067f3139c221f49890edf1836d33306cca096c8e4786030"
+      },
+      {
+        "_path": "site-packages/numpydoc/templates/numpydoc_docstring.rst",
+        "path_type": "hardlink",
+        "sha256": "24a30a19eac0b74e9827d0898b25d967e9a34f6b4eb9293f48eab519a8d40d91",
+        "size_in_bytes": 227,
+        "sha256_in_prefix": "24a30a19eac0b74e9827d0898b25d967e9a34f6b4eb9293f48eab519a8d40d91"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/hooks/test_utils.py",
+        "path_type": "hardlink",
+        "sha256": "b0bb127e4bfa4ad8c33e83a1b92d689b9841bfac1abdaf328e075ee5dd65d7fb",
+        "size_in_bytes": 1064,
+        "sha256_in_prefix": "b0bb127e4bfa4ad8c33e83a1b92d689b9841bfac1abdaf328e075ee5dd65d7fb"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/hooks/test_validate_hook.py",
+        "path_type": "hardlink",
+        "sha256": "dd2393a6b49ffa8b0e56cc849a68d10f245b7affebccdd9dcc271c4bb43a736b",
+        "size_in_bytes": 10220,
+        "sha256_in_prefix": "dd2393a6b49ffa8b0e56cc849a68d10f245b7affebccdd9dcc271c4bb43a736b"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/test_docscrape.py",
+        "path_type": "hardlink",
+        "sha256": "aeb316d29491cb19b73512a27197394e257c258a74d60d951998a4c4d8cb65ec",
+        "size_in_bytes": 38909,
+        "sha256_in_prefix": "aeb316d29491cb19b73512a27197394e257c258a74d60d951998a4c4d8cb65ec"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/test_full.py",
+        "path_type": "hardlink",
+        "sha256": "88ae9ae88c2201624d0c5757d6a649c20591febc5ccc4fd52eb6c20feaa1b638",
+        "size_in_bytes": 3747,
+        "sha256_in_prefix": "88ae9ae88c2201624d0c5757d6a649c20591febc5ccc4fd52eb6c20feaa1b638"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/test_main.py",
+        "path_type": "hardlink",
+        "sha256": "2f682d419a0302183cc236fd2bab1fedea2106a659d67d7e188fefa77a280a16",
+        "size_in_bytes": 3560,
+        "sha256_in_prefix": "2f682d419a0302183cc236fd2bab1fedea2106a659d67d7e188fefa77a280a16"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/test_numpydoc.py",
+        "path_type": "hardlink",
+        "sha256": "c8d9fdcb4a426d84a07bda53f5ab8559952efd6525ff3caa31d52467c0ef3a21",
+        "size_in_bytes": 11039,
+        "sha256_in_prefix": "c8d9fdcb4a426d84a07bda53f5ab8559952efd6525ff3caa31d52467c0ef3a21"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/test_validate.py",
+        "path_type": "hardlink",
+        "sha256": "7b346850770840a92c001c9f023fece5e2ffdd05f8f1c63c4d9ca313548b6f2d",
+        "size_in_bytes": 53039,
+        "sha256_in_prefix": "7b346850770840a92c001c9f023fece5e2ffdd05f8f1c63c4d9ca313548b6f2d"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/test_xref.py",
+        "path_type": "hardlink",
+        "sha256": "ea95595ae1cfc02761f336cee5269044a5110706a3f627ee54045b062898a06c",
+        "size_in_bytes": 6258,
+        "sha256_in_prefix": "ea95595ae1cfc02761f336cee5269044a5110706a3f627ee54045b062898a06c"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/tinybuild/Makefile",
+        "path_type": "hardlink",
+        "sha256": "5472b80df2b4eace6650f31eca2f77b6a724180677384cb9d64d9e3541def152",
+        "size_in_bytes": 249,
+        "sha256_in_prefix": "5472b80df2b4eace6650f31eca2f77b6a724180677384cb9d64d9e3541def152"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/tinybuild/conf.py",
+        "path_type": "hardlink",
+        "sha256": "c57f468339e2e54a75cf765110df5c895cc10da3c43f5686ce8aed6e082f0650",
+        "size_in_bytes": 590,
+        "sha256_in_prefix": "c57f468339e2e54a75cf765110df5c895cc10da3c43f5686ce8aed6e082f0650"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/tinybuild/index.rst",
+        "path_type": "hardlink",
+        "sha256": "ea762c2ef506191e9e8f58073505a6f3e238a4e3f38af887eb3d72d74236411c",
+        "size_in_bytes": 146,
+        "sha256_in_prefix": "ea762c2ef506191e9e8f58073505a6f3e238a4e3f38af887eb3d72d74236411c"
+      },
+      {
+        "_path": "site-packages/numpydoc/tests/tinybuild/numpydoc_test_module.py",
+        "path_type": "hardlink",
+        "sha256": "33306a5e0a99b9307350840677b38f09485e58c23e55e1424fd4a4b268353e26",
+        "size_in_bytes": 907,
+        "sha256_in_prefix": "33306a5e0a99b9307350840677b38f09485e58c23e55e1424fd4a4b268353e26"
+      },
+      {
+        "_path": "site-packages/numpydoc/validate.py",
+        "path_type": "hardlink",
+        "sha256": "111dcd0f510d18f766d925aa1fe485178586bd494c36722622dfe1eaf94510db",
+        "size_in_bytes": 30050,
+        "sha256_in_prefix": "111dcd0f510d18f766d925aa1fe485178586bd494c36722622dfe1eaf94510db"
+      },
+      {
+        "_path": "site-packages/numpydoc/xref.py",
+        "path_type": "hardlink",
+        "sha256": "1842ec7d4e5caff50e578d4c01ed7bf24993493d4ac299790546591a11f34b16",
+        "size_in_bytes": 6525,
+        "sha256_in_prefix": "1842ec7d4e5caff50e578d4c01ed7bf24993493d4ac299790546591a11f34b16"
+      },
+      {
+        "_path": "site-packages/numpydoc-1.10.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc",
+        "size_in_bytes": 6,
+        "sha256_in_prefix": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc"
+      },
+      {
+        "_path": "site-packages/numpydoc-1.10.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "fc7263c4d443b72f7d504fba1db04237b200e6a41163e9a0cd80d93b5c47f708",
+        "size_in_bytes": 3755,
+        "sha256_in_prefix": "fc7263c4d443b72f7d504fba1db04237b200e6a41163e9a0cd80d93b5c47f708"
+      },
+      {
+        "_path": "site-packages/numpydoc-1.10.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "586e7b22ce6068e9b8988100b258679f332bc67f685a6b896786c6031f54bdd7",
+        "size_in_bytes": 4255,
+        "sha256_in_prefix": "586e7b22ce6068e9b8988100b258679f332bc67f685a6b896786c6031f54bdd7"
+      },
+      {
+        "_path": "site-packages/numpydoc-1.10.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/numpydoc-1.10.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "ff309ddcdd65ebd02bc724dbf2bcc4a0ff53a5b61792a44548d383e4ebb19d3b",
+        "size_in_bytes": 91,
+        "sha256_in_prefix": "ff309ddcdd65ebd02bc724dbf2bcc4a0ff53a5b61792a44548d383e4ebb19d3b"
+      },
+      {
+        "_path": "site-packages/numpydoc-1.10.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "d2d309d9336e1b027e4d7f558eb5da376b8d96f9e4f13d56f13aa3a919d550d9",
+        "size_in_bytes": 119,
+        "sha256_in_prefix": "d2d309d9336e1b027e4d7f558eb5da376b8d96f9e4f13d56f13aa3a919d550d9"
+      },
+      {
+        "_path": "site-packages/numpydoc-1.10.0.dist-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "ed659a085f7129170f9a2006c9b28c9c089afdced7e1ebd3641f2c4511345068",
+        "size_in_bytes": 47,
+        "sha256_in_prefix": "ed659a085f7129170f9a2006c9b28c9c089afdced7e1ebd3641f2c4511345068"
+      },
+      {
+        "_path": "site-packages/numpydoc-1.10.0.dist-info/licenses/LICENSE.txt",
+        "path_type": "hardlink",
+        "sha256": "0b78243e9446fe949093d69a7656b3d147d6b98bc48c975c9b4c290d8159033d",
+        "size_in_bytes": 1298,
+        "sha256_in_prefix": "0b78243e9446fe949093d69a7656b3d147d6b98bc48c975c9b4c290d8159033d"
+      },
+      {
+        "_path": "site-packages/numpydoc-1.10.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "6fd76396c00246cbe67d63642af559a792e4146ec1d6373bf2fda40e8e20a90e",
+        "size_in_bytes": 9,
+        "sha256_in_prefix": "6fd76396c00246cbe67d63642af559a792e4146ec1d6373bf2fda40e8e20a90e"
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 540
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/__pycache__/__main__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 289
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/__pycache__/_version.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 162
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/__pycache__/cli.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5836
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/__pycache__/docscrape.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 32483
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/__pycache__/docscrape_sphinx.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 19920
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/hooks/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 188
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/hooks/__pycache__/utils.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 2092
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/hooks/__pycache__/validate_docstrings.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 18887
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/__pycache__/numpydoc.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 23420
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/hooks/__pycache__/test_utils.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 1399
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/hooks/__pycache__/test_validate_hook.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 11898
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/__pycache__/test_docscrape.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 52959
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/__pycache__/test_full.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 4554
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/__pycache__/test_main.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5885
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/__pycache__/test_numpydoc.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 14302
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/__pycache__/test_validate.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 63408
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/__pycache__/test_xref.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 7127
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/tinybuild/__pycache__/conf.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 926
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/tests/tinybuild/__pycache__/numpydoc_test_module.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 1380
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/__pycache__/validate.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 37849
+      },
+      {
+        "_path": "Lib/site-packages/numpydoc/__pycache__/xref.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5298
+      },
+      {
+        "_path": "Scripts/numpydoc-script.py",
+        "path_type": "windows_python_entry_point_script",
+        "size_in_bytes": 204
+      },
+      {
+        "_path": "Scripts/numpydoc.exe",
+        "path_type": "windows_python_entry_point_exe"
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\numpydoc-1.10.0-pyhcf101f3_0",
+    "type": 1
+  }
+}

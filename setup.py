@@ -8,23 +8,55 @@ from Cython.Build import cythonize
 import numpy as np
 import os
 
-# Get all .pyx files from asset_asrl/Forces
+# Get all .pyx files recursively under asset_asrl
 cython_extensions = []
-forces_dir = "asset_asrl/Forces"
 
-if os.path.exists(forces_dir):
-    for pyx_file in os.listdir(forces_dir):
+root_dir = "asset_asrl"
+
+
+for root, dirs, files in os.walk(root_dir):
+
+    for pyx_file in files:
+
         if pyx_file.endswith(".pyx"):
-            module_name = f"asset_asrl.Forces.{pyx_file[:-4]}"
-            ext_path = os.path.join(forces_dir, pyx_file)
+
+            pyx_path = os.path.join(
+                root,
+                pyx_file
+            )
+
+
+            # convert:
+            # asset_asrl\GravityPines.pyx
+            #
+            # into:
+            # asset_asrl.GravityPines
+
+            module_name = (
+                pyx_path
+                .replace(os.sep, ".")
+                .replace(".pyx", "")
+            )
+
+
             cython_extensions.append(
+
                 Extension(
                     module_name,
-                    [ext_path],
-                    include_dirs=[np.get_include()],
-                    extra_compile_args=["-O3"],
+                    [pyx_path],
+                    include_dirs=[
+                        np.get_include()
+                    ],
+                    extra_compile_args=[
+                        "-O3"
+                    ],
                 )
             )
+
+
+print("\nCython modules:")
+for ext in cython_extensions:
+    print("  ", ext.name)
 
 setup(
     name="asset-asrl",

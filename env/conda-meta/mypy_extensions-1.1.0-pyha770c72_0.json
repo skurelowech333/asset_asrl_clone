@@ -1,0 +1,105 @@
+{
+  "name": "mypy_extensions",
+  "version": "1.1.0",
+  "build": "pyha770c72_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "mypy_extensions-1.1.0-pyha770c72_0.conda",
+  "md5": "e9c622e0d00fa24a6292279af3ab6d06",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/mypy_extensions-1.1.0-pyha770c72_0.conda",
+  "sha256": "6ed158e4e5dd8f6a10ad9e525631e35cee8557718f83de7a4e3966b1f772c4b1",
+  "depends": [
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1745776666000,
+  "size": 11766,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\mypy_extensions-1.1.0-pyha770c72_0.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\mypy_extensions-1.1.0-pyha770c72_0",
+  "files": [
+    "Lib/site-packages/mypy_extensions-1.1.0.dist-info/INSTALLER",
+    "Lib/site-packages/mypy_extensions-1.1.0.dist-info/METADATA",
+    "Lib/site-packages/mypy_extensions-1.1.0.dist-info/RECORD",
+    "Lib/site-packages/mypy_extensions-1.1.0.dist-info/REQUESTED",
+    "Lib/site-packages/mypy_extensions-1.1.0.dist-info/WHEEL",
+    "Lib/site-packages/mypy_extensions-1.1.0.dist-info/direct_url.json",
+    "Lib/site-packages/mypy_extensions-1.1.0.dist-info/licenses/LICENSE",
+    "Lib/site-packages/mypy_extensions.py",
+    "Lib/site-packages/__pycache__/mypy_extensions.cpython-312.pyc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/mypy_extensions-1.1.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5,
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8"
+      },
+      {
+        "_path": "site-packages/mypy_extensions-1.1.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "2c4a44936d885f30433181ca40bbf62457351f1f6b0871b11f8789564f87477f",
+        "size_in_bytes": 1100,
+        "sha256_in_prefix": "2c4a44936d885f30433181ca40bbf62457351f1f6b0871b11f8789564f87477f"
+      },
+      {
+        "_path": "site-packages/mypy_extensions-1.1.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "4e31b0685fed4db3171ae1e48940452e32f1d4174240ef0fe1b5768679deb670",
+        "size_in_bytes": 757,
+        "sha256_in_prefix": "4e31b0685fed4db3171ae1e48940452e32f1d4174240ef0fe1b5768679deb670"
+      },
+      {
+        "_path": "site-packages/mypy_extensions-1.1.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/mypy_extensions-1.1.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "1b68144734c4b66791f27add5d425f3620775585718a03d0f9b110ba3a4d88db",
+        "size_in_bytes": 82,
+        "sha256_in_prefix": "1b68144734c4b66791f27add5d425f3620775585718a03d0f9b110ba3a4d88db"
+      },
+      {
+        "_path": "site-packages/mypy_extensions-1.1.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "613e2c5776c58d90fd64d1fbe16ad5045867eb43c119a9a04d9383bf85449e5f",
+        "size_in_bytes": 111,
+        "sha256_in_prefix": "613e2c5776c58d90fd64d1fbe16ad5045867eb43c119a9a04d9383bf85449e5f"
+      },
+      {
+        "_path": "site-packages/mypy_extensions-1.1.0.dist-info/licenses/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "a50450da1d53cd777b80ced77c58ff96abe0ccd879706bd142c3ec20e245f0b4",
+        "size_in_bytes": 1204,
+        "sha256_in_prefix": "a50450da1d53cd777b80ced77c58ff96abe0ccd879706bd142c3ec20e245f0b4"
+      },
+      {
+        "_path": "site-packages/mypy_extensions.py",
+        "path_type": "hardlink",
+        "sha256": "198ee22e5da53ea6cb0fdd0f4e6d94fd2c40e0c6afbf0bf3a4cf0c112620a919",
+        "size_in_bytes": 7754,
+        "sha256_in_prefix": "198ee22e5da53ea6cb0fdd0f4e6d94fd2c40e0c6afbf0bf3a4cf0c112620a919"
+      },
+      {
+        "_path": "Lib/site-packages/__pycache__/mypy_extensions.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 10231
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\mypy_extensions-1.1.0-pyha770c72_0",
+    "type": 1
+  }
+}

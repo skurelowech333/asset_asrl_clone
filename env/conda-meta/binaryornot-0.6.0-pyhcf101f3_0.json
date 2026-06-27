@@ -1,0 +1,227 @@
+{
+  "name": "binaryornot",
+  "version": "0.6.0",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "binaryornot-0.6.0-pyhcf101f3_0.conda",
+  "md5": "980ed7a17e9279d5c0063d080cf13d0c",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/binaryornot-0.6.0-pyhcf101f3_0.conda",
+  "sha256": "1513cf9ab5285c823f90214eb8e638c0d065d3fa11120bfb7bb3cff1eb7a98d0",
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1773003768000,
+  "size": 21898,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\binaryornot-0.6.0-pyhcf101f3_0.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\binaryornot-0.6.0-pyhcf101f3_0",
+  "files": [
+    "Lib/site-packages/binaryornot/__init__.py",
+    "Lib/site-packages/binaryornot/__main__.py",
+    "Lib/site-packages/binaryornot/check.py",
+    "Lib/site-packages/binaryornot/data/__init__.py",
+    "Lib/site-packages/binaryornot/data/binary_extensions.csv",
+    "Lib/site-packages/binaryornot/data/binary_formats.csv",
+    "Lib/site-packages/binaryornot/data/encodings.csv",
+    "Lib/site-packages/binaryornot/helpers.py",
+    "Lib/site-packages/binaryornot/py.typed",
+    "Lib/site-packages/binaryornot/tree.py",
+    "Lib/site-packages/binaryornot-0.6.0.dist-info/INSTALLER",
+    "Lib/site-packages/binaryornot-0.6.0.dist-info/METADATA",
+    "Lib/site-packages/binaryornot-0.6.0.dist-info/RECORD",
+    "Lib/site-packages/binaryornot-0.6.0.dist-info/REQUESTED",
+    "Lib/site-packages/binaryornot-0.6.0.dist-info/WHEEL",
+    "Lib/site-packages/binaryornot-0.6.0.dist-info/direct_url.json",
+    "Lib/site-packages/binaryornot-0.6.0.dist-info/entry_points.txt",
+    "Lib/site-packages/binaryornot-0.6.0.dist-info/licenses/LICENSE",
+    "Lib/site-packages/binaryornot/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/binaryornot/__pycache__/__main__.cpython-312.pyc",
+    "Lib/site-packages/binaryornot/__pycache__/check.cpython-312.pyc",
+    "Lib/site-packages/binaryornot/data/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/binaryornot/__pycache__/helpers.cpython-312.pyc",
+    "Lib/site-packages/binaryornot/__pycache__/tree.cpython-312.pyc",
+    "Scripts/binaryornot-script.py",
+    "Scripts/binaryornot.exe"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/binaryornot/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "3908c7cd1d117b0b6df9c4e960a283000d97501a4b1ae51e6fd2516a4d7936ab",
+        "size_in_bytes": 95,
+        "sha256_in_prefix": "3908c7cd1d117b0b6df9c4e960a283000d97501a4b1ae51e6fd2516a4d7936ab"
+      },
+      {
+        "_path": "site-packages/binaryornot/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "38ba0e91ea0098c9c9be75cb4eece8b7f51d9543ebd7aeb96ef45732d8332043",
+        "size_in_bytes": 63,
+        "sha256_in_prefix": "38ba0e91ea0098c9c9be75cb4eece8b7f51d9543ebd7aeb96ef45732d8332043"
+      },
+      {
+        "_path": "site-packages/binaryornot/check.py",
+        "path_type": "hardlink",
+        "sha256": "dedf8489dd03e7d5cb9b6e0496cb8d3cb59327b55a41cb643c72d5fe5f8cb6e3",
+        "size_in_bytes": 1391,
+        "sha256_in_prefix": "dedf8489dd03e7d5cb9b6e0496cb8d3cb59327b55a41cb643c72d5fe5f8cb6e3"
+      },
+      {
+        "_path": "site-packages/binaryornot/data/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/binaryornot/data/binary_extensions.csv",
+        "path_type": "hardlink",
+        "sha256": "86a1b5657e3f4a6ea3e54b4f30d1a02ef0c85e187fb72fb8f1b13fb7b9575b7f",
+        "size_in_bytes": 1650,
+        "sha256_in_prefix": "86a1b5657e3f4a6ea3e54b4f30d1a02ef0c85e187fb72fb8f1b13fb7b9575b7f"
+      },
+      {
+        "_path": "site-packages/binaryornot/data/binary_formats.csv",
+        "path_type": "hardlink",
+        "sha256": "13aad5d062b1efeba232ec3df1be19d79c784b87089dfa53d8eacfcae1e143a2",
+        "size_in_bytes": 4547,
+        "sha256_in_prefix": "13aad5d062b1efeba232ec3df1be19d79c784b87089dfa53d8eacfcae1e143a2"
+      },
+      {
+        "_path": "site-packages/binaryornot/data/encodings.csv",
+        "path_type": "hardlink",
+        "sha256": "f00f3647db32bc3db084b185cba5fb9ddadfb924ae344b2b78f0a5ed6c4b9340",
+        "size_in_bytes": 3734,
+        "sha256_in_prefix": "f00f3647db32bc3db084b185cba5fb9ddadfb924ae344b2b78f0a5ed6c4b9340"
+      },
+      {
+        "_path": "site-packages/binaryornot/helpers.py",
+        "path_type": "hardlink",
+        "sha256": "daa0f5a4a1f26c8467782f15700c88e7f835598cb60d66894002a3d4ea5ab423",
+        "size_in_bytes": 9348,
+        "sha256_in_prefix": "daa0f5a4a1f26c8467782f15700c88e7f835598cb60d66894002a3d4ea5ab423"
+      },
+      {
+        "_path": "site-packages/binaryornot/py.typed",
+        "path_type": "hardlink",
+        "sha256": "f0f8f2675695a10a5156fb7bd66bafbaae6a13e8d315990af862c792175e6e67",
+        "size_in_bytes": 26,
+        "sha256_in_prefix": "f0f8f2675695a10a5156fb7bd66bafbaae6a13e8d315990af862c792175e6e67"
+      },
+      {
+        "_path": "site-packages/binaryornot/tree.py",
+        "path_type": "hardlink",
+        "sha256": "dfc9b0e600c0820593c88aab6e8c70d47bc9ed1d75a2e27cd3111d84a1f11eda",
+        "size_in_bytes": 19766,
+        "sha256_in_prefix": "dfc9b0e600c0820593c88aab6e8c70d47bc9ed1d75a2e27cd3111d84a1f11eda"
+      },
+      {
+        "_path": "site-packages/binaryornot-0.6.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc",
+        "size_in_bytes": 6,
+        "sha256_in_prefix": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc"
+      },
+      {
+        "_path": "site-packages/binaryornot-0.6.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "8887d4227a6c530f061dcde877cb5bd0562bfdb229a7f6f74b1eb6d1b0dde9f5",
+        "size_in_bytes": 2857,
+        "sha256_in_prefix": "8887d4227a6c530f061dcde877cb5bd0562bfdb229a7f6f74b1eb6d1b0dde9f5"
+      },
+      {
+        "_path": "site-packages/binaryornot-0.6.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "f4a6556cda49baff9f6f88ec119c5a6df8d4503519a70bb00be7f515c5fc4848",
+        "size_in_bytes": 1927,
+        "sha256_in_prefix": "f4a6556cda49baff9f6f88ec119c5a6df8d4503519a70bb00be7f515c5fc4848"
+      },
+      {
+        "_path": "site-packages/binaryornot-0.6.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/binaryornot-0.6.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "58b82a17209f9bf2804afe161f2632d0fde933f9bb2792fd936b2474a2e2ac2f",
+        "size_in_bytes": 87,
+        "sha256_in_prefix": "58b82a17209f9bf2804afe161f2632d0fde933f9bb2792fd936b2474a2e2ac2f"
+      },
+      {
+        "_path": "site-packages/binaryornot-0.6.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "a9d63bbfcd2339e6add4cbe7b9f0a9c778fc93ea6033e70661f88c3cdf079aa3",
+        "size_in_bytes": 122,
+        "sha256_in_prefix": "a9d63bbfcd2339e6add4cbe7b9f0a9c778fc93ea6033e70661f88c3cdf079aa3"
+      },
+      {
+        "_path": "site-packages/binaryornot-0.6.0.dist-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "65cbccecb14cc3334115b638fbc209a76b787727832f38aed961987c837235ec",
+        "size_in_bytes": 55,
+        "sha256_in_prefix": "65cbccecb14cc3334115b638fbc209a76b787727832f38aed961987c837235ec"
+      },
+      {
+        "_path": "site-packages/binaryornot-0.6.0.dist-info/licenses/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "03f46bf43c101e64af64b9f818ac9783618290f725296881759c93c92d2f7968",
+        "size_in_bytes": 1078,
+        "sha256_in_prefix": "03f46bf43c101e64af64b9f818ac9783618290f725296881759c93c92d2f7968"
+      },
+      {
+        "_path": "Lib/site-packages/binaryornot/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 241
+      },
+      {
+        "_path": "Lib/site-packages/binaryornot/__pycache__/__main__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 239
+      },
+      {
+        "_path": "Lib/site-packages/binaryornot/__pycache__/check.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 2087
+      },
+      {
+        "_path": "Lib/site-packages/binaryornot/data/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 143
+      },
+      {
+        "_path": "Lib/site-packages/binaryornot/__pycache__/helpers.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 11908
+      },
+      {
+        "_path": "Lib/site-packages/binaryornot/__pycache__/tree.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 4632
+      },
+      {
+        "_path": "Scripts/binaryornot-script.py",
+        "path_type": "windows_python_entry_point_script",
+        "size_in_bytes": 209
+      },
+      {
+        "_path": "Scripts/binaryornot.exe",
+        "path_type": "windows_python_entry_point_exe"
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\binaryornot-0.6.0-pyhcf101f3_0",
+    "type": 1
+  }
+}

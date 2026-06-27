@@ -1,0 +1,201 @@
+{
+  "name": "python-slugify",
+  "version": "8.0.4",
+  "build": "pyhd8ed1ab_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "python-slugify-8.0.4-pyhd8ed1ab_1.conda",
+  "md5": "a4059bc12930bddeb41aef71537ffaed",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/python-slugify-8.0.4-pyhd8ed1ab_1.conda",
+  "sha256": "a84f270426ae7661f79807b107dedb9829c79bd45f77a3033aa021e10556e87f",
+  "depends": [
+    "python >=3.9",
+    "text-unidecode >=1.3"
+  ],
+  "constrains": [
+    "slugify <0",
+    "unidecode >=1.1.1",
+    "awesome-slugify <0"
+  ],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1733756348000,
+  "size": 18991,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\python-slugify-8.0.4-pyhd8ed1ab_1.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\python-slugify-8.0.4-pyhd8ed1ab_1",
+  "files": [
+    "Lib/site-packages/python_slugify-8.0.4.dist-info/INSTALLER",
+    "Lib/site-packages/python_slugify-8.0.4.dist-info/LICENSE",
+    "Lib/site-packages/python_slugify-8.0.4.dist-info/METADATA",
+    "Lib/site-packages/python_slugify-8.0.4.dist-info/RECORD",
+    "Lib/site-packages/python_slugify-8.0.4.dist-info/REQUESTED",
+    "Lib/site-packages/python_slugify-8.0.4.dist-info/WHEEL",
+    "Lib/site-packages/python_slugify-8.0.4.dist-info/direct_url.json",
+    "Lib/site-packages/python_slugify-8.0.4.dist-info/entry_points.txt",
+    "Lib/site-packages/python_slugify-8.0.4.dist-info/top_level.txt",
+    "Lib/site-packages/slugify/__init__.py",
+    "Lib/site-packages/slugify/__main__.py",
+    "Lib/site-packages/slugify/__version__.py",
+    "Lib/site-packages/slugify/py.typed",
+    "Lib/site-packages/slugify/slugify.py",
+    "Lib/site-packages/slugify/special.py",
+    "Lib/site-packages/slugify/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/slugify/__pycache__/__main__.cpython-312.pyc",
+    "Lib/site-packages/slugify/__pycache__/__version__.cpython-312.pyc",
+    "Lib/site-packages/slugify/__pycache__/slugify.cpython-312.pyc",
+    "Lib/site-packages/slugify/__pycache__/special.cpython-312.pyc",
+    "Scripts/slugify-script.py",
+    "Scripts/slugify.exe"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/python_slugify-8.0.4.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5,
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8"
+      },
+      {
+        "_path": "site-packages/python_slugify-8.0.4.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "30ba4dc69a9f4dce132dd703937c7a93b573e2524604d2d5f92c5066514c0d4f",
+        "size_in_bytes": 1103,
+        "sha256_in_prefix": "30ba4dc69a9f4dce132dd703937c7a93b573e2524604d2d5f92c5066514c0d4f"
+      },
+      {
+        "_path": "site-packages/python_slugify-8.0.4.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "798a699d6e7d849fb6f5737b3a0b5b5d1c31709f3fc10e7ae4f02d707aedb6af",
+        "size_in_bytes": 8462,
+        "sha256_in_prefix": "798a699d6e7d849fb6f5737b3a0b5b5d1c31709f3fc10e7ae4f02d707aedb6af"
+      },
+      {
+        "_path": "site-packages/python_slugify-8.0.4.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "bdab7c9db8c91abd0a403908fc8de73aa6ff25488cfbb0897822e9564135a9fe",
+        "size_in_bytes": 1589,
+        "sha256_in_prefix": "bdab7c9db8c91abd0a403908fc8de73aa6ff25488cfbb0897822e9564135a9fe"
+      },
+      {
+        "_path": "site-packages/python_slugify-8.0.4.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/python_slugify-8.0.4.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "3d9504c5d7fbd548bfb28ebb417a724ae1ed0a2dfe277c2f1783912ba93f4bc5",
+        "size_in_bytes": 91,
+        "sha256_in_prefix": "3d9504c5d7fbd548bfb28ebb417a724ae1ed0a2dfe277c2f1783912ba93f4bc5"
+      },
+      {
+        "_path": "site-packages/python_slugify-8.0.4.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "dfed0b56e0420300191db267426720ca1d60ccd278a065a11b49ba33860e553e",
+        "size_in_bytes": 110,
+        "sha256_in_prefix": "dfed0b56e0420300191db267426720ca1d60ccd278a065a11b49ba33860e553e"
+      },
+      {
+        "_path": "site-packages/python_slugify-8.0.4.dist-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "b3f0719f735dda5b074d0e0f142436cf7a37c4c833413b4f3f1dd41ac52723d2",
+        "size_in_bytes": 50,
+        "sha256_in_prefix": "b3f0719f735dda5b074d0e0f142436cf7a37c4c833413b4f3f1dd41ac52723d2"
+      },
+      {
+        "_path": "site-packages/python_slugify-8.0.4.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "0fbcee47bcf1212aa50b102b94e38eb8bb1639bcf5ff78e0a2cab95e1952a5ec",
+        "size_in_bytes": 8,
+        "sha256_in_prefix": "0fbcee47bcf1212aa50b102b94e38eb8bb1639bcf5ff78e0a2cab95e1952a5ec"
+      },
+      {
+        "_path": "site-packages/slugify/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "43ef5b28242ff3db9fddb26bff21f130f84159737c602ce5c50c0afe476979f2",
+        "size_in_bytes": 346,
+        "sha256_in_prefix": "43ef5b28242ff3db9fddb26bff21f130f84159737c602ce5c50c0afe476979f2"
+      },
+      {
+        "_path": "site-packages/slugify/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "d64bfc035e5383fdfe96bc11495b87a18b80f3fca4beb6b73a1080d31628d5c6",
+        "size_in_bytes": 3961,
+        "sha256_in_prefix": "d64bfc035e5383fdfe96bc11495b87a18b80f3fca4beb6b73a1080d31628d5c6"
+      },
+      {
+        "_path": "site-packages/slugify/__version__.py",
+        "path_type": "hardlink",
+        "sha256": "0e1df2e0c9d602334919b6a8466ddd7e2cadc85fa20f977edce09f1b297ffd8f",
+        "size_in_bytes": 325,
+        "sha256_in_prefix": "0e1df2e0c9d602334919b6a8466ddd7e2cadc85fa20f977edce09f1b297ffd8f"
+      },
+      {
+        "_path": "site-packages/slugify/py.typed",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/slugify/slugify.py",
+        "path_type": "hardlink",
+        "sha256": "3103ecc34bb68362d4fbc0414fb2b40ce946b40848c68287403e1f5a5b4a9656",
+        "size_in_bytes": 6180,
+        "sha256_in_prefix": "3103ecc34bb68362d4fbc0414fb2b40ce946b40848c68287403e1f5a5b4a9656"
+      },
+      {
+        "_path": "site-packages/slugify/special.py",
+        "path_type": "hardlink",
+        "sha256": "f1b1c03c69d9fb591eb96e31d9665d15755bf4b1684bb8bd268e2dcbfd83f210",
+        "size_in_bytes": 1222,
+        "sha256_in_prefix": "f1b1c03c69d9fb591eb96e31d9665d15755bf4b1684bb8bd268e2dcbfd83f210"
+      },
+      {
+        "_path": "Lib/site-packages/slugify/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 469
+      },
+      {
+        "_path": "Lib/site-packages/slugify/__pycache__/__main__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5191
+      },
+      {
+        "_path": "Lib/site-packages/slugify/__pycache__/__version__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 516
+      },
+      {
+        "_path": "Lib/site-packages/slugify/__pycache__/slugify.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 7382
+      },
+      {
+        "_path": "Lib/site-packages/slugify/__pycache__/special.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 1171
+      },
+      {
+        "_path": "Scripts/slugify-script.py",
+        "path_type": "windows_python_entry_point_script",
+        "size_in_bytes": 208
+      },
+      {
+        "_path": "Scripts/slugify.exe",
+        "path_type": "windows_python_entry_point_exe"
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\python-slugify-8.0.4-pyhd8ed1ab_1",
+    "type": 1
+  }
+}

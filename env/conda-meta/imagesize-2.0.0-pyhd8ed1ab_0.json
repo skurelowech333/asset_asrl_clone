@@ -1,0 +1,127 @@
+{
+  "name": "imagesize",
+  "version": "2.0.0",
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "imagesize-2.0.0-pyhd8ed1ab_0.conda",
+  "md5": "92617c2ba2847cca7a6ed813b6f4ab79",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/imagesize-2.0.0-pyhd8ed1ab_0.conda",
+  "sha256": "5a047f9eac290e679b4e6f6f4cbfcc5acdfbf031a4f06824d4ddb590cdbb850b",
+  "depends": [
+    "python >=3.10"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1773752188000,
+  "size": 15729,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\imagesize-2.0.0-pyhd8ed1ab_0.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\imagesize-2.0.0-pyhd8ed1ab_0",
+  "files": [
+    "Lib/site-packages/imagesize-2.0.0.dist-info/INSTALLER",
+    "Lib/site-packages/imagesize-2.0.0.dist-info/METADATA",
+    "Lib/site-packages/imagesize-2.0.0.dist-info/RECORD",
+    "Lib/site-packages/imagesize-2.0.0.dist-info/REQUESTED",
+    "Lib/site-packages/imagesize-2.0.0.dist-info/WHEEL",
+    "Lib/site-packages/imagesize-2.0.0.dist-info/direct_url.json",
+    "Lib/site-packages/imagesize-2.0.0.dist-info/licenses/LICENSE.rst",
+    "Lib/site-packages/imagesize-2.0.0.dist-info/top_level.txt",
+    "Lib/site-packages/imagesize/__init__.py",
+    "Lib/site-packages/imagesize/imagesize.py",
+    "Lib/site-packages/imagesize/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/imagesize/__pycache__/imagesize.cpython-312.pyc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/imagesize-2.0.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5,
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8"
+      },
+      {
+        "_path": "site-packages/imagesize-2.0.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "d56afebcac05eca8ab6f88232288bb20c7e2290fb4160a94626c57b3dbecf66f",
+        "size_in_bytes": 1469,
+        "sha256_in_prefix": "d56afebcac05eca8ab6f88232288bb20c7e2290fb4160a94626c57b3dbecf66f"
+      },
+      {
+        "_path": "site-packages/imagesize-2.0.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "56b0ca967820c7cab1b17220d8130f84fd6afb1286f2a63120d21b00799ba207",
+        "size_in_bytes": 953,
+        "sha256_in_prefix": "56b0ca967820c7cab1b17220d8130f84fd6afb1286f2a63120d21b00799ba207"
+      },
+      {
+        "_path": "site-packages/imagesize-2.0.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/imagesize-2.0.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "4dd4392ed3702eec530a3831379d4081d539c3e2a407db6d98b6f38d31f4da98",
+        "size_in_bytes": 109,
+        "sha256_in_prefix": "4dd4392ed3702eec530a3831379d4081d539c3e2a407db6d98b6f38d31f4da98"
+      },
+      {
+        "_path": "site-packages/imagesize-2.0.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "320ce5451a46f6c036ab10d749b91c14d49a3b38b0ade62d607034d5a4984204",
+        "size_in_bytes": 105,
+        "sha256_in_prefix": "320ce5451a46f6c036ab10d749b91c14d49a3b38b0ade62d607034d5a4984204"
+      },
+      {
+        "_path": "site-packages/imagesize-2.0.0.dist-info/licenses/LICENSE.rst",
+        "path_type": "hardlink",
+        "sha256": "d0659c2767a164c2bf2736ee9f7bb619e0f165c89a962839de53fd5f77f62f4e",
+        "size_in_bytes": 1120,
+        "sha256_in_prefix": "d0659c2767a164c2bf2736ee9f7bb619e0f165c89a962839de53fd5f77f62f4e"
+      },
+      {
+        "_path": "site-packages/imagesize-2.0.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "fff8fa9258b3a0a09a664db55b6f9d29c400565769d28a5f1d5122122664e914",
+        "size_in_bytes": 10,
+        "sha256_in_prefix": "fff8fa9258b3a0a09a664db55b6f9d29c400565769d28a5f1d5122122664e914"
+      },
+      {
+        "_path": "site-packages/imagesize/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "34260be993d6928b56425dc7593282094fcc2b3e4232c795e553ddc57bcf892a",
+        "size_in_bytes": 148,
+        "sha256_in_prefix": "34260be993d6928b56425dc7593282094fcc2b3e4232c795e553ddc57bcf892a"
+      },
+      {
+        "_path": "site-packages/imagesize/imagesize.py",
+        "path_type": "hardlink",
+        "sha256": "9c43575559e74010295c37a3253c01687b7c82cdbc5116656a3fa32747a1d312",
+        "size_in_bytes": 33030,
+        "sha256_in_prefix": "9c43575559e74010295c37a3253c01687b7c82cdbc5116656a3fa32747a1d312"
+      },
+      {
+        "_path": "Lib/site-packages/imagesize/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 313
+      },
+      {
+        "_path": "Lib/site-packages/imagesize/__pycache__/imagesize.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 37751
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\imagesize-2.0.0-pyhd8ed1ab_0",
+    "type": 1
+  }
+}

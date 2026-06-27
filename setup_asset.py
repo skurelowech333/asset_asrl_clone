@@ -11,6 +11,9 @@ REPO_ROOT = Path(__file__).resolve().parent
 ENV_PATH = REPO_ROOT / "env"
 
 
+# -------------------------
+# COLORS
+# -------------------------
 class C:
     RESET = "\033[0m"
     BOLD = "\033[1m"
@@ -21,240 +24,216 @@ class C:
     CYAN = "\033[96m"
 
 
-def ok(msg): 
-    print(f"{C.GREEN}[OK]{C.RESET} {msg}")
-    
-def warn(msg): 
-    print(f"{C.YELLOW}[WARN]{C.RESET} {msg}")
-    
-def err(msg): 
-    print(f"{C.RED}[ERROR]{C.RESET} {msg}")
-    
-def info(msg): 
-    print(f"{C.CYAN}[INFO]{C.RESET} {msg}")
-    
-def title(msg): 
-    print(f"\n{C.BOLD}{C.BLUE}{msg}{C.RESET}")
+def ok(msg): print(f"{C.GREEN}[OK]{C.RESET} {msg}")
+def warn(msg): print(f"{C.YELLOW}[WARN]{C.RESET} {msg}")
+def err(msg): print(f"{C.RED}[ERROR]{C.RESET} {msg}")
+def info(msg): print(f"{C.CYAN}[INFO]{C.RESET} {msg}")
+def title(msg): print(f"\n{C.BOLD}{C.BLUE}{msg}{C.RESET}")
 
 
+# -------------------------
+# RUNNER
+# -------------------------
 def run(cmd, desc=None):
     if desc:
         info(desc)
 
     start = time.time()
+
     p = subprocess.Popen(
         cmd,
         shell=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
-        text=True,
-        bufsize=1
+        text=True
     )
 
     for line in p.stdout:
-        print(line, end="")  # live stream
+        print(line, end="")
 
-    success = p.wait() == 0
-    elapsed = time.time() - start
-    
-    if success and desc:
-        ok(f"Completed in {elapsed:.1f}s")
-    elif not success:
-        err(f"Failed after {elapsed:.1f}s")
-    
+    success = (p.wait() == 0)
+    dt = time.time() - start
+
+    if success:
+        ok(f"done in {dt:.1f}s")
+    else:
+        err(f"failed in {dt:.1f}s")
+
     return success
 
 
+def run_strict(cmd, desc=None):
+    if not run(cmd, desc):
+        sys.exit(1)
+
+
+# -------------------------
+# CHECKS
+# -------------------------
 def conda_exists():
-    """Check if conda is available"""
-    try:
-        result = subprocess.run(
-            "conda --version",
-            shell=True,
-            capture_output=True,
-            timeout=5,
-            text=True
-        )
-        return result.returncode == 0
-    except (subprocess.TimeoutExpired, FileNotFoundError):
-        return False
+    return shutil.which("conda") is not None
 
 
 def env_exists():
     return ENV_PATH.exists()
 
 
-def delete_env():
-    warn("Deleting existing environment")
-
-    run(f'conda env remove -p "{ENV_PATH}" -y', "Removing conda env")
-    shutil.rmtree(ENV_PATH, ignore_errors=True)
-
-    ok("Environment deleted")
-    
-
-def create_env():
-    return run(
-        f'conda create -y --prefix "{ENV_PATH}" python={PY_VERSION}',
-        "Creating fresh environment"
-    )
-
-
-def rebuild_env_if_needed():
-    """Only rebuild if the environment doesn't exist or is corrupted"""
+# -------------------------
+# ENV
+# -------------------------
+def setup_env():
     title("ENV SETUP")
-    
-    if env_exists():
-        ok("Environment already exists, skipping rebuild")
-        return True
-    
-    info("Creating fresh environment")
-    return create_env()
-    
 
-def pip(cmd, desc=None):
-    return run(
-        f'conda run -p "{ENV_PATH}" python -m pip {cmd}',
-        desc
+    if not env_exists():
+        run_strict(
+            f'conda create -y --prefix "{ENV_PATH}" python={PY_VERSION}',
+            "Creating env"
+        )
+    else:
+        ok("env exists")
+
+
+# -------------------------
+# SUBMODULES (CRITICAL FIX)
+# -------------------------
+def init_submodules():
+    title("SUBMODULES")
+
+    run_strict("git submodule sync --recursive", "sync submodules")
+    run_strict("git submodule update --init --recursive", "update submodules")
+
+    ok("submodules ready")
+
+
+# -------------------------
+# CORE DEPENDENCIES
+# -------------------------
+def install_deps():
+    title("DEPENDENCIES")
+
+    run_strict(
+        f'conda run -p "{ENV_PATH}" python -m pip install --upgrade pip setuptools wheel',
+        "upgrading pip tooling"
+    )
+
+    run_strict(
+        f'conda run -p "{ENV_PATH}" python -m pip install '
+        "cmake ninja cython scikit-build-core",
+        "installing build tools"
+    )
+
+    # MKL optional but OK
+    run_strict(
+        f'conda install -y -p "{ENV_PATH}" -c conda-forge mkl intel-openmp',
+        "installing MKL"
     )
 
 
-def pip_install_batch(packages, desc=None):
-    """Install multiple packages in a single pip call for better performance"""
-    cmd = "install " + " ".join(packages)
-    return pip(cmd, desc)
+def build_asset():
+    title("BUILDING ASSET (CYTHON + C++)")
+
+    run_strict(
+        f'conda run -p "{ENV_PATH}" python -m pip install '
+        f'-e "{REPO_ROOT}" --no-build-isolation',
+        "compiling ASSET (pyx + C++ extensions)"
+    )
+
+    ok("ASSET build complete")
 
 
-def init_submodules():
-    title("INITIALIZING GIT SUBMODULES")
+# -------------------------
+# SPYDER KERNEL
+# -------------------------
+def install_kernel():
+    title("SPYDER KERNEL")
+
+    run_strict(
+        f'conda run -p "{ENV_PATH}" python -m pip install spyder-kernels==3.1.*',
+        "installing kernel"
+    )
     
-    # Check if submodules are configured
+def build_cython_extensions():
+    """Compile Cython extensions (.pyx files to .pyd/.so)"""
+    title("BUILDING CYTHON EXTENSIONS")
+    
+    info("Compiling Cython modules in asset_asrl/Forces/")
+    
+    # Run setup.py build_ext in-place to compile .pyx files
+    build_cmd = f'conda run -p "{ENV_PATH}" python setup.py build_ext --inplace'
+    
+    if not run(build_cmd, "Building Cython extensions"):
+        warn("Cython build had issues, but continuing with pure Python fallback...")
+        return False
+    
+    ok("Cython extensions built successfully")
+    return True
+
+
+# -------------------------
+# OVERLAY
+# -------------------------
+def setup_overlay():
+    title("OVERLAY")
+
+    site_cmd = "import site; print(site.getsitepackages()[0])"
+
     result = subprocess.run(
-        "git config --file .gitmodules --get-regexp path",
+        f'conda run -p "{ENV_PATH}" python -c "{site_cmd}"',
         shell=True,
         capture_output=True,
         text=True
     )
-    
-    if not result.stdout.strip():
-        ok("No submodules configured")
-        return True
-    
-    # Initialize and update submodules in one call
-    if not run("git submodule update --init --recursive", 
-               "Initializing and updating submodules"):
-        err("Failed to update submodules")
-        return False
-    
-    ok("Submodules initialized and updated successfully")
-    return True
+
+    site_packages = Path(result.stdout.strip())
+
+    with open(site_packages / "asset_asrl_local.pth", "w") as f:
+        f.write(str(REPO_ROOT))
+
+    ok("overlay injected")
 
 
-def verify_installation():
-    """Verify that asset_asrl.Forces can be imported"""
-    title("VERIFYING INSTALLATION")
-    
-    verify_cmd = (
-        f'conda run -p "{ENV_PATH}" python -c '
-        '"from asset_asrl.Forces.Gravity import GravityVF; print(\'Forces module loaded successfully\')"'
+# -------------------------
+# VERIFY
+# -------------------------
+def verify():
+    title("VERIFY")
+
+    cmd = """
+import asset_asrl
+import asset_asrl.Forces
+from asset_asrl.Forces.Gravity import GravityVF
+print("FORCES OK")
+"""
+
+    return run(
+        f'conda run -p "{ENV_PATH}" python -c "{cmd}"',
+        "final verification"
     )
-    
-    result = subprocess.run(verify_cmd, shell=True, capture_output=True, text=True)
-    
-    if result.returncode == 0:
-        ok("asset_asrl.Forces module verified")
-        return True
-    else:
-        warn("Asset Forces module verification failed")
-        warn("This may be due to missing build dependencies")
-        if result.stderr:
-            print(f"Error: {result.stderr}")
-        return False
 
 
-def print_interpreter_instructions():
-    title("PYTHON INTERPRETER SETUP (IMPORTANT)")
-
-    python_path = ENV_PATH / "python.exe"
-
-    print(f"""
-        {C.CYAN}STEP 1:{C.RESET}
-            Open Spyder
-        
-        {C.CYAN}STEP 2:{C.RESET}
-            Go to:
-                Tools → Preferences → Python Interpreter
-        
-        {C.CYAN}STEP 3:{C.RESET}
-            Select:
-                {python_path}
-        
-        {C.CYAN}STEP 4:{C.RESET}
-            Restart kernel
-        
-        {C.CYAN}STEP 5:{C.RESET}
-            Verify inside Spyder:
-                import sys
-                print(sys.executable)
-        
-            It MUST show:
-                {python_path}
-        """)
-
+# -------------------------
+# MAIN
+# -------------------------
 if __name__ == "__main__":
 
-    print(f"{C.BOLD}{C.BLUE}\nASSET Setup\n{C.RESET}")
+    print(f"{C.BOLD}{C.BLUE}ASSET SETUP (FIXED BUILD PIPELINE){C.RESET}")
 
     if not conda_exists():
-        err("Conda not found")
+        err("conda missing")
         sys.exit(1)
 
-    ok("Conda detected")
+    setup_env()
+    init_submodules()
+    install_deps()
+    build_cython_extensions()
+    build_asset()
 
-    rebuild_env_if_needed()
-    
-    if not init_submodules():
-        err("Submodule initialization failed")
-        sys.exit(1)
+    install_kernel()
+    setup_overlay()
 
-    title("INSTALLING DEPENDENCIES")
-
-    # Batch install all dependencies in one call for speed
-    pip_install_batch([
-        "--upgrade",
-        "pip",
-        "setuptools>=62.0",
-        "wheel",
-        "ninja",
-        "cmake>=3.16",
-        "cython>=0.29.0",
-        "spyder",
-        "spyder-kernels",
-        "asset-asrl",
-    ], "Installing core dependencies")
-    
-    title("BUILDING AND INSTALLING LOCAL PACKAGE")
-    
-    # Install local package in editable mode with verbose output to catch build errors
-    if not pip("install -e . --verbose --no-cache-dir", "Installing repo (editable mode with build)"):
-        warn("Local package installation had issues, but continuing...")
-    
-    title("VERIFYING INSTALLATION")
-    
-    # Verify the installation
-    if verify_installation():
-        title("DONE")
-        ok("Setup complete - asset_asrl.Forces verified")
+    if verify():
+        title("SUCCESS")
+        ok("ASSET READY")
     else:
-        title("SETUP COMPLETE (WITH WARNINGS)")
-        warn("Setup completed but asset_asrl.Forces could not be verified")
-        warn("This may require manual build steps or additional system dependencies")
-        print(f"\n{C.YELLOW}Troubleshooting steps:{C.RESET}")
-        print("1. Ensure you have a C++17 compiler installed (MSVC, GCC, or Clang)")
-        print("2. Verify CMake is installed: conda list cmake")
-        print("3. Check Intel MKL: conda list mkl")
-        print("4. Try manual rebuild: conda run -p <env_path> pip install -e . --verbose\n")
-    
-    print_interpreter_instructions()
-
-    print(f"\nInterpreter:\n{ENV_PATH / 'python.exe'}\n")
+        title("FAILED")
+        warn("check build logs")

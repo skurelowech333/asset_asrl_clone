@@ -1,0 +1,191 @@
+{
+  "name": "diff-match-patch",
+  "version": "20241021",
+  "build": "pyhd8ed1ab_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "diff-match-patch-20241021-pyhd8ed1ab_1.conda",
+  "md5": "b132505f3e484a9519370e867842ba24",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/diff-match-patch-20241021-pyhd8ed1ab_1.conda",
+  "sha256": "6122688de2d28c7beb479126ffb6bed38b1a06db48b461156d57f3e88f0b4a4a",
+  "depends": [
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "Apache-2.0",
+  "package_type": "noarch_python",
+  "timestamp": 1734637659000,
+  "size": 41859,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\diff-match-patch-20241021-pyhd8ed1ab_1.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\diff-match-patch-20241021-pyhd8ed1ab_1",
+  "files": [
+    "Lib/site-packages/diff_match_patch-20241021.dist-info/INSTALLER",
+    "Lib/site-packages/diff_match_patch-20241021.dist-info/LICENSE",
+    "Lib/site-packages/diff_match_patch-20241021.dist-info/METADATA",
+    "Lib/site-packages/diff_match_patch-20241021.dist-info/RECORD",
+    "Lib/site-packages/diff_match_patch-20241021.dist-info/REQUESTED",
+    "Lib/site-packages/diff_match_patch-20241021.dist-info/WHEEL",
+    "Lib/site-packages/diff_match_patch-20241021.dist-info/direct_url.json",
+    "Lib/site-packages/diff_match_patch/__init__.py",
+    "Lib/site-packages/diff_match_patch/__version__.py",
+    "Lib/site-packages/diff_match_patch/diff_match_patch.py",
+    "Lib/site-packages/diff_match_patch/tests/__init__.py",
+    "Lib/site-packages/diff_match_patch/tests/diff_match_patch_test.py",
+    "Lib/site-packages/diff_match_patch/tests/speedtest.py",
+    "Lib/site-packages/diff_match_patch/tests/speedtest1.txt",
+    "Lib/site-packages/diff_match_patch/tests/speedtest2.txt",
+    "Lib/site-packages/diff_match_patch/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/diff_match_patch/__pycache__/__version__.cpython-312.pyc",
+    "Lib/site-packages/diff_match_patch/__pycache__/diff_match_patch.cpython-312.pyc",
+    "Lib/site-packages/diff_match_patch/tests/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/diff_match_patch/tests/__pycache__/diff_match_patch_test.cpython-312.pyc",
+    "Lib/site-packages/diff_match_patch/tests/__pycache__/speedtest.cpython-312.pyc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/diff_match_patch-20241021.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5,
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8"
+      },
+      {
+        "_path": "site-packages/diff_match_patch-20241021.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "size_in_bytes": 11358,
+        "sha256_in_prefix": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "_path": "site-packages/diff_match_patch-20241021.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "ab129c55e6883d3667c6218e1d1825f59d4a0ebb0de90f14db4739864cc30cec",
+        "size_in_bytes": 5463,
+        "sha256_in_prefix": "ab129c55e6883d3667c6218e1d1825f59d4a0ebb0de90f14db4739864cc30cec"
+      },
+      {
+        "_path": "site-packages/diff_match_patch-20241021.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "c94e56532fa1dc3cd7c529de3601bd0bd1e3532c4b371307d2539564d9b3a38f",
+        "size_in_bytes": 1783,
+        "sha256_in_prefix": "c94e56532fa1dc3cd7c529de3601bd0bd1e3532c4b371307d2539564d9b3a38f"
+      },
+      {
+        "_path": "site-packages/diff_match_patch-20241021.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/diff_match_patch-20241021.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "0a950253178741b44de54191407611268acee407fe432fdf1cc72d710f034862",
+        "size_in_bytes": 82,
+        "sha256_in_prefix": "0a950253178741b44de54191407611268acee407fe432fdf1cc72d710f034862"
+      },
+      {
+        "_path": "site-packages/diff_match_patch-20241021.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "3ed0a1b71187be2186e2c0e0ebbe37fb6e542425440e5a28cadb7e322afb7cc6",
+        "size_in_bytes": 112,
+        "sha256_in_prefix": "3ed0a1b71187be2186e2c0e0ebbe37fb6e542425440e5a28cadb7e322afb7cc6"
+      },
+      {
+        "_path": "site-packages/diff_match_patch/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "8ca504bf886e3b7eba9ffde6e9cf2b7a58eb51a8cad46eae6a13e73cb88dd0ca",
+        "size_in_bytes": 322,
+        "sha256_in_prefix": "8ca504bf886e3b7eba9ffde6e9cf2b7a58eb51a8cad46eae6a13e73cb88dd0ca"
+      },
+      {
+        "_path": "site-packages/diff_match_patch/__version__.py",
+        "path_type": "hardlink",
+        "sha256": "681b782269688ffecde257236d62e0fe242001a01002fb3c3a814d58f0f10bcb",
+        "size_in_bytes": 159,
+        "sha256_in_prefix": "681b782269688ffecde257236d62e0fe242001a01002fb3c3a814d58f0f10bcb"
+      },
+      {
+        "_path": "site-packages/diff_match_patch/diff_match_patch.py",
+        "path_type": "hardlink",
+        "sha256": "c5aecc2945441f53cdfe413b59c23e88eb43bfa61e444ca8ff0eee5823232a71",
+        "size_in_bytes": 80575,
+        "sha256_in_prefix": "c5aecc2945441f53cdfe413b59c23e88eb43bfa61e444ca8ff0eee5823232a71"
+      },
+      {
+        "_path": "site-packages/diff_match_patch/tests/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "d65a7219c1a1ca5612eb0aed21ba8fc5345f1e03bd6772d0c818ed9a7ee9b356",
+        "size_in_bytes": 66,
+        "sha256_in_prefix": "d65a7219c1a1ca5612eb0aed21ba8fc5345f1e03bd6772d0c818ed9a7ee9b356"
+      },
+      {
+        "_path": "site-packages/diff_match_patch/tests/diff_match_patch_test.py",
+        "path_type": "hardlink",
+        "sha256": "9898a0aa24833793190fa63f7e2f41ce25b8903bd8d0078854eb8bcdf5663699",
+        "size_in_bytes": 57365,
+        "sha256_in_prefix": "9898a0aa24833793190fa63f7e2f41ce25b8903bd8d0078854eb8bcdf5663699"
+      },
+      {
+        "_path": "site-packages/diff_match_patch/tests/speedtest.py",
+        "path_type": "hardlink",
+        "sha256": "5278a2be915403d9a54592db2e1eb581f37fad67ce3b4ecc819b4b52067f0e55",
+        "size_in_bytes": 1438,
+        "sha256_in_prefix": "5278a2be915403d9a54592db2e1eb581f37fad67ce3b4ecc819b4b52067f0e55"
+      },
+      {
+        "_path": "site-packages/diff_match_patch/tests/speedtest1.txt",
+        "path_type": "hardlink",
+        "sha256": "92a6f5c3992d98632eea7a6c6261cf1a26ae484b34358778b774a2d58fd356d3",
+        "size_in_bytes": 12979,
+        "sha256_in_prefix": "92a6f5c3992d98632eea7a6c6261cf1a26ae484b34358778b774a2d58fd356d3"
+      },
+      {
+        "_path": "site-packages/diff_match_patch/tests/speedtest2.txt",
+        "path_type": "hardlink",
+        "sha256": "8d106ddba8bd4a85a8bb4b59e481b88f536de98046dc8e4f76f7551c265c5dd3",
+        "size_in_bytes": 11918,
+        "sha256_in_prefix": "8d106ddba8bd4a85a8bb4b59e481b88f536de98046dc8e4f76f7551c265c5dd3"
+      },
+      {
+        "_path": "Lib/site-packages/diff_match_patch/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 499
+      },
+      {
+        "_path": "Lib/site-packages/diff_match_patch/__pycache__/__version__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 323
+      },
+      {
+        "_path": "Lib/site-packages/diff_match_patch/__pycache__/diff_match_patch.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 67205
+      },
+      {
+        "_path": "Lib/site-packages/diff_match_patch/tests/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 249
+      },
+      {
+        "_path": "Lib/site-packages/diff_match_patch/tests/__pycache__/diff_match_patch_test.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 72733
+      },
+      {
+        "_path": "Lib/site-packages/diff_match_patch/tests/__pycache__/speedtest.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 1943
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\diff-match-patch-20241021-pyhd8ed1ab_1",
+    "type": 1
+  }
+}

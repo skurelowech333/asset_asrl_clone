@@ -1,0 +1,44 @@
+{
+  "name": "python-lsp-server",
+  "version": "1.12.2",
+  "build": "pyhff2d567_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "python-lsp-server-1.12.2-pyhff2d567_0.conda",
+  "md5": "8eeb18da2803dd64c190e07b7b2f9724",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/python-lsp-server-1.12.2-pyhff2d567_0.conda",
+  "sha256": "4fba42c45c8eda9666a26d447e7e4a64a95c6b7d28948e1fab8416229db9905d",
+  "depends": [
+    "autopep8 >=2.0.4,<2.1.0",
+    "flake8 >=7.1.0,<8.0.0",
+    "mccabe >=0.7.0,<0.8.0",
+    "pycodestyle >=2.12.0,<2.13.0",
+    "pydocstyle >=6.3.0,<6.4.0",
+    "pyflakes >=3.2.0,<3.3.0",
+    "pylint >=3.1.0,<4.0.0",
+    "python >=3.9",
+    "python-lsp-server-base 1.12.2 pyhd8ed1ab_0",
+    "rope >=1.11.0",
+    "whatthepatch >=1.0.2,<2.0.0",
+    "yapf >=0.33.0"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1739028481000,
+  "size": 7292,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\python-lsp-server-1.12.2-pyhff2d567_0.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\python-lsp-server-1.12.2-pyhff2d567_0",
+  "files": [],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": []
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\python-lsp-server-1.12.2-pyhff2d567_0",
+    "type": 1
+  }
+}

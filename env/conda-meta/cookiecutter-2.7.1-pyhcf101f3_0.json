@@ -1,0 +1,2051 @@
+{
+  "name": "cookiecutter",
+  "version": "2.7.1",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "cookiecutter-2.7.1-pyhcf101f3_0.conda",
+  "md5": "99d0a571c453f147f32426905f976dea",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/cookiecutter-2.7.1-pyhcf101f3_0.conda",
+  "sha256": "4a8f3d2ca173925e4cf87b2d0ebd96ff4a9b6f25115cde0f1563eaf52f45f75a",
+  "depends": [
+    "arrow",
+    "binaryornot >=0.4.4",
+    "click >=7.0,<9.0.0",
+    "jinja2 >=2.7,<4.0.0",
+    "python >=3.10",
+    "python-slugify >=4.0.0",
+    "pyyaml >=5.3.1",
+    "requests >=2.23.0",
+    "rich",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1772630675000,
+  "size": 113921,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\cookiecutter-2.7.1-pyhcf101f3_0.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\cookiecutter-2.7.1-pyhcf101f3_0",
+  "files": [
+    "etc/conda/test-files/cookiecutter/1/pyproject.toml",
+    "etc/conda/test-files/cookiecutter/1/tests/__init__.py",
+    "etc/conda/test-files/cookiecutter/1/tests/conftest.py",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates/fake-package/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates/fake-project/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates-old-style/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates-old-style/fake-package/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo/fake-project/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-bad/no-project-in-here.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-bad-json/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-bad-json/{{cookiecutter.repo_name}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-dict/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-dict/{{cookiecutter.project_slug}}/README.md",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-dir/my-dir/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-dir/my-dir/{{cookiecutter.repo_name}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre/{{cookiecutter.repo_name}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre2/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre2/whatever.some.thing",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre2/{%{cookiecutter.repo_name}%}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-replay/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-replay/{{cookiecutter.repo_name}}/README.md",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-tmpl/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-tmpl/{{cookiecutter.repo_name}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-tmpl-_cookiecutter/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/fake-repo-tmpl-_cookiecutter/{{cookiecutter.repo_name}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/files/bad-zip-file.zip",
+    "etc/conda/test-files/cookiecutter/1/tests/files/empty.zip",
+    "etc/conda/test-files/cookiecutter/1/tests/files/fake-repo-tmpl.zip",
+    "etc/conda/test-files/cookiecutter/1/tests/files/not-a-repo.zip",
+    "etc/conda/test-files/cookiecutter/1/tests/files/protected-fake-repo-tmpl.zip",
+    "etc/conda/test-files/cookiecutter/1/tests/files/syntax_error.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/files/unicode.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/files/{% if cookiecutter.generate_file == 'y' %}cheese.txt{% endif %}",
+    "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.generate_file}}.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.generate_file}}_crlf_newlines.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.generate_file}}_lf_newlines.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.jsonify_file}}.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.random_string_file}}.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/hooks-abort-render/hooks/post_gen_project.py",
+    "etc/conda/test-files/cookiecutter/1/tests/hooks-abort-render/hooks/pre_gen_project.py",
+    "etc/conda/test-files/cookiecutter/1/tests/hooks-abort-render/{{cookiecutter.repo_dir}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/replay/conftest.py",
+    "etc/conda/test-files/cookiecutter/1/tests/replay/test_dump.py",
+    "etc/conda/test-files/cookiecutter/1/tests/replay/test_load.py",
+    "etc/conda/test-files/cookiecutter/1/tests/replay/test_replay.py",
+    "etc/conda/test-files/cookiecutter/1/tests/repository/test_abbreviation_expansion.py",
+    "etc/conda/test-files/cookiecutter/1/tests/repository/test_determine_repo_dir_clones_repo.py",
+    "etc/conda/test-files/cookiecutter/1/tests/repository/test_determine_repo_dir_finds_existing_cookiecutter.py",
+    "etc/conda/test-files/cookiecutter/1/tests/repository/test_determine_repo_dir_finds_subdirectories.py",
+    "etc/conda/test-files/cookiecutter/1/tests/repository/test_determine_repository_should_use_local_repo.py",
+    "etc/conda/test-files/cookiecutter/1/tests/repository/test_is_repo_url.py",
+    "etc/conda/test-files/cookiecutter/1/tests/repository/test_repository_has_cookiecutter_json.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-config/config-expand-user.yaml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-config/config-expand-vars.yaml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-config/empty-config.yaml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-config/invalid-config-w-array.yaml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-config/invalid-config-w-multiple-docs.yaml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-config/invalid-config.yaml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-config/valid-config.yaml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-config/valid-partial-config.yaml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-post/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-post/hooks/post_gen_project.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-post/{{cookiecutter.project_slug}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-pre/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-pre/hooks/pre_gen_project.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-pre/{{cookiecutter.project_slug}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/default/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/default/{{cookiecutter.project_slug}}/HISTORY.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/default/{{cookiecutter.project_slug}}/id",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/hello_extension/__init__.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/hello_extension/hello_extension.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/local_extension/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/local_extension/local_extensions/__init__.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/local_extension/local_extensions/main.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/local_extension/{{cookiecutter.project_slug}}/HISTORY.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/unknown/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-extensions/unknown/{{cookiecutter.project_slug}}/HISTORY.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/.DS_Store",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/logo.png",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/readme.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/some_font.otf",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/.DS_Store",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/logo.png",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/readme.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/some_font.otf",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/logo.png",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/choices_template.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/invalid-syntax.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/nested_dict.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/nested_dict_additional.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/non_ascii.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/test.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/README.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/rendered/not_rendered.yml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-not-rendered/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.md",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/README.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/rendered/not_rendered.yml",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-not-rendered/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.md",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files/input{{cookiecutter.food}}/simple-with-conditions.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files/input{{cookiecutter.food}}/simple-with-newline-crlf.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files/input{{cookiecutter.food}}/simple-with-newline.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files/input{{cookiecutter.food}}/simple.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-line-end/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-line-end/{{cookiecutter.test_name}}/folder/in_folder.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-line-end/{{cookiecutter.test_name}}/something.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-line-end/{{cookiecutter.test_name}}/{{cookiecutter.folder_name}}/{{cookiecutter.filename}}.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-nontemplated/input/simple.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-permissions/input{{cookiecutter.permissions}}/script.sh",
+    "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-permissions/input{{cookiecutter.permissions}}/simple.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-output-folder/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-output-folder/{{cookiecutter.test_name}}/folder/in_folder.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-output-folder/{{cookiecutter.test_name}}/something.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-output-folder/{{cookiecutter.test_name}}/{{cookiecutter.folder_name}}/{{cookiecutter.filename}}.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/hooks/post_gen_project.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/hooks/pre_gen_project.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/hooks/pre_prompt.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/input{{cookiecutter.pyhooks}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/post_gen_project.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/post_gen_project.sh",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/pre_gen_project.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/pre_gen_project.sh",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/pre_prompt.sh",
+    "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/input{{pyshellhooks}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-replay/cookiedozer_load.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-replay/invalid_replay.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-replay/valid_replay.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks/hooks/post_gen_project.sh",
+    "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks/hooks/pre_gen_project.sh",
+    "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks/input{{cookiecutter.shellhooks}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-empty/hooks/pre_gen_project.sh",
+    "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-empty/input{{cookiecutter.shellhooks}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-win/hooks/post_gen_project.bat",
+    "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-win/hooks/pre_gen_project.bat",
+    "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-win/input{{cookiecutter.shellhooks}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/templates/base-requirements.jinja",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/templates/click-requirements.jinja",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/templates/pytest-requirements.jinja",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/{{cookiecutter.project_slug}}/requirements.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/include/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/include/templates/click-requirements.jinja",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/include/templates/pytest-requirements.jinja",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/include/{{cookiecutter.project_slug}}/requirements.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/no-templates/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/no-templates/{{cookiecutter.project_slug}}/requirements.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/templates/base-requirements.jinja",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/templates/click-requirements.jinja",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/templates/pytest-requirements.jinja",
+    "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/{{cookiecutter.project_slug}}/requirements.txt",
+    "etc/conda/test-files/cookiecutter/1/tests/test_abort_generate_on_hook_error.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_cli.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_cookiecutter_invocation.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_cookiecutter_local_no_input.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_cookiecutter_local_with_input.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_cookiecutter_nested_templates.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_custom_extensions_in_hooks.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_default_extensions.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_environment.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_exceptions.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_find.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_generate_context.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_generate_copy_without_render.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_generate_copy_without_render_override.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_generate_file.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_generate_files.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_generate_hooks.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_get_config.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_get_user_config.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_hooks.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_log.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_main.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_output_folder.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_pre_prompt_hooks.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_preferred_encoding.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_prompt.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_read_repo_password.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_read_user_choice.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_read_user_dict.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_read_user_variable.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_read_user_yes_no.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_repo_not_found.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_specify_output_dir.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_templates.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_time_extension.py",
+    "etc/conda/test-files/cookiecutter/1/tests/test_utils.py",
+    "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/dir-name/{{cookiecutter.project_slug}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/dir-name/{{cookiecutter.project_slug}}/{{cookiecutter.foobar}}/helloworld.py",
+    "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/file-content/{{cookiecutter.project_slug}}/README.rst",
+    "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/file-name/cookiecutter.json",
+    "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/file-name/{{cookiecutter.project_slug}}/{{cookiecutter.foobar}}",
+    "etc/conda/test-files/cookiecutter/1/tests/vcs/test_clone.py",
+    "etc/conda/test-files/cookiecutter/1/tests/vcs/test_identify_repo.py",
+    "etc/conda/test-files/cookiecutter/1/tests/vcs/test_is_vcs_installed.py",
+    "etc/conda/test-files/cookiecutter/1/tests/zipfile/test_unzip.py",
+    "Lib/site-packages/cookiecutter/__init__.py",
+    "Lib/site-packages/cookiecutter/__main__.py",
+    "Lib/site-packages/cookiecutter/cli.py",
+    "Lib/site-packages/cookiecutter/config.py",
+    "Lib/site-packages/cookiecutter/environment.py",
+    "Lib/site-packages/cookiecutter/exceptions.py",
+    "Lib/site-packages/cookiecutter/extensions.py",
+    "Lib/site-packages/cookiecutter/find.py",
+    "Lib/site-packages/cookiecutter/generate.py",
+    "Lib/site-packages/cookiecutter/hooks.py",
+    "Lib/site-packages/cookiecutter/log.py",
+    "Lib/site-packages/cookiecutter/main.py",
+    "Lib/site-packages/cookiecutter/prompt.py",
+    "Lib/site-packages/cookiecutter/replay.py",
+    "Lib/site-packages/cookiecutter/repository.py",
+    "Lib/site-packages/cookiecutter/utils.py",
+    "Lib/site-packages/cookiecutter/vcs.py",
+    "Lib/site-packages/cookiecutter/zipfile.py",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/INSTALLER",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/METADATA",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/RECORD",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/REQUESTED",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/WHEEL",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/direct_url.json",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/entry_points.txt",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/licenses/AUTHORS.md",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/licenses/LICENSE",
+    "Lib/site-packages/cookiecutter-2.7.1.dist-info/top_level.txt",
+    "Lib/site-packages/cookiecutter/__pycache__/__init__.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/__main__.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/cli.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/config.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/environment.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/exceptions.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/extensions.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/find.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/generate.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/hooks.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/log.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/main.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/prompt.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/replay.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/repository.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/utils.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/vcs.cpython-312.pyc",
+    "Lib/site-packages/cookiecutter/__pycache__/zipfile.cpython-312.pyc",
+    "Scripts/cookiecutter-script.py",
+    "Scripts/cookiecutter.exe"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/pyproject.toml",
+        "path_type": "hardlink",
+        "sha256": "15b06be7905c965fddf24d20767c04be81dd9249c8ac865aef72aeaae5b986c2",
+        "size_in_bytes": 6224,
+        "sha256_in_prefix": "15b06be7905c965fddf24d20767c04be81dd9249c8ac865aef72aeaae5b986c2"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "6e59860be9d260d673b7e6e7b5bc09893b565f3965eabb5a64b2325c563e2f9f",
+        "size_in_bytes": 38,
+        "sha256_in_prefix": "6e59860be9d260d673b7e6e7b5bc09893b565f3965eabb5a64b2325c563e2f9f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/conftest.py",
+        "path_type": "hardlink",
+        "sha256": "6769347d161435a6024ae7abc5a3f839effe2f103e239c5c108803979095f10f",
+        "size_in_bytes": 7551,
+        "sha256_in_prefix": "6769347d161435a6024ae7abc5a3f839effe2f103e239c5c108803979095f10f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "35348364c323e7acd0987d52198ee9f3b0d3b253c05152e36fb3f41c40d5046e",
+        "size_in_bytes": 334,
+        "sha256_in_prefix": "35348364c323e7acd0987d52198ee9f3b0d3b253c05152e36fb3f41c40d5046e"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates/fake-package/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "size_in_bytes": 3,
+        "sha256_in_prefix": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates/fake-project/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "size_in_bytes": 3,
+        "sha256_in_prefix": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates-old-style/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "4eb9b185dea05eb904d69dc0b6222bcb56244efa308075f0839b203e57607b6d",
+        "size_in_bytes": 203,
+        "sha256_in_prefix": "4eb9b185dea05eb904d69dc0b6222bcb56244efa308075f0839b203e57607b6d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-nested-templates-old-style/fake-package/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+        "size_in_bytes": 3,
+        "sha256_in_prefix": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo/fake-project/README.rst",
+        "path_type": "hardlink",
+        "sha256": "67de7e5c6baf998cbb1d6159ca4215ab12cd77df3bfbaa8764d15de95a22a33f",
+        "size_in_bytes": 49,
+        "sha256_in_prefix": "67de7e5c6baf998cbb1d6159ca4215ab12cd77df3bfbaa8764d15de95a22a33f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-bad/no-project-in-here.txt",
+        "path_type": "hardlink",
+        "sha256": "399dd32818af68d69ca06f9de1d3d50ebfd18e92164fdd050dfaa3715f7bd518",
+        "size_in_bytes": 10,
+        "sha256_in_prefix": "399dd32818af68d69ca06f9de1d3d50ebfd18e92164fdd050dfaa3715f7bd518"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-bad-json/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "0fbe8028633617b4c7b2662ccf89a4db682890c698008def89b4d63a2856d745",
+        "size_in_bytes": 33,
+        "sha256_in_prefix": "0fbe8028633617b4c7b2662ccf89a4db682890c698008def89b4d63a2856d745"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-bad-json/{{cookiecutter.repo_name}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "77a3348126fd4cefe2867cf0012aa697608a44dbeb741c730204251f9fdc5e5b",
+        "size_in_bytes": 100,
+        "sha256_in_prefix": "77a3348126fd4cefe2867cf0012aa697608a44dbeb741c730204251f9fdc5e5b"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-dict/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "af433dc0b8c590cabc76bdb7c40612767365d5820da5b5c8be76d76350393945",
+        "size_in_bytes": 319,
+        "sha256_in_prefix": "af433dc0b8c590cabc76bdb7c40612767365d5820da5b5c8be76d76350393945"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-dict/{{cookiecutter.project_slug}}/README.md",
+        "path_type": "hardlink",
+        "sha256": "5c1157787236237d3a9ed37687993741336f5774ebe538399866bd6e9fb851f5",
+        "size_in_bytes": 353,
+        "sha256_in_prefix": "5c1157787236237d3a9ed37687993741336f5774ebe538399866bd6e9fb851f5"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-dir/my-dir/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "3f79a575728d9ac99032b53e9a7df2a9997496c2fd76385ba217f041cb392d63",
+        "size_in_bytes": 321,
+        "sha256_in_prefix": "3f79a575728d9ac99032b53e9a7df2a9997496c2fd76385ba217f041cb392d63"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-dir/my-dir/{{cookiecutter.repo_name}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "77a3348126fd4cefe2867cf0012aa697608a44dbeb741c730204251f9fdc5e5b",
+        "size_in_bytes": 100,
+        "sha256_in_prefix": "77a3348126fd4cefe2867cf0012aa697608a44dbeb741c730204251f9fdc5e5b"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "3f79a575728d9ac99032b53e9a7df2a9997496c2fd76385ba217f041cb392d63",
+        "size_in_bytes": 321,
+        "sha256_in_prefix": "3f79a575728d9ac99032b53e9a7df2a9997496c2fd76385ba217f041cb392d63"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre/{{cookiecutter.repo_name}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "77a3348126fd4cefe2867cf0012aa697608a44dbeb741c730204251f9fdc5e5b",
+        "size_in_bytes": 100,
+        "sha256_in_prefix": "77a3348126fd4cefe2867cf0012aa697608a44dbeb741c730204251f9fdc5e5b"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre2/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "3f79a575728d9ac99032b53e9a7df2a9997496c2fd76385ba217f041cb392d63",
+        "size_in_bytes": 321,
+        "sha256_in_prefix": "3f79a575728d9ac99032b53e9a7df2a9997496c2fd76385ba217f041cb392d63"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre2/whatever.some.thing",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-pre2/{%{cookiecutter.repo_name}%}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "67de7e5c6baf998cbb1d6159ca4215ab12cd77df3bfbaa8764d15de95a22a33f",
+        "size_in_bytes": 49,
+        "sha256_in_prefix": "67de7e5c6baf998cbb1d6159ca4215ab12cd77df3bfbaa8764d15de95a22a33f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-replay/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "051998a895ae553e4cf97a384027bfb86049c6d4cac1cba23d5b9cb709507681",
+        "size_in_bytes": 337,
+        "sha256_in_prefix": "051998a895ae553e4cf97a384027bfb86049c6d4cac1cba23d5b9cb709507681"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-replay/{{cookiecutter.repo_name}}/README.md",
+        "path_type": "hardlink",
+        "sha256": "1fd61eedbf4bc63ce7a76b848b6c90b05028fd65eac0c7989215bb38b5421f37",
+        "size_in_bytes": 29,
+        "sha256_in_prefix": "1fd61eedbf4bc63ce7a76b848b6c90b05028fd65eac0c7989215bb38b5421f37"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-tmpl/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "824ee2d28226a54d8a501b85c0b4de924a54892a50853f62c49a869b1ca20e05",
+        "size_in_bytes": 374,
+        "sha256_in_prefix": "824ee2d28226a54d8a501b85c0b4de924a54892a50853f62c49a869b1ca20e05"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-tmpl/{{cookiecutter.repo_name}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "67de7e5c6baf998cbb1d6159ca4215ab12cd77df3bfbaa8764d15de95a22a33f",
+        "size_in_bytes": 49,
+        "sha256_in_prefix": "67de7e5c6baf998cbb1d6159ca4215ab12cd77df3bfbaa8764d15de95a22a33f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-tmpl-_cookiecutter/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "5b089e66cde7b2a1a1168f71a4a7c4fc9df1795dc1fd9522b33eac5fb36d5338",
+        "size_in_bytes": 462,
+        "sha256_in_prefix": "5b089e66cde7b2a1a1168f71a4a7c4fc9df1795dc1fd9522b33eac5fb36d5338"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/fake-repo-tmpl-_cookiecutter/{{cookiecutter.repo_name}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "67de7e5c6baf998cbb1d6159ca4215ab12cd77df3bfbaa8764d15de95a22a33f",
+        "size_in_bytes": 49,
+        "sha256_in_prefix": "67de7e5c6baf998cbb1d6159ca4215ab12cd77df3bfbaa8764d15de95a22a33f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/bad-zip-file.zip",
+        "path_type": "hardlink",
+        "sha256": "46e735622d61ece4d073f02a21f9a452d4571441eecdfbf25732137a0ed52e9d",
+        "size_in_bytes": 28,
+        "sha256_in_prefix": "46e735622d61ece4d073f02a21f9a452d4571441eecdfbf25732137a0ed52e9d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/empty.zip",
+        "path_type": "hardlink",
+        "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+        "size_in_bytes": 22,
+        "sha256_in_prefix": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/fake-repo-tmpl.zip",
+        "path_type": "hardlink",
+        "sha256": "34559a5465d75d9b0dac2583345d83bb3d8c8f66b84836d998a330e525fd2cc3",
+        "size_in_bytes": 994,
+        "sha256_in_prefix": "34559a5465d75d9b0dac2583345d83bb3d8c8f66b84836d998a330e525fd2cc3"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/not-a-repo.zip",
+        "path_type": "hardlink",
+        "sha256": "fcfc99218bdcb37a0cc305518130771f20109aca57aed82f602996493e26f44e",
+        "size_in_bytes": 206,
+        "sha256_in_prefix": "fcfc99218bdcb37a0cc305518130771f20109aca57aed82f602996493e26f44e"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/protected-fake-repo-tmpl.zip",
+        "path_type": "hardlink",
+        "sha256": "da883f5a6faacf6da5f6cebefc9bff5f64fe043dd9ed2b2e40a51b294f6b8a3f",
+        "size_in_bytes": 1114,
+        "sha256_in_prefix": "da883f5a6faacf6da5f6cebefc9bff5f64fe043dd9ed2b2e40a51b294f6b8a3f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/syntax_error.txt",
+        "path_type": "hardlink",
+        "sha256": "4adbf06a9ca28570f76a158838125671812b4c264fd0eb0a8fdcdc9b77ecee2a",
+        "size_in_bytes": 56,
+        "sha256_in_prefix": "4adbf06a9ca28570f76a158838125671812b4c264fd0eb0a8fdcdc9b77ecee2a"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/unicode.txt",
+        "path_type": "hardlink",
+        "sha256": "4969627646edb7d30c1eb98a5ffb83bef661bb3d4874513dd9aa7357fe73aecb",
+        "size_in_bytes": 89,
+        "sha256_in_prefix": "4969627646edb7d30c1eb98a5ffb83bef661bb3d4874513dd9aa7357fe73aecb"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/{% if cookiecutter.generate_file == 'y' %}cheese.txt{% endif %}",
+        "path_type": "hardlink",
+        "sha256": "b56fccca172816ed33cbf7194c347d410d42fad8d5cd5468cb3a2a94139391a7",
+        "size_in_bytes": 64,
+        "sha256_in_prefix": "b56fccca172816ed33cbf7194c347d410d42fad8d5cd5468cb3a2a94139391a7"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.generate_file}}.txt",
+        "path_type": "hardlink",
+        "sha256": "25587ae8b4d1f3aedb0ae8c697d77a5b7218ac400099fa8fa91620e20bd46ed1",
+        "size_in_bytes": 41,
+        "sha256_in_prefix": "25587ae8b4d1f3aedb0ae8c697d77a5b7218ac400099fa8fa91620e20bd46ed1"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.generate_file}}_crlf_newlines.txt",
+        "path_type": "hardlink",
+        "sha256": "3c16ac6ae7b77ecbcdb636f995470a93582297899036f0fb8b195d7143feab56",
+        "size_in_bytes": 51,
+        "sha256_in_prefix": "3c16ac6ae7b77ecbcdb636f995470a93582297899036f0fb8b195d7143feab56"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.generate_file}}_lf_newlines.txt",
+        "path_type": "hardlink",
+        "sha256": "63ad6e3c2a08688db94e40bf47ef5aa1579b7d3a266e5f6134428fb72d7b1cc0",
+        "size_in_bytes": 28,
+        "sha256_in_prefix": "63ad6e3c2a08688db94e40bf47ef5aa1579b7d3a266e5f6134428fb72d7b1cc0"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.jsonify_file}}.txt",
+        "path_type": "hardlink",
+        "sha256": "5ae7db7abaf9ec0d943268f59bfebbb7682409a55717e4bde02bde0d95d1d668",
+        "size_in_bytes": 32,
+        "sha256_in_prefix": "5ae7db7abaf9ec0d943268f59bfebbb7682409a55717e4bde02bde0d95d1d668"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/files/{{cookiecutter.random_string_file}}.txt",
+        "path_type": "hardlink",
+        "sha256": "71f5dbbc015ebdea4b8c44bee67d763ec098278a3144e75d313440037e91cad0",
+        "size_in_bytes": 47,
+        "sha256_in_prefix": "71f5dbbc015ebdea4b8c44bee67d763ec098278a3144e75d313440037e91cad0"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/hooks-abort-render/hooks/post_gen_project.py",
+        "path_type": "hardlink",
+        "sha256": "7c934c6441bdb382d4d98dd7f7c7b99e1100b03e804aba58e8bef1aa023917bf",
+        "size_in_bytes": 199,
+        "sha256_in_prefix": "7c934c6441bdb382d4d98dd7f7c7b99e1100b03e804aba58e8bef1aa023917bf"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/hooks-abort-render/hooks/pre_gen_project.py",
+        "path_type": "hardlink",
+        "sha256": "8befe16b53b511d4754f82cd9dc4019beb3f6fc22ae1ebffd6096322e117eeaf",
+        "size_in_bytes": 197,
+        "sha256_in_prefix": "8befe16b53b511d4754f82cd9dc4019beb3f6fc22ae1ebffd6096322e117eeaf"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/hooks-abort-render/{{cookiecutter.repo_dir}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "ffd6a8ef832bcf53a8d29490122778565ae4af2f1a4e5bd7e400b8d43ee4a769",
+        "size_in_bytes": 52,
+        "sha256_in_prefix": "ffd6a8ef832bcf53a8d29490122778565ae4af2f1a4e5bd7e400b8d43ee4a769"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/replay/conftest.py",
+        "path_type": "hardlink",
+        "sha256": "3872a85444b51a9a367cc701e00467e5927672db33853c1405194c53b0668b20",
+        "size_in_bytes": 678,
+        "sha256_in_prefix": "3872a85444b51a9a367cc701e00467e5927672db33853c1405194c53b0668b20"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/replay/test_dump.py",
+        "path_type": "hardlink",
+        "sha256": "6c433413339e5bdb2d4bdcc1079522d81b4500126c6c9861aaebb70e3f63ea89",
+        "size_in_bytes": 2925,
+        "sha256_in_prefix": "6c433413339e5bdb2d4bdcc1079522d81b4500126c6c9861aaebb70e3f63ea89"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/replay/test_load.py",
+        "path_type": "hardlink",
+        "sha256": "80de71080f6fcc449940ec1738c3b54dd9f86d1cbb0a7f058615d2e5d4b4843a",
+        "size_in_bytes": 1680,
+        "sha256_in_prefix": "80de71080f6fcc449940ec1738c3b54dd9f86d1cbb0a7f058615d2e5d4b4843a"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/replay/test_replay.py",
+        "path_type": "hardlink",
+        "sha256": "36ae9c7d92ef10e4abf999b9859e7ac3a0f6c312eb661bc9531c1f3bbb1f0ac6",
+        "size_in_bytes": 2329,
+        "sha256_in_prefix": "36ae9c7d92ef10e4abf999b9859e7ac3a0f6c312eb661bc9531c1f3bbb1f0ac6"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/repository/test_abbreviation_expansion.py",
+        "path_type": "hardlink",
+        "sha256": "d4fb27bb87d16beccc1e6dbfecc03d55cb768fc3fc3147690cfd1cb863e2c5d7",
+        "size_in_bytes": 1854,
+        "sha256_in_prefix": "d4fb27bb87d16beccc1e6dbfecc03d55cb768fc3fc3147690cfd1cb863e2c5d7"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/repository/test_determine_repo_dir_clones_repo.py",
+        "path_type": "hardlink",
+        "sha256": "7e623c5f753342b2046bb234fe13ac7242aee895520b848946ce49d403102964",
+        "size_in_bytes": 3234,
+        "sha256_in_prefix": "7e623c5f753342b2046bb234fe13ac7242aee895520b848946ce49d403102964"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/repository/test_determine_repo_dir_finds_existing_cookiecutter.py",
+        "path_type": "hardlink",
+        "sha256": "52bfdc85e6b16192981c73b5f97e026a6f9c431f3faa9eee4071682abf28506f",
+        "size_in_bytes": 1310,
+        "sha256_in_prefix": "52bfdc85e6b16192981c73b5f97e026a6f9c431f3faa9eee4071682abf28506f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/repository/test_determine_repo_dir_finds_subdirectories.py",
+        "path_type": "hardlink",
+        "sha256": "3714e8fc1e0a5462bcfd3e4f6aec1af0140268e2f8c9222d3c9c5cc4be127139",
+        "size_in_bytes": 2472,
+        "sha256_in_prefix": "3714e8fc1e0a5462bcfd3e4f6aec1af0140268e2f8c9222d3c9c5cc4be127139"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/repository/test_determine_repository_should_use_local_repo.py",
+        "path_type": "hardlink",
+        "sha256": "3e13075420ba168ad349767bae554400557e26714ccd3a7f891815632aadd013",
+        "size_in_bytes": 2115,
+        "sha256_in_prefix": "3e13075420ba168ad349767bae554400557e26714ccd3a7f891815632aadd013"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/repository/test_is_repo_url.py",
+        "path_type": "hardlink",
+        "sha256": "54457c40d062b98a97b93d8fdad35127d2ba4843f7510e88ee1f9c5604b608aa",
+        "size_in_bytes": 2262,
+        "sha256_in_prefix": "54457c40d062b98a97b93d8fdad35127d2ba4843f7510e88ee1f9c5604b608aa"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/repository/test_repository_has_cookiecutter_json.py",
+        "path_type": "hardlink",
+        "sha256": "20583c3a7aae40f3e7f89d2fad933cbbe42b149c0423966cb8b529d84d1a2aaa",
+        "size_in_bytes": 623,
+        "sha256_in_prefix": "20583c3a7aae40f3e7f89d2fad933cbbe42b149c0423966cb8b529d84d1a2aaa"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-config/config-expand-user.yaml",
+        "path_type": "hardlink",
+        "sha256": "0cdee967756d6409bb20f869848c6eb6ec5f20780790df6c0ce00ae5125df047",
+        "size_in_bytes": 62,
+        "sha256_in_prefix": "0cdee967756d6409bb20f869848c6eb6ec5f20780790df6c0ce00ae5125df047"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-config/config-expand-vars.yaml",
+        "path_type": "hardlink",
+        "sha256": "a103eb784fc9563b062f037a143d7275c6c774cbae8574e3db9786bb77c5d42c",
+        "size_in_bytes": 76,
+        "sha256_in_prefix": "a103eb784fc9563b062f037a143d7275c6c774cbae8574e3db9786bb77c5d42c"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-config/empty-config.yaml",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-config/invalid-config-w-array.yaml",
+        "path_type": "hardlink",
+        "sha256": "b432591d5ecf67bb24a0aab2f05eb575cc61abfacf540844f694bc83c55e6ec9",
+        "size_in_bytes": 12,
+        "sha256_in_prefix": "b432591d5ecf67bb24a0aab2f05eb575cc61abfacf540844f694bc83c55e6ec9"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-config/invalid-config-w-multiple-docs.yaml",
+        "path_type": "hardlink",
+        "sha256": "3663089088f3b87cc97765115939ec13ab8e27fbd791ff322df526945a6f51da",
+        "size_in_bytes": 412,
+        "sha256_in_prefix": "3663089088f3b87cc97765115939ec13ab8e27fbd791ff322df526945a6f51da"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-config/invalid-config.yaml",
+        "path_type": "hardlink",
+        "sha256": "4f4d77e82b49e72c27a70da551432cd9b94b7348c36c5c5390e09b0b4969e6a8",
+        "size_in_bytes": 162,
+        "sha256_in_prefix": "4f4d77e82b49e72c27a70da551432cd9b94b7348c36c5c5390e09b0b4969e6a8"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-config/valid-config.yaml",
+        "path_type": "hardlink",
+        "sha256": "bbf2ac48161d50cb5adc5e61124b96b27310b18a8c281140f8802d382b025e09",
+        "size_in_bytes": 440,
+        "sha256_in_prefix": "bbf2ac48161d50cb5adc5e61124b96b27310b18a8c281140f8802d382b025e09"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-config/valid-partial-config.yaml",
+        "path_type": "hardlink",
+        "sha256": "fcb66679b75c430d4ca72c85eebcbf40f4cca68800d7ef25920c72bb1e7c9221",
+        "size_in_bytes": 126,
+        "sha256_in_prefix": "fcb66679b75c430d4ca72c85eebcbf40f4cca68800d7ef25920c72bb1e7c9221"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-post/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "80d76c50bee2d550ce42f409569b5f59167199f639d1e7ee8f1c5265511cf98e",
+        "size_in_bytes": 111,
+        "sha256_in_prefix": "80d76c50bee2d550ce42f409569b5f59167199f639d1e7ee8f1c5265511cf98e"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-post/hooks/post_gen_project.py",
+        "path_type": "hardlink",
+        "sha256": "5c229246bfe04d5cad81390feb8717851676dbecda336ee03e03173cdf591516",
+        "size_in_bytes": 200,
+        "sha256_in_prefix": "5c229246bfe04d5cad81390feb8717851676dbecda336ee03e03173cdf591516"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-post/{{cookiecutter.project_slug}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "ee82717af98871469918b07ca932817d2ce36d7a75c61aadfffd27f5f0ce65f7",
+        "size_in_bytes": 30,
+        "sha256_in_prefix": "ee82717af98871469918b07ca932817d2ce36d7a75c61aadfffd27f5f0ce65f7"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-pre/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "80d76c50bee2d550ce42f409569b5f59167199f639d1e7ee8f1c5265511cf98e",
+        "size_in_bytes": 111,
+        "sha256_in_prefix": "80d76c50bee2d550ce42f409569b5f59167199f639d1e7ee8f1c5265511cf98e"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-pre/hooks/pre_gen_project.py",
+        "path_type": "hardlink",
+        "sha256": "7cd48df1db96a4d0256a9848301353e9332a32e82cebd56ac67a4f957da900f1",
+        "size_in_bytes": 199,
+        "sha256_in_prefix": "7cd48df1db96a4d0256a9848301353e9332a32e82cebd56ac67a4f957da900f1"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/custom-extension-pre/{{cookiecutter.project_slug}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "ee82717af98871469918b07ca932817d2ce36d7a75c61aadfffd27f5f0ce65f7",
+        "size_in_bytes": 30,
+        "sha256_in_prefix": "ee82717af98871469918b07ca932817d2ce36d7a75c61aadfffd27f5f0ce65f7"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/default/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "b00a2dc269f93d019f26479db59e54f4936224e5b37dbbce252282e0e9ad3071",
+        "size_in_bytes": 103,
+        "sha256_in_prefix": "b00a2dc269f93d019f26479db59e54f4936224e5b37dbbce252282e0e9ad3071"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/default/{{cookiecutter.project_slug}}/HISTORY.rst",
+        "path_type": "hardlink",
+        "sha256": "483c20ed8a8905686266177ae5dc16bc696fac18e1507f8098d52953f81daf99",
+        "size_in_bytes": 92,
+        "sha256_in_prefix": "483c20ed8a8905686266177ae5dc16bc696fac18e1507f8098d52953f81daf99"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/default/{{cookiecutter.project_slug}}/id",
+        "path_type": "hardlink",
+        "sha256": "d712731f29139a0fabfacd868cc925bd513e7e7f6a640e9ef8164efe355833d7",
+        "size_in_bytes": 14,
+        "sha256_in_prefix": "d712731f29139a0fabfacd868cc925bd513e7e7f6a640e9ef8164efe355833d7"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/hello_extension/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "94f22f69f4639203f8368a4903749c4a48463dc345e7ff8ba88ad462d0567c31",
+        "size_in_bytes": 23,
+        "sha256_in_prefix": "94f22f69f4639203f8368a4903749c4a48463dc345e7ff8ba88ad462d0567c31"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/hello_extension/hello_extension.py",
+        "path_type": "hardlink",
+        "sha256": "d82b1100e8510b67f81985a46f8da938147328353b0f6cc322b38b77dc878e4a",
+        "size_in_bytes": 890,
+        "sha256_in_prefix": "d82b1100e8510b67f81985a46f8da938147328353b0f6cc322b38b77dc878e4a"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/local_extension/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "e4454db356d3b580b87e1a10ea708cbf2e0175db26ee2af8cbdf46b8489218e0",
+        "size_in_bytes": 298,
+        "sha256_in_prefix": "e4454db356d3b580b87e1a10ea708cbf2e0175db26ee2af8cbdf46b8489218e0"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/local_extension/local_extensions/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "c363606b40491f5390553857ed6a0947d969b0e661464ad9b2d7b8fb5ae6f3c9",
+        "size_in_bytes": 71,
+        "sha256_in_prefix": "c363606b40491f5390553857ed6a0947d969b0e661464ad9b2d7b8fb5ae6f3c9"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/local_extension/local_extensions/main.py",
+        "path_type": "hardlink",
+        "sha256": "bd02d710e8af781209acff191dbbb6215f27948e2eb5fca9adf499fedd2eece9",
+        "size_in_bytes": 613,
+        "sha256_in_prefix": "bd02d710e8af781209acff191dbbb6215f27948e2eb5fca9adf499fedd2eece9"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/local_extension/{{cookiecutter.project_slug}}/HISTORY.rst",
+        "path_type": "hardlink",
+        "sha256": "be62a66900667065ab48dbf033849af3b950bd675c7d8e7a9c68aedae66d1770",
+        "size_in_bytes": 139,
+        "sha256_in_prefix": "be62a66900667065ab48dbf033849af3b950bd675c7d8e7a9c68aedae66d1770"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/unknown/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "d59a6224465b61695862d53043ff8810f8ad224dd11b59650008ddb80ca440b0",
+        "size_in_bytes": 121,
+        "sha256_in_prefix": "d59a6224465b61695862d53043ff8810f8ad224dd11b59650008ddb80ca440b0"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-extensions/unknown/{{cookiecutter.project_slug}}/HISTORY.rst",
+        "path_type": "hardlink",
+        "sha256": "6d8d275f05f3a38a6545ddcb81a75a2033d38ad80ea2b3ff09f977e7c5dc6e2e",
+        "size_in_bytes": 119,
+        "sha256_in_prefix": "6d8d275f05f3a38a6545ddcb81a75a2033d38ad80ea2b3ff09f977e7c5dc6e2e"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/.DS_Store",
+        "path_type": "hardlink",
+        "sha256": "3fa1c4dceb389f005cdae3844bb53924a8eb56e1a77ad954c6f192faae56c1d2",
+        "size_in_bytes": 15364,
+        "sha256_in_prefix": "3fa1c4dceb389f005cdae3844bb53924a8eb56e1a77ad954c6f192faae56c1d2"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/logo.png",
+        "path_type": "hardlink",
+        "sha256": "4a9bf008328d480903daf6891030bdcad590dd0c63daaa717f81ee2066c7c1d5",
+        "size_in_bytes": 4381,
+        "sha256_in_prefix": "4a9bf008328d480903daf6891030bdcad590dd0c63daaa717f81ee2066c7c1d5"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/readme.txt",
+        "path_type": "hardlink",
+        "sha256": "6c284e517985279c25d56b83b14bd835bb3c1ae0eb9f6182ef5e02a8755da578",
+        "size_in_bytes": 37,
+        "sha256_in_prefix": "6c284e517985279c25d56b83b14bd835bb3c1ae0eb9f6182ef5e02a8755da578"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/some_font.otf",
+        "path_type": "hardlink",
+        "sha256": "3ff5688f0a610ecf786609c7fed1b713966bfaf263b8c3cd4a9d0bae56b3115f",
+        "size_in_bytes": 18116,
+        "sha256_in_prefix": "3ff5688f0a610ecf786609c7fed1b713966bfaf263b8c3cd4a9d0bae56b3115f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/.DS_Store",
+        "path_type": "hardlink",
+        "sha256": "80b1ac315a3aeb4c9f7f551ed69edbed5ae299ba939dc4ee768ea05416361dd5",
+        "size_in_bytes": 12292,
+        "sha256_in_prefix": "80b1ac315a3aeb4c9f7f551ed69edbed5ae299ba939dc4ee768ea05416361dd5"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/logo.png",
+        "path_type": "hardlink",
+        "sha256": "4a9bf008328d480903daf6891030bdcad590dd0c63daaa717f81ee2066c7c1d5",
+        "size_in_bytes": 4381,
+        "sha256_in_prefix": "4a9bf008328d480903daf6891030bdcad590dd0c63daaa717f81ee2066c7c1d5"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/readme.txt",
+        "path_type": "hardlink",
+        "sha256": "6c284e517985279c25d56b83b14bd835bb3c1ae0eb9f6182ef5e02a8755da578",
+        "size_in_bytes": 37,
+        "sha256_in_prefix": "6c284e517985279c25d56b83b14bd835bb3c1ae0eb9f6182ef5e02a8755da578"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/some_font.otf",
+        "path_type": "hardlink",
+        "sha256": "3ff5688f0a610ecf786609c7fed1b713966bfaf263b8c3cd4a9d0bae56b3115f",
+        "size_in_bytes": 18116,
+        "sha256_in_prefix": "3ff5688f0a610ecf786609c7fed1b713966bfaf263b8c3cd4a9d0bae56b3115f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-binaries/input{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/{{cookiecutter.binary_test}}/logo.png",
+        "path_type": "hardlink",
+        "sha256": "4a9bf008328d480903daf6891030bdcad590dd0c63daaa717f81ee2066c7c1d5",
+        "size_in_bytes": 4381,
+        "sha256_in_prefix": "4a9bf008328d480903daf6891030bdcad590dd0c63daaa717f81ee2066c7c1d5"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/choices_template.json",
+        "path_type": "hardlink",
+        "sha256": "0fb8f6a67b6ae0889d15f08baa7670b217474a661d795f7aaf12125769490d67",
+        "size_in_bytes": 227,
+        "sha256_in_prefix": "0fb8f6a67b6ae0889d15f08baa7670b217474a661d795f7aaf12125769490d67"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/invalid-syntax.json",
+        "path_type": "hardlink",
+        "sha256": "0fbe8028633617b4c7b2662ccf89a4db682890c698008def89b4d63a2856d745",
+        "size_in_bytes": 33,
+        "sha256_in_prefix": "0fbe8028633617b4c7b2662ccf89a4db682890c698008def89b4d63a2856d745"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/nested_dict.json",
+        "path_type": "hardlink",
+        "sha256": "ff177836bc33ccbd7db3dbf3d778574ef81190d8f8dd6402ee15fb0202318f26",
+        "size_in_bytes": 287,
+        "sha256_in_prefix": "ff177836bc33ccbd7db3dbf3d778574ef81190d8f8dd6402ee15fb0202318f26"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/nested_dict_additional.json",
+        "path_type": "hardlink",
+        "sha256": "ece8d1557523ec4606ce3ec7ad08711c8436c6542c7625e26b0fccdbbdc6ce3b",
+        "size_in_bytes": 138,
+        "sha256_in_prefix": "ece8d1557523ec4606ce3ec7ad08711c8436c6542c7625e26b0fccdbbdc6ce3b"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/non_ascii.json",
+        "path_type": "hardlink",
+        "sha256": "fa98b1ff9dca497fe911a9eed0508a2f410c3f35a321a1d14860823e17d8de86",
+        "size_in_bytes": 28,
+        "sha256_in_prefix": "fa98b1ff9dca497fe911a9eed0508a2f410c3f35a321a1d14860823e17d8de86"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-context/test.json",
+        "path_type": "hardlink",
+        "sha256": "94fbe17a56afceb0b8c27b676a112496a4454c1262c9ff193f1c0b6daff18a07",
+        "size_in_bytes": 39,
+        "sha256_in_prefix": "94fbe17a56afceb0b8c27b676a112496a4454c1262c9ff193f1c0b6daff18a07"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/README.txt",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/rendered/not_rendered.yml",
+        "path_type": "hardlink",
+        "sha256": "8d4da93bef333a96a50eb6731c90eff4476500beb89f55fb20e7b436ef47a27a",
+        "size_in_bytes": 41,
+        "sha256_in_prefix": "8d4da93bef333a96a50eb6731c90eff4476500beb89f55fb20e7b436ef47a27a"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-not-rendered/README.rst",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.md",
+        "path_type": "hardlink",
+        "sha256": "8c1c8706c48ada1bcdb776e8bdba47e2feec4a7d113d168c0e33cd6323316955",
+        "size_in_bytes": 45,
+        "sha256_in_prefix": "8c1c8706c48ada1bcdb776e8bdba47e2feec4a7d113d168c0e33cd6323316955"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.rst",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.txt",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/README.txt",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/rendered/not_rendered.yml",
+        "path_type": "hardlink",
+        "sha256": "8d4da93bef333a96a50eb6731c90eff4476500beb89f55fb20e7b436ef47a27a",
+        "size_in_bytes": 41,
+        "sha256_in_prefix": "8d4da93bef333a96a50eb6731c90eff4476500beb89f55fb20e7b436ef47a27a"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-not-rendered/README.rst",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.md",
+        "path_type": "hardlink",
+        "sha256": "8c1c8706c48ada1bcdb776e8bdba47e2feec4a7d113d168c0e33cd6323316955",
+        "size_in_bytes": 45,
+        "sha256_in_prefix": "8c1c8706c48ada1bcdb776e8bdba47e2feec4a7d113d168c0e33cd6323316955"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.rst",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-copy-without-render-override/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}-rendered/README.txt",
+        "path_type": "hardlink",
+        "sha256": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d",
+        "size_in_bytes": 69,
+        "sha256_in_prefix": "76b2efd928baab2b85cf108e8e3dfba33b0e727ff552efd5d1015971988b261d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files/input{{cookiecutter.food}}/simple-with-conditions.txt",
+        "path_type": "hardlink",
+        "sha256": "c7c96ba4f28f120f3e735aab3a8791bb3cf8457e8e2f4c6aa0234d618629f076",
+        "size_in_bytes": 111,
+        "sha256_in_prefix": "c7c96ba4f28f120f3e735aab3a8791bb3cf8457e8e2f4c6aa0234d618629f076"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files/input{{cookiecutter.food}}/simple-with-newline-crlf.txt",
+        "path_type": "hardlink",
+        "sha256": "3c16ac6ae7b77ecbcdb636f995470a93582297899036f0fb8b195d7143feab56",
+        "size_in_bytes": 51,
+        "sha256_in_prefix": "3c16ac6ae7b77ecbcdb636f995470a93582297899036f0fb8b195d7143feab56"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files/input{{cookiecutter.food}}/simple-with-newline.txt",
+        "path_type": "hardlink",
+        "sha256": "63ad6e3c2a08688db94e40bf47ef5aa1579b7d3a266e5f6134428fb72d7b1cc0",
+        "size_in_bytes": 28,
+        "sha256_in_prefix": "63ad6e3c2a08688db94e40bf47ef5aa1579b7d3a266e5f6134428fb72d7b1cc0"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files/input{{cookiecutter.food}}/simple.txt",
+        "path_type": "hardlink",
+        "sha256": "7c3493b9c2ee8a750fbd6aadb146383aa02da0036475641309644aba4a437e1e",
+        "size_in_bytes": 30,
+        "sha256_in_prefix": "7c3493b9c2ee8a750fbd6aadb146383aa02da0036475641309644aba4a437e1e"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-line-end/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "8520de4ef34d1309b49b78e16c3cfa136d537ab5b96c4a2f4180779af9afb719",
+        "size_in_bytes": 183,
+        "sha256_in_prefix": "8520de4ef34d1309b49b78e16c3cfa136d537ab5b96c4a2f4180779af9afb719"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-line-end/{{cookiecutter.test_name}}/folder/in_folder.txt",
+        "path_type": "hardlink",
+        "sha256": "f41fdd84affe14e397f51730a8619f279b3e76430a33000273d3b3a2552ce842",
+        "size_in_bytes": 83,
+        "sha256_in_prefix": "f41fdd84affe14e397f51730a8619f279b3e76430a33000273d3b3a2552ce842"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-line-end/{{cookiecutter.test_name}}/something.txt",
+        "path_type": "hardlink",
+        "sha256": "d46877ee12fef239bf3c7125e3c53fc9be132d3b5eeadba49c2817cba298162d",
+        "size_in_bytes": 76,
+        "sha256_in_prefix": "d46877ee12fef239bf3c7125e3c53fc9be132d3b5eeadba49c2817cba298162d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-line-end/{{cookiecutter.test_name}}/{{cookiecutter.folder_name}}/{{cookiecutter.filename}}.py",
+        "path_type": "hardlink",
+        "sha256": "09216fd50d59f32b5b3a9ea313821e780a5e9a3895723c146631a0190fe719d7",
+        "size_in_bytes": 126,
+        "sha256_in_prefix": "09216fd50d59f32b5b3a9ea313821e780a5e9a3895723c146631a0190fe719d7"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-nontemplated/input/simple.txt",
+        "path_type": "hardlink",
+        "sha256": "63eec1897d66c68db590fff089a0ef9d763a86aa5ac6c0be0bb7ed0bb7c675aa",
+        "size_in_bytes": 17,
+        "sha256_in_prefix": "63eec1897d66c68db590fff089a0ef9d763a86aa5ac6c0be0bb7ed0bb7c675aa"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-permissions/input{{cookiecutter.permissions}}/script.sh",
+        "path_type": "hardlink",
+        "sha256": "7318d29f591b9e2256f03fa371ed3de7aca11ad17ec17ed4a627d4788c576547",
+        "size_in_bytes": 32,
+        "sha256_in_prefix": "7318d29f591b9e2256f03fa371ed3de7aca11ad17ec17ed4a627d4788c576547"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-generate-files-permissions/input{{cookiecutter.permissions}}/simple.txt",
+        "path_type": "hardlink",
+        "sha256": "a422afdebac2ed8087bed8cb97053a456ce4923a3274aa9334e75ac6e84398c5",
+        "size_in_bytes": 17,
+        "sha256_in_prefix": "a422afdebac2ed8087bed8cb97053a456ce4923a3274aa9334e75ac6e84398c5"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-output-folder/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "18d1595d950e60fc1a74783bc8a5eafbb6283628273c5af43e833d29c1073810",
+        "size_in_bytes": 188,
+        "sha256_in_prefix": "18d1595d950e60fc1a74783bc8a5eafbb6283628273c5af43e833d29c1073810"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-output-folder/{{cookiecutter.test_name}}/folder/in_folder.txt",
+        "path_type": "hardlink",
+        "sha256": "f41fdd84affe14e397f51730a8619f279b3e76430a33000273d3b3a2552ce842",
+        "size_in_bytes": 83,
+        "sha256_in_prefix": "f41fdd84affe14e397f51730a8619f279b3e76430a33000273d3b3a2552ce842"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-output-folder/{{cookiecutter.test_name}}/something.txt",
+        "path_type": "hardlink",
+        "sha256": "d46877ee12fef239bf3c7125e3c53fc9be132d3b5eeadba49c2817cba298162d",
+        "size_in_bytes": 76,
+        "sha256_in_prefix": "d46877ee12fef239bf3c7125e3c53fc9be132d3b5eeadba49c2817cba298162d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-output-folder/{{cookiecutter.test_name}}/{{cookiecutter.folder_name}}/{{cookiecutter.filename}}.py",
+        "path_type": "hardlink",
+        "sha256": "f086e316a956d30df7be35a4d06238a65fa0c38db8aba969f8a122b59643efa8",
+        "size_in_bytes": 128,
+        "sha256_in_prefix": "f086e316a956d30df7be35a4d06238a65fa0c38db8aba969f8a122b59643efa8"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "3d891150ffd3ccd41e02750e958a130b344268a7245d70ee20d3401f4df53449",
+        "size_in_bytes": 68,
+        "sha256_in_prefix": "3d891150ffd3ccd41e02750e958a130b344268a7245d70ee20d3401f4df53449"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/hooks/post_gen_project.py",
+        "path_type": "hardlink",
+        "sha256": "f0c670f15ebfed99a4b5c14aa6e255260421ab99b76a8b32ad538fec92f8ffb5",
+        "size_in_bytes": 153,
+        "sha256_in_prefix": "f0c670f15ebfed99a4b5c14aa6e255260421ab99b76a8b32ad538fec92f8ffb5"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/hooks/pre_gen_project.py",
+        "path_type": "hardlink",
+        "sha256": "9dd30036d78b63562ee95e4b330b1e8e4141efadbb423756012cbb974e325d02",
+        "size_in_bytes": 151,
+        "sha256_in_prefix": "9dd30036d78b63562ee95e4b330b1e8e4141efadbb423756012cbb974e325d02"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/hooks/pre_prompt.py",
+        "path_type": "hardlink",
+        "sha256": "be0766228a2a5670945acc528169e64b89ed1d5ecb1e91ff2ed02f6e2394b340",
+        "size_in_bytes": 675,
+        "sha256_in_prefix": "be0766228a2a5670945acc528169e64b89ed1d5ecb1e91ff2ed02f6e2394b340"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyhooks/input{{cookiecutter.pyhooks}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "ce65aa4c84c3b23734f4c7426c6980017da7c2accc06cb49f019611408b11df1",
+        "size_in_bytes": 13,
+        "sha256_in_prefix": "ce65aa4c84c3b23734f4c7426c6980017da7c2accc06cb49f019611408b11df1"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "1cdf68d068e8c6760cb3698167984e1ded491d043259a3dfa7ae71dce34471ac",
+        "size_in_bytes": 73,
+        "sha256_in_prefix": "1cdf68d068e8c6760cb3698167984e1ded491d043259a3dfa7ae71dce34471ac"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/post_gen_project.py",
+        "path_type": "hardlink",
+        "sha256": "f0c670f15ebfed99a4b5c14aa6e255260421ab99b76a8b32ad538fec92f8ffb5",
+        "size_in_bytes": 153,
+        "sha256_in_prefix": "f0c670f15ebfed99a4b5c14aa6e255260421ab99b76a8b32ad538fec92f8ffb5"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/post_gen_project.sh",
+        "path_type": "hardlink",
+        "sha256": "3521817751cb1ccafedae5875063c008dfd866711aebfeb5e5dc9f3f3544d56d",
+        "size_in_bytes": 65,
+        "sha256_in_prefix": "3521817751cb1ccafedae5875063c008dfd866711aebfeb5e5dc9f3f3544d56d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/pre_gen_project.py",
+        "path_type": "hardlink",
+        "sha256": "9dd30036d78b63562ee95e4b330b1e8e4141efadbb423756012cbb974e325d02",
+        "size_in_bytes": 151,
+        "sha256_in_prefix": "9dd30036d78b63562ee95e4b330b1e8e4141efadbb423756012cbb974e325d02"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/pre_gen_project.sh",
+        "path_type": "hardlink",
+        "sha256": "84ef1a8f1a5b55b64e7586ac4831cbed1333341c2b5c6246ebcc4cd408d2e0db",
+        "size_in_bytes": 64,
+        "sha256_in_prefix": "84ef1a8f1a5b55b64e7586ac4831cbed1333341c2b5c6246ebcc4cd408d2e0db"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/hooks/pre_prompt.sh",
+        "path_type": "hardlink",
+        "sha256": "71fe59c5b051c700ea76d56ade29336c5fa93c239cfc3e5d85e92ca91abd5cf0",
+        "size_in_bytes": 64,
+        "sha256_in_prefix": "71fe59c5b051c700ea76d56ade29336c5fa93c239cfc3e5d85e92ca91abd5cf0"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-pyshellhooks/input{{pyshellhooks}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "ce65aa4c84c3b23734f4c7426c6980017da7c2accc06cb49f019611408b11df1",
+        "size_in_bytes": 13,
+        "sha256_in_prefix": "ce65aa4c84c3b23734f4c7426c6980017da7c2accc06cb49f019611408b11df1"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-replay/cookiedozer_load.json",
+        "path_type": "hardlink",
+        "sha256": "5f22130e03421482e8a551d957e97ae0fad21dfac5c50d47aa6da97844215ae1",
+        "size_in_bytes": 161,
+        "sha256_in_prefix": "5f22130e03421482e8a551d957e97ae0fad21dfac5c50d47aa6da97844215ae1"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-replay/invalid_replay.json",
+        "path_type": "hardlink",
+        "sha256": "83dccec2e809c21ff67e7d37640da9e29b6fad3199819ee04a177c5ec171476e",
+        "size_in_bytes": 165,
+        "sha256_in_prefix": "83dccec2e809c21ff67e7d37640da9e29b6fad3199819ee04a177c5ec171476e"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-replay/valid_replay.json",
+        "path_type": "hardlink",
+        "sha256": "f227dcca7682f75fc4cbfa6bf68a5ddaea5c0cfad3fa5842568575ba77b42ce9",
+        "size_in_bytes": 319,
+        "sha256_in_prefix": "f227dcca7682f75fc4cbfa6bf68a5ddaea5c0cfad3fa5842568575ba77b42ce9"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks/hooks/post_gen_project.sh",
+        "path_type": "hardlink",
+        "sha256": "3521817751cb1ccafedae5875063c008dfd866711aebfeb5e5dc9f3f3544d56d",
+        "size_in_bytes": 65,
+        "sha256_in_prefix": "3521817751cb1ccafedae5875063c008dfd866711aebfeb5e5dc9f3f3544d56d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks/hooks/pre_gen_project.sh",
+        "path_type": "hardlink",
+        "sha256": "74ab22dd9cd98caf932f8ebbef11467b01811e1b63fd2a86b1b7fc1bc87b0d56",
+        "size_in_bytes": 63,
+        "sha256_in_prefix": "74ab22dd9cd98caf932f8ebbef11467b01811e1b63fd2a86b1b7fc1bc87b0d56"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks/input{{cookiecutter.shellhooks}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "ce65aa4c84c3b23734f4c7426c6980017da7c2accc06cb49f019611408b11df1",
+        "size_in_bytes": 13,
+        "sha256_in_prefix": "ce65aa4c84c3b23734f4c7426c6980017da7c2accc06cb49f019611408b11df1"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-empty/hooks/pre_gen_project.sh",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-empty/input{{cookiecutter.shellhooks}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "fb7c7f59ed22d71b93ee908dcc0066e5caacfc942aa073223154a19d5210f5b4",
+        "size_in_bytes": 43,
+        "sha256_in_prefix": "fb7c7f59ed22d71b93ee908dcc0066e5caacfc942aa073223154a19d5210f5b4"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-win/hooks/post_gen_project.bat",
+        "path_type": "hardlink",
+        "sha256": "9570d6a01061f9c274fc244fe23874f52c121d5ad389391c9df4f0e9c94bebfc",
+        "size_in_bytes": 59,
+        "sha256_in_prefix": "9570d6a01061f9c274fc244fe23874f52c121d5ad389391c9df4f0e9c94bebfc"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-win/hooks/pre_gen_project.bat",
+        "path_type": "hardlink",
+        "sha256": "38576fa3907a7d74301025b551c0939273d400b132e5c30643622d62393fa01a",
+        "size_in_bytes": 57,
+        "sha256_in_prefix": "38576fa3907a7d74301025b551c0939273d400b132e5c30643622d62393fa01a"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-shellhooks-win/input{{cookiecutter.shellhooks}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "ce65aa4c84c3b23734f4c7426c6980017da7c2accc06cb49f019611408b11df1",
+        "size_in_bytes": 13,
+        "sha256_in_prefix": "ce65aa4c84c3b23734f4c7426c6980017da7c2accc06cb49f019611408b11df1"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "7c72b70382b365229ffeb59d1b58d56c02a56d1bcec7dc58576fec33ecaec4c4",
+        "size_in_bytes": 89,
+        "sha256_in_prefix": "7c72b70382b365229ffeb59d1b58d56c02a56d1bcec7dc58576fec33ecaec4c4"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/templates/base-requirements.jinja",
+        "path_type": "hardlink",
+        "sha256": "d63d15c3d22595461fce49e9d3efe4d3755e219ae61672b0fbf7738674d526be",
+        "size_in_bytes": 252,
+        "sha256_in_prefix": "d63d15c3d22595461fce49e9d3efe4d3755e219ae61672b0fbf7738674d526be"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/templates/click-requirements.jinja",
+        "path_type": "hardlink",
+        "sha256": "38a536c7c5e096089e182c76b39df588ebca5f145abf3c7b2ec3768f0e067003",
+        "size_in_bytes": 6,
+        "sha256_in_prefix": "38a536c7c5e096089e182c76b39df588ebca5f145abf3c7b2ec3768f0e067003"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/templates/pytest-requirements.jinja",
+        "path_type": "hardlink",
+        "sha256": "8004a972c3d5c274d8c808e8d8afe03b9aca8af8eebf3df4298f114d8008b754",
+        "size_in_bytes": 7,
+        "sha256_in_prefix": "8004a972c3d5c274d8c808e8d8afe03b9aca8af8eebf3df4298f114d8008b754"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/extends/{{cookiecutter.project_slug}}/requirements.txt",
+        "path_type": "hardlink",
+        "sha256": "af879f17bfd101e9f4f6849dda2372c3e9b4fdccd2a3c0b329f83cca9794fcef",
+        "size_in_bytes": 40,
+        "sha256_in_prefix": "af879f17bfd101e9f4f6849dda2372c3e9b4fdccd2a3c0b329f83cca9794fcef"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/include/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "7c72b70382b365229ffeb59d1b58d56c02a56d1bcec7dc58576fec33ecaec4c4",
+        "size_in_bytes": 89,
+        "sha256_in_prefix": "7c72b70382b365229ffeb59d1b58d56c02a56d1bcec7dc58576fec33ecaec4c4"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/include/templates/click-requirements.jinja",
+        "path_type": "hardlink",
+        "sha256": "38a536c7c5e096089e182c76b39df588ebca5f145abf3c7b2ec3768f0e067003",
+        "size_in_bytes": 6,
+        "sha256_in_prefix": "38a536c7c5e096089e182c76b39df588ebca5f145abf3c7b2ec3768f0e067003"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/include/templates/pytest-requirements.jinja",
+        "path_type": "hardlink",
+        "sha256": "8004a972c3d5c274d8c808e8d8afe03b9aca8af8eebf3df4298f114d8008b754",
+        "size_in_bytes": 7,
+        "sha256_in_prefix": "8004a972c3d5c274d8c808e8d8afe03b9aca8af8eebf3df4298f114d8008b754"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/include/{{cookiecutter.project_slug}}/requirements.txt",
+        "path_type": "hardlink",
+        "sha256": "df8c2b0de413d4adbc523e9791d048ec356505d325b83bb1e61dea9ca5ebd78d",
+        "size_in_bytes": 213,
+        "sha256_in_prefix": "df8c2b0de413d4adbc523e9791d048ec356505d325b83bb1e61dea9ca5ebd78d"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/no-templates/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "7c72b70382b365229ffeb59d1b58d56c02a56d1bcec7dc58576fec33ecaec4c4",
+        "size_in_bytes": 89,
+        "sha256_in_prefix": "7c72b70382b365229ffeb59d1b58d56c02a56d1bcec7dc58576fec33ecaec4c4"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/no-templates/{{cookiecutter.project_slug}}/requirements.txt",
+        "path_type": "hardlink",
+        "sha256": "3867a8a2280886466b8098adece5b4599643a2824b2913cf690529541722c345",
+        "size_in_bytes": 143,
+        "sha256_in_prefix": "3867a8a2280886466b8098adece5b4599643a2824b2913cf690529541722c345"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "7c72b70382b365229ffeb59d1b58d56c02a56d1bcec7dc58576fec33ecaec4c4",
+        "size_in_bytes": 89,
+        "sha256_in_prefix": "7c72b70382b365229ffeb59d1b58d56c02a56d1bcec7dc58576fec33ecaec4c4"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/templates/base-requirements.jinja",
+        "path_type": "hardlink",
+        "sha256": "43fa24c23ffb1881479cf7547bb480a2bc065c2a4f6b0da53da5ec84135314ac",
+        "size_in_bytes": 297,
+        "sha256_in_prefix": "43fa24c23ffb1881479cf7547bb480a2bc065c2a4f6b0da53da5ec84135314ac"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/templates/click-requirements.jinja",
+        "path_type": "hardlink",
+        "sha256": "38a536c7c5e096089e182c76b39df588ebca5f145abf3c7b2ec3768f0e067003",
+        "size_in_bytes": 6,
+        "sha256_in_prefix": "38a536c7c5e096089e182c76b39df588ebca5f145abf3c7b2ec3768f0e067003"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/templates/pytest-requirements.jinja",
+        "path_type": "hardlink",
+        "sha256": "8004a972c3d5c274d8c808e8d8afe03b9aca8af8eebf3df4298f114d8008b754",
+        "size_in_bytes": 7,
+        "sha256_in_prefix": "8004a972c3d5c274d8c808e8d8afe03b9aca8af8eebf3df4298f114d8008b754"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test-templates/super/{{cookiecutter.project_slug}}/requirements.txt",
+        "path_type": "hardlink",
+        "sha256": "a322017070be8507713032ec9172b29a0e224f54cd2a95915679f9b864b909b3",
+        "size_in_bytes": 96,
+        "sha256_in_prefix": "a322017070be8507713032ec9172b29a0e224f54cd2a95915679f9b864b909b3"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_abort_generate_on_hook_error.py",
+        "path_type": "hardlink",
+        "sha256": "c8aeb6930820517166cf7ccc36f28d4a6715f501595529525db171c958c1cf59",
+        "size_in_bytes": 1165,
+        "sha256_in_prefix": "c8aeb6930820517166cf7ccc36f28d4a6715f501595529525db171c958c1cf59"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_cli.py",
+        "path_type": "hardlink",
+        "sha256": "e95845f5603d0c72e8dd312e7a912ad5d00f60ef75733fbc6d71f28662c2236e",
+        "size_in_bytes": 22816,
+        "sha256_in_prefix": "e95845f5603d0c72e8dd312e7a912ad5d00f60ef75733fbc6d71f28662c2236e"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_cookiecutter_invocation.py",
+        "path_type": "hardlink",
+        "sha256": "46003f00a5ebe97c821103309af43e58c7be552fe317a6ad33de33fa4a9f573b",
+        "size_in_bytes": 976,
+        "sha256_in_prefix": "46003f00a5ebe97c821103309af43e58c7be552fe317a6ad33de33fa4a9f573b"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_cookiecutter_local_no_input.py",
+        "path_type": "hardlink",
+        "sha256": "bcd5f32a97d94cfad1d32b296b986198115045fbd6a43979b6b826a43ac7a07e",
+        "size_in_bytes": 4624,
+        "sha256_in_prefix": "bcd5f32a97d94cfad1d32b296b986198115045fbd6a43979b6b826a43ac7a07e"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_cookiecutter_local_with_input.py",
+        "path_type": "hardlink",
+        "sha256": "b43b5d52b2a0a6e6aa45419040753d67a6dc4a4b7f5cb67441c7ed61d5099925",
+        "size_in_bytes": 1713,
+        "sha256_in_prefix": "b43b5d52b2a0a6e6aa45419040753d67a6dc4a4b7f5cb67441c7ed61d5099925"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_cookiecutter_nested_templates.py",
+        "path_type": "hardlink",
+        "sha256": "0c2790c494ffb1d349253977d21751bfe88aa08db3c2ef194a6f5f71c7e7d3ce",
+        "size_in_bytes": 807,
+        "sha256_in_prefix": "0c2790c494ffb1d349253977d21751bfe88aa08db3c2ef194a6f5f71c7e7d3ce"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_custom_extensions_in_hooks.py",
+        "path_type": "hardlink",
+        "sha256": "86233574a757af42b92f370713e21c70b57dfeb64132b17ccc336954366dbc20",
+        "size_in_bytes": 1280,
+        "sha256_in_prefix": "86233574a757af42b92f370713e21c70b57dfeb64132b17ccc336954366dbc20"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_default_extensions.py",
+        "path_type": "hardlink",
+        "sha256": "b30d53724322d5113e56ab28d27c280b07eea70b32dc33c6d08bb1203a05f297",
+        "size_in_bytes": 1874,
+        "sha256_in_prefix": "b30d53724322d5113e56ab28d27c280b07eea70b32dc33c6d08bb1203a05f297"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_environment.py",
+        "path_type": "hardlink",
+        "sha256": "8f830e60e5c89e3b3d0daf624b72b9b08ad2e35b4ea98cf1d1408e1da9c17730",
+        "size_in_bytes": 1088,
+        "sha256_in_prefix": "8f830e60e5c89e3b3d0daf624b72b9b08ad2e35b4ea98cf1d1408e1da9c17730"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_exceptions.py",
+        "path_type": "hardlink",
+        "sha256": "851de15a943775ff1398429396a6643b3a51cf8e96fc449de7561983af5acd23",
+        "size_in_bytes": 721,
+        "sha256_in_prefix": "851de15a943775ff1398429396a6643b3a51cf8e96fc449de7561983af5acd23"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_find.py",
+        "path_type": "hardlink",
+        "sha256": "b9f171ae978ad405fb6b1f087e04067a3d7db5a28f8da2a331c6716025829f7b",
+        "size_in_bytes": 2214,
+        "sha256_in_prefix": "b9f171ae978ad405fb6b1f087e04067a3d7db5a28f8da2a331c6716025829f7b"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_generate_context.py",
+        "path_type": "hardlink",
+        "sha256": "822acda2e426cc1f4f3258968f608b5958ca05395050de9cc9186dd301da5934",
+        "size_in_bytes": 13865,
+        "sha256_in_prefix": "822acda2e426cc1f4f3258968f608b5958ca05395050de9cc9186dd301da5934"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_generate_copy_without_render.py",
+        "path_type": "hardlink",
+        "sha256": "0faf26372a7199ac4eacd9ee4a3643800186e280ec15d796ab4696671ea860b4",
+        "size_in_bytes": 2484,
+        "sha256_in_prefix": "0faf26372a7199ac4eacd9ee4a3643800186e280ec15d796ab4696671ea860b4"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_generate_copy_without_render_override.py",
+        "path_type": "hardlink",
+        "sha256": "556e24c3909eb4b9dffde6d84c20ad4f69b5a7cbd93e4ef5afcd687531ea008c",
+        "size_in_bytes": 3114,
+        "sha256_in_prefix": "556e24c3909eb4b9dffde6d84c20ad4f69b5a7cbd93e4ef5afcd687531ea008c"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_generate_file.py",
+        "path_type": "hardlink",
+        "sha256": "9d65e5cc4395af15d715b3682515d0d74aa2b49c4a91e0581e6b6e36796060c0",
+        "size_in_bytes": 7298,
+        "sha256_in_prefix": "9d65e5cc4395af15d715b3682515d0d74aa2b49c4a91e0581e6b6e36796060c0"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_generate_files.py",
+        "path_type": "hardlink",
+        "sha256": "d617cf56d973b661b98afb6eebab3edecc67c5e9e0dd8e905945a268c8f74775",
+        "size_in_bytes": 16283,
+        "sha256_in_prefix": "d617cf56d973b661b98afb6eebab3edecc67c5e9e0dd8e905945a268c8f74775"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_generate_hooks.py",
+        "path_type": "hardlink",
+        "sha256": "43872a2cd0d4b15ab4e4074466a0fbae235fb6afb2d14989fa3dca1787d3ba9b",
+        "size_in_bytes": 8833,
+        "sha256_in_prefix": "43872a2cd0d4b15ab4e4074466a0fbae235fb6afb2d14989fa3dca1787d3ba9b"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_get_config.py",
+        "path_type": "hardlink",
+        "sha256": "b16864277dae4c8f8b8d8b10c5597ccd11cb13e891a709bb101280c02f83004a",
+        "size_in_bytes": 5619,
+        "sha256_in_prefix": "b16864277dae4c8f8b8d8b10c5597ccd11cb13e891a709bb101280c02f83004a"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_get_user_config.py",
+        "path_type": "hardlink",
+        "sha256": "27e473b735a2939b1b86098cf74b81bc31c57c436964716eca74987cf2b0087f",
+        "size_in_bytes": 5866,
+        "sha256_in_prefix": "27e473b735a2939b1b86098cf74b81bc31c57c436964716eca74987cf2b0087f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_hooks.py",
+        "path_type": "hardlink",
+        "sha256": "6ad734e214954d7568d01d9ace38db60514a700ff2bb2abbe1cdf821aa779ec4",
+        "size_in_bytes": 10727,
+        "sha256_in_prefix": "6ad734e214954d7568d01d9ace38db60514a700ff2bb2abbe1cdf821aa779ec4"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_log.py",
+        "path_type": "hardlink",
+        "sha256": "c4dcd807068a7069a49855e5808aea8e0f363cea902b6ccdf488145a491da1e1",
+        "size_in_bytes": 3982,
+        "sha256_in_prefix": "c4dcd807068a7069a49855e5808aea8e0f363cea902b6ccdf488145a491da1e1"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_main.py",
+        "path_type": "hardlink",
+        "sha256": "73e8e96254a1228000b2bec6d9f79af75d7bbb6fd0d73cadab0609ff2140181c",
+        "size_in_bytes": 3446,
+        "sha256_in_prefix": "73e8e96254a1228000b2bec6d9f79af75d7bbb6fd0d73cadab0609ff2140181c"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_output_folder.py",
+        "path_type": "hardlink",
+        "sha256": "520fccfbc3090dcc54460c6bccf1eeecd87264204884ba9ab4f6060d6c834b05",
+        "size_in_bytes": 1887,
+        "sha256_in_prefix": "520fccfbc3090dcc54460c6bccf1eeecd87264204884ba9ab4f6060d6c834b05"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_pre_prompt_hooks.py",
+        "path_type": "hardlink",
+        "sha256": "7035af7b7c2dd1cc8af53ab200ce031f144204cc4d82dc4cf81183bb56d95f63",
+        "size_in_bytes": 1861,
+        "sha256_in_prefix": "7035af7b7c2dd1cc8af53ab200ce031f144204cc4d82dc4cf81183bb56d95f63"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_preferred_encoding.py",
+        "path_type": "hardlink",
+        "sha256": "8ccac0c3af5d5c0b41375578259db1407e96c5aa472ffa583fe3a4af7efc7fe4",
+        "size_in_bytes": 851,
+        "sha256_in_prefix": "8ccac0c3af5d5c0b41375578259db1407e96c5aa472ffa583fe3a4af7efc7fe4"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_prompt.py",
+        "path_type": "hardlink",
+        "sha256": "4e49b11f8bae89cd271844b494d0110483043452dc4bdc1d2d3cd179b2d88794",
+        "size_in_bytes": 28348,
+        "sha256_in_prefix": "4e49b11f8bae89cd271844b494d0110483043452dc4bdc1d2d3cd179b2d88794"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_read_repo_password.py",
+        "path_type": "hardlink",
+        "sha256": "76e5a4c9a01ec51de26fc0d82a51e688c6f0e1abd9b0d794258c0534fb877bed",
+        "size_in_bytes": 497,
+        "sha256_in_prefix": "76e5a4c9a01ec51de26fc0d82a51e688c6f0e1abd9b0d794258c0534fb877bed"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_read_user_choice.py",
+        "path_type": "hardlink",
+        "sha256": "e6f021c41d493d5d61696d94983f153da1f15e1d3ed03ec4223b3ecdfdebe534",
+        "size_in_bytes": 1184,
+        "sha256_in_prefix": "e6f021c41d493d5d61696d94983f153da1f15e1d3ed03ec4223b3ecdfdebe534"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_read_user_dict.py",
+        "path_type": "hardlink",
+        "sha256": "3223c8a45e439f40e1a2d83292d52bef954e887a4433906f5350bc76b4e64e2c",
+        "size_in_bytes": 3965,
+        "sha256_in_prefix": "3223c8a45e439f40e1a2d83292d52bef954e887a4433906f5350bc76b4e64e2c"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_read_user_variable.py",
+        "path_type": "hardlink",
+        "sha256": "052e45f2cbe5e67461084ee5a41f32530964bb9647086c3456249c792a44fb77",
+        "size_in_bytes": 1057,
+        "sha256_in_prefix": "052e45f2cbe5e67461084ee5a41f32530964bb9647086c3456249c792a44fb77"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_read_user_yes_no.py",
+        "path_type": "hardlink",
+        "sha256": "bbb92fffe0e994d7cd9c28fd524526d85940a77ed084f78b28ea476440c067d2",
+        "size_in_bytes": 903,
+        "sha256_in_prefix": "bbb92fffe0e994d7cd9c28fd524526d85940a77ed084f78b28ea476440c067d2"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_repo_not_found.py",
+        "path_type": "hardlink",
+        "sha256": "4d13882a332cabe0c67915b37ee28d93a914e0ee6066f3a0fd4ba497c3111dc2",
+        "size_in_bytes": 376,
+        "sha256_in_prefix": "4d13882a332cabe0c67915b37ee28d93a914e0ee6066f3a0fd4ba497c3111dc2"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_specify_output_dir.py",
+        "path_type": "hardlink",
+        "sha256": "a06f41559b94b0b48f1c3ad5f0aecdad3cb11e09e85f15f5b87319d1de12fbf9",
+        "size_in_bytes": 2364,
+        "sha256_in_prefix": "a06f41559b94b0b48f1c3ad5f0aecdad3cb11e09e85f15f5b87319d1de12fbf9"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_templates.py",
+        "path_type": "hardlink",
+        "sha256": "65642b0077f816d2bcc3073c18869e836a8f85397fe54184045053dc921301cb",
+        "size_in_bytes": 942,
+        "sha256_in_prefix": "65642b0077f816d2bcc3073c18869e836a8f85397fe54184045053dc921301cb"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_time_extension.py",
+        "path_type": "hardlink",
+        "sha256": "02e87a101e0538cb920a25051faab78d434864643618b2eac9622de30ea749ff",
+        "size_in_bytes": 2509,
+        "sha256_in_prefix": "02e87a101e0538cb920a25051faab78d434864643618b2eac9622de30ea749ff"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/test_utils.py",
+        "path_type": "hardlink",
+        "sha256": "cb89cd5ca99b68a59fec06c9b204b97ff322bb7ab2fbb0f2d2b8c50d28eb54b9",
+        "size_in_bytes": 3228,
+        "sha256_in_prefix": "cb89cd5ca99b68a59fec06c9b204b97ff322bb7ab2fbb0f2d2b8c50d28eb54b9"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/dir-name/{{cookiecutter.project_slug}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "4b20483bfe8f3b2b77d65104fa6885e08689afe2b1fc64afb9e265a33f604af8",
+        "size_in_bytes": 84,
+        "sha256_in_prefix": "4b20483bfe8f3b2b77d65104fa6885e08689afe2b1fc64afb9e265a33f604af8"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/dir-name/{{cookiecutter.project_slug}}/{{cookiecutter.foobar}}/helloworld.py",
+        "path_type": "hardlink",
+        "sha256": "3bc78a9cf2d03514cf7c30053a6aa7056b33e22ffde824d2c71b1886e8e9aa4b",
+        "size_in_bytes": 121,
+        "sha256_in_prefix": "3bc78a9cf2d03514cf7c30053a6aa7056b33e22ffde824d2c71b1886e8e9aa4b"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/file-content/{{cookiecutter.project_slug}}/README.rst",
+        "path_type": "hardlink",
+        "sha256": "dae009c46d7fcf2ea66efbb48d417e4cad7ea00fffa0cd66171e71e35071353c",
+        "size_in_bytes": 192,
+        "sha256_in_prefix": "dae009c46d7fcf2ea66efbb48d417e4cad7ea00fffa0cd66171e71e35071353c"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/file-name/cookiecutter.json",
+        "path_type": "hardlink",
+        "sha256": "40cebb34f5ed0d8ca9cdef6a8a9c76d30c0077ae20dc973573800360ef828d71",
+        "size_in_bytes": 70,
+        "sha256_in_prefix": "40cebb34f5ed0d8ca9cdef6a8a9c76d30c0077ae20dc973573800360ef828d71"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/undefined-variable/file-name/{{cookiecutter.project_slug}}/{{cookiecutter.foobar}}",
+        "path_type": "hardlink",
+        "sha256": "4b20483bfe8f3b2b77d65104fa6885e08689afe2b1fc64afb9e265a33f604af8",
+        "size_in_bytes": 84,
+        "sha256_in_prefix": "4b20483bfe8f3b2b77d65104fa6885e08689afe2b1fc64afb9e265a33f604af8"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/vcs/test_clone.py",
+        "path_type": "hardlink",
+        "sha256": "db2b11815fa2f1fc606373606c7a627291b6d8682c43f12bd3c108963afba666",
+        "size_in_bytes": 7209,
+        "sha256_in_prefix": "db2b11815fa2f1fc606373606c7a627291b6d8682c43f12bd3c108963afba666"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/vcs/test_identify_repo.py",
+        "path_type": "hardlink",
+        "sha256": "7d3f5ff28aa7dcf9c3754dfa23a577c815f6da49d780a893eca9db1a39cfa83f",
+        "size_in_bytes": 2590,
+        "sha256_in_prefix": "7d3f5ff28aa7dcf9c3754dfa23a577c815f6da49d780a893eca9db1a39cfa83f"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/vcs/test_is_vcs_installed.py",
+        "path_type": "hardlink",
+        "sha256": "b4db7ab567998e4283cafcb37af6eaf5ac152094b399005e4c0e893358b3d776",
+        "size_in_bytes": 509,
+        "sha256_in_prefix": "b4db7ab567998e4283cafcb37af6eaf5ac152094b399005e4c0e893358b3d776"
+      },
+      {
+        "_path": "etc/conda/test-files/cookiecutter/1/tests/zipfile/test_unzip.py",
+        "path_type": "hardlink",
+        "sha256": "78c7ce8c3fce4c4478180d8bbe1f8d0238572fa23f1fadabc1a246c83b6f4edd",
+        "size_in_bytes": 9861,
+        "sha256_in_prefix": "78c7ce8c3fce4c4478180d8bbe1f8d0238572fa23f1fadabc1a246c83b6f4edd"
+      },
+      {
+        "_path": "site-packages/cookiecutter/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "852ed9c1d3056d74819c71c1306f760059b121b57b73918185042dd7541a35cd",
+        "size_in_bytes": 116,
+        "sha256_in_prefix": "852ed9c1d3056d74819c71c1306f760059b121b57b73918185042dd7541a35cd"
+      },
+      {
+        "_path": "site-packages/cookiecutter/__main__.py",
+        "path_type": "hardlink",
+        "sha256": "28d05324591691d6d3126b2087910b98a45d6f167d02bb806f2201dad76e0f9f",
+        "size_in_bytes": 174,
+        "sha256_in_prefix": "28d05324591691d6d3126b2087910b98a45d6f167d02bb806f2201dad76e0f9f"
+      },
+      {
+        "_path": "site-packages/cookiecutter/cli.py",
+        "path_type": "hardlink",
+        "sha256": "5457091a2db63f5d40ff558b64e428bafa0fb0e4e4888e1c6aaa6030f50de0da",
+        "size_in_bytes": 7909,
+        "sha256_in_prefix": "5457091a2db63f5d40ff558b64e428bafa0fb0e4e4888e1c6aaa6030f50de0da"
+      },
+      {
+        "_path": "site-packages/cookiecutter/config.py",
+        "path_type": "hardlink",
+        "sha256": "ac71524d0301fa092633cfe8d262b87394a4d4128ab581156aa099aac9233ec7",
+        "size_in_bytes": 5014,
+        "sha256_in_prefix": "ac71524d0301fa092633cfe8d262b87394a4d4128ab581156aa099aac9233ec7"
+      },
+      {
+        "_path": "site-packages/cookiecutter/environment.py",
+        "path_type": "hardlink",
+        "sha256": "bcef2093b3051fe12f5f7504e6725ba1d1a8ed157bd60fbd7cba888b978eacfc",
+        "size_in_bytes": 2474,
+        "sha256_in_prefix": "bcef2093b3051fe12f5f7504e6725ba1d1a8ed157bd60fbd7cba888b978eacfc"
+      },
+      {
+        "_path": "site-packages/cookiecutter/exceptions.py",
+        "path_type": "hardlink",
+        "sha256": "f406d7344a9448b896f261edc48c70f4651f7141ef7d870e6a5e8caaf80b8bbe",
+        "size_in_bytes": 4249,
+        "sha256_in_prefix": "f406d7344a9448b896f261edc48c70f4651f7141ef7d870e6a5e8caaf80b8bbe"
+      },
+      {
+        "_path": "site-packages/cookiecutter/extensions.py",
+        "path_type": "hardlink",
+        "sha256": "1f214e2ac0333dbe157b699dbe55d03f5f25c1de1603ee6cfdc3df34b2af9d49",
+        "size_in_bytes": 5441,
+        "sha256_in_prefix": "1f214e2ac0333dbe157b699dbe55d03f5f25c1de1603ee6cfdc3df34b2af9d49"
+      },
+      {
+        "_path": "site-packages/cookiecutter/find.py",
+        "path_type": "hardlink",
+        "sha256": "09ce7fc7fae209d808f5b537699d792d23e877b9acd8d69af90ea551c1412bad",
+        "size_in_bytes": 1131,
+        "sha256_in_prefix": "09ce7fc7fae209d808f5b537699d792d23e877b9acd8d69af90ea551c1412bad"
+      },
+      {
+        "_path": "site-packages/cookiecutter/generate.py",
+        "path_type": "hardlink",
+        "sha256": "f3898d30deb78e06d176c36c38c417f68883407e05dd81eca8931d62d1c14e2e",
+        "size_in_bytes": 17872,
+        "sha256_in_prefix": "f3898d30deb78e06d176c36c38c417f68883407e05dd81eca8931d62d1c14e2e"
+      },
+      {
+        "_path": "site-packages/cookiecutter/hooks.py",
+        "path_type": "hardlink",
+        "sha256": "95a7cfaaed76f81dd6d70302afeeb79c99921c30bc10e686b8ccd14c7bd7bb09",
+        "size_in_bytes": 6356,
+        "sha256_in_prefix": "95a7cfaaed76f81dd6d70302afeeb79c99921c30bc10e686b8ccd14c7bd7bb09"
+      },
+      {
+        "_path": "site-packages/cookiecutter/log.py",
+        "path_type": "hardlink",
+        "sha256": "f63c314a0f288c50370b6cd773a9c28179f757bcce851ae4a05a1a1a84d98323",
+        "size_in_bytes": 1650,
+        "sha256_in_prefix": "f63c314a0f288c50370b6cd773a9c28179f757bcce851ae4a05a1a1a84d98323"
+      },
+      {
+        "_path": "site-packages/cookiecutter/main.py",
+        "path_type": "hardlink",
+        "sha256": "be5ba8ae595a648d222b00985464cf8aba23d0814a94fcc2e4454dedc0967d91",
+        "size_in_bytes": 8046,
+        "sha256_in_prefix": "be5ba8ae595a648d222b00985464cf8aba23d0814a94fcc2e4454dedc0967d91"
+      },
+      {
+        "_path": "site-packages/cookiecutter/prompt.py",
+        "path_type": "hardlink",
+        "sha256": "ab77946a6b260796e9d25de39c7f0415989c4d55d2075d755e873d4d02240db3",
+        "size_in_bytes": 14777,
+        "sha256_in_prefix": "ab77946a6b260796e9d25de39c7f0415989c4d55d2075d755e873d4d02240db3"
+      },
+      {
+        "_path": "site-packages/cookiecutter/replay.py",
+        "path_type": "hardlink",
+        "sha256": "b99de9626d9f62b6a5f7e3e56794c2f9e53404a2bdda27eb99a4e437a758b6d4",
+        "size_in_bytes": 1410,
+        "sha256_in_prefix": "b99de9626d9f62b6a5f7e3e56794c2f9e53404a2bdda27eb99a4e437a758b6d4"
+      },
+      {
+        "_path": "site-packages/cookiecutter/repository.py",
+        "path_type": "hardlink",
+        "sha256": "fc8d261453ddf9a6dec38eecab1f2468177b6ee1de6195271264feab60c46dca",
+        "size_in_bytes": 4538,
+        "sha256_in_prefix": "fc8d261453ddf9a6dec38eecab1f2468177b6ee1de6195271264feab60c46dca"
+      },
+      {
+        "_path": "site-packages/cookiecutter/utils.py",
+        "path_type": "hardlink",
+        "sha256": "e8b031b34b9f6d5c1fc488a88e68efb5e696f7629602db17caaca3386345adff",
+        "size_in_bytes": 3201,
+        "sha256_in_prefix": "e8b031b34b9f6d5c1fc488a88e68efb5e696f7629602db17caaca3386345adff"
+      },
+      {
+        "_path": "site-packages/cookiecutter/vcs.py",
+        "path_type": "hardlink",
+        "sha256": "ff5233e3779409c9bd85b697b7a080146d94b5f07f1b60b0ed2350de2bf9cf28",
+        "size_in_bytes": 4550,
+        "sha256_in_prefix": "ff5233e3779409c9bd85b697b7a080146d94b5f07f1b60b0ed2350de2bf9cf28"
+      },
+      {
+        "_path": "site-packages/cookiecutter/zipfile.py",
+        "path_type": "hardlink",
+        "sha256": "87a5477b31baeb999c35688bb59972f707db9370aa89b9a1087a4d77aae66752",
+        "size_in_bytes": 5123,
+        "sha256_in_prefix": "87a5477b31baeb999c35688bb59972f707db9370aa89b9a1087a4d77aae66752"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc",
+        "size_in_bytes": 6,
+        "sha256_in_prefix": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "059204c23e73a11c50dbf083f5a74ea53b4c936d1f19d5288b0ce4e00f23979b",
+        "size_in_bytes": 7323,
+        "sha256_in_prefix": "059204c23e73a11c50dbf083f5a74ea53b4c936d1f19d5288b0ce4e00f23979b"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "9c52363dfcd78b619de322ba72e50e11b3a941c68ab7ac8cded772cdf5514f06",
+        "size_in_bytes": 3378,
+        "sha256_in_prefix": "9c52363dfcd78b619de322ba72e50e11b3a941c68ab7ac8cded772cdf5514f06"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "6027f0606398322e49870d9f538c8d83012bc9b6f6217e4f13004a57865b741a",
+        "size_in_bytes": 91,
+        "sha256_in_prefix": "6027f0606398322e49870d9f538c8d83012bc9b6f6217e4f13004a57865b741a"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "6818f574fa0718aeec2941c0c049dc25c9b52a70f0e43851a7a96df555a78065",
+        "size_in_bytes": 123,
+        "sha256_in_prefix": "6818f574fa0718aeec2941c0c049dc25c9b52a70f0e43851a7a96df555a78065"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/entry_points.txt",
+        "path_type": "hardlink",
+        "sha256": "3736265c6d09e0c2f81263393ce525f48e4fc4d375aa50d580eb648d547c1678",
+        "size_in_bytes": 60,
+        "sha256_in_prefix": "3736265c6d09e0c2f81263393ce525f48e4fc4d375aa50d580eb648d547c1678"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/licenses/AUTHORS.md",
+        "path_type": "hardlink",
+        "sha256": "312db048e05b58317c226db00138b36cd49bc80044ed5d11ed6891d158e12ef0",
+        "size_in_bytes": 11894,
+        "sha256_in_prefix": "312db048e05b58317c226db00138b36cd49bc80044ed5d11ed6891d158e12ef0"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/licenses/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "a30f1b36607116ae7bc25a9d0bdf23df235c3f25d50b070e426deb07b0ebe9e0",
+        "size_in_bytes": 1496,
+        "sha256_in_prefix": "a30f1b36607116ae7bc25a9d0bdf23df235c3f25d50b070e426deb07b0ebe9e0"
+      },
+      {
+        "_path": "site-packages/cookiecutter-2.7.1.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "504d0d1a3e22a8b3600bee42018e15f784eaa7d9800fc1eac2f6691bdcfa7066",
+        "size_in_bytes": 13,
+        "sha256_in_prefix": "504d0d1a3e22a8b3600bee42018e15f784eaa7d9800fc1eac2f6691bdcfa7066"
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 293
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/__main__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 372
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/cli.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 10353
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/config.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5970
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/environment.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 3394
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/exceptions.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 6453
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/extensions.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 8183
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/find.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 1513
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/generate.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 17428
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/hooks.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 8548
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/log.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 2109
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/main.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 8207
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/prompt.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 16702
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/replay.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 2029
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/repository.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5251
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/utils.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5345
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/vcs.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 5451
+      },
+      {
+        "_path": "Lib/site-packages/cookiecutter/__pycache__/zipfile.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 4593
+      },
+      {
+        "_path": "Scripts/cookiecutter-script.py",
+        "path_type": "windows_python_entry_point_script",
+        "size_in_bytes": 213
+      },
+      {
+        "_path": "Scripts/cookiecutter.exe",
+        "path_type": "windows_python_entry_point_exe"
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\cookiecutter-2.7.1-pyhcf101f3_0",
+    "type": 1
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "name": "text-unidecode",
+  "version": "1.3",
+  "build": "pyhd8ed1ab_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "text-unidecode-1.3-pyhd8ed1ab_2.conda",
+  "md5": "23b4ba5619c4752976eb7ba1f5acb7e8",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/text-unidecode-1.3-pyhd8ed1ab_2.conda",
+  "sha256": "4770807cc5a217638c9aea3f05ea55718a82c50f32462df196b5472aff02787f",
+  "depends": [
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "Artistic-1.0-Perl",
+  "package_type": "noarch_python",
+  "timestamp": 1733750024000,
+  "size": 65532,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\text-unidecode-1.3-pyhd8ed1ab_2.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\text-unidecode-1.3-pyhd8ed1ab_2",
+  "files": [
+    "Lib/site-packages/text_unidecode-1.3.dist-info/INSTALLER",
+    "Lib/site-packages/text_unidecode-1.3.dist-info/LICENSE",
+    "Lib/site-packages/text_unidecode-1.3.dist-info/METADATA",
+    "Lib/site-packages/text_unidecode-1.3.dist-info/RECORD",
+    "Lib/site-packages/text_unidecode-1.3.dist-info/REQUESTED",
+    "Lib/site-packages/text_unidecode-1.3.dist-info/WHEEL",
+    "Lib/site-packages/text_unidecode-1.3.dist-info/direct_url.json",
+    "Lib/site-packages/text_unidecode-1.3.dist-info/top_level.txt",
+    "Lib/site-packages/text_unidecode/__init__.py",
+    "Lib/site-packages/text_unidecode/data.bin",
+    "Lib/site-packages/text_unidecode/__pycache__/__init__.cpython-312.pyc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/text_unidecode-1.3.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5,
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8"
+      },
+      {
+        "_path": "site-packages/text_unidecode-1.3.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "3938e7535c3e4ef7e6363de9b693fe3bafe3c4a5e5f4925cd48375096fe7afd5",
+        "size_in_bytes": 6535,
+        "sha256_in_prefix": "3938e7535c3e4ef7e6363de9b693fe3bafe3c4a5e5f4925cd48375096fe7afd5"
+      },
+      {
+        "_path": "site-packages/text_unidecode-1.3.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "ff06fe55251e132e5cd869fe3fc4ab18e4e3f9c85cc43a8ab9a3c1317bc2811a",
+        "size_in_bytes": 2424,
+        "sha256_in_prefix": "ff06fe55251e132e5cd869fe3fc4ab18e4e3f9c85cc43a8ab9a3c1317bc2811a"
+      },
+      {
+        "_path": "site-packages/text_unidecode-1.3.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "91c8ab567a1443c5fede0cfda825b4523ac3a23d6aef948893732d08d4623c62",
+        "size_in_bytes": 924,
+        "sha256_in_prefix": "91c8ab567a1443c5fede0cfda825b4523ac3a23d6aef948893732d08d4623c62"
+      },
+      {
+        "_path": "site-packages/text_unidecode-1.3.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/text_unidecode-1.3.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "a7178d5f925db427b9f0f51260ff6ea6673b8dd44f82f4f41a6f646f5487955c",
+        "size_in_bytes": 109,
+        "sha256_in_prefix": "a7178d5f925db427b9f0f51260ff6ea6673b8dd44f82f4f41a6f646f5487955c"
+      },
+      {
+        "_path": "site-packages/text_unidecode-1.3.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "dbd19150ff849009efb8faa1c5658ebe15ed5d54951b49df75283088127d0c2e",
+        "size_in_bytes": 110,
+        "sha256_in_prefix": "dbd19150ff849009efb8faa1c5658ebe15ed5d54951b49df75283088127d0c2e"
+      },
+      {
+        "_path": "site-packages/text_unidecode-1.3.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "4901fd4918d694bac3f97807c9038fb43420fc3681b771adea188c48dc076ee1",
+        "size_in_bytes": 15,
+        "sha256_in_prefix": "4901fd4918d694bac3f97807c9038fb43420fc3681b771adea188c48dc076ee1"
+      },
+      {
+        "_path": "site-packages/text_unidecode/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "fe1112aa5bc647f713cb4a2bc8fba8cab567b42388203edb1c303ecb6d88d628",
+        "size_in_bytes": 484,
+        "sha256_in_prefix": "fe1112aa5bc647f713cb4a2bc8fba8cab567b42388203edb1c303ecb6d88d628"
+      },
+      {
+        "_path": "site-packages/text_unidecode/data.bin",
+        "path_type": "hardlink",
+        "sha256": "7924666da4ce0ad24d4b8142b330e6d8e89465cd883934724cd9e4b7d8130f09",
+        "size_in_bytes": 311077,
+        "sha256_in_prefix": "7924666da4ce0ad24d4b8142b330e6d8e89465cd883934724cd9e4b7d8130f09"
+      },
+      {
+        "_path": "Lib/site-packages/text_unidecode/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 954
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\text-unidecode-1.3-pyhd8ed1ab_2",
+    "type": 1
+  }
+}

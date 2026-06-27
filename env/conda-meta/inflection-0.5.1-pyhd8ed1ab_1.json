@@ -1,0 +1,121 @@
+{
+  "name": "inflection",
+  "version": "0.5.1",
+  "build": "pyhd8ed1ab_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "inflection-0.5.1-pyhd8ed1ab_1.conda",
+  "md5": "12fcab817a0b8df370db76ce08556b60",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/inflection-0.5.1-pyhd8ed1ab_1.conda",
+  "sha256": "8911490cb120f760ca1234288a2767ef6de4ee47416bfda0cc1c3919ff001da4",
+  "depends": [
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1734732240000,
+  "size": 11730,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\inflection-0.5.1-pyhd8ed1ab_1.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\inflection-0.5.1-pyhd8ed1ab_1",
+  "files": [
+    "Lib/site-packages/inflection-0.5.1.dist-info/INSTALLER",
+    "Lib/site-packages/inflection-0.5.1.dist-info/LICENSE",
+    "Lib/site-packages/inflection-0.5.1.dist-info/METADATA",
+    "Lib/site-packages/inflection-0.5.1.dist-info/RECORD",
+    "Lib/site-packages/inflection-0.5.1.dist-info/REQUESTED",
+    "Lib/site-packages/inflection-0.5.1.dist-info/WHEEL",
+    "Lib/site-packages/inflection-0.5.1.dist-info/direct_url.json",
+    "Lib/site-packages/inflection-0.5.1.dist-info/top_level.txt",
+    "Lib/site-packages/inflection/__init__.py",
+    "Lib/site-packages/inflection/py.typed",
+    "Lib/site-packages/inflection/__pycache__/__init__.cpython-312.pyc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/inflection-0.5.1.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5,
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8"
+      },
+      {
+        "_path": "site-packages/inflection-0.5.1.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "9e9f9b4b2e7543ad1486f1328bf9ec50e5a5e2bb9caceb59652496dd61e64133",
+        "size_in_bytes": 1062,
+        "sha256_in_prefix": "9e9f9b4b2e7543ad1486f1328bf9ec50e5a5e2bb9caceb59652496dd61e64133"
+      },
+      {
+        "_path": "site-packages/inflection-0.5.1.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "6f83d2af20527f5dad108f5618c9a59449996c5f7a7eef361575ab0b62379cd9",
+        "size_in_bytes": 1732,
+        "sha256_in_prefix": "6f83d2af20527f5dad108f5618c9a59449996c5f7a7eef361575ab0b62379cd9"
+      },
+      {
+        "_path": "site-packages/inflection-0.5.1.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "6ff4ec71525c982ff388023ae756ae66f756a969d811ecb9002c9289430ca2db",
+        "size_in_bytes": 893,
+        "sha256_in_prefix": "6ff4ec71525c982ff388023ae756ae66f756a969d811ecb9002c9289430ca2db"
+      },
+      {
+        "_path": "site-packages/inflection-0.5.1.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/inflection-0.5.1.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "a7178d5f925db427b9f0f51260ff6ea6673b8dd44f82f4f41a6f646f5487955c",
+        "size_in_bytes": 109,
+        "sha256_in_prefix": "a7178d5f925db427b9f0f51260ff6ea6673b8dd44f82f4f41a6f646f5487955c"
+      },
+      {
+        "_path": "site-packages/inflection-0.5.1.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "eb0e965a8555d09e77dc6065b206a3bc78d5ed336189b88682d8d8e445106951",
+        "size_in_bytes": 106,
+        "sha256_in_prefix": "eb0e965a8555d09e77dc6065b206a3bc78d5ed336189b88682d8d8e445106951"
+      },
+      {
+        "_path": "site-packages/inflection-0.5.1.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "013daf6116463066276ac35d8f8a096e949d765b58499ddc6461fc063a3bc50a",
+        "size_in_bytes": 11,
+        "sha256_in_prefix": "013daf6116463066276ac35d8f8a096e949d765b58499ddc6461fc063a3bc50a"
+      },
+      {
+        "_path": "site-packages/inflection/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "3f2dfceedae1d0ff7399c238e70da02eb0c0a658e2f649ad1abe6cec36374c3f",
+        "size_in_bytes": 11437,
+        "sha256_in_prefix": "3f2dfceedae1d0ff7399c238e70da02eb0c0a658e2f649ad1abe6cec36374c3f"
+      },
+      {
+        "_path": "site-packages/inflection/py.typed",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "Lib/site-packages/inflection/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 14980
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\inflection-0.5.1-pyhd8ed1ab_1",
+    "type": 1
+  }
+}

@@ -9,6 +9,7 @@ requires = [
 ]
 build-backend = "scikit_build_core.build"
 
+
 [project]
 name = "asset-asrl-dev"
 version = "0.5.2"
@@ -29,6 +30,18 @@ dependencies = [
     "mkl"
 ]
 
+
+# ----------------------------
+# PACKAGE DISCOVERY (CRITICAL FIX)
+# ----------------------------
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["asset_asrl*"]
+
+
+# ----------------------------
+# OPTIONAL DEPENDENCIES
+# ----------------------------
 [project.optional-dependencies]
 dev = [
     "pytest>=6.0",
@@ -41,18 +54,22 @@ dev = [
     "flake8>=3.9.0",
     "mypy>=0.900"
 ]
+
 docs = [
     "sphinx>=4.0.0",
     "breathe>=4.26.0",
     "furo>=2021.8.0"
 ]
+
 test = [
     "pytest>=6.0",
     "pytest-cov>=2.12.0"
 ]
+
 cython = [
     "cython>=0.29.0"
 ]
+
 analysis = [
     "scipy>=1.6.0",
     "pandas>=1.2.0",
@@ -61,7 +78,9 @@ analysis = [
 ]
 
 
+# ----------------------------
+# SCIKIT-BUILD CONFIG (FIXED)
+# ----------------------------
 [tool.scikit-build]
 cmake.minimum-version = "3.16"
 cmake.build-type = "Release"
-wheel.packages = ["asset_asrl"]

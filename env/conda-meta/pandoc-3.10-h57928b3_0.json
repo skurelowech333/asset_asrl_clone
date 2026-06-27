@@ -1,0 +1,39 @@
+{
+  "name": "pandoc",
+  "version": "3.10",
+  "build": "h57928b3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/win-64",
+  "subdir": "win-64",
+  "fn": "pandoc-3.10-h57928b3_0.conda",
+  "md5": "279aed27b9dd4747cca81f18ab226034",
+  "url": "https://conda.anaconda.org/conda-forge/win-64/pandoc-3.10-h57928b3_0.conda",
+  "sha256": "113b65a0994f0858b60273ed4ccd2b34c71623af7263c1e79a9db7503b70598e",
+  "depends": [],
+  "constrains": [],
+  "license": "GPL-2.0-or-later",
+  "timestamp": 1780595558000,
+  "size": 26777174,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\pandoc-3.10-h57928b3_0.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\pandoc-3.10-h57928b3_0",
+  "files": [
+    "Library/bin/pandoc.exe"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "Library/bin/pandoc.exe",
+        "path_type": "hardlink",
+        "sha256": "0e5d21f8b10537048ad5ba31d575d0792286fe682172fe67ea7267bccd1cabf8",
+        "size_in_bytes": 231772424,
+        "sha256_in_prefix": "0e5d21f8b10537048ad5ba31d575d0792286fe682172fe67ea7267bccd1cabf8"
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\pandoc-3.10-h57928b3_0",
+    "type": 1
+  }
+}

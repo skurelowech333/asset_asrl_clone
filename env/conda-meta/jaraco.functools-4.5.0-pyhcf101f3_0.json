@@ -1,0 +1,131 @@
+{
+  "name": "jaraco.functools",
+  "version": "4.5.0",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "jaraco.functools-4.5.0-pyhcf101f3_0.conda",
+  "md5": "8e33f6f90e5de5efd971840c7634d954",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/jaraco.functools-4.5.0-pyhcf101f3_0.conda",
+  "sha256": "8bc317fe1e93dec7350b460f7b4e82ea9c3d157c278219bfc6a95b7a51007fdd",
+  "depends": [
+    "python >=3.10",
+    "more-itertools",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1778889146000,
+  "size": 18461,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\jaraco.functools-4.5.0-pyhcf101f3_0.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\jaraco.functools-4.5.0-pyhcf101f3_0",
+  "files": [
+    "Lib/site-packages/jaraco/functools/__init__.py",
+    "Lib/site-packages/jaraco/functools/__init__.pyi",
+    "Lib/site-packages/jaraco/functools/py.typed",
+    "Lib/site-packages/jaraco_functools-4.5.0.dist-info/INSTALLER",
+    "Lib/site-packages/jaraco_functools-4.5.0.dist-info/METADATA",
+    "Lib/site-packages/jaraco_functools-4.5.0.dist-info/RECORD",
+    "Lib/site-packages/jaraco_functools-4.5.0.dist-info/REQUESTED",
+    "Lib/site-packages/jaraco_functools-4.5.0.dist-info/WHEEL",
+    "Lib/site-packages/jaraco_functools-4.5.0.dist-info/direct_url.json",
+    "Lib/site-packages/jaraco_functools-4.5.0.dist-info/licenses/LICENSE",
+    "Lib/site-packages/jaraco_functools-4.5.0.dist-info/top_level.txt",
+    "Lib/site-packages/jaraco/functools/__pycache__/__init__.cpython-312.pyc"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "site-packages/jaraco/functools/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "c24ffe0912eff5ddc1e77cf8cbad1389ab8be15c298f6f0b8aa0735f693f3431",
+        "size_in_bytes": 19116,
+        "sha256_in_prefix": "c24ffe0912eff5ddc1e77cf8cbad1389ab8be15c298f6f0b8aa0735f693f3431"
+      },
+      {
+        "_path": "site-packages/jaraco/functools/__init__.pyi",
+        "path_type": "hardlink",
+        "sha256": "1432996550123a3e1b42415bf500e73d6ba37a0918400127178ef376e76bc7f4",
+        "size_in_bytes": 3930,
+        "sha256_in_prefix": "1432996550123a3e1b42415bf500e73d6ba37a0918400127178ef376e76bc7f4"
+      },
+      {
+        "_path": "site-packages/jaraco/functools/py.typed",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/jaraco_functools-4.5.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc",
+        "size_in_bytes": 6,
+        "sha256_in_prefix": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc"
+      },
+      {
+        "_path": "site-packages/jaraco_functools-4.5.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "e64af3e83e1cca078bd000171d539b958c60757f12a91be707ac9785ad0a6c5d",
+        "size_in_bytes": 2920,
+        "sha256_in_prefix": "e64af3e83e1cca078bd000171d539b958c60757f12a91be707ac9785ad0a6c5d"
+      },
+      {
+        "_path": "site-packages/jaraco_functools-4.5.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "43f423a87dddd90f7da1500289356fa85a437b7f7c58b08690c9ba2524a18e3c",
+        "size_in_bytes": 1054,
+        "sha256_in_prefix": "43f423a87dddd90f7da1500289356fa85a437b7f7c58b08690c9ba2524a18e3c"
+      },
+      {
+        "_path": "site-packages/jaraco_functools-4.5.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0,
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "_path": "site-packages/jaraco_functools-4.5.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "69e6228a0d35958183cc1812f07c565ce837b95eb51bd8a33acba9fa4f68d6c9",
+        "size_in_bytes": 91,
+        "sha256_in_prefix": "69e6228a0d35958183cc1812f07c565ce837b95eb51bd8a33acba9fa4f68d6c9"
+      },
+      {
+        "_path": "site-packages/jaraco_functools-4.5.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "8e76d73c0809932bbc72ed826ab14bfbecda675d390fb54c75487031857c365c",
+        "size_in_bytes": 127,
+        "sha256_in_prefix": "8e76d73c0809932bbc72ed826ab14bfbecda675d390fb54c75487031857c365c"
+      },
+      {
+        "_path": "site-packages/jaraco_functools-4.5.0.dist-info/licenses/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "9755a18519666e5f0f4cae3daad3d7012bcae48a600b31237d75e9fe134e6683",
+        "size_in_bytes": 1076,
+        "sha256_in_prefix": "9755a18519666e5f0f4cae3daad3d7012bcae48a600b31237d75e9fe134e6683"
+      },
+      {
+        "_path": "site-packages/jaraco_functools-4.5.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "d099cddcb7d71f82c845f5cbf9014e18227341664edc42f1e11d5dfe5a2ea103",
+        "size_in_bytes": 7,
+        "sha256_in_prefix": "d099cddcb7d71f82c845f5cbf9014e18227341664edc42f1e11d5dfe5a2ea103"
+      },
+      {
+        "_path": "Lib/site-packages/jaraco/functools/__pycache__/__init__.cpython-312.pyc",
+        "path_type": "pyc_file",
+        "size_in_bytes": 26213
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\jaraco.functools-4.5.0-pyhcf101f3_0",
+    "type": 1
+  }
+}

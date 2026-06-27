@@ -4,7 +4,7 @@ import asset_asrl.OptimalControl
 import asset_asrl.Utils
 import asset_asrl.Astro
 import asset_asrl.Solvers
-from . import Forces
+#from . import Forces
 import inspect
 
 SoftwareInfo = _asset.SoftwareInfo

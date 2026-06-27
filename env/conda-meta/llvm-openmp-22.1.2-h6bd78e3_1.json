@@ -1,0 +1,133 @@
+{
+  "name": "llvm-openmp",
+  "version": "22.1.2",
+  "build": "h6bd78e3_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "subdir": "win-64",
+  "fn": "llvm-openmp-22.1.2-h6bd78e3_1.conda",
+  "md5": "6ddc4ecb2bfbe058825314c192091c0a",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/llvm-openmp-22.1.2-h6bd78e3_1.conda",
+  "sha256": "787b2c31e384a52c6cc104cd89d24a1b2603002595790a8a1dcd631b331b9376",
+  "depends": [
+    "ucrt >=10.0.20348.0",
+    "vc >=14.3,<15",
+    "vc14_runtime >=14.44.35208"
+  ],
+  "constrains": [
+    "openmp 22.1.2|22.1.2.*"
+  ],
+  "license": "Apache-2.0 WITH LLVM-exception",
+  "timestamp": 1779209590000,
+  "size": 306854,
+  "requested_spec": "None",
+  "package_tarball_full_path": "C:\\Users\\Sarah\\anaconda3\\pkgs\\llvm-openmp-22.1.2-h6bd78e3_1.conda",
+  "extracted_package_dir": "C:\\Users\\Sarah\\anaconda3\\pkgs\\llvm-openmp-22.1.2-h6bd78e3_1",
+  "files": [
+    "Library/bin/libiomp5md.dll",
+    "Library/bin/libomp.dll",
+    "Library/include/omp.h",
+    "Library/include/omp_lib.h",
+    "Library/include/ompx.h",
+    "Library/lib/clang/18/include/omp.h",
+    "Library/lib/clang/19/include/omp.h",
+    "Library/lib/clang/20/include/omp.h",
+    "Library/lib/clang/21/include/omp.h",
+    "Library/lib/clang/22/include/omp.h",
+    "Library/lib/libiomp5md.lib",
+    "Library/lib/libomp.lib"
+  ],
+  "paths_data": {
+    "paths_version": 1,
+    "paths": [
+      {
+        "_path": "Library/bin/libiomp5md.dll",
+        "path_type": "hardlink",
+        "sha256": "9e36e10e351d631d6ba403fd85b7c2d9868df0a7ca13b5c7e31eb24681dbc375",
+        "size_in_bytes": 684872,
+        "sha256_in_prefix": "9e36e10e351d631d6ba403fd85b7c2d9868df0a7ca13b5c7e31eb24681dbc375"
+      },
+      {
+        "_path": "Library/bin/libomp.dll",
+        "path_type": "hardlink",
+        "sha256": "b2b68a8eeca786316f56d18863d9722d945b35e2751ecd8231edf7c5e0ff7a6f",
+        "size_in_bytes": 684872,
+        "sha256_in_prefix": "b2b68a8eeca786316f56d18863d9722d945b35e2751ecd8231edf7c5e0ff7a6f"
+      },
+      {
+        "_path": "Library/include/omp.h",
+        "path_type": "hardlink",
+        "sha256": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd",
+        "size_in_bytes": 26633,
+        "sha256_in_prefix": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd"
+      },
+      {
+        "_path": "Library/include/omp_lib.h",
+        "path_type": "hardlink",
+        "sha256": "0a49a6a5376a4ecef7b4e6eeaef956f87139c40758ab875baf396402cccf2bcb",
+        "size_in_bytes": 55660,
+        "sha256_in_prefix": "0a49a6a5376a4ecef7b4e6eeaef956f87139c40758ab875baf396402cccf2bcb"
+      },
+      {
+        "_path": "Library/include/ompx.h",
+        "path_type": "hardlink",
+        "sha256": "713e8ca738021ac3ce8b744da2dd4bcc19eb5895dd20a5c1949e1e2dd6760f23",
+        "size_in_bytes": 7960,
+        "sha256_in_prefix": "713e8ca738021ac3ce8b744da2dd4bcc19eb5895dd20a5c1949e1e2dd6760f23"
+      },
+      {
+        "_path": "Library/lib/clang/18/include/omp.h",
+        "path_type": "hardlink",
+        "sha256": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd",
+        "size_in_bytes": 26633,
+        "sha256_in_prefix": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd"
+      },
+      {
+        "_path": "Library/lib/clang/19/include/omp.h",
+        "path_type": "hardlink",
+        "sha256": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd",
+        "size_in_bytes": 26633,
+        "sha256_in_prefix": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd"
+      },
+      {
+        "_path": "Library/lib/clang/20/include/omp.h",
+        "path_type": "hardlink",
+        "sha256": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd",
+        "size_in_bytes": 26633,
+        "sha256_in_prefix": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd"
+      },
+      {
+        "_path": "Library/lib/clang/21/include/omp.h",
+        "path_type": "hardlink",
+        "sha256": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd",
+        "size_in_bytes": 26633,
+        "sha256_in_prefix": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd"
+      },
+      {
+        "_path": "Library/lib/clang/22/include/omp.h",
+        "path_type": "hardlink",
+        "sha256": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd",
+        "size_in_bytes": 26633,
+        "sha256_in_prefix": "cb9ab6f531f893ed38634f071417459d147607e1cd2adae0e382dff5e98f18fd"
+      },
+      {
+        "_path": "Library/lib/libiomp5md.lib",
+        "path_type": "hardlink",
+        "sha256": "3f8f26586db975f83db95dac80ef1a264e9c2b65dcb2ddb2d1a9318d2e01940d",
+        "size_in_bytes": 189786,
+        "sha256_in_prefix": "3f8f26586db975f83db95dac80ef1a264e9c2b65dcb2ddb2d1a9318d2e01940d"
+      },
+      {
+        "_path": "Library/lib/libomp.lib",
+        "path_type": "hardlink",
+        "sha256": "3f8f26586db975f83db95dac80ef1a264e9c2b65dcb2ddb2d1a9318d2e01940d",
+        "size_in_bytes": 189786,
+        "sha256_in_prefix": "3f8f26586db975f83db95dac80ef1a264e9c2b65dcb2ddb2d1a9318d2e01940d"
+      }
+    ]
+  },
+  "link": {
+    "source": "C:\\Users\\Sarah\\anaconda3\\pkgs\\llvm-openmp-22.1.2-h6bd78e3_1",
+    "type": 1
+  }
+}

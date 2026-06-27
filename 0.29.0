@@ -1,0 +1,6 @@
+Requirement already satisfied: scikit-build-core in .\env\Lib\site-packages (0.12.2)
+Requirement already satisfied: cmake in .\env\Lib\site-packages (4.3.2)
+Requirement already satisfied: ninja in .\env\Lib\site-packages (1.13.0)
+Requirement already satisfied: cython in .\env\Lib\site-packages (3.2.5)
+Requirement already satisfied: packaging>=23.2 in .\env\Lib\site-packages (from scikit-build-core) (25.0)
+Requirement already satisfied: pathspec>=0.12.0 in .\env\Lib\site-packages (from scikit-build-core) (1.1.1)
