@@ -1,16 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-benchmark_gravity_kernels_visual.py
-
-Compare:
-    - Regular spherical harmonic gravity kernel
-    - Pines gravity kernel
-
-Includes:
-    - correctness validation
-    - timing
-    - dark benchmark plots
-
 @author: Sarah
 """
 
@@ -33,8 +22,7 @@ NSAMPLES = 10000
 plt.style.use("dark_background")
 
 def make_coefficients(N):
-    C = {}
-    S = {}
+    C, S = {}, {}
 
     for n in range(N + 1):
         for m in range(n + 1):
@@ -47,8 +35,7 @@ C, S = make_coefficients(DEGREE)
 
 states = [
     np.array(
-        [
-            7000.0,
+        [7000.0,
             0.0,
             0.0,
             0.0,
@@ -58,8 +45,7 @@ states = [
     ),
 
     np.array(
-        [
-            8000.0,
+        [8000.0,
             1000.0,
             500.0,
             0.0,
@@ -69,8 +55,7 @@ states = [
     ),
 
     np.array(
-        [
-            26560.0,
+        [26560.0,
             0.0,
             0.0,
             0.0,
@@ -83,12 +68,7 @@ states = [
 states = [x.astype(np.float64) for x in states]
 
 def build_regular():
-    return SphericalHarmonicGravityVF(
-        MU,
-        R,
-        C,
-        S,
-        DEGREE)
+    return SphericalHarmonicGravityVF(MU, R, C, S, DEGREE)
 
 def build_pines():
     return PinesGravityVF(MU)
@@ -128,18 +108,10 @@ reg_accel = regular.build_accel()
 pin_accel = pines.build_accel()
 
 # Validate
-reg_vec = []
-pin_vec = []
-
-reg_mag = []
-pin_mag = []
-
-errors = []
-
+reg_vec,  pin_vec, reg_mag, pin_mag, errors = [], [], [], [], []
 
 for x in states:
     r = np.array(reg_accel.compute(x))
-
     p = np.array(pin_accel.compute(x))
 
     reg_vec.append(r)
@@ -159,9 +131,12 @@ t_pin = timed_eval(pin_accel, states[0], NSAMPLES)
 speedup = t_reg/t_pin
 
 t_reg_jac = timed_jacobian(reg_accel, states[0])
-
 t_pin_jac = timed_jacobian(pin_accel, states[0])
 
+Jsh = np.array(reg_accel.jacobian(states[0]))
+Jpin = np.array(pin_accel.jacobian(states[0]))
+
+print("Jacobian difference:", np.linalg.norm(Jsh-Jpin))
 
 print(
 f"""
@@ -203,24 +178,12 @@ Max error:
 """
 )
 
-
 # Acceleration Magnitude
 fig, ax = plt.subplots(figsize=(8,5))
 x = np.arange(len(states))
 
-ax.plot(
-    x,
-    reg_mag,
-    marker="o",
-    linewidth=2,
-    label="Spherical Harmonic")
-
-ax.plot(
-    x,
-    pin_mag,
-    marker="s",
-    linewidth=2,
-    label="Pines")
+ax.plot(x, reg_mag, marker="o", linewidth=2, label="Spherical Harmonic")
+ax.plot(x, pin_mag, marker="s", linewidth=2, label="Pines")
 
 ax.set_title(f"Gravity Magnitude Agreement (Degree {DEGREE})")
 ax.set_xlabel("Test Case")
@@ -234,24 +197,12 @@ plt.show()
 fig, ax = plt.subplots(figsize=(8,5))
 
 if np.allclose(errors, 0):
-    ax.plot(
-        x,
-        errors,
-        marker="o",
-        linewidth=2)
-
+    ax.plot(x, errors, marker="o", linewidth=2)
     ax.set_ylim(-1e-16, 1e-16)
-
-    ax.axhline(
-        0,
-        color="white",
-        linestyle="--")
+    ax.axhline(0, color="white", linestyle="--")
 
 else:
-    ax.semilogy(
-        x,
-        errors,
-        marker="o")
+    ax.semilogy(x, errors, marker="o")
 
 ax.set_title("Kernel Agreement Error")
 ax.set_xlabel("Test Case")
@@ -259,7 +210,6 @@ ax.set_ylabel("||aSH - aPines||")
 ax.grid(True, alpha=0.3)
 plt.tight_layout()
 plt.show()
-
 
 # Speed Comparison
 fig, ax = plt.subplots(figsize=(8,5))
@@ -320,16 +270,12 @@ plt.show()
 class RegularGravityODE(oc.ODEBase):
 
     def __init__(self):
-
         X = Args(6)
 
         r = X.head3()
         v = X.segment3(3)
 
-        ode = vf.stack(
-            v,
-            reg_accel
-        )
+        ode = vf.stack(v,reg_accel)
 
         super().__init__(
             ode,
@@ -337,20 +283,14 @@ class RegularGravityODE(oc.ODEBase):
             0
         )
 
-
 class PinesGravityODE(oc.ODEBase):
-
     def __init__(self):
-
         X = Args(6)
 
         r = X.head3()
         v = X.segment3(3)
 
-        ode = vf.stack(
-            v,
-            pin_accel
-        )
+        ode = vf.stack(v,pin_accel)
 
         super().__init__(
             ode,
@@ -359,90 +299,138 @@ class PinesGravityODE(oc.ODEBase):
         )
 
 print("\n==============================")
-print("PROPAGATION BENCHMARK")
+print("LONG PROPAGATION BENCHMARK")
 print("==============================")
 
-def benchmark_prop(ode_class, x0, tf=5400.0, runs=5):
-    times = []
-    steps = []
+def benchmark_prop(ode_class, x0, tf, runs=3):
+    times, steps, solutions = [], [], []
 
     for i in range(runs):
         ode = ode_class()
         integ = ode.integrator("DOPRI87", 20)
-
         t0 = time.perf_counter()
-        sol = integ.integrate_dense(x0,tf)
-        t1 = time.perf_counter()
 
+        sol = integ.integrate_dense(x0, tf)
+
+        t1 = time.perf_counter()
         traj = np.array(sol)
 
         times.append(t1-t0)
         steps.append(len(traj))
+        solutions.append(traj)
 
-    return np.array(times), np.array(steps)
+    return (
+        np.array(times),
+        np.array(steps),
+        solutions[-1])
 
 Xt0 = np.hstack([states[0], 0.0])
 
-reg_times, reg_steps = benchmark_prop(RegularGravityODE, Xt0)
-pin_times, pin_steps = benchmark_prop(PinesGravityODE, Xt0)
+prop_times = [
+    5400.0,          # 1.5 hours
+    86400.0,         # 1 day
+    7*86400.0        # 7 days
+]
 
-print(f"Regular SH mean : {np.mean(reg_times):.6f} s")
-print(f"Pines mean      : {np.mean(pin_times):.6f} s")
-print(
-    f"Propagation speedup: "
-    f"{np.mean(reg_times)/np.mean(pin_times):.2f}x")
+prop_results = {}
 
-reg_sol = RegularGravityODE().integrator(
-    "DOPRI87", 20).integrate_dense(Xt0, 5400.0)
+for tf in prop_times:
+    print(f"\nPropagation time: {tf/3600:.1f} hours")
 
-pin_sol = PinesGravityODE().integrator(
-    "DOPRI87", 20).integrate_dense(Xt0, 5400.0)
+    reg_times, reg_steps, reg_traj = benchmark_prop(RegularGravityODE, Xt0, tf)
+    pin_times, pin_steps, pin_traj = benchmark_prop(PinesGravityODE, Xt0, tf)
 
-reg_traj = np.array(reg_sol)
-pin_traj = np.array(pin_sol)
+    n = min(len(reg_traj), len(pin_traj))
 
-n = min(len(reg_traj), len(pin_traj))
+    reg_traj = reg_traj[:n]
+    pin_traj = pin_traj[:n]
 
-reg_traj = reg_traj[:n]
-pin_traj = pin_traj[:n]
+    pos_error = np.linalg.norm(reg_traj[:,:3] - pin_traj[:,:3], axis=1)
 
-pos_error = np.linalg.norm(
-    reg_traj[:,:3] -
-    pin_traj[:,:3],
-    axis=1
-)
+    print(
+        f"""
+SH:
 
-print("\nPropagation agreement")
-print(
-    f"Max position error: "
-    f"{np.max(pos_error):.3e} km")
+    Runtime:
+        {np.mean(reg_times):.4f} s
 
-print(
-    f"Mean position error: "
-    f"{np.mean(pos_error):.3e} km")
+    Steps:
+        {np.mean(reg_steps):.0f}
 
 
-# =====================================================
-# PROPAGATION PLOTS
-# =====================================================
+Pines:
+
+    Runtime:
+        {np.mean(pin_times):.4f} s
+
+    Steps:
+        {np.mean(pin_steps):.0f}
+
+
+Speedup:
+    {np.mean(reg_times)/np.mean(pin_times):.2f}x
+
+
+Position agreement:
+
+    Max:
+        {np.max(pos_error):.3e} km
+
+    Final:
+        {pos_error[-1]:.3e} km
+
+    Mean:
+        {np.mean(pos_error):.3e} km
+"""
+    )
+
+    prop_results[tf] = (
+        reg_traj,
+        pin_traj,
+        pos_error
+    )
+
+fig, ax = plt.subplots(figsize=(9,5))
+
+for tf, data in prop_results.items():
+    error = data[2]
+    t = np.linspace(0, tf/3600, len(error))
+    ax.semilogy(t, error, linewidth=2, label=f"{tf/86400:.1f} days")
+
+ax.set_title("Long-Term Gravity Kernel Propagation Error")
+ax.set_xlabel("Time (hours)")
+ax.set_ylabel("||rSH - rPines|| km")
+ax.grid(True, alpha=0.3)
+ax.legend()
+plt.tight_layout()
+plt.show()
+
+reg_traj, pin_traj, pos_error = prop_results[7*86400.0]
+
+fig, ax = plt.subplots(figsize=(8,8))
+
+ax.plot(reg_traj[:,0], reg_traj[:,1], linewidth=2, label="Spherical Harmonic")
+ax.plot(pin_traj[:,0], pin_traj[:,1], "--", linewidth=2, label="Pines")
+
+ax.set_aspect("equal")
+ax.set_title("7 Day Orbit Propagation")
+
+ax.set_xlabel("X km")
+ax.set_ylabel("Y km")
+
+ax.grid(True, alpha=0.3)
+ax.legend()
+
+plt.tight_layout()
+plt.show()
 
 t = np.linspace(0, 5400, n)
 
 # trajectory
 fig, ax = plt.subplots(figsize=(8,8))
 
-ax.plot(
-    reg_traj[:,0],
-    reg_traj[:,1],
-    linewidth=2,
-    label="Spherical Harmonics")
-
-ax.plot(
-    pin_traj[:,0],
-    pin_traj[:,1],
-    "--",
-    linewidth=2,
-    label="Pines")
+ax.plot(reg_traj[:,0], reg_traj[:,1], linewidth=2, label="Spherical Harmonics")
+ax.plot(pin_traj[:,0], pin_traj[:,1], "--", linewidth=2, label="Pines")
 
 ax.set_aspect("equal")
 ax.set_title("Orbit Propagation Comparison")
@@ -457,30 +445,15 @@ plt.show()
 fig, ax = plt.subplots(figsize=(8,5))
 
 if np.allclose(pos_error, 0):
-    ax.plot(
-        t,
-        pos_error,
-        linewidth=2,
-        marker="o")
-
-    ax.axhline(
-        0,
-        linestyle="--",
-        linewidth=1,
-        label="Zero Error")
-
+    ax.plot(t, pos_error, linewidth=2, marker="o")
+    ax.axhline(0, linestyle="--", linewidth=1, label="Zero Error")
     ax.set_ylim(-1e-16, 1e-16)
     ax.legend()
 
 else:
-    ax.semilogy(
-        t,
-        pos_error,
-        linewidth=2)
+    ax.semilogy(t, pos_error, linewidth=2)
 
-ax.set_title("Propagation Position Error\n"
-    "Regular SH vs Pines")
-
+ax.set_title("Propagation Position Error\n""Regular SH vs Pines")
 ax.set_xlabel("Time (s)")
 ax.set_ylabel("Position Error (km)")
 ax.grid(True, alpha=0.3)
@@ -498,14 +471,7 @@ pines_degree_times = []
 for deg in degrees:
     Cdeg, Sdeg = make_coefficients(deg)
 
-    sh = SphericalHarmonicGravityVF(
-        MU,
-        R,
-        Cdeg,
-        Sdeg,
-        deg
-    )
-
+    sh = SphericalHarmonicGravityVF(MU, R, Cdeg, Sdeg, deg)
     sh_accel = sh.build_accel()
 
     t = timed_eval(sh_accel, states[0], 5000)
@@ -520,19 +486,8 @@ print(f"\nEstimated SH scaling: O(N^{order:.2f})")
 
 fig, ax = plt.subplots(figsize=(8,5))
 
-ax.plot(
-    degrees,
-    sh_degree_times,
-    marker="o",
-    linewidth=2,
-    label="Spherical Harmonic")
-
-ax.plot(
-    degrees,
-    pines_degree_times,
-    marker="s",
-    linewidth=2,
-    label="Pines")
+ax.plot(degrees, sh_degree_times, marker="o", linewidth=2, label="Spherical Harmonic")
+ax.plot(degrees, pines_degree_times, marker="s", linewidth=2, label="Pines")
 
 ax.set_yscale("log")
 ax.set_title("Gravity Kernel Scaling With Degree")
@@ -546,11 +501,7 @@ plt.show()
 degree_speedup = np.array(sh_degree_times) / np.array(pines_degree_times)
 fig, ax = plt.subplots(figsize=(8,5))
 
-ax.plot(
-    degrees,
-    degree_speedup,
-    marker="o",
-    linewidth=2)
+ax.plot(degrees, degree_speedup, marker="o", linewidth=2)
 
 ax.set_title("Pines Speedup vs Harmonic Degree")
 ax.set_xlabel("Harmonic Degree")
@@ -564,14 +515,8 @@ print("ENERGY CHECK")
 print("==============================")
 
 def specific_energy(traj):
-    r = np.linalg.norm(
-        traj[:, :3],
-        axis=1)
-
-    v = np.linalg.norm(
-        traj[:, 3:6],
-        axis=1)
-
+    r = np.linalg.norm(traj[:, :3], axis=1)
+    v = np.linalg.norm(traj[:, 3:6], axis=1)
     return 0.5 * v * v - MU / r
 
 E_reg = specific_energy(reg_traj)
@@ -582,15 +527,8 @@ print("Maximum energy drift:", np.max(np.abs(energy_error)))
 energy_t = np.linspace(0, 5400.0, len(energy_error))
 
 fig, ax = plt.subplots(figsize=(8,5))
-ax.plot(
-    energy_t,
-    energy_error,
-    linewidth=2)
-
-ax.axhline(
-    0,
-    linestyle="--",
-    linewidth=1)
+ax.plot(energy_t, energy_error, linewidth=2)
+ax.axhline(0, linestyle="--", linewidth=1)
 
 ax.set_title("Orbital Energy Drift")
 ax.set_xlabel("Time (s)")
@@ -623,10 +561,7 @@ print("Maximum error:", np.max(random_errors))
 print("Mean error:", np.mean(random_errors))
 
 fig, ax = plt.subplots(figsize=(8,5))
-ax.semilogy(
-    random_errors,
-    marker="o",
-    linewidth=1)
+ax.semilogy(random_errors, marker="o", linewidth=1)
 
 ax.set_title("Random State Kernel Agreement")
 ax.set_xlabel("Sample")
@@ -645,7 +580,6 @@ def summary_row(name,build,runtime,jac,prop,error):
         error
     ]
 
-
 table = [
     summary_row(
         "Spherical Harmonic",
@@ -653,8 +587,7 @@ table = [
         t_reg,
         t_reg_jac,
         np.mean(reg_times),
-        max_error
-    ),
+        max_error),
 
     summary_row(
         "Pines",
@@ -662,10 +595,8 @@ table = [
         t_pin,
         t_pin_jac,
         np.mean(pin_times),
-        max_error
-    )
+        max_error)
 ]
-
 
 print(
 """
@@ -688,7 +619,6 @@ for row in table:
         f"{row[4]:10.5f}"
         f"{row[5]:12.3e}"
     )
-
 
 print(
 """
