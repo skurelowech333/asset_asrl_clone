@@ -1532,7 +1532,7 @@ static const char* const __pyx_f[] = {
 /*--- Type declarations ---*/
 struct __pyx_obj_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF;
 
-/* "asset_asrl/GravitySphericalHarmonic.pyx":40
+/* "asset_asrl/GravitySphericalHarmonic.pyx":42
  * # ============================================================
  * 
  * cdef class SphericalHarmonicGravityVF:             # <<<<<<<<<<<<<<
@@ -1978,6 +1978,18 @@ static PyObject* __Pyx_PyFloat_AddObjC(PyObject *op1, PyObject *op2, double floa
     (inplace ? PyNumber_InPlaceAdd(op1, op2) : PyNumber_Add(op1, op2))
 #endif
 
+/* RaiseTooManyValuesToUnpack.proto */
+static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected);
+
+/* RaiseNeedMoreValuesToUnpack.proto */
+static CYTHON_INLINE void __Pyx_RaiseNeedMoreValuesError(Py_ssize_t index);
+
+/* IterFinish.proto */
+static CYTHON_INLINE int __Pyx_IterFinish(void);
+
+/* UnpackItemEndCheck.proto */
+static int __Pyx_IternextUnpackEndCheck(PyObject *retval, Py_ssize_t expected);
+
 /* pybytes_as_double.proto (used by pynumber_float) */
 static double __Pyx_SlowPyString_AsDouble(PyObject *obj);
 static double __Pyx__PyBytes_AsDouble(PyObject *obj, const char* start, Py_ssize_t length);
@@ -2147,18 +2159,6 @@ static CYTHON_INLINE PyObject *__Pyx_PyObject_GetItem(PyObject *obj, PyObject *k
 #else
 #define __Pyx_PyObject_GetItem(obj, key)  PyObject_GetItem(obj, key)
 #endif
-
-/* RaiseTooManyValuesToUnpack.proto */
-static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected);
-
-/* RaiseNeedMoreValuesToUnpack.proto */
-static CYTHON_INLINE void __Pyx_RaiseNeedMoreValuesError(Py_ssize_t index);
-
-/* IterFinish.proto */
-static CYTHON_INLINE int __Pyx_IterFinish(void);
-
-/* UnpackItemEndCheck.proto */
-static int __Pyx_IternextUnpackEndCheck(PyObject *retval, Py_ssize_t expected);
 
 /* RejectKeywords.export */
 static void __Pyx_RejectKeywords(const char* function_name, PyObject *kwds);
@@ -2617,7 +2617,7 @@ typedef struct {
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_pop;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_values;
   PyObject *__pyx_codeobj_tab[5];
-  PyObject *__pyx_string_tab[70];
+  PyObject *__pyx_string_tab[68];
   PyObject *__pyx_number_tab[3];
 /* #### Code section: module_state_contents ### */
 /* CommonTypesMetaclass.module_state_decls */
@@ -2675,60 +2675,58 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_AssociatedLegendre __pyx_string_tab[13]
 #define __pyx_n_u_Cnm __pyx_string_tab[14]
 #define __pyx_n_u_Constant __pyx_string_tab[15]
-#define __pyx_n_u_Legendre __pyx_string_tab[16]
-#define __pyx_n_u_Pyx_PyDict_NextRef __pyx_string_tab[17]
-#define __pyx_n_u_Snm __pyx_string_tab[18]
-#define __pyx_n_u_SphericalHarmonicGravityVF __pyx_string_tab[19]
-#define __pyx_n_u_SphericalHarmonicGravityVF___red __pyx_string_tab[20]
-#define __pyx_n_u_SphericalHarmonicGravityVF___set __pyx_string_tab[21]
-#define __pyx_n_u_SphericalHarmonicGravityVF_build __pyx_string_tab[22]
-#define __pyx_n_u_SphericalHarmonicGravityVF_ode __pyx_string_tab[23]
-#define __pyx_n_u_SphericalHarmonicGravityVF_vf __pyx_string_tab[24]
-#define __pyx_n_u_SphericalToCartesian __pyx_string_tab[25]
-#define __pyx_n_u_VectorFunctions __pyx_string_tab[26]
-#define __pyx_n_u_asset_asrl __pyx_string_tab[27]
-#define __pyx_n_u_asset_asrl_GravitySphericalHarmo __pyx_string_tab[28]
-#define __pyx_n_u_ast __pyx_string_tab[29]
-#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[30]
-#define __pyx_n_u_atan2 __pyx_string_tab[31]
+#define __pyx_n_u_HarmonicTrig __pyx_string_tab[16]
+#define __pyx_n_u_Legendre __pyx_string_tab[17]
+#define __pyx_n_u_Pyx_PyDict_NextRef __pyx_string_tab[18]
+#define __pyx_n_u_Snm __pyx_string_tab[19]
+#define __pyx_n_u_SphericalHarmonicGravityVF __pyx_string_tab[20]
+#define __pyx_n_u_SphericalHarmonicGravityVF___red __pyx_string_tab[21]
+#define __pyx_n_u_SphericalHarmonicGravityVF___set __pyx_string_tab[22]
+#define __pyx_n_u_SphericalHarmonicGravityVF_build __pyx_string_tab[23]
+#define __pyx_n_u_SphericalHarmonicGravityVF_ode __pyx_string_tab[24]
+#define __pyx_n_u_SphericalHarmonicGravityVF_vf __pyx_string_tab[25]
+#define __pyx_n_u_SphericalToCartesian __pyx_string_tab[26]
+#define __pyx_n_u_VectorFunctions __pyx_string_tab[27]
+#define __pyx_n_u_asset_asrl __pyx_string_tab[28]
+#define __pyx_n_u_asset_asrl_GravitySphericalHarmo __pyx_string_tab[29]
+#define __pyx_n_u_ast __pyx_string_tab[30]
+#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[31]
 #define __pyx_n_u_build_accel __pyx_string_tab[32]
 #define __pyx_n_u_class_getitem __pyx_string_tab[33]
 #define __pyx_n_u_cline_in_traceback __pyx_string_tab[34]
-#define __pyx_n_u_cos __pyx_string_tab[35]
-#define __pyx_n_u_degree __pyx_string_tab[36]
-#define __pyx_n_u_func __pyx_string_tab[37]
-#define __pyx_n_u_getstate __pyx_string_tab[38]
-#define __pyx_n_u_head3 __pyx_string_tab[39]
-#define __pyx_n_u_is_coroutine __pyx_string_tab[40]
-#define __pyx_n_u_items __pyx_string_tab[41]
-#define __pyx_n_u_main __pyx_string_tab[42]
-#define __pyx_n_u_module __pyx_string_tab[43]
-#define __pyx_n_u_mu __pyx_string_tab[44]
-#define __pyx_n_u_name __pyx_string_tab[45]
-#define __pyx_n_u_ode __pyx_string_tab[46]
-#define __pyx_n_u_pines_math __pyx_string_tab[47]
-#define __pyx_n_u_pop __pyx_string_tab[48]
-#define __pyx_n_u_pyx_state __pyx_string_tab[49]
-#define __pyx_n_u_pyx_vtable __pyx_string_tab[50]
-#define __pyx_n_u_qualname __pyx_string_tab[51]
-#define __pyx_n_u_radius __pyx_string_tab[52]
-#define __pyx_n_u_reduce __pyx_string_tab[53]
-#define __pyx_n_u_reduce_cython __pyx_string_tab[54]
-#define __pyx_n_u_reduce_ex __pyx_string_tab[55]
-#define __pyx_n_u_self __pyx_string_tab[56]
-#define __pyx_n_u_set_name __pyx_string_tab[57]
-#define __pyx_n_u_setdefault __pyx_string_tab[58]
-#define __pyx_n_u_setstate __pyx_string_tab[59]
-#define __pyx_n_u_setstate_cython __pyx_string_tab[60]
-#define __pyx_n_u_sin __pyx_string_tab[61]
-#define __pyx_n_u_sqrt __pyx_string_tab[62]
-#define __pyx_n_u_stack __pyx_string_tab[63]
-#define __pyx_n_u_tail3 __pyx_string_tab[64]
-#define __pyx_n_u_test __pyx_string_tab[65]
-#define __pyx_n_u_values __pyx_string_tab[66]
-#define __pyx_n_u_vf __pyx_string_tab[67]
-#define __pyx_kp_b_iso88591_A_t1 __pyx_string_tab[68]
-#define __pyx_kp_b_iso88591_Q __pyx_string_tab[69]
+#define __pyx_n_u_degree __pyx_string_tab[35]
+#define __pyx_n_u_func __pyx_string_tab[36]
+#define __pyx_n_u_getstate __pyx_string_tab[37]
+#define __pyx_n_u_head3 __pyx_string_tab[38]
+#define __pyx_n_u_is_coroutine __pyx_string_tab[39]
+#define __pyx_n_u_items __pyx_string_tab[40]
+#define __pyx_n_u_main __pyx_string_tab[41]
+#define __pyx_n_u_module __pyx_string_tab[42]
+#define __pyx_n_u_mu __pyx_string_tab[43]
+#define __pyx_n_u_name __pyx_string_tab[44]
+#define __pyx_n_u_ode __pyx_string_tab[45]
+#define __pyx_n_u_pines_math __pyx_string_tab[46]
+#define __pyx_n_u_pop __pyx_string_tab[47]
+#define __pyx_n_u_pyx_state __pyx_string_tab[48]
+#define __pyx_n_u_pyx_vtable __pyx_string_tab[49]
+#define __pyx_n_u_qualname __pyx_string_tab[50]
+#define __pyx_n_u_radius __pyx_string_tab[51]
+#define __pyx_n_u_reduce __pyx_string_tab[52]
+#define __pyx_n_u_reduce_cython __pyx_string_tab[53]
+#define __pyx_n_u_reduce_ex __pyx_string_tab[54]
+#define __pyx_n_u_self __pyx_string_tab[55]
+#define __pyx_n_u_set_name __pyx_string_tab[56]
+#define __pyx_n_u_setdefault __pyx_string_tab[57]
+#define __pyx_n_u_setstate __pyx_string_tab[58]
+#define __pyx_n_u_setstate_cython __pyx_string_tab[59]
+#define __pyx_n_u_sqrt __pyx_string_tab[60]
+#define __pyx_n_u_stack __pyx_string_tab[61]
+#define __pyx_n_u_tail3 __pyx_string_tab[62]
+#define __pyx_n_u_test __pyx_string_tab[63]
+#define __pyx_n_u_values __pyx_string_tab[64]
+#define __pyx_n_u_vf __pyx_string_tab[65]
+#define __pyx_kp_b_iso88591_A_t1 __pyx_string_tab[66]
+#define __pyx_kp_b_iso88591_Q __pyx_string_tab[67]
 #define __pyx_float_0_0 __pyx_number_tab[0]
 #define __pyx_float_1_0 __pyx_number_tab[1]
 #define __pyx_int_6 __pyx_number_tab[2]
@@ -2749,7 +2747,7 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF);
   Py_CLEAR(clear_module_state->__pyx_type_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF);
   for (int i=0; i<5; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<70; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<68; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   for (int i=0; i<3; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_clear_contents ### */
 /* CommonTypesMetaclass.module_state_clear */
@@ -2776,7 +2774,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   Py_VISIT(traverse_module_state->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF);
   Py_VISIT(traverse_module_state->__pyx_type_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF);
   for (int i=0; i<5; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<70; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  for (int i=0; i<68; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   for (int i=0; i<3; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_traverse_contents ### */
 /* CommonTypesMetaclass.module_state_traverse */
@@ -2791,7 +2789,7 @@ return 0;
 #endif
 /* #### Code section: module_code ### */
 
-/* "asset_asrl/GravitySphericalHarmonic.pyx":61
+/* "asset_asrl/GravitySphericalHarmonic.pyx":64
  *     # ========================================================
  * 
  *     def __cinit__(             # <<<<<<<<<<<<<<
@@ -2825,60 +2823,60 @@ static int __pyx_pw_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicG
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_mu,&__pyx_mstate_global->__pyx_n_u_radius,&__pyx_mstate_global->__pyx_n_u_Cnm,&__pyx_mstate_global->__pyx_n_u_Snm,&__pyx_mstate_global->__pyx_n_u_degree,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_VARARGS(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 61, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 64, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_VARARGS(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 61, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 64, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_VARARGS(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 61, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 64, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_VARARGS(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 61, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 64, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_VARARGS(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 61, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 64, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 61, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 64, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__cinit__", 0) < (0)) __PYX_ERR(0, 61, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__cinit__", 0) < (0)) __PYX_ERR(0, 64, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, i); __PYX_ERR(0, 61, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, i); __PYX_ERR(0, 64, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_VARARGS(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 61, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 64, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_VARARGS(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 61, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 64, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_VARARGS(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 61, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 64, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_VARARGS(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 61, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 64, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_VARARGS(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 61, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 64, __pyx_L3_error)
     }
-    __pyx_v_mu = __Pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mu == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 63, __pyx_L3_error)
-    __pyx_v_radius = __Pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_radius == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 64, __pyx_L3_error)
+    __pyx_v_mu = __Pyx_PyFloat_AsDouble(values[0]); if (unlikely((__pyx_v_mu == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 66, __pyx_L3_error)
+    __pyx_v_radius = __Pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_radius == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
     __pyx_v_Cnm = values[2];
     __pyx_v_Snm = values[3];
-    __pyx_v_degree = __Pyx_PyLong_As_int(values[4]); if (unlikely((__pyx_v_degree == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L3_error)
+    __pyx_v_degree = __Pyx_PyLong_As_int(values[4]); if (unlikely((__pyx_v_degree == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 70, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 61, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 64, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -2908,35 +2906,26 @@ static int __pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicG
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":70
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":73
  *     ):
  * 
  *         self.mu = mu             # <<<<<<<<<<<<<<
  *         self.radius = radius
- *         self.degree = degree
+ * 
 */
   __pyx_v_self->mu = __pyx_v_mu;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":71
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":74
  * 
  *         self.mu = mu
  *         self.radius = radius             # <<<<<<<<<<<<<<
- *         self.degree = degree
- * 
-*/
-  __pyx_v_self->radius = __pyx_v_radius;
-
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":72
- *         self.mu = mu
- *         self.radius = radius
- *         self.degree = degree             # <<<<<<<<<<<<<<
  * 
  *         self.Cnm = Cnm
 */
-  __pyx_v_self->degree = __pyx_v_degree;
+  __pyx_v_self->radius = __pyx_v_radius;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":74
- *         self.degree = degree
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":76
+ *         self.radius = radius
  * 
  *         self.Cnm = Cnm             # <<<<<<<<<<<<<<
  *         self.Snm = Snm
@@ -2948,12 +2937,12 @@ static int __pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicG
   __Pyx_DECREF(__pyx_v_self->Cnm);
   __pyx_v_self->Cnm = __pyx_v_Cnm;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":75
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":77
  * 
  *         self.Cnm = Cnm
  *         self.Snm = Snm             # <<<<<<<<<<<<<<
  * 
- * 
+ *         self.degree = degree
 */
   __Pyx_INCREF(__pyx_v_Snm);
   __Pyx_GIVEREF(__pyx_v_Snm);
@@ -2961,37 +2950,62 @@ static int __pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicG
   __Pyx_DECREF(__pyx_v_self->Snm);
   __pyx_v_self->Snm = __pyx_v_Snm;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":78
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":79
+ *         self.Snm = Snm
+ * 
+ *         self.degree = degree             # <<<<<<<<<<<<<<
  * 
  * 
- *         self._acc_vf = self._build_acceleration()             # <<<<<<<<<<<<<<
- * 
- *         self._ode_vf = self._build_ode()
 */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF *)__pyx_v_self->__pyx_vtab)->_build_acceleration(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_v_self->degree = __pyx_v_degree;
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":83
+ * 
+ *         self._acc_vf = (
+ *             self._build_acceleration()             # <<<<<<<<<<<<<<
+ *         )
+ * 
+*/
+  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF *)__pyx_v_self->__pyx_vtab)->_build_acceleration(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":82
+ * 
+ * 
+ *         self._acc_vf = (             # <<<<<<<<<<<<<<
+ *             self._build_acceleration()
+ *         )
+*/
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->_acc_vf);
   __Pyx_DECREF(__pyx_v_self->_acc_vf);
   __pyx_v_self->_acc_vf = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":80
- *         self._acc_vf = self._build_acceleration()
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":87
  * 
- *         self._ode_vf = self._build_ode()             # <<<<<<<<<<<<<<
- * 
+ *         self._ode_vf = (
+ *             self._build_ode()             # <<<<<<<<<<<<<<
+ *         )
  * 
 */
-  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF *)__pyx_v_self->__pyx_vtab)->_build_ode(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_1 = ((struct __pyx_vtabstruct_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF *)__pyx_v_self->__pyx_vtab)->_build_ode(__pyx_v_self); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":86
+ *         )
+ * 
+ *         self._ode_vf = (             # <<<<<<<<<<<<<<
+ *             self._build_ode()
+ *         )
+*/
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->_ode_vf);
   __Pyx_DECREF(__pyx_v_self->_ode_vf);
   __pyx_v_self->_ode_vf = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":61
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":64
  *     # ========================================================
  * 
  *     def __cinit__(             # <<<<<<<<<<<<<<
@@ -3011,7 +3025,7 @@ static int __pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicG
   return __pyx_r;
 }
 
-/* "asset_asrl/GravitySphericalHarmonic.pyx":88
+/* "asset_asrl/GravitySphericalHarmonic.pyx":96
  *     # ========================================================
  * 
  *     cdef object _build_acceleration(self):             # <<<<<<<<<<<<<<
@@ -3029,10 +3043,9 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   PyObject *__pyx_v_r = NULL;
   PyObject *__pyx_v_sinphi = NULL;
   PyObject *__pyx_v_cosphi = NULL;
-  PyObject *__pyx_v_sinlam = NULL;
   PyObject *__pyx_v_coslam = NULL;
+  PyObject *__pyx_v_sinlam = NULL;
   PyObject *__pyx_v_rho = NULL;
-  PyObject *__pyx_v_lam = NULL;
   PyObject *__pyx_v_P = NULL;
   PyObject *__pyx_v_zero = NULL;
   PyObject *__pyx_v_one = NULL;
@@ -3042,9 +3055,9 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   int __pyx_v_n;
   int __pyx_v_m;
   PyObject *__pyx_v_rho_n = 0;
+  PyObject *__pyx_v_Ctrig = 0;
+  PyObject *__pyx_v_Strig = 0;
   PyObject *__pyx_v_trig = 0;
-  PyObject *__pyx_v_cp = 0;
-  PyObject *__pyx_v_sp = 0;
   PyObject *__pyx_v_dP = 0;
   PyObject *__pyx_v_mu_r2 = NULL;
   PyObject *__pyx_v_ar = NULL;
@@ -3064,19 +3077,19 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   long __pyx_t_7;
   long __pyx_t_8;
   int __pyx_t_9;
-  long __pyx_t_10;
+  PyObject *(*__pyx_t_10)(PyObject *);
   long __pyx_t_11;
-  int __pyx_t_12;
-  PyObject *__pyx_t_13 = NULL;
-  int __pyx_t_14;
-  PyObject *__pyx_t_15 = NULL;
-  PyObject *(*__pyx_t_16)(PyObject *);
+  long __pyx_t_12;
+  int __pyx_t_13;
+  PyObject *__pyx_t_14 = NULL;
+  int __pyx_t_15;
+  PyObject *__pyx_t_16 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_build_acceleration", 0);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":91
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":99
  * 
  * 
  *         X = Args(6)             # <<<<<<<<<<<<<<
@@ -3084,7 +3097,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
  * 
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -3103,13 +3116,13 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_X = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":94
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":102
  * 
  * 
  *         rvec = X.head3()             # <<<<<<<<<<<<<<
@@ -3123,60 +3136,76 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_head3, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_rvec = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":97
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":105
  * 
  * 
  *         x = rvec[0]             # <<<<<<<<<<<<<<
  *         y = rvec[1]
  *         z = rvec[2]
 */
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_rvec, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_rvec, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_x = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":98
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":106
  * 
  *         x = rvec[0]
  *         y = rvec[1]             # <<<<<<<<<<<<<<
  *         z = rvec[2]
  * 
 */
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_rvec, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_rvec, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_y = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":99
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":107
  *         x = rvec[0]
  *         y = rvec[1]
  *         z = rvec[2]             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_rvec, 2, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_rvec, 2, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_z = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":103
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":116
  * 
  *         rxy = (
- *             x*x+y*y             # <<<<<<<<<<<<<<
+ *             x*x +             # <<<<<<<<<<<<<<
+ *             y*y
+ *         ).sqrt()
+*/
+  __pyx_t_2 = PyNumber_Multiply(__pyx_v_x, __pyx_v_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":117
+ *         rxy = (
+ *             x*x +
+ *             y*y             # <<<<<<<<<<<<<<
  *         ).sqrt()
  * 
 */
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_x, __pyx_v_x); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = PyNumber_Multiply(__pyx_v_y, __pyx_v_y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_5 = PyNumber_Multiply(__pyx_v_y, __pyx_v_y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyNumber_Add(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 103, __pyx_L1_error)
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":116
+ * 
+ *         rxy = (
+ *             x*x +             # <<<<<<<<<<<<<<
+ *             y*y
+ *         ).sqrt()
+*/
+  __pyx_t_6 = PyNumber_Add(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -3188,30 +3217,62 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_sqrt, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_rxy = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":108
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":122
  * 
  *         r = (
- *             x*x+y*y+z*z             # <<<<<<<<<<<<<<
- *         ).sqrt()
- * 
+ *             x*x +             # <<<<<<<<<<<<<<
+ *             y*y +
+ *             z*z
 */
-  __pyx_t_3 = PyNumber_Multiply(__pyx_v_x, __pyx_v_x); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Multiply(__pyx_v_x, __pyx_v_x); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyNumber_Multiply(__pyx_v_y, __pyx_v_y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 108, __pyx_L1_error)
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":123
+ *         r = (
+ *             x*x +
+ *             y*y +             # <<<<<<<<<<<<<<
+ *             z*z
+ *         ).sqrt()
+*/
+  __pyx_t_5 = PyNumber_Multiply(__pyx_v_y, __pyx_v_y); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = PyNumber_Add(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":122
+ * 
+ *         r = (
+ *             x*x +             # <<<<<<<<<<<<<<
+ *             y*y +
+ *             z*z
+*/
+  __pyx_t_2 = PyNumber_Add(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = PyNumber_Multiply(__pyx_v_z, __pyx_v_z); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 108, __pyx_L1_error)
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":124
+ *             x*x +
+ *             y*y +
+ *             z*z             # <<<<<<<<<<<<<<
+ *         ).sqrt()
+ * 
+*/
+  __pyx_t_5 = PyNumber_Multiply(__pyx_v_z, __pyx_v_z); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = PyNumber_Add(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":123
+ *         r = (
+ *             x*x +
+ *             y*y +             # <<<<<<<<<<<<<<
+ *             z*z
+ *         ).sqrt()
+*/
+  __pyx_t_3 = PyNumber_Add(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -3223,70 +3284,70 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_sqrt, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_r = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":117
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":133
  *         #
  * 
  *         sinphi = z/r             # <<<<<<<<<<<<<<
  * 
- *         cosphi = rxy/r
+ * 
 */
-  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_z, __pyx_v_r); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_z, __pyx_v_r); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_sinphi = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":119
- *         sinphi = z/r
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":136
+ * 
  * 
  *         cosphi = rxy/r             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_rxy, __pyx_v_r); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_rxy, __pyx_v_r); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_cosphi = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":122
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":139
  * 
- * 
- *         sinlam = y/rxy             # <<<<<<<<<<<<<<
- * 
- *         coslam = x/rxy
-*/
-  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_y, __pyx_v_rxy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_sinlam = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":124
- *         sinlam = y/rxy
  * 
  *         coslam = x/rxy             # <<<<<<<<<<<<<<
  * 
- * 
+ *         sinlam = y/rxy
 */
-  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_x, __pyx_v_rxy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_x, __pyx_v_rxy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 139, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_coslam = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":129
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":141
+ *         coslam = x/rxy
+ * 
+ *         sinlam = y/rxy             # <<<<<<<<<<<<<<
+ * 
+ * 
+*/
+  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_y, __pyx_v_rxy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_v_sinlam = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":146
  * 
  *         rho = (
- *             X.Constant(self.radius)/r             # <<<<<<<<<<<<<<
- *         )
- * 
+ *             X.Constant(self.radius)             # <<<<<<<<<<<<<<
+ *             /
+ *             r
 */
   __pyx_t_3 = __pyx_v_X;
   __Pyx_INCREF(__pyx_t_3);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_self->radius); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 129, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_self->radius); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_4 = 0;
   {
@@ -3294,36 +3355,24 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
-  __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 129, __pyx_L1_error)
+
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":147
+ *         rho = (
+ *             X.Constant(self.radius)
+ *             /             # <<<<<<<<<<<<<<
+ *             r
+ *         )
+*/
+  __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_v_r); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_rho = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":138
- *         #
- * 
- *         lam = y.atan2(x)             # <<<<<<<<<<<<<<
- * 
- * 
-*/
-  __pyx_t_1 = __pyx_v_y;
-  __Pyx_INCREF(__pyx_t_1);
-  __pyx_t_4 = 0;
-  {
-    PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_x};
-    __pyx_t_6 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_atan2, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 138, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-  }
-  __pyx_v_lam = __pyx_t_6;
-  __pyx_t_6 = 0;
-
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":146
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":157
  *         #
  * 
  *         P = AssociatedLegendre(             # <<<<<<<<<<<<<<
@@ -3331,17 +3380,17 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
  *             self.degree
 */
   __pyx_t_1 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_AssociatedLegendre); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_AssociatedLegendre); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":148
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":159
  *         P = AssociatedLegendre(
  *             sinphi,
  *             self.degree             # <<<<<<<<<<<<<<
  *         )
  * 
 */
-  __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_self->degree); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_self->degree); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -3361,37 +3410,37 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 146, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 157, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
   }
   __pyx_v_P = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":153
- * 
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":170
+ *         #
  * 
  *         zero = x*0.0             # <<<<<<<<<<<<<<
  * 
  *         one = zero + 1.0
 */
-  __pyx_t_6 = PyNumber_Multiply(__pyx_v_x, __pyx_mstate_global->__pyx_float_0_0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_6 = PyNumber_Multiply(__pyx_v_x, __pyx_mstate_global->__pyx_float_0_0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_v_zero = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":155
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":172
  *         zero = x*0.0
  * 
  *         one = zero + 1.0             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_6 = __Pyx_PyFloat_AddObjC(__pyx_v_zero, __pyx_mstate_global->__pyx_float_1_0, 1.0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyFloat_AddObjC(__pyx_v_zero, __pyx_mstate_global->__pyx_float_1_0, 1.0, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_v_one = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":158
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":175
  * 
  * 
  *         radial_sum = one             # <<<<<<<<<<<<<<
@@ -3401,7 +3450,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __Pyx_INCREF(__pyx_v_one);
   __pyx_v_radial_sum = __pyx_v_one;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":160
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":177
  *         radial_sum = one
  * 
  *         latitude_sum = zero             # <<<<<<<<<<<<<<
@@ -3411,7 +3460,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __Pyx_INCREF(__pyx_v_zero);
   __pyx_v_latitude_sum = __pyx_v_zero;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":162
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":179
  *         latitude_sum = zero
  * 
  *         longitude_sum = zero             # <<<<<<<<<<<<<<
@@ -3421,8 +3470,8 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __Pyx_INCREF(__pyx_v_zero);
   __pyx_v_longitude_sum = __pyx_v_zero;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":182
- *         #
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":200
+ *         # ----------------------------------------------------
  * 
  *         for n in range(2,self.degree+1):             # <<<<<<<<<<<<<<
  * 
@@ -3433,301 +3482,375 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   for (__pyx_t_9 = 2; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
     __pyx_v_n = __pyx_t_9;
 
-    /* "asset_asrl/GravitySphericalHarmonic.pyx":185
+    /* "asset_asrl/GravitySphericalHarmonic.pyx":203
  * 
  * 
  *             rho_n = rho**n             # <<<<<<<<<<<<<<
  * 
  * 
 */
-    __pyx_t_6 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 203, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_3 = PyNumber_Power(__pyx_v_rho, __pyx_t_6, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 185, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Power(__pyx_v_rho, __pyx_t_6, Py_None); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 203, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF_SET(__pyx_v_rho_n, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "asset_asrl/GravitySphericalHarmonic.pyx":188
+    /* "asset_asrl/GravitySphericalHarmonic.pyx":210
+ *             #
+ * 
+ *             Ctrig,Strig = HarmonicTrig(             # <<<<<<<<<<<<<<
+ *                 coslam,
+ *                 sinlam,
+*/
+    __pyx_t_6 = NULL;
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_HarmonicTrig); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 210, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+
+    /* "asset_asrl/GravitySphericalHarmonic.pyx":213
+ *                 coslam,
+ *                 sinlam,
+ *                 n             # <<<<<<<<<<<<<<
+ *             )
+ * 
+*/
+    __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 213, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_4 = 1;
+    #if CYTHON_UNPACK_METHODS
+    if (unlikely(PyMethod_Check(__pyx_t_5))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
+      assert(__pyx_t_6);
+      PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_6);
+      __Pyx_INCREF(__pyx__function);
+      __Pyx_DECREF_SET(__pyx_t_5, __pyx__function);
+      __pyx_t_4 = 0;
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[4] = {__pyx_t_6, __pyx_v_coslam, __pyx_v_sinlam, __pyx_t_1};
+      __pyx_t_3 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_5, __pyx_callargs+__pyx_t_4, (4-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 210, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+    }
+    if ((likely(PyTuple_CheckExact(__pyx_t_3))) || (PyList_CheckExact(__pyx_t_3))) {
+      PyObject* sequence = __pyx_t_3;
+      Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
+      if (unlikely(size != 2)) {
+        if (size > 2) __Pyx_RaiseTooManyValuesError(2);
+        else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
+        __PYX_ERR(0, 210, __pyx_L1_error)
+      }
+      #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+      if (likely(PyTuple_CheckExact(sequence))) {
+        __pyx_t_5 = PyTuple_GET_ITEM(sequence, 0);
+        __Pyx_INCREF(__pyx_t_5);
+        __pyx_t_1 = PyTuple_GET_ITEM(sequence, 1);
+        __Pyx_INCREF(__pyx_t_1);
+      } else {
+        __pyx_t_5 = __Pyx_PyList_GetItemRefFast(sequence, 0, __Pyx_ReferenceSharing_SharedReference);
+        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 210, __pyx_L1_error)
+        __Pyx_XGOTREF(__pyx_t_5);
+        __pyx_t_1 = __Pyx_PyList_GetItemRefFast(sequence, 1, __Pyx_ReferenceSharing_SharedReference);
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 210, __pyx_L1_error)
+        __Pyx_XGOTREF(__pyx_t_1);
+      }
+      #else
+      __pyx_t_5 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 210, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_1 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 210, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      #endif
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    } else {
+      Py_ssize_t index = -1;
+      __pyx_t_6 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 210, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_6);
+      index = 0; __pyx_t_5 = __pyx_t_10(__pyx_t_6); if (unlikely(!__pyx_t_5)) goto __pyx_L5_unpacking_failed;
+      __Pyx_GOTREF(__pyx_t_5);
+      index = 1; __pyx_t_1 = __pyx_t_10(__pyx_t_6); if (unlikely(!__pyx_t_1)) goto __pyx_L5_unpacking_failed;
+      __Pyx_GOTREF(__pyx_t_1);
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_6), 2) < (0)) __PYX_ERR(0, 210, __pyx_L1_error)
+      __pyx_t_10 = NULL;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      goto __pyx_L6_unpacking_done;
+      __pyx_L5_unpacking_failed:;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_10 = NULL;
+      if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
+      __PYX_ERR(0, 210, __pyx_L1_error)
+      __pyx_L6_unpacking_done:;
+    }
+
+    /* "asset_asrl/GravitySphericalHarmonic.pyx":210
+ *             #
+ * 
+ *             Ctrig,Strig = HarmonicTrig(             # <<<<<<<<<<<<<<
+ *                 coslam,
+ *                 sinlam,
+*/
+    __Pyx_XDECREF_SET(__pyx_v_Ctrig, __pyx_t_5);
+    __pyx_t_5 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_Strig, __pyx_t_1);
+    __pyx_t_1 = 0;
+
+    /* "asset_asrl/GravitySphericalHarmonic.pyx":218
  * 
  * 
  *             for m in range(n+1):             # <<<<<<<<<<<<<<
  * 
  * 
 */
-    __pyx_t_10 = (__pyx_v_n + 1);
-    __pyx_t_11 = __pyx_t_10;
-    for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
-      __pyx_v_m = __pyx_t_12;
+    __pyx_t_11 = (__pyx_v_n + 1);
+    __pyx_t_12 = __pyx_t_11;
+    for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_12; __pyx_t_13+=1) {
+      __pyx_v_m = __pyx_t_13;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":198
- * 
- *                 cp = (
- *                     (m*lam).cos()             # <<<<<<<<<<<<<<
- *                 )
- * 
-*/
-      __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 198, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_1 = PyNumber_Multiply(__pyx_t_5, __pyx_v_lam); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_6 = __pyx_t_1;
-      __Pyx_INCREF(__pyx_t_6);
-      __pyx_t_4 = 0;
-      {
-        PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
-        __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_cos, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 198, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-      }
-      __Pyx_XDECREF_SET(__pyx_v_cp, __pyx_t_3);
-      __pyx_t_3 = 0;
-
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":202
- * 
- *                 sp = (
- *                     (m*lam).sin()             # <<<<<<<<<<<<<<
- *                 )
- * 
-*/
-      __pyx_t_6 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 202, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_5 = PyNumber_Multiply(__pyx_t_6, __pyx_v_lam); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 202, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_1 = __pyx_t_5;
-      __Pyx_INCREF(__pyx_t_1);
-      __pyx_t_4 = 0;
-      {
-        PyObject *__pyx_callargs[2] = {__pyx_t_1, NULL};
-        __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_sin, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 202, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-      }
-      __Pyx_XDECREF_SET(__pyx_v_sp, __pyx_t_3);
-      __pyx_t_3 = 0;
-
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":208
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":223
  *                 trig = (
  * 
  *                     X.Constant(             # <<<<<<<<<<<<<<
  *                         float(self.Cnm[n,m])
  *                     )
 */
-      __pyx_t_5 = __pyx_v_X;
-      __Pyx_INCREF(__pyx_t_5);
+      __pyx_t_1 = __pyx_v_X;
+      __Pyx_INCREF(__pyx_t_1);
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":209
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":224
  * 
  *                     X.Constant(
  *                         float(self.Cnm[n,m])             # <<<<<<<<<<<<<<
  *                     )
- *                     *
+ * 
 */
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 209, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 209, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 224, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_6 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 209, __pyx_L1_error)
+      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 224, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 209, __pyx_L1_error);
+      __Pyx_GIVEREF(__pyx_t_5);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_5) != (0)) __PYX_ERR(0, 224, __pyx_L1_error);
       __Pyx_GIVEREF(__pyx_t_6);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_6) != (0)) __PYX_ERR(0, 209, __pyx_L1_error);
-      __pyx_t_1 = 0;
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_6) != (0)) __PYX_ERR(0, 224, __pyx_L1_error);
+      __pyx_t_5 = 0;
       __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_self->Cnm, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 209, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_v_self->Cnm, __pyx_t_2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyNumber_Float(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 209, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyNumber_Float(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 224, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_4 = 0;
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_2};
+        PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_t_2};
         __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 208, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 223, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
       }
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":211
- *                         float(self.Cnm[n,m])
- *                     )
- *                     *             # <<<<<<<<<<<<<<
- *                     cp
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":229
+ *                     *
+ * 
+ *                     Ctrig[m]             # <<<<<<<<<<<<<<
+ * 
  * 
 */
-      __pyx_t_2 = PyNumber_Multiply(__pyx_t_3, __pyx_v_cp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 211, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_Ctrig, __pyx_v_m, int, 1, __Pyx_PyLong_From_int, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 229, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":216
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":227
+ *                     )
+ * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
+ *                     Ctrig[m]
+*/
+      __pyx_t_1 = PyNumber_Multiply(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 227, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":234
  *                     +
  * 
  *                     X.Constant(             # <<<<<<<<<<<<<<
  *                         float(self.Snm[n,m])
  *                     )
 */
-      __pyx_t_5 = __pyx_v_X;
-      __Pyx_INCREF(__pyx_t_5);
+      __pyx_t_3 = __pyx_v_X;
+      __Pyx_INCREF(__pyx_t_3);
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":217
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":235
  * 
  *                     X.Constant(
  *                         float(self.Snm[n,m])             # <<<<<<<<<<<<<<
  *                     )
- *                     *
+ * 
 */
-      __pyx_t_6 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 217, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 235, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 217, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_13);
+      __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
       __Pyx_GIVEREF(__pyx_t_6);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 217, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 217, __pyx_L1_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_6) != (0)) __PYX_ERR(0, 235, __pyx_L1_error);
+      __Pyx_GIVEREF(__pyx_t_5);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_5) != (0)) __PYX_ERR(0, 235, __pyx_L1_error);
       __pyx_t_6 = 0;
-      __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_self->Snm, __pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = __Pyx_PyNumber_Float(__pyx_t_1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 217, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_13);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_5 = 0;
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_self->Snm, __pyx_t_14); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __pyx_t_14 = __Pyx_PyNumber_Float(__pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_4 = 0;
       {
-        PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_13};
-        __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 216, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
+        PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_t_14};
+        __pyx_t_2 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 234, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
       }
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":219
- *                         float(self.Snm[n,m])
- *                     )
- *                     *             # <<<<<<<<<<<<<<
- *                     sp
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":240
+ *                     *
+ * 
+ *                     Strig[m]             # <<<<<<<<<<<<<<
+ * 
  *                 )
 */
-      __pyx_t_13 = PyNumber_Multiply(__pyx_t_3, __pyx_v_sp); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 219, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_13);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_14 = __Pyx_GetItemInt(__pyx_v_Strig, __pyx_v_m, int, 1, __Pyx_PyLong_From_int, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 240, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":214
- *                     cp
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":238
+ *                     )
+ * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
+ *                     Strig[m]
+*/
+      __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_t_14); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 238, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":232
+ * 
  * 
  *                     +             # <<<<<<<<<<<<<<
  * 
  *                     X.Constant(
 */
-      __pyx_t_3 = PyNumber_Add(__pyx_t_2, __pyx_t_13); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 214, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_trig, __pyx_t_3);
-      __pyx_t_3 = 0;
+      __pyx_t_14 = PyNumber_Add(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 232, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_trig, __pyx_t_14);
+      __pyx_t_14 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":229
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":250
  *                 #
  * 
  *                 if m == n:             # <<<<<<<<<<<<<<
  * 
- *                     dP = (
+ * 
 */
-      __pyx_t_14 = (__pyx_v_m == __pyx_v_n);
-      if (__pyx_t_14) {
+      __pyx_t_15 = (__pyx_v_m == __pyx_v_n);
+      if (__pyx_t_15) {
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":233
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":255
  *                     dP = (
  * 
  *                         -n             # <<<<<<<<<<<<<<
  *                         *
  *                         sinphi
 */
-        __pyx_t_3 = __Pyx_PyLong_From_int((-__pyx_v_n)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 233, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_14 = __Pyx_PyLong_From_int((-__pyx_v_n)); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 255, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_14);
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":234
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":256
  * 
  *                         -n
  *                         *             # <<<<<<<<<<<<<<
  *                         sinphi
  *                         *
 */
-        __pyx_t_13 = PyNumber_Multiply(__pyx_t_3, __pyx_v_sinphi); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 234, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_13);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_3 = PyNumber_Multiply(__pyx_t_14, __pyx_v_sinphi); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 256, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":237
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":259
  *                         sinphi
  *                         *
  *                         P[n,m]             # <<<<<<<<<<<<<<
  * 
  *                         /
 */
-        __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 237, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 237, __pyx_L1_error)
+        __pyx_t_14 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 259, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_14);
+        __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 259, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 259, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 237, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_GIVEREF(__pyx_t_3);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 237, __pyx_L1_error);
-        __Pyx_GIVEREF(__pyx_t_2);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 237, __pyx_L1_error);
-        __pyx_t_3 = 0;
-        __pyx_t_2 = 0;
-        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 237, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __Pyx_GIVEREF(__pyx_t_14);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_14) != (0)) __PYX_ERR(0, 259, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_1);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 259, __pyx_L1_error);
+        __pyx_t_14 = 0;
+        __pyx_t_1 = 0;
+        __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 259, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":236
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":258
  *                         *
  *                         sinphi
  *                         *             # <<<<<<<<<<<<<<
  *                         P[n,m]
  * 
 */
-        __pyx_t_5 = PyNumber_Multiply(__pyx_t_13, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 236, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_2 = PyNumber_Multiply(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 258, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":239
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":261
  *                         P[n,m]
  * 
  *                         /             # <<<<<<<<<<<<<<
  * 
  *                         cosphi
 */
-        __pyx_t_2 = __Pyx_PyNumber_Divide(__pyx_t_5, __pyx_v_cosphi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 239, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_XDECREF_SET(__pyx_v_dP, __pyx_t_2);
-        __pyx_t_2 = 0;
+        __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_v_cosphi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 261, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_XDECREF_SET(__pyx_v_dP, __pyx_t_1);
+        __pyx_t_1 = 0;
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":229
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":250
  *                 #
  * 
  *                 if m == n:             # <<<<<<<<<<<<<<
  * 
- *                     dP = (
+ * 
 */
-        goto __pyx_L7;
+        goto __pyx_L9;
       }
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":265
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":293
  *                         )
  * 
  *                     ) / cosphi             # <<<<<<<<<<<<<<
@@ -3736,671 +3859,693 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
 */
       /*else*/ {
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":250
- * 
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":275
  *                         (
+ * 
  *                             (n+m)             # <<<<<<<<<<<<<<
  *                             *
  *                             P[n-1,m]
 */
-        __pyx_t_2 = __Pyx_PyLong_From_int((__pyx_v_n + __pyx_v_m)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 250, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_1 = __Pyx_PyLong_From_int((__pyx_v_n + __pyx_v_m)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":252
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":277
  *                             (n+m)
  *                             *
  *                             P[n-1,m]             # <<<<<<<<<<<<<<
- *                         )
  * 
+ *                         )
 */
-        __pyx_t_5 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_13 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 252, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 252, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 277, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 277, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_GIVEREF(__pyx_t_5);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_5) != (0)) __PYX_ERR(0, 252, __pyx_L1_error);
-        __Pyx_GIVEREF(__pyx_t_13);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_13) != (0)) __PYX_ERR(0, 252, __pyx_L1_error);
-        __pyx_t_5 = 0;
-        __pyx_t_13 = 0;
-        __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_3); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 252, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_13);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 277, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_14);
+        __Pyx_GIVEREF(__pyx_t_2);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 277, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_3);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 277, __pyx_L1_error);
+        __pyx_t_2 = 0;
+        __pyx_t_3 = 0;
+        __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_14); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 277, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":251
- *                         (
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":276
+ * 
  *                             (n+m)
  *                             *             # <<<<<<<<<<<<<<
  *                             P[n-1,m]
- *                         )
-*/
-        __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_t_13); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 251, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":258
  * 
+*/
+        __pyx_t_14 = PyNumber_Multiply(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 276, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_14);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":285
  *                         (
+ * 
  *                             n             # <<<<<<<<<<<<<<
  *                             *
  *                             sinphi
 */
-        __pyx_t_13 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 258, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_13);
+        __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":259
- *                         (
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":286
+ * 
  *                             n
  *                             *             # <<<<<<<<<<<<<<
  *                             sinphi
  *                             *
 */
-        __pyx_t_2 = PyNumber_Multiply(__pyx_t_13, __pyx_v_sinphi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 259, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+        __pyx_t_1 = PyNumber_Multiply(__pyx_t_3, __pyx_v_sinphi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 286, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":262
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":289
  *                             sinphi
  *                             *
  *                             P[n,m]             # <<<<<<<<<<<<<<
- *                         )
  * 
+ *                         )
 */
-        __pyx_t_13 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 262, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 262, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 289, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 289, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_GIVEREF(__pyx_t_13);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_13) != (0)) __PYX_ERR(0, 262, __pyx_L1_error);
-        __Pyx_GIVEREF(__pyx_t_5);
-        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_5) != (0)) __PYX_ERR(0, 262, __pyx_L1_error);
-        __pyx_t_13 = 0;
-        __pyx_t_5 = 0;
-        __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 262, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_GIVEREF(__pyx_t_3);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 289, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_2);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 289, __pyx_L1_error);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = 0;
+        __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":261
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":288
  *                             *
  *                             sinphi
  *                             *             # <<<<<<<<<<<<<<
  *                             P[n,m]
- *                         )
+ * 
 */
-        __pyx_t_1 = PyNumber_Multiply(__pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 261, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_5 = PyNumber_Multiply(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 288, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":255
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":281
  *                         )
  * 
  *                         -             # <<<<<<<<<<<<<<
  * 
  *                         (
 */
-        __pyx_t_5 = PyNumber_Subtract(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 255, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_2 = PyNumber_Subtract(__pyx_t_14, __pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 281, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "asset_asrl/GravitySphericalHarmonic.pyx":265
+        /* "asset_asrl/GravitySphericalHarmonic.pyx":293
  *                         )
  * 
  *                     ) / cosphi             # <<<<<<<<<<<<<<
  * 
  * 
 */
-        __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_t_5, __pyx_v_cosphi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 265, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_XDECREF_SET(__pyx_v_dP, __pyx_t_1);
-        __pyx_t_1 = 0;
+        __pyx_t_5 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_v_cosphi); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 293, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_XDECREF_SET(__pyx_v_dP, __pyx_t_5);
+        __pyx_t_5 = 0;
       }
-      __pyx_L7:;
+      __pyx_L9:;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":271
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":303
  *                 radial_sum += (
  * 
  *                     (n+1)             # <<<<<<<<<<<<<<
- *                     *
- *                     rho_n
-*/
-      __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n + 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 271, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":272
  * 
- *                     (n+1)
- *                     *             # <<<<<<<<<<<<<<
- *                     rho_n
  *                     *
 */
-      __pyx_t_5 = PyNumber_Multiply(__pyx_t_1, __pyx_v_rho_n); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyLong_From_long((__pyx_v_n + 1)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 303, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":275
- *                     rho_n
- *                     *
- *                     P[n,m]             # <<<<<<<<<<<<<<
- *                     *
- *                     trig
-*/
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 275, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 275, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 275, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_3);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 275, __pyx_L1_error);
-      __pyx_t_1 = 0;
-      __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 275, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":274
- *                     *
- *                     rho_n
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":305
+ *                     (n+1)
+ * 
  *                     *             # <<<<<<<<<<<<<<
- *                     P[n,m]
- *                     *
+ * 
+ *                     rho_n
 */
-      __pyx_t_2 = PyNumber_Multiply(__pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_Multiply(__pyx_t_5, __pyx_v_rho_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":276
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":311
  *                     *
- *                     P[n,m]
- *                     *             # <<<<<<<<<<<<<<
- *                     trig
  * 
+ *                     P[n,m]             # <<<<<<<<<<<<<<
+ * 
+ *                     *
 */
-      __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_v_trig); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 276, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_14 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 311, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_GIVEREF(__pyx_t_5);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_5) != (0)) __PYX_ERR(0, 311, __pyx_L1_error);
+      __Pyx_GIVEREF(__pyx_t_14);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_14) != (0)) __PYX_ERR(0, 311, __pyx_L1_error);
+      __pyx_t_5 = 0;
+      __pyx_t_14 = 0;
+      __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 311, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":269
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":309
+ *                     rho_n
  * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
+ *                     P[n,m]
+*/
+      __pyx_t_1 = PyNumber_Multiply(__pyx_t_2, __pyx_t_14); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":313
+ *                     P[n,m]
+ * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
+ *                     trig
+*/
+      __pyx_t_14 = PyNumber_Multiply(__pyx_t_1, __pyx_v_trig); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 313, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":301
+ *                 #
  * 
  *                 radial_sum += (             # <<<<<<<<<<<<<<
  * 
  *                     (n+1)
 */
-      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_radial_sum, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 269, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF_SET(__pyx_v_radial_sum, __pyx_t_2);
-      __pyx_t_2 = 0;
+      __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_radial_sum, __pyx_t_14); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __Pyx_DECREF_SET(__pyx_v_radial_sum, __pyx_t_1);
+      __pyx_t_1 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":286
- * 
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":329
  *                     rho_n
+ * 
  *                     *             # <<<<<<<<<<<<<<
+ * 
  *                     dP
- *                     *
 */
-      __pyx_t_2 = PyNumber_Multiply(__pyx_v_rho_n, __pyx_v_dP); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = PyNumber_Multiply(__pyx_v_rho_n, __pyx_v_dP); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 329, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":288
- *                     *
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":333
  *                     dP
+ * 
  *                     *             # <<<<<<<<<<<<<<
+ * 
  *                     trig
- * 
 */
-      __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_v_trig); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 288, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_14 = PyNumber_Multiply(__pyx_t_1, __pyx_v_trig); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 333, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":283
- * 
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":325
+ *                 #
  * 
  *                 latitude_sum += (             # <<<<<<<<<<<<<<
  * 
  *                     rho_n
 */
-      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_latitude_sum, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF_SET(__pyx_v_latitude_sum, __pyx_t_2);
-      __pyx_t_2 = 0;
+      __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_latitude_sum, __pyx_t_14); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 325, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __Pyx_DECREF_SET(__pyx_v_latitude_sum, __pyx_t_1);
+      __pyx_t_1 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":299
- *                     rho_n
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":351
  *                     *
- *                     P[n,m]             # <<<<<<<<<<<<<<
- *                     *
- *                     m
-*/
-      __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 299, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 299, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 299, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_GIVEREF(__pyx_t_2);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 299, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_3);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 299, __pyx_L1_error);
-      __pyx_t_2 = 0;
-      __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 299, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":298
  * 
- *                     rho_n
- *                     *             # <<<<<<<<<<<<<<
- *                     P[n,m]
+ *                     P[n,m]             # <<<<<<<<<<<<<<
+ * 
  *                     *
 */
-      __pyx_t_5 = PyNumber_Multiply(__pyx_v_rho_n, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 298, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 351, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_14 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 351, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 351, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_GIVEREF(__pyx_t_1);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 351, __pyx_L1_error);
+      __Pyx_GIVEREF(__pyx_t_14);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_14) != (0)) __PYX_ERR(0, 351, __pyx_L1_error);
+      __pyx_t_1 = 0;
+      __pyx_t_14 = 0;
+      __pyx_t_14 = __Pyx_PyObject_GetItem(__pyx_v_P, __pyx_t_2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 351, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":301
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":349
+ *                     rho_n
+ * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
  *                     P[n,m]
+*/
+      __pyx_t_2 = PyNumber_Multiply(__pyx_v_rho_n, __pyx_t_14); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 349, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":355
  *                     *
+ * 
  *                     m             # <<<<<<<<<<<<<<
  * 
  *                     *
 */
-      __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_14 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 355, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":300
- *                     *
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":353
  *                     P[n,m]
- *                     *             # <<<<<<<<<<<<<<
- *                     m
  * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
+ *                     m
 */
-      __pyx_t_2 = PyNumber_Multiply(__pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 300, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_1 = PyNumber_Multiply(__pyx_t_2, __pyx_t_14); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 353, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":307
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":361
  *                     (
  * 
  *                         X.Constant(             # <<<<<<<<<<<<<<
  *                             float(self.Snm[n,m])
  *                         )
 */
-      __pyx_t_5 = __pyx_v_X;
-      __Pyx_INCREF(__pyx_t_5);
+      __pyx_t_2 = __pyx_v_X;
+      __Pyx_INCREF(__pyx_t_2);
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":308
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":362
  * 
  *                         X.Constant(
  *                             float(self.Snm[n,m])             # <<<<<<<<<<<<<<
  *                         )
- *                         *
-*/
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_13 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 308, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 308, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 308, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_13);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_13) != (0)) __PYX_ERR(0, 308, __pyx_L1_error);
-      __pyx_t_1 = 0;
-      __pyx_t_13 = 0;
-      __pyx_t_13 = __Pyx_PyObject_GetItem(__pyx_v_self->Snm, __pyx_t_6); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 308, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_13);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyNumber_Float(__pyx_t_13); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 308, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_4 = 0;
-      {
-        PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_6};
-        __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 307, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-      }
-
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":310
- *                             float(self.Snm[n,m])
- *                         )
- *                         *             # <<<<<<<<<<<<<<
- *                         cp
  * 
 */
-      __pyx_t_6 = PyNumber_Multiply(__pyx_t_3, __pyx_v_cp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 310, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 362, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 362, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 362, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_GIVEREF(__pyx_t_5);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5) != (0)) __PYX_ERR(0, 362, __pyx_L1_error);
+      __Pyx_GIVEREF(__pyx_t_3);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 362, __pyx_L1_error);
+      __pyx_t_5 = 0;
+      __pyx_t_3 = 0;
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_self->Snm, __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 362, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = __Pyx_PyNumber_Float(__pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 362, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_4 = 0;
+      {
+        PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_t_6};
+        __pyx_t_14 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+        __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 361, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_14);
+      }
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":315
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":367
+ *                         *
+ * 
+ *                         Ctrig[m]             # <<<<<<<<<<<<<<
+ * 
+ * 
+*/
+      __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_Ctrig, __pyx_v_m, int, 1, __Pyx_PyLong_From_int, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 367, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":365
+ *                         )
+ * 
+ *                         *             # <<<<<<<<<<<<<<
+ * 
+ *                         Ctrig[m]
+*/
+      __pyx_t_2 = PyNumber_Multiply(__pyx_t_14, __pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 365, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":372
  *                         -
  * 
  *                         X.Constant(             # <<<<<<<<<<<<<<
  *                             float(self.Cnm[n,m])
  *                         )
 */
-      __pyx_t_5 = __pyx_v_X;
-      __Pyx_INCREF(__pyx_t_5);
+      __pyx_t_14 = __pyx_v_X;
+      __Pyx_INCREF(__pyx_t_14);
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":316
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":373
  * 
  *                         X.Constant(
  *                             float(self.Cnm[n,m])             # <<<<<<<<<<<<<<
  *                         )
- *                         *
-*/
-      __pyx_t_13 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 316, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_15 = PyTuple_New(2); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 316, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_15);
-      __Pyx_GIVEREF(__pyx_t_13);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_t_13) != (0)) __PYX_ERR(0, 316, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_15, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 316, __pyx_L1_error);
-      __pyx_t_13 = 0;
-      __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_self->Cnm, __pyx_t_15); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-      __pyx_t_15 = __Pyx_PyNumber_Float(__pyx_t_1); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 316, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_15);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_4 = 0;
-      {
-        PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_15};
-        __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 315, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-      }
-
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":318
- *                             float(self.Cnm[n,m])
- *                         )
- *                         *             # <<<<<<<<<<<<<<
- *                         sp
  * 
 */
-      __pyx_t_15 = PyNumber_Multiply(__pyx_t_3, __pyx_v_sp); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 318, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_15);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 373, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_5 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 373, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_16 = PyTuple_New(2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 373, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_GIVEREF(__pyx_t_3);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 373, __pyx_L1_error);
+      __Pyx_GIVEREF(__pyx_t_5);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_16, 1, __pyx_t_5) != (0)) __PYX_ERR(0, 373, __pyx_L1_error);
+      __pyx_t_3 = 0;
+      __pyx_t_5 = 0;
+      __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_self->Cnm, __pyx_t_16); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 373, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      __pyx_t_16 = __Pyx_PyNumber_Float(__pyx_t_5); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 373, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __pyx_t_4 = 0;
+      {
+        PyObject *__pyx_callargs[2] = {__pyx_t_14, __pyx_t_16};
+        __pyx_t_6 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+        __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 372, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+      }
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":313
- *                         cp
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":378
+ *                         *
+ * 
+ *                         Strig[m]             # <<<<<<<<<<<<<<
+ * 
+ *                     )
+*/
+      __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_Strig, __pyx_v_m, int, 1, __Pyx_PyLong_From_int, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 378, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":376
+ *                         )
+ * 
+ *                         *             # <<<<<<<<<<<<<<
+ * 
+ *                         Strig[m]
+*/
+      __pyx_t_14 = PyNumber_Multiply(__pyx_t_6, __pyx_t_16); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 376, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":370
+ * 
  * 
  *                         -             # <<<<<<<<<<<<<<
  * 
  *                         X.Constant(
 */
-      __pyx_t_3 = PyNumber_Subtract(__pyx_t_6, __pyx_t_15); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 313, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+      __pyx_t_16 = PyNumber_Subtract(__pyx_t_2, __pyx_t_14); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 370, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":303
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":357
  *                     m
  * 
  *                     *             # <<<<<<<<<<<<<<
  * 
  *                     (
 */
-      __pyx_t_15 = PyNumber_Multiply(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 303, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_15);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_14 = PyNumber_Multiply(__pyx_t_1, __pyx_t_16); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 357, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-      /* "asset_asrl/GravitySphericalHarmonic.pyx":295
- * 
+      /* "asset_asrl/GravitySphericalHarmonic.pyx":345
+ *                 #
  * 
  *                 longitude_sum += (             # <<<<<<<<<<<<<<
  * 
  *                     rho_n
 */
-      __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_v_longitude_sum, __pyx_t_15); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 295, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-      __Pyx_DECREF_SET(__pyx_v_longitude_sum, __pyx_t_3);
-      __pyx_t_3 = 0;
+      __pyx_t_16 = PyNumber_InPlaceAdd(__pyx_v_longitude_sum, __pyx_t_14); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 345, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      __Pyx_DECREF_SET(__pyx_v_longitude_sum, __pyx_t_16);
+      __pyx_t_16 = 0;
     }
   }
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":329
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":392
  *         mu_r2 = (
  * 
  *             X.Constant(self.mu)             # <<<<<<<<<<<<<<
  * 
  *             /
 */
-  __pyx_t_15 = __pyx_v_X;
-  __Pyx_INCREF(__pyx_t_15);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->mu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 329, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_14 = __pyx_v_X;
+  __Pyx_INCREF(__pyx_t_14);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->mu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 392, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_4 = 0;
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_15, __pyx_t_2};
-    __pyx_t_3 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 329, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
+    PyObject *__pyx_callargs[2] = {__pyx_t_14, __pyx_t_1};
+    __pyx_t_16 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_Constant, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 392, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_16);
   }
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":333
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":396
  *             /
  * 
  *             (r*r)             # <<<<<<<<<<<<<<
  * 
  *         )
 */
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_r, __pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 333, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_r, __pyx_v_r); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 396, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":331
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":394
  *             X.Constant(self.mu)
  * 
  *             /             # <<<<<<<<<<<<<<
  * 
  *             (r*r)
 */
-  __pyx_t_15 = __Pyx_PyNumber_Divide(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 331, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_15);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_mu_r2 = __pyx_t_15;
-  __pyx_t_15 = 0;
+  __pyx_t_14 = __Pyx_PyNumber_Divide(__pyx_t_16, __pyx_t_1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_14);
+  __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_mu_r2 = __pyx_t_14;
+  __pyx_t_14 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":341
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":404
  *         ar = (
  * 
  *             -mu_r2             # <<<<<<<<<<<<<<
+ * 
  *             *
- *             radial_sum
 */
-  __pyx_t_15 = PyNumber_Negative(__pyx_v_mu_r2); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 341, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_15);
+  __pyx_t_14 = PyNumber_Negative(__pyx_v_mu_r2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 404, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_14);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":342
- * 
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":406
  *             -mu_r2
+ * 
  *             *             # <<<<<<<<<<<<<<
+ * 
  *             radial_sum
- * 
 */
-  __pyx_t_2 = PyNumber_Multiply(__pyx_t_15, __pyx_v_radial_sum); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 342, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-  __pyx_v_ar = __pyx_t_2;
-  __pyx_t_2 = 0;
+  __pyx_t_1 = PyNumber_Multiply(__pyx_t_14, __pyx_v_radial_sum); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 406, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+  __pyx_v_ar = __pyx_t_1;
+  __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":351
- * 
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":417
  *             mu_r2
+ * 
  *             *             # <<<<<<<<<<<<<<
+ * 
  *             latitude_sum
- * 
 */
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_mu_r2, __pyx_v_latitude_sum); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 351, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_v_aph = __pyx_t_2;
-  __pyx_t_2 = 0;
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_mu_r2, __pyx_v_latitude_sum); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_v_aph = __pyx_t_1;
+  __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":360
- * 
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":428
  *             mu_r2
- *             *             # <<<<<<<<<<<<<<
- *             longitude_sum
  * 
+ *             *             # <<<<<<<<<<<<<<
+ * 
+ *             longitude_sum
 */
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_mu_r2, __pyx_v_longitude_sum); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 360, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_mu_r2, __pyx_v_longitude_sum); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 428, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":363
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":432
  *             longitude_sum
  * 
  *             /             # <<<<<<<<<<<<<<
  * 
  *             cosphi
 */
-  __pyx_t_15 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_v_cosphi); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 363, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_15);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_alam = __pyx_t_15;
-  __pyx_t_15 = 0;
+  __pyx_t_14 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_v_cosphi); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 432, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_14);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_alam = __pyx_t_14;
+  __pyx_t_14 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":371
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":440
  * 
  * 
  *         ax,ay,az = SphericalToCartesian(             # <<<<<<<<<<<<<<
  * 
  *             ar,
 */
-  __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_SphericalToCartesian); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_mstate_global->__pyx_n_u_SphericalToCartesian); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_16);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":381
- * 
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":454
  *             sinlam,
+ * 
  *             coslam             # <<<<<<<<<<<<<<
  * 
  *         )
 */
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
-    assert(__pyx_t_2);
-    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_3);
-    __Pyx_INCREF(__pyx_t_2);
+  if (unlikely(PyMethod_Check(__pyx_t_16))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_16);
+    assert(__pyx_t_1);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_16);
+    __Pyx_INCREF(__pyx_t_1);
     __Pyx_INCREF(__pyx__function);
-    __Pyx_DECREF_SET(__pyx_t_3, __pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_16, __pyx__function);
     __pyx_t_4 = 0;
   }
   #endif
   {
-    PyObject *__pyx_callargs[8] = {__pyx_t_2, __pyx_v_ar, __pyx_v_aph, __pyx_v_alam, __pyx_v_sinphi, __pyx_v_cosphi, __pyx_v_sinlam, __pyx_v_coslam};
-    __pyx_t_15 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_4, (8-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 371, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_15);
+    PyObject *__pyx_callargs[8] = {__pyx_t_1, __pyx_v_ar, __pyx_v_aph, __pyx_v_alam, __pyx_v_sinphi, __pyx_v_cosphi, __pyx_v_sinlam, __pyx_v_coslam};
+    __pyx_t_14 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_16, __pyx_callargs+__pyx_t_4, (8-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+    if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_14);
   }
-  if ((likely(PyTuple_CheckExact(__pyx_t_15))) || (PyList_CheckExact(__pyx_t_15))) {
-    PyObject* sequence = __pyx_t_15;
+  if ((likely(PyTuple_CheckExact(__pyx_t_14))) || (PyList_CheckExact(__pyx_t_14))) {
+    PyObject* sequence = __pyx_t_14;
     Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
     if (unlikely(size != 3)) {
       if (size > 3) __Pyx_RaiseTooManyValuesError(3);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(0, 371, __pyx_L1_error)
+      __PYX_ERR(0, 440, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
-      __pyx_t_3 = PyTuple_GET_ITEM(sequence, 0);
-      __Pyx_INCREF(__pyx_t_3);
-      __pyx_t_2 = PyTuple_GET_ITEM(sequence, 1);
+      __pyx_t_16 = PyTuple_GET_ITEM(sequence, 0);
+      __Pyx_INCREF(__pyx_t_16);
+      __pyx_t_1 = PyTuple_GET_ITEM(sequence, 1);
+      __Pyx_INCREF(__pyx_t_1);
+      __pyx_t_2 = PyTuple_GET_ITEM(sequence, 2);
       __Pyx_INCREF(__pyx_t_2);
-      __pyx_t_6 = PyTuple_GET_ITEM(sequence, 2);
-      __Pyx_INCREF(__pyx_t_6);
     } else {
-      __pyx_t_3 = __Pyx_PyList_GetItemRefFast(sequence, 0, __Pyx_ReferenceSharing_SharedReference);
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L1_error)
-      __Pyx_XGOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyList_GetItemRefFast(sequence, 1, __Pyx_ReferenceSharing_SharedReference);
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+      __pyx_t_16 = __Pyx_PyList_GetItemRefFast(sequence, 0, __Pyx_ReferenceSharing_SharedReference);
+      if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 440, __pyx_L1_error)
+      __Pyx_XGOTREF(__pyx_t_16);
+      __pyx_t_1 = __Pyx_PyList_GetItemRefFast(sequence, 1, __Pyx_ReferenceSharing_SharedReference);
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
+      __Pyx_XGOTREF(__pyx_t_1);
+      __pyx_t_2 = __Pyx_PyList_GetItemRefFast(sequence, 2, __Pyx_ReferenceSharing_SharedReference);
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 440, __pyx_L1_error)
       __Pyx_XGOTREF(__pyx_t_2);
-      __pyx_t_6 = __Pyx_PyList_GetItemRefFast(sequence, 2, __Pyx_ReferenceSharing_SharedReference);
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 371, __pyx_L1_error)
-      __Pyx_XGOTREF(__pyx_t_6);
     }
     #else
-    __pyx_t_3 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+    __pyx_t_16 = __Pyx_PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_16);
+    __pyx_t_1 = __Pyx_PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 440, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = __Pyx_PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 371, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
     #endif
-    __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_5 = PyObject_GetIter(__pyx_t_15); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 371, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-    __pyx_t_16 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_5);
-    index = 0; __pyx_t_3 = __pyx_t_16(__pyx_t_5); if (unlikely(!__pyx_t_3)) goto __pyx_L8_unpacking_failed;
-    __Pyx_GOTREF(__pyx_t_3);
-    index = 1; __pyx_t_2 = __pyx_t_16(__pyx_t_5); if (unlikely(!__pyx_t_2)) goto __pyx_L8_unpacking_failed;
-    __Pyx_GOTREF(__pyx_t_2);
-    index = 2; __pyx_t_6 = __pyx_t_16(__pyx_t_5); if (unlikely(!__pyx_t_6)) goto __pyx_L8_unpacking_failed;
+    __pyx_t_6 = PyObject_GetIter(__pyx_t_14); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 440, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_16(__pyx_t_5), 3) < (0)) __PYX_ERR(0, 371, __pyx_L1_error)
-    __pyx_t_16 = NULL;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    goto __pyx_L9_unpacking_done;
-    __pyx_L8_unpacking_failed:;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_16 = NULL;
+    __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+    __pyx_t_10 = (CYTHON_COMPILING_IN_LIMITED_API) ? PyIter_Next : __Pyx_PyObject_GetIterNextFunc(__pyx_t_6);
+    index = 0; __pyx_t_16 = __pyx_t_10(__pyx_t_6); if (unlikely(!__pyx_t_16)) goto __pyx_L10_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_16);
+    index = 1; __pyx_t_1 = __pyx_t_10(__pyx_t_6); if (unlikely(!__pyx_t_1)) goto __pyx_L10_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_1);
+    index = 2; __pyx_t_2 = __pyx_t_10(__pyx_t_6); if (unlikely(!__pyx_t_2)) goto __pyx_L10_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_2);
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_10(__pyx_t_6), 3) < (0)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_10 = NULL;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    goto __pyx_L11_unpacking_done;
+    __pyx_L10_unpacking_failed:;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_10 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(0, 371, __pyx_L1_error)
-    __pyx_L9_unpacking_done:;
+    __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_L11_unpacking_done:;
   }
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":371
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":440
  * 
  * 
  *         ax,ay,az = SphericalToCartesian(             # <<<<<<<<<<<<<<
  * 
  *             ar,
 */
-  __pyx_v_ax = __pyx_t_3;
-  __pyx_t_3 = 0;
-  __pyx_v_ay = __pyx_t_2;
+  __pyx_v_ax = __pyx_t_16;
+  __pyx_t_16 = 0;
+  __pyx_v_ay = __pyx_t_1;
+  __pyx_t_1 = 0;
+  __pyx_v_az = __pyx_t_2;
   __pyx_t_2 = 0;
-  __pyx_v_az = __pyx_t_6;
-  __pyx_t_6 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":387
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":459
  * 
  * 
  *         return vf.stack(             # <<<<<<<<<<<<<<
@@ -4408,57 +4553,57 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
  *                 ax,
 */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_6 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_stack); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 459, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_stack); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 459, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_16);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":388
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":460
  * 
  *         return vf.stack(
  *             [             # <<<<<<<<<<<<<<
  *                 ax,
  *                 ay,
 */
-  __pyx_t_2 = PyList_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 388, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = PyList_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 460, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_ax);
   __Pyx_GIVEREF(__pyx_v_ax);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_v_ax) != (0)) __PYX_ERR(0, 388, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_v_ax) != (0)) __PYX_ERR(0, 460, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_ay);
   __Pyx_GIVEREF(__pyx_v_ay);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 1, __pyx_v_ay) != (0)) __PYX_ERR(0, 388, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 1, __pyx_v_ay) != (0)) __PYX_ERR(0, 460, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_az);
   __Pyx_GIVEREF(__pyx_v_az);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 2, __pyx_v_az) != (0)) __PYX_ERR(0, 388, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 2, __pyx_v_az) != (0)) __PYX_ERR(0, 460, __pyx_L1_error);
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
-  if (unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
-    assert(__pyx_t_6);
-    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_3);
-    __Pyx_INCREF(__pyx_t_6);
+  if (unlikely(PyMethod_Check(__pyx_t_16))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_16);
+    assert(__pyx_t_2);
+    PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_16);
+    __Pyx_INCREF(__pyx_t_2);
     __Pyx_INCREF(__pyx__function);
-    __Pyx_DECREF_SET(__pyx_t_3, __pyx__function);
+    __Pyx_DECREF_SET(__pyx_t_16, __pyx__function);
     __pyx_t_4 = 0;
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_t_2};
-    __pyx_t_15 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 387, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_15);
+    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_t_1};
+    __pyx_t_14 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_16, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+    if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 459, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_14);
   }
-  __pyx_r = __pyx_t_15;
-  __pyx_t_15 = 0;
+  __pyx_r = __pyx_t_14;
+  __pyx_t_14 = 0;
   goto __pyx_L0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":88
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":96
  *     # ========================================================
  * 
  *     cdef object _build_acceleration(self):             # <<<<<<<<<<<<<<
@@ -4473,8 +4618,8 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_XDECREF(__pyx_t_13);
-  __Pyx_XDECREF(__pyx_t_15);
+  __Pyx_XDECREF(__pyx_t_14);
+  __Pyx_XDECREF(__pyx_t_16);
   __Pyx_AddTraceback("asset_asrl.GravitySphericalHarmonic.SphericalHarmonicGravityVF._build_acceleration", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
@@ -4487,10 +4632,9 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __Pyx_XDECREF(__pyx_v_r);
   __Pyx_XDECREF(__pyx_v_sinphi);
   __Pyx_XDECREF(__pyx_v_cosphi);
-  __Pyx_XDECREF(__pyx_v_sinlam);
   __Pyx_XDECREF(__pyx_v_coslam);
+  __Pyx_XDECREF(__pyx_v_sinlam);
   __Pyx_XDECREF(__pyx_v_rho);
-  __Pyx_XDECREF(__pyx_v_lam);
   __Pyx_XDECREF(__pyx_v_P);
   __Pyx_XDECREF(__pyx_v_zero);
   __Pyx_XDECREF(__pyx_v_one);
@@ -4498,9 +4642,9 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __Pyx_XDECREF(__pyx_v_latitude_sum);
   __Pyx_XDECREF(__pyx_v_longitude_sum);
   __Pyx_XDECREF(__pyx_v_rho_n);
+  __Pyx_XDECREF(__pyx_v_Ctrig);
+  __Pyx_XDECREF(__pyx_v_Strig);
   __Pyx_XDECREF(__pyx_v_trig);
-  __Pyx_XDECREF(__pyx_v_cp);
-  __Pyx_XDECREF(__pyx_v_sp);
   __Pyx_XDECREF(__pyx_v_dP);
   __Pyx_XDECREF(__pyx_v_mu_r2);
   __Pyx_XDECREF(__pyx_v_ar);
@@ -4514,12 +4658,12 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   return __pyx_r;
 }
 
-/* "asset_asrl/GravitySphericalHarmonic.pyx":401
+/* "asset_asrl/GravitySphericalHarmonic.pyx":473
  *     # ========================================================
  * 
  *     cdef object _build_ode(self):             # <<<<<<<<<<<<<<
  * 
- *         X = Args(6)
+ * 
 */
 
 static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF__build_ode(struct __pyx_obj_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF *__pyx_v_self) {
@@ -4544,15 +4688,15 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_build_ode", 0);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":403
- *     cdef object _build_ode(self):
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":476
+ * 
  * 
  *         X = Args(6)             # <<<<<<<<<<<<<<
  * 
- *         v = X.tail3()
+ * 
 */
   __pyx_t_2 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 403, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Args); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
@@ -4571,18 +4715,18 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     __pyx_t_1 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_3, __pyx_callargs+__pyx_t_4, (2-__pyx_t_4) | (__pyx_t_4*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 476, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_X = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":405
- *         X = Args(6)
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":479
+ * 
  * 
  *         v = X.tail3()             # <<<<<<<<<<<<<<
  * 
- *         a = self._acc_vf
+ * 
 */
   __pyx_t_3 = __pyx_v_X;
   __Pyx_INCREF(__pyx_t_3);
@@ -4591,14 +4735,14 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_tail3, __pyx_callargs+__pyx_t_4, (1-__pyx_t_4) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 405, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 479, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_v = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":407
- *         v = X.tail3()
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":482
+ * 
  * 
  *         a = self._acc_vf             # <<<<<<<<<<<<<<
  * 
@@ -4609,7 +4753,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __pyx_v_a = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":410
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":485
  * 
  * 
  *         return vf.stack(             # <<<<<<<<<<<<<<
@@ -4618,93 +4762,93 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_3 = NULL;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 410, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_stack); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 410, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_stack); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":412
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":487
  *         return vf.stack(
  *             [
  *                 v[0],             # <<<<<<<<<<<<<<
  *                 v[1],
  *                 v[2],
 */
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_v, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 412, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_v, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":413
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":488
  *             [
  *                 v[0],
  *                 v[1],             # <<<<<<<<<<<<<<
  *                 v[2],
  * 
 */
-  __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_v, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 413, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_v, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 488, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":414
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":489
  *                 v[0],
  *                 v[1],
  *                 v[2],             # <<<<<<<<<<<<<<
  * 
  *                 a[0],
 */
-  __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_v, 2, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 414, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_v, 2, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":416
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":491
  *                 v[2],
  * 
  *                 a[0],             # <<<<<<<<<<<<<<
  *                 a[1],
  *                 a[2]
 */
-  __pyx_t_8 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_GetItemInt(__pyx_v_a, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":417
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":492
  * 
  *                 a[0],
  *                 a[1],             # <<<<<<<<<<<<<<
  *                 a[2]
  *             ]
 */
-  __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 492, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":418
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":493
  *                 a[0],
  *                 a[1],
  *                 a[2]             # <<<<<<<<<<<<<<
  *             ]
  *         )
 */
-  __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_a, 2, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_a, 2, long, 1, __Pyx_PyLong_From_long, 0, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":411
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":486
  * 
  *         return vf.stack(
  *             [             # <<<<<<<<<<<<<<
  *                 v[0],
  *                 v[1],
 */
-  __pyx_t_11 = PyList_New(6); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 411, __pyx_L1_error)
+  __pyx_t_11 = PyList_New(6); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 411, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 486, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_6);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 1, __pyx_t_6) != (0)) __PYX_ERR(0, 411, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 1, __pyx_t_6) != (0)) __PYX_ERR(0, 486, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_7);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 2, __pyx_t_7) != (0)) __PYX_ERR(0, 411, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 2, __pyx_t_7) != (0)) __PYX_ERR(0, 486, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_8);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 3, __pyx_t_8) != (0)) __PYX_ERR(0, 411, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 3, __pyx_t_8) != (0)) __PYX_ERR(0, 486, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_9);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 4, __pyx_t_9) != (0)) __PYX_ERR(0, 411, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 4, __pyx_t_9) != (0)) __PYX_ERR(0, 486, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_10);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 5, __pyx_t_10) != (0)) __PYX_ERR(0, 411, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_11, 5, __pyx_t_10) != (0)) __PYX_ERR(0, 486, __pyx_L1_error);
   __pyx_t_2 = 0;
   __pyx_t_6 = 0;
   __pyx_t_7 = 0;
@@ -4729,19 +4873,19 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 410, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 485, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":401
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":473
  *     # ========================================================
  * 
  *     cdef object _build_ode(self):             # <<<<<<<<<<<<<<
  * 
- *         X = Args(6)
+ * 
 */
 
   /* function exit code */
@@ -4767,7 +4911,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   return __pyx_r;
 }
 
-/* "asset_asrl/GravitySphericalHarmonic.pyx":428
+/* "asset_asrl/GravitySphericalHarmonic.pyx":503
  *     # ========================================================
  * 
  *     cpdef object build_accel(self):             # <<<<<<<<<<<<<<
@@ -4810,7 +4954,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_build_accel); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 428, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_build_accel); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_3build_accel)) {
         __Pyx_XDECREF(__pyx_r);
@@ -4834,7 +4978,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
           __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 428, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
         }
         __pyx_r = __pyx_t_2;
@@ -4855,7 +4999,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     #endif
   }
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":430
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":505
  *     cpdef object build_accel(self):
  * 
  *         return self._acc_vf             # <<<<<<<<<<<<<<
@@ -4867,7 +5011,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __pyx_r = __pyx_v_self->_acc_vf;
   goto __pyx_L0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":428
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":503
  *     # ========================================================
  * 
  *     cpdef object build_accel(self):             # <<<<<<<<<<<<<<
@@ -4940,7 +5084,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("build_accel", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_build_accel(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 428, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_build_accel(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4957,7 +5101,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   return __pyx_r;
 }
 
-/* "asset_asrl/GravitySphericalHarmonic.pyx":433
+/* "asset_asrl/GravitySphericalHarmonic.pyx":509
  * 
  * 
  *     cpdef object vf(self):             # <<<<<<<<<<<<<<
@@ -5000,7 +5144,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 509, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_5vf)) {
         __Pyx_XDECREF(__pyx_r);
@@ -5024,7 +5168,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
           __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 433, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 509, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
         }
         __pyx_r = __pyx_t_2;
@@ -5045,7 +5189,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     #endif
   }
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":435
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":511
  *     cpdef object vf(self):
  * 
  *         return self._acc_vf             # <<<<<<<<<<<<<<
@@ -5057,7 +5201,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __pyx_r = __pyx_v_self->_acc_vf;
   goto __pyx_L0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":433
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":509
  * 
  * 
  *     cpdef object vf(self):             # <<<<<<<<<<<<<<
@@ -5130,7 +5274,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("vf", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_vf(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_vf(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 509, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5147,7 +5291,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   return __pyx_r;
 }
 
-/* "asset_asrl/GravitySphericalHarmonic.pyx":438
+/* "asset_asrl/GravitySphericalHarmonic.pyx":515
  * 
  * 
  *     cpdef object ode(self):             # <<<<<<<<<<<<<<
@@ -5190,7 +5334,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_ode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_ode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 515, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_7ode)) {
         __Pyx_XDECREF(__pyx_r);
@@ -5214,7 +5358,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
           __pyx_t_2 = __Pyx_PyObject_FastCall((PyObject*)__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 515, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
         }
         __pyx_r = __pyx_t_2;
@@ -5235,7 +5379,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
     #endif
   }
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":440
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":517
  *     cpdef object ode(self):
  * 
  *         return self._ode_vf             # <<<<<<<<<<<<<<
@@ -5247,7 +5391,7 @@ static PyObject *__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarm
   __pyx_r = __pyx_v_self->_ode_vf;
   goto __pyx_L0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":438
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":515
  * 
  * 
  *     cpdef object ode(self):             # <<<<<<<<<<<<<<
@@ -5320,7 +5464,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("ode", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_ode(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_ode(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 515, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5337,7 +5481,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   return __pyx_r;
 }
 
-/* "asset_asrl/GravitySphericalHarmonic.pyx":443
+/* "asset_asrl/GravitySphericalHarmonic.pyx":521
  * 
  * 
  *     def __call__(self):             # <<<<<<<<<<<<<<
@@ -5375,7 +5519,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__call__", 0);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":445
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":523
  *     def __call__(self):
  * 
  *         return self._ode_vf             # <<<<<<<<<<<<<<
@@ -5387,7 +5531,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   __pyx_r = __pyx_v_self->_ode_vf;
   goto __pyx_L0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":443
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":521
  * 
  * 
  *     def __call__(self):             # <<<<<<<<<<<<<<
@@ -5402,7 +5546,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   return __pyx_r;
 }
 
-/* "asset_asrl/GravitySphericalHarmonic.pyx":448
+/* "asset_asrl/GravitySphericalHarmonic.pyx":527
  * 
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
@@ -5436,7 +5580,7 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__repr__", 0);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":450
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":529
  *     def __repr__(self):
  * 
  *         return (             # <<<<<<<<<<<<<<
@@ -5445,19 +5589,19 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
 */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":452
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":531
  *         return (
  *             f"SphericalHarmonicGravityVF("
  *             f"degree={self.degree})"             # <<<<<<<<<<<<<<
  *         )
 */
-  __pyx_t_1 = __Pyx_PyUnicode_From_int(__pyx_v_self->degree, 0, ' ', 'd'); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyUnicode_From_int(__pyx_v_self->degree, 0, ' ', 'd'); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 531, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2[0] = __pyx_mstate_global->__pyx_kp_u_SphericalHarmonicGravityVF_degre;
   __pyx_t_2[1] = __pyx_t_1;
   __pyx_t_2[2] = __pyx_mstate_global->__pyx_kp_u_;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":451
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":530
  * 
  *         return (
  *             f"SphericalHarmonicGravityVF("             # <<<<<<<<<<<<<<
@@ -5465,14 +5609,14 @@ static PyObject *__pyx_pf_10asset_asrl_24GravitySphericalHarmonic_26SphericalHar
  *         )
 */
   __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_2, 3, 34 + __Pyx_PyUnicode_GET_LENGTH(__pyx_t_1) + 1, 127);
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 451, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 530, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":448
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":527
  * 
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
@@ -5942,15 +6086,15 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   __pyx_vtable_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF.vf = (PyObject *(*)(struct __pyx_obj_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF *, int __pyx_skip_dispatch))__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_vf;
   __pyx_vtable_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF.ode = (PyObject *(*)(struct __pyx_obj_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF *, int __pyx_skip_dispatch))__pyx_f_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_ode;
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF)) __PYX_ERR(0, 40, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF_spec, __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF)) __PYX_ERR(0, 42, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF_spec, __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 42, __pyx_L1_error)
   #else
   __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF = &__pyx_type_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 42, __pyx_L1_error)
   #endif
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount((PyObject*)__pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF);
@@ -5960,10 +6104,10 @@ static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
     __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF->tp_getattro = PyObject_GenericGetAttr;
   }
   #endif
-  if (__Pyx_SetVtable(__pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF, __pyx_vtabptr_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
-  if (__Pyx_MergeVtables(__pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_SphericalHarmonicGravityVF, (PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 40, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF, __pyx_vtabptr_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 42, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 42, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_SphericalHarmonicGravityVF, (PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 42, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF) < (0)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -6266,44 +6410,44 @@ __Pyx_RefNannySetupContext("PyInit_GravitySphericalHarmonic", 0);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":18
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":20
  * 
  * 
  * import asset_asrl as ast             # <<<<<<<<<<<<<<
  * 
  * cimport cython
 */
-  __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_asset_asrl, 0, 0, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_asset_asrl, 0, 0, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
   __pyx_t_2 = __pyx_t_1;
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ast, __pyx_t_2) < (0)) __PYX_ERR(0, 18, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_ast, __pyx_t_2) < (0)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":23
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":25
  * 
  * 
  * from pines_math import (             # <<<<<<<<<<<<<<
+ *     HarmonicTrig,
  *     SphericalToCartesian
- * )
 */
   {
-    PyObject* const __pyx_imported_names[] = {__pyx_mstate_global->__pyx_n_u_SphericalToCartesian};
-    __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_pines_math, __pyx_imported_names, 1, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
+    PyObject* const __pyx_imported_names[] = {__pyx_mstate_global->__pyx_n_u_HarmonicTrig,__pyx_mstate_global->__pyx_n_u_SphericalToCartesian};
+    __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_pines_math, __pyx_imported_names, 2, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
   }
   __pyx_t_2 = __pyx_t_1;
   __Pyx_GOTREF(__pyx_t_2);
   {
-    PyObject* const __pyx_imported_names[] = {__pyx_mstate_global->__pyx_n_u_SphericalToCartesian};
-    __pyx_t_3 = 0; {
-      __pyx_t_4 = __Pyx_ImportFrom(__pyx_t_2, __pyx_imported_names[__pyx_t_3]); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 23, __pyx_L1_error)
+    PyObject* const __pyx_imported_names[] = {__pyx_mstate_global->__pyx_n_u_HarmonicTrig,__pyx_mstate_global->__pyx_n_u_SphericalToCartesian};
+    for (__pyx_t_3=0; __pyx_t_3 < 2; __pyx_t_3++) {
+      __pyx_t_4 = __Pyx_ImportFrom(__pyx_t_2, __pyx_imported_names[__pyx_t_3]); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 25, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_imported_names[__pyx_t_3], __pyx_t_4) < (0)) __PYX_ERR(0, 23, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_imported_names[__pyx_t_3], __pyx_t_4) < (0)) __PYX_ERR(0, 25, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":27
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":30
  * )
  * 
  * from Legendre import AssociatedLegendre             # <<<<<<<<<<<<<<
@@ -6312,94 +6456,94 @@ __Pyx_RefNannySetupContext("PyInit_GravitySphericalHarmonic", 0);
 */
   {
     PyObject* const __pyx_imported_names[] = {__pyx_mstate_global->__pyx_n_u_AssociatedLegendre};
-    __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_Legendre, __pyx_imported_names, 1, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_Import(__pyx_mstate_global->__pyx_n_u_Legendre, __pyx_imported_names, 1, NULL, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
   }
   __pyx_t_2 = __pyx_t_1;
   __Pyx_GOTREF(__pyx_t_2);
   {
     PyObject* const __pyx_imported_names[] = {__pyx_mstate_global->__pyx_n_u_AssociatedLegendre};
     __pyx_t_3 = 0; {
-      __pyx_t_4 = __Pyx_ImportFrom(__pyx_t_2, __pyx_imported_names[__pyx_t_3]); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 27, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_ImportFrom(__pyx_t_2, __pyx_imported_names[__pyx_t_3]); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 30, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_imported_names[__pyx_t_3], __pyx_t_4) < (0)) __PYX_ERR(0, 27, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_imported_names[__pyx_t_3], __pyx_t_4) < (0)) __PYX_ERR(0, 30, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":31
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":33
  * 
  * 
  * vf = ast.VectorFunctions             # <<<<<<<<<<<<<<
  * Args = vf.Arguments
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ast); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_ast); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_VectorFunctions); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_VectorFunctions); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_4) < (0)) __PYX_ERR(0, 31, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_4) < (0)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":32
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":34
  * 
  * vf = ast.VectorFunctions
  * Args = vf.Arguments             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_vf); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_Arguments); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_Arguments); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Args, __pyx_t_2) < (0)) __PYX_ERR(0, 32, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_Args, __pyx_t_2) < (0)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":428
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":503
  *     # ========================================================
  * 
  *     cpdef object build_accel(self):             # <<<<<<<<<<<<<<
  * 
  *         return self._acc_vf
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_3build_accel, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_SphericalHarmonicGravityVF_build, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_GravitySphericalHarmo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 428, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_3build_accel, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_SphericalHarmonicGravityVF_build, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_GravitySphericalHarmo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
   #endif
-  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF, __pyx_mstate_global->__pyx_n_u_build_accel, __pyx_t_2) < (0)) __PYX_ERR(0, 428, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF, __pyx_mstate_global->__pyx_n_u_build_accel, __pyx_t_2) < (0)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":433
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":509
  * 
  * 
  *     cpdef object vf(self):             # <<<<<<<<<<<<<<
  * 
  *         return self._acc_vf
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_5vf, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_SphericalHarmonicGravityVF_vf, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_GravitySphericalHarmo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_5vf, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_SphericalHarmonicGravityVF_vf, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_GravitySphericalHarmo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 509, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
   #endif
-  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_2) < (0)) __PYX_ERR(0, 433, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF, __pyx_mstate_global->__pyx_n_u_vf, __pyx_t_2) < (0)) __PYX_ERR(0, 509, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "asset_asrl/GravitySphericalHarmonic.pyx":438
+  /* "asset_asrl/GravitySphericalHarmonic.pyx":515
  * 
  * 
  *     cpdef object ode(self):             # <<<<<<<<<<<<<<
  * 
  *         return self._ode_vf
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_7ode, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_SphericalHarmonicGravityVF_ode, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_GravitySphericalHarmo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_24GravitySphericalHarmonic_26SphericalHarmonicGravityVF_7ode, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_SphericalHarmonicGravityVF_ode, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_GravitySphericalHarmo, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 515, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
   #endif
-  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF, __pyx_mstate_global->__pyx_n_u_ode, __pyx_t_2) < (0)) __PYX_ERR(0, 438, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_10asset_asrl_24GravitySphericalHarmonic_SphericalHarmonicGravityVF, __pyx_mstate_global->__pyx_n_u_ode, __pyx_t_2) < (0)) __PYX_ERR(0, 515, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "(tree fragment)":1
@@ -6500,31 +6644,31 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 6; } index[] = {{1},{34},{1},{1},{39},{7},{6},{2},{9},{50},{14},{4},{9},{18},{3},{8},{8},{20},{3},{26},{44},{46},{38},{30},{29},{20},{15},{10},{35},{3},{18},{5},{11},{17},{18},{3},{6},{8},{12},{5},{13},{5},{8},{10},{2},{8},{3},{10},{3},{11},{14},{12},{6},{10},{17},{13},{4},{12},{10},{12},{19},{3},{4},{5},{5},{8},{6},{2},{9},{9}};
-    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (540 bytes) */
-const char* const cstring = "BZh91AY&SY\254/\322\261\000\000\t_\343dP\300k\270\007\255\305}\000\277\357\377`@@@\000\000@@\000@\001\316\355\264\266\354\032$\301\032Sz\024\361OI\345=\031@\006\217I\240\3233T\"S\365O\322i3(\323#@\310h\301\014\201\2011\001\246\223EO\323I\244\364\001\r220\000\t\210`IB14i\251\244\332 \000\000\r\000d\323LAr\322\013f\\~\232{\266w\351\367\331\032\211\207\356qAh\311\316\026\341\310S*\277a\274\213\2362N\225\350/\306\213\006\374\333\315\231\344iG\302\246\245\231\340Y\265\250\"\346T8Sk\202~c'\013G\261\377\"\r^\245W\320\323\346u\200S\315&\362@\252U\352\342\030\240I\215\206\210\242I\244U\305M\211\017\347@!<$%\250\370\020\033\345*\206Os\020d\033-\"\364\024\326\030\351\200\031\030\221P\374\250m\307&H~\3269K\372O\272\260{r\226o\326\331a\275#\031\002\202/\245\324\326\366U\241hyu\245!\224\223.\313\211\241\024C\375 \272\206\226D\302#.\320N\023\021\022\005\361D\030\306\031\265\313\216\366\2259\251\272Zak*\347\021r!,\220\002\002\031\253E\006Jr\265\221\262Ls\360u\265Nh+\213\311\324z\252\001\002Y\230a\252Q\357\203\003 \323\207#S2\000\367\335\200\"D\026\t\230\333\334i\n \262\000\361\315\367)F\346j\241ZS\203\355e\240 \200c\354\222\262\222\242\231DR\331\227\303<%^\304\030\3429<\3416\027\010\211%\235\005\2436\302\274S\245|\202\350\260\2429\204\001G\034l!&2\226I\020\2021\007\323\226\345\271\352Q%\000\033\306(\320D\224\002X\327\321x\t\351\016e\350\\y\276F\000\342\003\207U\232\301Q\200D\302\317=\3278\304\367\320\226\220\t\256c#\205\304\003+\002,J\032\263\321\260\207o\370\273\222)\302\204\205a~\225\210";
-    PyObject *data = __Pyx_DecompressString(cstring, 540, 2);
+    const struct { const unsigned int length: 6; } index[] = {{1},{34},{1},{1},{39},{7},{6},{2},{9},{50},{14},{4},{9},{18},{3},{8},{12},{8},{20},{3},{26},{44},{46},{38},{30},{29},{20},{15},{10},{35},{3},{18},{11},{17},{18},{6},{8},{12},{5},{13},{5},{8},{10},{2},{8},{3},{10},{3},{11},{14},{12},{6},{10},{17},{13},{4},{12},{10},{12},{19},{4},{5},{5},{8},{6},{2},{9},{9}};
+    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (531 bytes) */
+const char* const cstring = "BZh91AY&SY\202\024\273\312\000\000\t_\343dP\300k\250\007\255\305}\000\277\357\377`@@@\000\000@@\000@\001\316\351r\356\354\022\212Lhj\215\351O\325\033\3254\331OQ\352z\2002h\006\031\252\r\t\244\311\243(\t\262\023##F\023\000\004\310\032i4S\324\365\032h\217@&#\010`\000L\217S\t(\004\t\264Q\266\250\000\000\000\r\006OR\3618e\031\331\267w\335\013\256\356\374\277-\246db\354\\\321]\255igo\003\241\263\177G\341\023\217uU\242\274\014\231=X,a\252\356}1+\303\010\311\3679*H\0133j\n\334\307\216\024Z\340NX\311\302\341\244\377\021\006\365\257a\3635m.\240\024\235*\324@\252U\352\342\030\240U\262Lk\234\366<\247\344*sg\257hF9\330\237\037\201\036\327,\217Y\333!Uv\222\364\023\326\031W$\023bC\310\342\206\332rN\\P\034\254\256\026\274 \334\n\267p\362\245\257F2\005\004_;\247\263\201Ve\231\345\324)\014\244\231R\271Z\021D?\262\013\334 \235\342\247\203\246\241\027D\020xp\223\3108\314\307\247xb\222\005el&mAn\223\\\200\204H>\213N \034\010\037d\256\3108J\024\034\323\204m\266Ac\022\001\256\230AD\352\200@\226f\037\023\024{\340\300\3105`\344k5B\007\276\364\010\221\005\2039h\301e&Bq\005\277\027[0\326g}9B\367X\313\002A\006;MP*\3209\342'n\202\371RVCb\014\262\034\242p\233\013\204eYj\240\213\206gT)\242\217\202T\222b\222\001%d\353A\024\233D\352\201\246<\265p\315\361\\V\227\001\215>L\211\224\2119\253\226\340\225\343Yt\223\323\213\252`5\003\352\035:\204}\344\225\232|\365\332\3259\273\037-\010\022\302\265E\215\250\014\200f\301#\237\034\250\214p\377\027rE8P\220\202\024\273\312";
+    PyObject *data = __Pyx_DecompressString(cstring, 531, 2);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (431 bytes) */
-const char* const cstring = "x\332\215RMo\023A\014\025\022\007\304\205\277\220#\010\021\004\275\362\241(\250p@\010h\325\253\345\314x7Vg=\351\330\263\312\336z\354\261?\217#?\005/I\223J%\021#\315\310c?{\336\370\371\305\331jI\205\003\246/X\272,\034>\027\354\331\206\213\323\347\221\332B\364~\372\021U\311\000\265\244\327\333\350\203\254\351jXGV\\$\"\031\3176\260n\254(y\022\251\301\232l\002P(\326@\000\223Xiby\"Y^Y\341\2361y4\260\260\001\274SwI\253\271\226@\037f\245U\337\265#1\235\251\346\300h\024\277RK\022\013\315\245\233gQC\261;\027\300\367a\355\373\023\007\203o\264\266\237\324\234Iw\370\257\207#\323\035\3450\3302\013\300Q\2547\312\231\330\177\241\027\225S\004\014\201\322\021T\216t$\3327\273\340y\236c1RF\271\240`\271\234V\t\306\336\232\275~{kzHIt\376:H\340<\r\271\344j,\244\350\335}{\217\257+5\326\202\226\214\215\272\361\3520`\001+\030h\201\3412d\335\014\020@\343D\300W{\327\034X\022\306\023`\205\335\023c\031\005\350\320k\370\352r\254\311\201]\005\020\354\334\362>\254F*\016\261\345*\257\000|\344`[o4{\033\247mL\276\252\2306I\005#W\335O\335\0031w\016Z\217\342\245\346\257\204\333'\335\332\016\356=a\341\037\"+\213^\225\321\031.\r9\235\000\270\020\236\325c\252\244}s=\373\375\344\331\215\335\276\271~\364\353\361\323\233\227\267?\376\000\232+a\325";
-    PyObject *data = __Pyx_DecompressString(cstring, 431, 1);
+    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (429 bytes) */
+const char* const cstring = "x\332\215RMo\0241\014\025\022\007\304\205\2770G\020b\020\352\025\250V\213\n\007\204\200V\275Z\336\3043k5\223Lcg\264s\353\261\307\376<\216\374\024<\335\257JeW\215\224\221'\357\331y\361\363\233\363~I\231\035\206o\230\273\024\331}\3158\260\216\227g\257=\265\231\350S}\212\"\244\200\222\303\373\r\372(\253\356\307\225g\301E \212\323\267u,\353\310\307Tyj\260\004\255\0002\371\342\010\240\362\205*MUL\361\235f\036\030\203\241\216#+\300G\261\243\330J*\331\321\347Yn\305v\351(\252\314D\222cT\362\337\251\245\3503\315c7OQ\024\243n\325\\dn\2670\300\317qe\373\013;\205\037\264\322\337\324\234\307\356\360\273\017#\365N\276\033u\231\"\300Q\2565\315T\351\223\330\213\302\301\003:G\341\010+y:\202\016\315\016\274Hs\314J\302\030/\311i\312g%:ek\323\336\313}T\037r\025M\277\214\321q\252]\312\251(G\222\007R\315\260\251\014\264\244\254\324M\277\306\000\216\240\031\035-\320]\255\207\010\2401\001`\253\3356\005\226\204\376\004X`Wz\252!\000\035Z\001[]\362%\030\261+\000\021;\213\354\375\375$\301(\272\354S\017`c\007\233zS8\3504qS\362u\301\260N\312\350\271\310~\362\036\231\270;\240\325dZh\356\255\333\\i\321fx\037\030\n\3771W\256\363t\342\256\0249\234\000X\367-e\300PH\206\346f\366\367\305\253[\275\373p\363\354\317\363\227\267o\357~\375\003\016\003b7";
+    PyObject *data = __Pyx_DecompressString(cstring, 429, 1);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (889 bytes) */
-const char* const bytes = ")SphericalHarmonicGravityVF(degree=.?asset_asrl/GravitySphericalHarmonic.pyxdisableenablegcisenabledno default __reduce__ due to non-trivial __cinit__<stringsource>ArgsArgumentsAssociatedLegendreCnmConstantLegendre__Pyx_PyDict_NextRefSnmSphericalHarmonicGravityVFSphericalHarmonicGravityVF.__reduce_cython__SphericalHarmonicGravityVF.__setstate_cython__SphericalHarmonicGravityVF.build_accelSphericalHarmonicGravityVF.odeSphericalHarmonicGravityVF.vfSphericalToCartesianVectorFunctionsasset_asrlasset_asrl.GravitySphericalHarmonicastasyncio.coroutinesatan2build_accel__class_getitem__cline_in_tracebackcosdegree__func____getstate__head3_is_coroutineitems__main____module__mu__name__odepines_mathpop__pyx_state__pyx_vtable____qualname__radius__reduce____reduce_cython____reduce_ex__self__set_name__setdefault__setstate____setstate_cython__sinsqrtstacktail3__test__valuesvf\200A\340\010\017\210t\2201\200\001\330\004\n\210+\220Q";
+    #else /* compression: none (890 bytes) */
+const char* const bytes = ")SphericalHarmonicGravityVF(degree=.?asset_asrl/GravitySphericalHarmonic.pyxdisableenablegcisenabledno default __reduce__ due to non-trivial __cinit__<stringsource>ArgsArgumentsAssociatedLegendreCnmConstantHarmonicTrigLegendre__Pyx_PyDict_NextRefSnmSphericalHarmonicGravityVFSphericalHarmonicGravityVF.__reduce_cython__SphericalHarmonicGravityVF.__setstate_cython__SphericalHarmonicGravityVF.build_accelSphericalHarmonicGravityVF.odeSphericalHarmonicGravityVF.vfSphericalToCartesianVectorFunctionsasset_asrlasset_asrl.GravitySphericalHarmonicastasyncio.coroutinesbuild_accel__class_getitem__cline_in_tracebackdegree__func____getstate__head3_is_coroutineitems__main____module__mu__name__odepines_mathpop__pyx_state__pyx_vtable____qualname__radius__reduce____reduce_cython____reduce_ex__self__set_name__setdefault__setstate____setstate_cython__sqrtstacktail3__test__valuesvf\200A\340\010\017\210t\2201\200\001\330\004\n\210+\220Q";
     PyObject *data = NULL;
     CYTHON_UNUSED_VAR(__Pyx_DecompressString);
     #endif
     PyObject **stringtab = __pyx_mstate->__pyx_string_tab;
     Py_ssize_t pos = 0;
-    for (int i = 0; i < 68; i++) {
+    for (int i = 0; i < 66; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyUnicode_DecodeUTF8(bytes + pos, bytes_length, NULL);
       if (likely(string) && i >= 11) PyUnicode_InternInPlace(&string);
@@ -6535,7 +6679,7 @@ const char* const bytes = ")SphericalHarmonicGravityVF(degree=.?asset_asrl/Gravi
       stringtab[i] = string;
       pos += bytes_length;
     }
-    for (int i = 68; i < 70; i++) {
+    for (int i = 66; i < 68; i++) {
       Py_ssize_t bytes_length = index[i].length;
       PyObject *string = PyBytes_FromStringAndSize(bytes + pos, bytes_length);
       stringtab[i] = string;
@@ -6546,14 +6690,14 @@ const char* const bytes = ")SphericalHarmonicGravityVF(degree=.?asset_asrl/Gravi
       }
     }
     Py_XDECREF(data);
-    for (Py_ssize_t i = 0; i < 70; i++) {
+    for (Py_ssize_t i = 0; i < 68; i++) {
       if (unlikely(PyObject_Hash(stringtab[i]) == -1)) {
         __PYX_ERR(0, 1, __pyx_L1_error)
       }
     }
     #if CYTHON_IMMORTAL_CONSTANTS
     {
-      PyObject **table = stringtab + 68;
+      PyObject **table = stringtab + 66;
       for (Py_ssize_t i=0; i<2; ++i) {
         #if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
         #if PY_VERSION_HEX < 0x030E0000
@@ -6617,7 +6761,7 @@ typedef struct {
     unsigned int num_kwonly_args : 1;
     unsigned int nlocals : 2;
     unsigned int flags : 10;
-    unsigned int first_line : 9;
+    unsigned int first_line : 10;
 } __Pyx_PyCode_New_function_description;
 /* NewCodeObj.proto */
 static PyObject* __Pyx_PyCode_New(
@@ -6634,17 +6778,17 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 428};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 503};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
     __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_GravitySphericalHarmo_2, __pyx_mstate->__pyx_n_u_build_accel, __pyx_mstate->__pyx_kp_b_iso88591_A_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 433};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 509};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
     __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_GravitySphericalHarmo_2, __pyx_mstate->__pyx_n_u_vf, __pyx_mstate->__pyx_kp_b_iso88591_A_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 438};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 515};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
     __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_GravitySphericalHarmo_2, __pyx_mstate->__pyx_n_u_ode, __pyx_mstate->__pyx_kp_b_iso88591_A_t1, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
   }
@@ -8162,6 +8306,44 @@ static PyObject* __Pyx_PyFloat_AddObjC(PyObject *op1, PyObject *op2, double floa
 }
 #endif
 
+/* RaiseTooManyValuesToUnpack */
+static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected) {
+    PyErr_Format(PyExc_ValueError,
+                 "too many values to unpack (expected %" CYTHON_FORMAT_SSIZE_T "d)", expected);
+}
+
+/* RaiseNeedMoreValuesToUnpack */
+static CYTHON_INLINE void __Pyx_RaiseNeedMoreValuesError(Py_ssize_t index) {
+    PyErr_Format(PyExc_ValueError,
+                 "need more than %" CYTHON_FORMAT_SSIZE_T "d value%.1s to unpack",
+                 index, (index == 1) ? "" : "s");
+}
+
+/* IterFinish */
+static CYTHON_INLINE int __Pyx_IterFinish(void) {
+    PyObject* exc_type;
+    __Pyx_PyThreadState_declare
+    __Pyx_PyThreadState_assign
+    exc_type = __Pyx_PyErr_CurrentExceptionType();
+    if (unlikely(exc_type)) {
+        if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration)))
+            return -1;
+        __Pyx_PyErr_Clear();
+        return 0;
+    }
+    return 0;
+}
+
+/* UnpackItemEndCheck */
+static int __Pyx_IternextUnpackEndCheck(PyObject *retval, Py_ssize_t expected) {
+    if (unlikely(retval)) {
+        Py_DECREF(retval);
+        __Pyx_RaiseTooManyValuesError(expected);
+        return -1;
+    }
+    return __Pyx_IterFinish();
+}
+
 /* pybytes_as_double (used by pynumber_float) */
 static double __Pyx_SlowPyString_AsDouble(PyObject *obj) {
     PyObject *float_value = PyFloat_FromString(obj);
@@ -8350,44 +8532,6 @@ static PyObject *__Pyx_PyObject_GetItem(PyObject *obj, PyObject *key) {
     return __Pyx_PyObject_GetItem_Slow(obj, key);
 }
 #endif
-
-/* RaiseTooManyValuesToUnpack */
-static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected) {
-    PyErr_Format(PyExc_ValueError,
-                 "too many values to unpack (expected %" CYTHON_FORMAT_SSIZE_T "d)", expected);
-}
-
-/* RaiseNeedMoreValuesToUnpack */
-static CYTHON_INLINE void __Pyx_RaiseNeedMoreValuesError(Py_ssize_t index) {
-    PyErr_Format(PyExc_ValueError,
-                 "need more than %" CYTHON_FORMAT_SSIZE_T "d value%.1s to unpack",
-                 index, (index == 1) ? "" : "s");
-}
-
-/* IterFinish */
-static CYTHON_INLINE int __Pyx_IterFinish(void) {
-    PyObject* exc_type;
-    __Pyx_PyThreadState_declare
-    __Pyx_PyThreadState_assign
-    exc_type = __Pyx_PyErr_CurrentExceptionType();
-    if (unlikely(exc_type)) {
-        if (unlikely(!__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration)))
-            return -1;
-        __Pyx_PyErr_Clear();
-        return 0;
-    }
-    return 0;
-}
-
-/* UnpackItemEndCheck */
-static int __Pyx_IternextUnpackEndCheck(PyObject *retval, Py_ssize_t expected) {
-    if (unlikely(retval)) {
-        Py_DECREF(retval);
-        __Pyx_RaiseTooManyValuesError(expected);
-        return -1;
-    }
-    return __Pyx_IterFinish();
-}
 
 /* RejectKeywords */
 static void __Pyx_RejectKeywords(const char* function_name, PyObject *kwds) {

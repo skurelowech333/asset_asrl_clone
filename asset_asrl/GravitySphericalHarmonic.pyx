@@ -3,8 +3,10 @@
 #
 # Classical spherical harmonic gravity kernel
 #
-# Direct trig evaluation
-# Baseline comparison against Pines recurrence
+# Reference implementation
+#
+# Compared against:
+#     GravityPines.pyx
 #
 # ============================================================
 
@@ -21,11 +23,11 @@ cimport cython
 
 
 from pines_math import (
+    HarmonicTrig,
     SphericalToCartesian
 )
 
 from Legendre import AssociatedLegendre
-
 
 
 vf = ast.VectorFunctions
@@ -44,6 +46,7 @@ cdef class SphericalHarmonicGravityVF:
 
         double mu
         double radius
+
         int degree
 
         object Cnm
@@ -69,15 +72,20 @@ cdef class SphericalHarmonicGravityVF:
 
         self.mu = mu
         self.radius = radius
-        self.degree = degree
 
         self.Cnm = Cnm
         self.Snm = Snm
 
+        self.degree = degree
 
-        self._acc_vf = self._build_acceleration()
 
-        self._ode_vf = self._build_ode()
+        self._acc_vf = (
+            self._build_acceleration()
+        )
+
+        self._ode_vf = (
+            self._build_ode()
+        )
 
 
 
@@ -99,13 +107,21 @@ cdef class SphericalHarmonicGravityVF:
         z = rvec[2]
 
 
+
+        #
+        # radius
+        #
+
         rxy = (
-            x*x+y*y
+            x*x +
+            y*y
         ).sqrt()
 
 
         r = (
-            x*x+y*y+z*z
+            x*x +
+            y*y +
+            z*z
         ).sqrt()
 
 
@@ -116,31 +132,26 @@ cdef class SphericalHarmonicGravityVF:
 
         sinphi = z/r
 
+
         cosphi = rxy/r
 
 
-        sinlam = y/rxy
-
         coslam = x/rxy
+
+        sinlam = y/rxy
 
 
 
         rho = (
-            X.Constant(self.radius)/r
+            X.Constant(self.radius)
+            /
+            r
         )
 
 
 
         #
-        # longitude angle
-        #
-
-        lam = y.atan2(x)
-
-
-
-        #
-        # Legendre
+        # Legendre functions
         #
 
         P = AssociatedLegendre(
@@ -149,6 +160,12 @@ cdef class SphericalHarmonicGravityVF:
         )
 
 
+
+        #
+        # trig is NOT cached here
+        #
+        # This is the reference kernel
+        #
 
         zero = x*0.0
 
@@ -168,16 +185,17 @@ cdef class SphericalHarmonicGravityVF:
 
 
         cdef object rho_n
+        cdef object Ctrig
+        cdef object Strig
+
         cdef object trig
-        cdef object cp
-        cdef object sp
         cdef object dP
 
 
 
-        #
-        # Direct spherical harmonic summation
-        #
+        # ----------------------------------------------------
+        # harmonic summation
+        # ----------------------------------------------------
 
         for n in range(2,self.degree+1):
 
@@ -185,22 +203,19 @@ cdef class SphericalHarmonicGravityVF:
             rho_n = rho**n
 
 
+            #
+            # intentionally rebuild trig
+            #
+
+            Ctrig,Strig = HarmonicTrig(
+                coslam,
+                sinlam,
+                n
+            )
+
+
+
             for m in range(n+1):
-
-
-                #
-                # DIRECT TRIG
-                #
-                # This is where Pines gains speed.
-                #
-
-                cp = (
-                    (m*lam).cos()
-                )
-
-                sp = (
-                    (m*lam).sin()
-                )
 
 
                 trig = (
@@ -208,25 +223,32 @@ cdef class SphericalHarmonicGravityVF:
                     X.Constant(
                         float(self.Cnm[n,m])
                     )
+
                     *
-                    cp
+
+                    Ctrig[m]
+
 
                     +
 
                     X.Constant(
                         float(self.Snm[n,m])
                     )
+
                     *
-                    sp
+
+                    Strig[m]
+
                 )
 
 
 
                 #
-                # derivative of P wrt latitude
+                # Legendre derivative
                 #
 
                 if m == n:
+
 
                     dP = (
 
@@ -242,62 +264,94 @@ cdef class SphericalHarmonicGravityVF:
 
                     )
 
+
                 else:
+
 
                     dP = (
 
                         (
+
                             (n+m)
                             *
                             P[n-1,m]
+
                         )
 
                         -
 
                         (
+
                             n
                             *
                             sinphi
                             *
                             P[n,m]
+
                         )
 
                     ) / cosphi
 
 
 
+                #
+                # radial derivative
+                #
+
                 radial_sum += (
 
                     (n+1)
+
                     *
+
                     rho_n
+
                     *
+
                     P[n,m]
+
                     *
+
                     trig
 
                 )
 
 
+
+                #
+                # latitude derivative
+                #
 
                 latitude_sum += (
 
                     rho_n
+
                     *
+
                     dP
+
                     *
+
                     trig
 
                 )
 
 
 
+                #
+                # longitude derivative
+                #
+
                 longitude_sum += (
 
                     rho_n
+
                     *
+
                     P[n,m]
+
                     *
+
                     m
 
                     *
@@ -307,22 +361,31 @@ cdef class SphericalHarmonicGravityVF:
                         X.Constant(
                             float(self.Snm[n,m])
                         )
+
                         *
-                        cp
+
+                        Ctrig[m]
+
 
                         -
 
                         X.Constant(
                             float(self.Cnm[n,m])
                         )
+
                         *
-                        sp
+
+                        Strig[m]
 
                     )
 
                 )
 
 
+
+        #
+        # acceleration
+        #
 
         mu_r2 = (
 
@@ -339,7 +402,9 @@ cdef class SphericalHarmonicGravityVF:
         ar = (
 
             -mu_r2
+
             *
+
             radial_sum
 
         )
@@ -348,7 +413,9 @@ cdef class SphericalHarmonicGravityVF:
         aph = (
 
             mu_r2
+
             *
+
             latitude_sum
 
         )
@@ -357,7 +424,9 @@ cdef class SphericalHarmonicGravityVF:
         alam = (
 
             mu_r2
+
             *
+
             longitude_sum
 
             /
@@ -371,17 +440,20 @@ cdef class SphericalHarmonicGravityVF:
         ax,ay,az = SphericalToCartesian(
 
             ar,
+
             aph,
+
             alam,
 
             sinphi,
+
             cosphi,
 
             sinlam,
+
             coslam
 
         )
-
 
 
         return vf.stack(
@@ -400,9 +472,12 @@ cdef class SphericalHarmonicGravityVF:
 
     cdef object _build_ode(self):
 
+
         X = Args(6)
 
+
         v = X.tail3()
+
 
         a = self._acc_vf
 
@@ -422,7 +497,7 @@ cdef class SphericalHarmonicGravityVF:
 
 
     # ========================================================
-    # API
+    # Public API
     # ========================================================
 
     cpdef object build_accel(self):
@@ -430,9 +505,11 @@ cdef class SphericalHarmonicGravityVF:
         return self._acc_vf
 
 
+
     cpdef object vf(self):
 
         return self._acc_vf
+
 
 
     cpdef object ode(self):
@@ -440,9 +517,11 @@ cdef class SphericalHarmonicGravityVF:
         return self._ode_vf
 
 
+
     def __call__(self):
 
         return self._ode_vf
+
 
 
     def __repr__(self):
