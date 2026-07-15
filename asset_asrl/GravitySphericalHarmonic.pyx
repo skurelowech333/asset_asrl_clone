@@ -3,10 +3,7 @@
 #
 # Classical spherical harmonic gravity kernel
 #
-# Reference implementation
-#
-# Compared against:
-#     GravityPines.pyx
+# Reference implementation for comparison with Pines
 #
 # ============================================================
 
@@ -22,12 +19,9 @@ import asset_asrl as ast
 cimport cython
 
 
-from pines_math import (
-    HarmonicTrig,
-    SphericalToCartesian
-)
-
 from Legendre import AssociatedLegendre
+
+from pines_math import SphericalToCartesian
 
 
 vf = ast.VectorFunctions
@@ -46,7 +40,6 @@ cdef class SphericalHarmonicGravityVF:
 
         double mu
         double radius
-
         int degree
 
         object Cnm
@@ -56,10 +49,6 @@ cdef class SphericalHarmonicGravityVF:
         object _ode_vf
 
 
-
-    # ========================================================
-    # Constructor
-    # ========================================================
 
     def __cinit__(
         self,
@@ -72,25 +61,20 @@ cdef class SphericalHarmonicGravityVF:
 
         self.mu = mu
         self.radius = radius
+        self.degree = degree
 
         self.Cnm = Cnm
         self.Snm = Snm
 
-        self.degree = degree
 
+        self._acc_vf = self._build_acceleration()
 
-        self._acc_vf = (
-            self._build_acceleration()
-        )
-
-        self._ode_vf = (
-            self._build_ode()
-        )
+        self._ode_vf = self._build_ode()
 
 
 
     # ========================================================
-    # Acceleration
+    # Build acceleration
     # ========================================================
 
     cdef object _build_acceleration(self):
@@ -108,30 +92,18 @@ cdef class SphericalHarmonicGravityVF:
 
 
 
-        #
-        # radius
-        #
-
         rxy = (
-            x*x +
-            y*y
+            x*x+y*y
         ).sqrt()
 
 
         r = (
-            x*x +
-            y*y +
-            z*z
+            x*x+y*y+z*z
         ).sqrt()
 
 
 
-        #
-        # spherical coordinates
-        #
-
         sinphi = z/r
-
 
         cosphi = rxy/r
 
@@ -161,15 +133,10 @@ cdef class SphericalHarmonicGravityVF:
 
 
 
-        #
-        # trig is NOT cached here
-        #
-        # This is the reference kernel
-        #
-
         zero = x*0.0
 
         one = zero + 1.0
+
 
 
         radial_sum = one
@@ -182,20 +149,29 @@ cdef class SphericalHarmonicGravityVF:
 
         cdef int n
         cdef int m
+        cdef int k
+
 
 
         cdef object rho_n
-        cdef object Ctrig
-        cdef object Strig
+
+        cdef object C_m
+        cdef object S_m
+
+        cdef object C_prev
+        cdef object S_prev
 
         cdef object trig
+
         cdef object dP
 
 
 
-        # ----------------------------------------------------
-        # harmonic summation
-        # ----------------------------------------------------
+        #
+        # Classical implementation
+        #
+        # Harmonics are rebuilt for every n,m
+        #
 
         for n in range(2,self.degree+1):
 
@@ -203,19 +179,61 @@ cdef class SphericalHarmonicGravityVF:
             rho_n = rho**n
 
 
-            #
-            # intentionally rebuild trig
-            #
 
-            Ctrig,Strig = HarmonicTrig(
-                coslam,
-                sinlam,
-                n
-            )
+            for m in range(0,n+1):
 
 
+                #
+                # ------------------------------------
+                # Recompute cos(m lambda), sin(m lambda)
+                #
+                # No cached recurrence
+                #
+                # ------------------------------------
+                #
 
-            for m in range(n+1):
+                C_m = one
+
+                S_m = zero
+
+
+                if m > 0:
+
+
+                    C_m = coslam
+
+                    S_m = sinlam
+
+
+                    for k in range(2,m+1):
+
+
+                        C_prev = C_m
+
+                        S_prev = S_m
+
+
+                        C_m = (
+
+                            coslam*C_prev
+
+                            -
+
+                            sinlam*S_prev
+
+                        )
+
+
+                        S_m = (
+
+                            sinlam*C_prev
+
+                            +
+
+                            coslam*S_prev
+
+                        )
+
 
 
                 trig = (
@@ -226,7 +244,7 @@ cdef class SphericalHarmonicGravityVF:
 
                     *
 
-                    Ctrig[m]
+                    C_m
 
 
                     +
@@ -237,7 +255,7 @@ cdef class SphericalHarmonicGravityVF:
 
                     *
 
-                    Strig[m]
+                    S_m
 
                 )
 
@@ -294,10 +312,6 @@ cdef class SphericalHarmonicGravityVF:
 
 
 
-                #
-                # radial derivative
-                #
-
                 radial_sum += (
 
                     (n+1)
@@ -318,10 +332,6 @@ cdef class SphericalHarmonicGravityVF:
 
 
 
-                #
-                # latitude derivative
-                #
-
                 latitude_sum += (
 
                     rho_n
@@ -337,10 +347,6 @@ cdef class SphericalHarmonicGravityVF:
                 )
 
 
-
-                #
-                # longitude derivative
-                #
 
                 longitude_sum += (
 
@@ -364,7 +370,7 @@ cdef class SphericalHarmonicGravityVF:
 
                         *
 
-                        Ctrig[m]
+                        C_m
 
 
                         -
@@ -375,17 +381,13 @@ cdef class SphericalHarmonicGravityVF:
 
                         *
 
-                        Strig[m]
+                        S_m
 
                     )
 
                 )
 
 
-
-        #
-        # acceleration
-        #
 
         mu_r2 = (
 
@@ -472,12 +474,9 @@ cdef class SphericalHarmonicGravityVF:
 
     cdef object _build_ode(self):
 
-
         X = Args(6)
 
-
         v = X.tail3()
-
 
         a = self._acc_vf
 
@@ -497,7 +496,7 @@ cdef class SphericalHarmonicGravityVF:
 
 
     # ========================================================
-    # Public API
+    # API
     # ========================================================
 
     cpdef object build_accel(self):
@@ -505,11 +504,9 @@ cdef class SphericalHarmonicGravityVF:
         return self._acc_vf
 
 
-
     cpdef object vf(self):
 
         return self._acc_vf
-
 
 
     cpdef object ode(self):
@@ -517,11 +514,9 @@ cdef class SphericalHarmonicGravityVF:
         return self._ode_vf
 
 
-
     def __call__(self):
 
         return self._ode_vf
-
 
 
     def __repr__(self):
