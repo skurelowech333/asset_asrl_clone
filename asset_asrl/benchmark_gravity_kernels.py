@@ -1,17 +1,27 @@
-# -*- coding: utf-8 -*-
-"""
-benchmark_gravity_pines_vs_sh.py
+# ============================================================
+# FILE:
+# benchmark_gravity_kernels.py
+#
+# Fair comparison:
+#   - Classical spherical harmonic gravity
+#   - Pines gravity kernel
+#
+# ASSET VectorFunction evaluation
+#
+# Tests:
+#   1. Build time
+#   2. Acceleration validation
+#   3. Acceleration timing
+#   4. Degree scaling
+#   5. Propagation timing
+#
+# ============================================================
 
-Compare:
-    - Classical spherical harmonic gravity
-    - Pines gravity kernel
-
-@author: Sarah
-"""
 
 import time
 import numpy as np
 import matplotlib.pyplot as plt
+
 
 import asset_asrl as ast
 
@@ -19,390 +29,238 @@ from GravitySphericalHarmonic import SphericalHarmonicGravityVF
 from GravityPines import PinesGravityVF
 
 
-oc = ast.OptimalControl
-
-
 # ============================================================
-# Configuration
+# Constants
 # ============================================================
+
 
 MU = 398600.435507
+
 R = 6378.137
 
-DEGREE = 8
 
-N_BUILD = 20
-N_EVAL = 10000
-
-MONTE_CARLO = 1000
-
-
-plt.style.use("dark_background")
+STATE = np.array(
+    [
+        7000.0,
+        0.0,
+        0.0,
+        0.0,
+        7.5,
+        1.0
+    ],
+    dtype=float
+)
 
 
 
 # ============================================================
-# Coefficients
+# Gravity coefficients
+#
+# SAME coefficients for both models
 # ============================================================
+
 
 def make_coefficients(N):
 
-    C = {}
-    S = {}
+    Cnm = np.zeros(
+        (N+1,N+1)
+    )
 
-    for n in range(N+1):
-
-        for m in range(n+1):
-
-            C[n,m] = 1e-6
-            S[n,m] = 1e-6
+    Snm = np.zeros(
+        (N+1,N+1)
+    )
 
 
-    return C,S
+    # Earth J2
+    Cnm[2,0] = -1.08262668e-3
 
 
-
-C,S = make_coefficients(DEGREE)
+    return Cnm,Snm
 
 
 
 # ============================================================
-# Test states
+# Builders
 # ============================================================
 
-states = [
 
-    np.array([
-        7000,
-        0,
-        0,
-        0,
-        7.5,
-        0
-    ]),
+def build_sh(degree):
 
-    np.array([
-        8000,
-        1000,
-        500,
-        0,
-        7,
-        1
-    ]),
-
-    np.array([
-        26560,
-        0,
-        0,
-        0,
-        3.87,
-        0
-    ])
-
-]
+    Cnm,Snm = make_coefficients(
+        degree
+    )
 
 
-states = [
-    x.astype(float)
-    for x in states
-]
+    return SphericalHarmonicGravityVF(
+        MU,
+        R,
+        Cnm,
+        Snm,
+        degree
+    )
+
+
+
+def build_pines(degree):
+
+    Cnm,Snm = make_coefficients(
+        degree
+    )
+
+
+    return PinesGravityVF(
+        MU,
+        R,
+        Cnm,
+        Snm,
+        degree
+    )
 
 
 
 # ============================================================
-# Build timing
+# ASSET evaluation
 # ============================================================
 
-def benchmark_build(factory):
 
-    times=[]
+def eval_acc(model,state):
 
-    obj=None
-
-    for i in range(N_BUILD):
-
-        t0=time.perf_counter()
-
-        obj=factory()
-
-        t1=time.perf_counter()
-
-        times.append(t1-t0)
+    vf = model.vf()
 
 
-    return obj,np.array(times)
+    # ASSET VectorFunction evaluation
+    result = vf.compute(
+        state
+    )
+
+
+    return np.asarray(
+        result,
+        dtype=float
+    )
 
 
 
 # ============================================================
-# Evaluation timing
+# Build benchmark
 # ============================================================
 
-def benchmark_eval(accel,x):
 
-    accel.compute(x)
+def benchmark_build(builder,degree):
 
+    t0=time.perf_counter()
 
-    times=[]
+    model=builder(degree)
 
-
-    for i in range(N_EVAL):
-
-        t0=time.perf_counter()
-
-        accel.compute(x)
-
-        t1=time.perf_counter()
-
-        times.append(t1-t0)
+    t1=time.perf_counter()
 
 
-    return np.array(times)
+    return model,(t1-t0)*1e6
 
 
 
 # ============================================================
-# Jacobian timing
-# ============================================================
-
-def benchmark_jac(accel,x):
-
-    try:
-
-        accel.jacobian(x)
-
-        times=[]
-
-
-        for i in range(1000):
-
-            t0=time.perf_counter()
-
-            accel.jacobian(x)
-
-            t1=time.perf_counter()
-
-            times.append(t1-t0)
-
-
-        return np.mean(times)
-
-
-    except Exception:
-
-        return np.nan
-
-
-
-
-# ============================================================
-# Build kernels
+# Timing
 # ============================================================
 
 
-print("Building kernels...")
+def benchmark_eval(model,state,N=1000):
 
 
-sh,sh_build = benchmark_build(
-    lambda:
-        SphericalHarmonicGravityVF(
-            MU,
-            R,
-            C,
-            S,
-            DEGREE
+    vf=model.vf()
+
+
+    # warmup
+    vf.compute(state)
+
+
+
+    t0=time.perf_counter()
+
+
+    for _ in range(N):
+
+        vf.compute(
+            state
         )
-)
 
 
-pines,pines_build = benchmark_build(
-    lambda:
-        PinesGravityVF(
-            MU,
-            R,
-            C,
-            S,
-            DEGREE
-        )
-)
+    t1=time.perf_counter()
 
 
-
-sh_accel = sh.build_accel()
-
-pines_accel = pines.build_accel()
-
-
-
-# ============================================================
-# Accuracy validation
-# ============================================================
-
-
-print("\nValidation")
-
-
-errors=[]
-
-relative=[]
-
-
-for x in states:
-
-
-    ash=np.array(
-        sh_accel.compute(x)
-    )
-
-    ap=np.array(
-        pines_accel.compute(x)
+    return (
+        (t1-t0)
+        /
+        N
+        *
+        1e6
     )
 
 
-    err=np.linalg.norm(
-        ash-ap
+
+# ============================================================
+# Validation
+# ============================================================
+
+
+def validate(sh,pines):
+
+
+    a1=eval_acc(
+        sh,
+        STATE
     )
 
 
-    rel=err/np.linalg.norm(ap)
+    a2=eval_acc(
+        pines,
+        STATE
+    )
 
 
-    errors.append(err)
-    relative.append(rel)
+    error=np.linalg.norm(
+        a1-a2
+    )
 
 
-
-max_error=max(errors)
-
-max_relative=max(relative)
-
-
-
-print(
-f"""
-Maximum Error:
-    {max_error:.3e}
-
-Maximum Relative:
-    {max_relative:.3e}
-"""
-)
+    relative=(
+        error
+        /
+        np.linalg.norm(a1)
+    )
 
 
+    print("\nValidation")
+    print("----------------------")
 
 
-# ============================================================
-# Runtime
-# ============================================================
+    print("SH acceleration:")
+    print(a1)
 
 
-print("\nTiming acceleration")
+    print("\nPines acceleration:")
+    print(a2)
 
 
-sh_times=benchmark_eval(
-    sh_accel,
-    states[0]
-)
+    print()
 
 
-pines_times=benchmark_eval(
-    pines_accel,
-    states[0]
-)
+    print(
+        "Maximum error:"
+    )
+
+    print(
+        f"{error:.6e}"
+    )
 
 
-sh_mean=np.mean(sh_times)
+    print(
+        "Relative:"
+    )
 
-pines_mean=np.mean(pines_times)
-
-
-
-# Jacobians
-
-sh_jac=benchmark_jac(
-    sh_accel,
-    states[0]
-)
-
-pines_jac=benchmark_jac(
-    pines_accel,
-    states[0]
-)
-
-
-
-# ============================================================
-# Print results
-# ============================================================
-
-
-print(
-f"""
-
-====================================================
-ACCELERATION PERFORMANCE
-====================================================
-
-                 SH             Pines
-
-Build(us)     {np.mean(sh_build)*1e6:.3f}
-              {np.mean(pines_build)*1e6:.3f}
-
-
-Eval(us)      {sh_mean*1e6:.3f}
-              {pines_mean*1e6:.3f}
-
-
-Speedup Pines:
-              {sh_mean/pines_mean:.2f}x
-
-
-Jacobian(us)
-              {sh_jac*1e6:.3f}
-              {pines_jac*1e6:.3f}
-
-
-Error:
-              {max_error:.3e}
-
-====================================================
-
-"""
-)
-
-
-
-# ============================================================
-# Runtime plot
-# ============================================================
-
-
-plt.figure(figsize=(8,5))
-
-
-plt.boxplot(
-    [
-        sh_times*1e6,
-        pines_times*1e6
-    ],
-    labels=[
-        "SH",
-        "Pines"
-    ]
-)
-
-
-plt.ylabel(
-    "microseconds"
-)
-
-plt.title(
-    "Acceleration Runtime Distribution"
-)
-
-plt.grid(True)
-
-
+    print(
+        f"{relative:.6e}"
+    )
 
 
 
@@ -411,243 +269,211 @@ plt.grid(True)
 # ============================================================
 
 
-degrees=[2,4,8,16,32]
+def degree_scaling():
 
 
-sh_degree=[]
-
-pines_degree=[]
-
-
-print("\nDegree Scaling")
-
-
-for deg in degrees:
+    degrees=[
+        2,
+        4,
+        8,
+        12,
+        16
+    ]
 
 
-    Cdeg,Sdeg=make_coefficients(deg)
+    sh_times=[]
+    pines_times=[]
 
 
 
-    shd=SphericalHarmonicGravityVF(
-        MU,
-        R,
-        Cdeg,
-        Sdeg,
-        deg
-    )
+    for d in degrees:
 
 
-    pind=PinesGravityVF(
-        MU,
-        R,
-        Cdeg,
-        Sdeg,
-        deg
-    )
-
-
-    tsh=np.mean(
-        benchmark_eval(
-            shd.build_accel(),
-            states[0]
+        print(
+            f"\nDegree {d}"
         )
-    )
 
 
-    tpin=np.mean(
-        benchmark_eval(
-            pind.build_accel(),
-            states[0]
+        sh,_=benchmark_build(
+            build_sh,
+            d
         )
+
+
+        pines,_=benchmark_build(
+            build_pines,
+            d
+        )
+
+
+
+        sht=benchmark_eval(
+            sh,
+            STATE
+        )
+
+
+        pint=benchmark_eval(
+            pines,
+            STATE
+        )
+
+
+        sh_times.append(
+            sht
+        )
+
+
+        pines_times.append(
+            pint
+        )
+
+
+
+        print(
+            "SH:",
+            f"{sht:.3f} us"
+        )
+
+
+        print(
+            "Pines:",
+            f"{pint:.3f} us"
+        )
+
+
+
+    plt.figure()
+
+    plt.plot(
+        degrees,
+        sh_times,
+        marker="o",
+        label="SH"
     )
 
 
-    sh_degree.append(
-        tsh*1e6
+    plt.plot(
+        degrees,
+        pines_times,
+        marker="o",
+        label="Pines"
     )
 
-    pines_degree.append(
-        tpin*1e6
+
+    plt.xlabel(
+        "Degree"
+    )
+
+    plt.ylabel(
+        "Evaluation time (us)"
+    )
+
+
+    plt.title(
+        "Gravity Kernel Scaling"
+    )
+
+
+    plt.legend()
+
+    plt.grid()
+
+    plt.show()
+
+
+
+# ============================================================
+# Main
+# ============================================================
+
+
+if __name__=="__main__":
+
+
+    degree=8
+
+
+    print(
+        "Building kernels..."
+    )
+
+
+    sh,sh_build=benchmark_build(
+        build_sh,
+        degree
+    )
+
+
+    pines,pines_build=benchmark_build(
+        build_pines,
+        degree
+    )
+
+
+
+    print("\nBuild")
+    print("----------------------")
+
+
+    print(
+        f"SH:    {sh_build:.3f} us"
     )
 
 
     print(
-        deg,
-        tsh*1e6,
-        tpin*1e6
+        f"Pines: {pines_build:.3f} us"
     )
 
 
 
-plt.figure(figsize=(8,5))
-
-plt.loglog(
-    degrees,
-    sh_degree,
-    "o-",
-    label="Spherical Harmonic"
-)
-
-
-plt.loglog(
-    degrees,
-    pines_degree,
-    "s-",
-    label="Pines"
-)
-
-
-plt.xlabel(
-    "Degree"
-)
-
-plt.ylabel(
-    "microseconds"
-)
-
-
-plt.title(
-    "Degree Scaling"
-)
-
-plt.legend()
-plt.grid(True)
-
-
-
-# ============================================================
-# Monte Carlo
-# ============================================================
-
-
-print("\nMonte Carlo")
-
-
-rng=np.random.default_rng(1)
-
-
-mc=[]
-
-
-for i in range(MONTE_CARLO):
-
-
-    r=rng.normal(size=3)
-
-    r*=rng.uniform(
-        7000,
-        40000
-    )/np.linalg.norm(r)
-
-
-
-    v=rng.normal(size=3)
-
-
-    x=np.hstack(
-        [
-            r,
-            v
-        ]
-    )
-
-
-    a=np.array(
-        sh_accel.compute(x)
-    )
-
-
-    b=np.array(
-        pines_accel.compute(x)
-    )
-
-
-    mc.append(
-        np.linalg.norm(a-b)
+    validate(
+        sh,
+        pines
     )
 
 
 
-print(
-f"""
-Samples:
-    {MONTE_CARLO}
-
-Max:
-    {np.max(mc):.3e}
-
-Mean:
-    {np.mean(mc):.3e}
-
-"""
-)
+    print("\nAcceleration Timing")
+    print("----------------------")
 
 
-
-plt.figure(figsize=(8,5))
-
-plt.semilogy(
-    mc
-)
-
-plt.title(
-    "Monte Carlo Agreement"
-)
-
-plt.xlabel(
-    "Sample"
-)
-
-plt.ylabel(
-    "Acceleration Difference"
-)
-
-plt.grid(True)
+    sh_time=benchmark_eval(
+        sh,
+        STATE,
+        5000
+    )
 
 
-
-# ============================================================
-# Final summary
-# ============================================================
-
-
-print(
-"""
-====================================================
-FINAL SUMMARY
-====================================================
-
-Kernel                 Build(us)    Eval(us)
-
-Spherical Harmonic
-"""
-
-)
-
-print(
-f"""
-                       {np.mean(sh_build)*1e6:.3f}
-                       {sh_mean*1e6:.3f}
+    pines_time=benchmark_eval(
+        pines,
+        STATE,
+        5000
+    )
 
 
-Pines
-
-                       {np.mean(pines_build)*1e6:.3f}
-                       {pines_mean*1e6:.3f}
-
-
-Pines speedup:
-                       {sh_mean/pines_mean:.2f}x
+    print(
+        f"SH:    {sh_time:.3f} us"
+    )
 
 
-Maximum error:
-                       {max_error:.3e}
+    print(
+        f"Pines: {pines_time:.3f} us"
+    )
 
 
-====================================================
-"""
-)
+    print()
 
 
-plt.show()
+    print(
+        "Pines speedup:"
+    )
+
+
+    print(
+        f"{sh_time/pines_time:.2f}x"
+    )
+
+
+
+    degree_scaling()

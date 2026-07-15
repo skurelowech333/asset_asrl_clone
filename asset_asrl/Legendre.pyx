@@ -1,17 +1,13 @@
 # ============================================================
 # FILE: Legendre.pyx
 #
-# Fully normalized associated Legendre recursion
+# Shared Legendre recursion for:
+#   Classical SH
+#   Pines
 #
-# Pines (1973) gravity support
+# Flat storage:
 #
-# Computes:
-#
-#       P[n,m]
-#
-# where P are fully normalized associated Legendre functions
-#
-# Compatible with ASSET VectorFunctions
+# idx = n*(N+1)+m
 #
 # ============================================================
 
@@ -24,135 +20,143 @@
 cimport cython
 
 
-@cython.boundscheck(False)
-@cython.wraparound(False)
-cpdef dict AssociatedLegendre(
+
+cpdef tuple AssociatedLegendreGradient(
     object sinphi,
     int N
 ):
-    """
-    Compute fully normalized associated Legendre functions.
-
-    Parameters
-    ----------
-    sinphi :
-        sin(latitude)
-
-    N :
-        Maximum degree
-
-    Returns
-    -------
-    P :
-        dictionary
-
-        P[n,m] = fully normalized Legendre function
-    """
 
     cdef int n
     cdef int m
+    cdef int idx
 
 
-    P = {}
+    size = (N+1)*(N+1)
 
 
-    #
-    # symbolic constants
-    #
+    P = [None]*size
+    dP = [None]*size
 
-    # ScalarFunction instances do not have a Constant method.  Build
-    # constants algebraically so the recurrence remains an ASSET expression.
-    zero = sinphi * 0.0
+
+    zero = sinphi*0.0
     one = zero + 1.0
 
 
     cosphi = (
-        one
-        -
+        one -
         sinphi*sinphi
     ).sqrt()
 
 
 
     #
-    # Base term
+    # P00
     #
 
-    P[0,0] = one
+    P[0] = one
 
-
-
-    if N == 0:
-        return P
+    dP[0] = zero
 
 
 
     #
-    # Diagonal recursion
-    #
-    # P(n,n)
+    # diagonal
     #
 
-    for n in range(1, N+1):
+    for n in range(1,N+1):
 
-        P[n,n] = (
+        idx = n*(N+1)+n
+
+        P[idx] = (
             (2*n-1)
             *
             cosphi
             *
-            P[n-1,n-1]
+            P[(n-1)*(N+1)+(n-1)]
+        )
+
+        dP[idx] = (
+            -n*sinphi*P[idx]/cosphi
         )
 
 
 
     #
-    # First off diagonal
-    #
-    # P(n,n-1)
+    # first off diagonal
     #
 
-    for n in range(1, N+1):
+    for n in range(1,N+1):
 
-        P[n,n-1] = (
+        idx = n*(N+1)+(n-1)
+
+        P[idx] = (
             (2*n-1)
             *
             sinphi
             *
-            P[n-1,n-1]
+            P[(n-1)*(N+1)+(n-1)]
+        )
+
+
+        dP[idx] = (
+            (
+                n*sinphi*P[idx]
+                -
+                (n+n-1)*P[(n-1)*(N+1)+(n-1)]
+            )
+            /
+            cosphi
         )
 
 
 
     #
-    # Remaining recursion
-    #
-    # P(n,m)
+    # remaining terms
     #
 
-    for n in range(2, N+1):
+    for n in range(2,N+1):
 
-        for m in range(0, n-1):
+        for m in range(0,n-1):
 
-            a = (
-                (2*n-1)
-                *
-                sinphi
-                *
-                P[n-1,m]
-            )
+            idx = n*(N+1)+m
 
 
-            b = (
-                (n+m-1)
-                *
-                P[n-2,m]
-            )
+            P[idx] = (
 
+                (
+                    (2*n-1)
+                    *
+                    sinphi
+                    *
+                    P[(n-1)*(N+1)+m]
+                )
 
-            P[n,m] = (
-                a-b
+                -
+
+                (
+                    (n+m-1)
+                    *
+                    P[(n-2)*(N+1)+m]
+                )
+
             )/(n-m)
 
 
+            dP[idx] = (
 
-    return P
+                (
+                    n*sinphi*P[idx]
+                    -
+                    (n+m)
+                    *
+                    P[(n-1)*(N+1)+m]
+                )
+
+                /
+
+                cosphi
+
+            )
+
+
+    return P,dP

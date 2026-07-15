@@ -3,9 +3,15 @@
 #
 # Classical spherical harmonic gravity kernel
 #
-# Reference implementation for comparison with Pines
+# Fair comparison with Pines:
+#   - Same Legendre
+#   - Same coefficients
+#   - Same normalization
+#   - Same trig recurrence
+#   - Same spherical conversion
 #
 # ============================================================
+
 
 # cython: language_level=3
 # cython: boundscheck=False
@@ -19,9 +25,12 @@ import asset_asrl as ast
 cimport cython
 
 
-from Legendre import AssociatedLegendre
+from Legendre import AssociatedLegendreGradient
+from pines_math import (
+    HarmonicTrig,
+    SphericalToCartesian
+)
 
-from pines_math import SphericalToCartesian
 
 
 vf = ast.VectorFunctions
@@ -30,8 +39,9 @@ Args = vf.Arguments
 
 
 # ============================================================
-# CLASS
+# CLASSICAL SPHERICAL HARMONIC
 # ============================================================
+
 
 cdef class SphericalHarmonicGravityVF:
 
@@ -40,6 +50,7 @@ cdef class SphericalHarmonicGravityVF:
 
         double mu
         double radius
+
         int degree
 
         object Cnm
@@ -61,23 +72,34 @@ cdef class SphericalHarmonicGravityVF:
 
         self.mu = mu
         self.radius = radius
-        self.degree = degree
 
         self.Cnm = Cnm
         self.Snm = Snm
 
+        self.degree = degree
 
-        self._acc_vf = self._build_acceleration()
 
-        self._ode_vf = self._build_ode()
+        self._acc_vf = (
+            self._build_acceleration()
+        )
+
+        self._ode_vf = (
+            self._build_ode()
+        )
 
 
 
     # ========================================================
-    # Build acceleration
+    # Acceleration
     # ========================================================
+
 
     cdef object _build_acceleration(self):
+
+
+        cdef int n
+        cdef int m
+        cdef int idx
 
 
         X = Args(6)
@@ -92,241 +114,202 @@ cdef class SphericalHarmonicGravityVF:
 
 
 
-        rxy = (
-            x*x+y*y
+        #
+        # Geometry
+        #
+
+        r2 = (
+            x*x
+            +
+            y*y
+            +
+            z*z
+        )
+
+
+        r = r2.sqrt()
+
+
+        inv_r = 1.0/r
+
+
+
+        xy = (
+            x*x
+            +
+            y*y
         ).sqrt()
 
 
-        r = (
-            x*x+y*y+z*z
-        ).sqrt()
+
+        inv_xy = 1.0/xy
 
 
 
-        sinphi = z/r
+        sinphi = z*inv_r
 
-        cosphi = rxy/r
+        cosphi = xy*inv_r
 
 
-        coslam = x/rxy
+        coslam = x*inv_xy
 
-        sinlam = y/rxy
+        sinlam = y*inv_xy
 
 
 
         rho = (
-            X.Constant(self.radius)
-            /
-            r
+            self.radius
+            *
+            inv_r
         )
 
 
 
         #
-        # Legendre functions
+        # Same trig recurrence as Pines
         #
 
-        P = AssociatedLegendre(
+        Ctrig,Strig = HarmonicTrig(
+            coslam,
+            sinlam,
+            self.degree
+        )
+
+
+
+        #
+        # Same Legendre
+        #
+
+        P,dP = AssociatedLegendreGradient(
             sinphi,
             self.degree
         )
 
 
 
-        zero = x*0.0
+        #
+        # rho powers
+        #
 
-        one = zero + 1.0
+        rho_power = [
+            None
+        ]*(self.degree+1)
 
 
+        one = X.Constant(1.0)
+
+
+        rho_power[0] = one
+
+
+        for n in range(1,self.degree+1):
+
+            rho_power[n] = (
+                rho_power[n-1]
+                *
+                rho
+            )
+
+
+
+        #
+        # harmonic sums
+        #
 
         radial_sum = one
 
-        latitude_sum = zero
+        latitude_sum = X.Constant(0.0)
 
-        longitude_sum = zero
-
-
-
-        cdef int n
-        cdef int m
-        cdef int k
+        longitude_sum = X.Constant(0.0)
 
 
 
-        cdef object rho_n
-
-        cdef object C_m
-        cdef object S_m
-
-        cdef object C_prev
-        cdef object S_prev
-
-        cdef object trig
-
-        cdef object dP
+        N1 = self.degree+1
 
 
 
         #
-        # Classical implementation
-        #
-        # Harmonics are rebuilt for every n,m
+        # classical harmonic loop
         #
 
         for n in range(2,self.degree+1):
 
 
-            rho_n = rho**n
+            for m in range(n+1):
+
+
+                idx = (
+                    n*N1
+                    +
+                    m
+                )
+
+
+                Pnm = P[idx]
+
+                dPnm = dP[idx]
 
 
 
-            for m in range(0,n+1):
+                C = X.Constant(
+                    float(
+                        self.Cnm[n,m]
+                    )
+                )
 
 
-                #
-                # ------------------------------------
-                # Recompute cos(m lambda), sin(m lambda)
-                #
-                # No cached recurrence
-                #
-                # ------------------------------------
-                #
-
-                C_m = one
-
-                S_m = zero
-
-
-                if m > 0:
-
-
-                    C_m = coslam
-
-                    S_m = sinlam
-
-
-                    for k in range(2,m+1):
-
-
-                        C_prev = C_m
-
-                        S_prev = S_m
-
-
-                        C_m = (
-
-                            coslam*C_prev
-
-                            -
-
-                            sinlam*S_prev
-
-                        )
-
-
-                        S_m = (
-
-                            sinlam*C_prev
-
-                            +
-
-                            coslam*S_prev
-
-                        )
+                S = X.Constant(
+                    float(
+                        self.Snm[n,m]
+                    )
+                )
 
 
 
                 trig = (
 
-                    X.Constant(
-                        float(self.Cnm[n,m])
-                    )
-
-                    *
-
-                    C_m
-
+                    C*Ctrig[m]
 
                     +
 
-                    X.Constant(
-                        float(self.Snm[n,m])
-                    )
-
-                    *
-
-                    S_m
+                    S*Strig[m]
 
                 )
 
 
 
-                #
-                # Legendre derivative
-                #
+                dtrig = (
 
-                if m == n:
+                    m*
 
-
-                    dP = (
-
-                        -n
-                        *
-                        sinphi
-                        *
-                        P[n,m]
-
-                        /
-
-                        cosphi
-
+                    (
+                        S*Ctrig[m]
+                        -
+                        C*Strig[m]
                     )
 
+                )
 
-                else:
 
 
-                    dP = (
+                term = (
 
-                        (
+                    rho_power[n]
+                    *
+                    Pnm
+                    *
+                    trig
 
-                            (n+m)
-                            *
-                            P[n-1,m]
-
-                        )
-
-                        -
-
-                        (
-
-                            n
-                            *
-                            sinphi
-                            *
-                            P[n,m]
-
-                        )
-
-                    ) / cosphi
+                )
 
 
 
                 radial_sum += (
 
                     (n+1)
-
                     *
-
-                    rho_n
-
-                    *
-
-                    P[n,m]
-
-                    *
-
-                    trig
+                    term
 
                 )
 
@@ -334,14 +317,10 @@ cdef class SphericalHarmonicGravityVF:
 
                 latitude_sum += (
 
-                    rho_n
-
+                    rho_power[n]
                     *
-
-                    dP
-
+                    dPnm
                     *
-
                     trig
 
                 )
@@ -350,89 +329,49 @@ cdef class SphericalHarmonicGravityVF:
 
                 longitude_sum += (
 
-                    rho_n
-
+                    rho_power[n]
                     *
-
-                    P[n,m]
-
+                    Pnm
                     *
-
-                    m
-
-                    *
-
-                    (
-
-                        X.Constant(
-                            float(self.Snm[n,m])
-                        )
-
-                        *
-
-                        C_m
-
-
-                        -
-
-                        X.Constant(
-                            float(self.Cnm[n,m])
-                        )
-
-                        *
-
-                        S_m
-
-                    )
+                    dtrig
 
                 )
 
 
 
+        #
+        # Convert acceleration
+        #
+
         mu_r2 = (
 
             X.Constant(self.mu)
-
             /
-
-            (r*r)
+            r2
 
         )
 
 
-
         ar = (
-
             -mu_r2
-
             *
-
             radial_sum
-
         )
 
 
         aph = (
-
             mu_r2
-
             *
-
             latitude_sum
-
         )
 
 
         alam = (
 
             mu_r2
-
             *
-
             longitude_sum
-
             /
-
             cosphi
 
         )
@@ -440,22 +379,15 @@ cdef class SphericalHarmonicGravityVF:
 
 
         ax,ay,az = SphericalToCartesian(
-
             ar,
-
             aph,
-
             alam,
-
             sinphi,
-
             cosphi,
-
             sinlam,
-
             coslam
-
         )
+
 
 
         return vf.stack(
@@ -472,7 +404,9 @@ cdef class SphericalHarmonicGravityVF:
     # ODE
     # ========================================================
 
+
     cdef object _build_ode(self):
+
 
         X = Args(6)
 
@@ -499,12 +433,13 @@ cdef class SphericalHarmonicGravityVF:
     # API
     # ========================================================
 
-    cpdef object build_accel(self):
+
+    cpdef object vf(self):
 
         return self._acc_vf
 
 
-    cpdef object vf(self):
+    cpdef object build_accel(self):
 
         return self._acc_vf
 
@@ -517,6 +452,7 @@ cdef class SphericalHarmonicGravityVF:
     def __call__(self):
 
         return self._ode_vf
+
 
 
     def __repr__(self):

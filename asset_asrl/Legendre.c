@@ -1636,16 +1636,15 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_FastCallDict(PyObject *func, PyObj
 static PyObject *__Pyx_PyObject_FastCallMethod(PyObject *name, PyObject *const *args, size_t nargsf);
 #endif
 
-/* DictGetItem.proto */
-#if !CYTHON_COMPILING_IN_PYPY
-static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key);
-#define __Pyx_PyObject_Dict_GetItem(obj, name)\
-    (likely(PyDict_CheckExact(obj)) ?\
-     __Pyx_PyDict_GetItem(obj, name) : PyObject_GetItem(obj, name))
-#else
-#define __Pyx_PyDict_GetItem(d, key) PyObject_GetItem(d, key)
-#define __Pyx_PyObject_Dict_GetItem(obj, name)  PyObject_GetItem(obj, name)
-#endif
+/* SetItemInt.proto */
+#define __Pyx_SetItemInt(o, i, v, type, is_signed, to_py_func, is_list, wraparound, boundscheck, has_gil, unsafe_shared)\
+    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
+    __Pyx_SetItemInt_Fast(o, (Py_ssize_t)i, v, is_list, wraparound, boundscheck, unsafe_shared) :\
+    (is_list ? (PyErr_SetString(PyExc_IndexError, "list assignment index out of range"), -1) :\
+               __Pyx_SetItemInt_Generic(o, to_py_func(i), v)))
+static int __Pyx_SetItemInt_Generic(PyObject *o, PyObject *j, PyObject *v);
+static CYTHON_INLINE int __Pyx_SetItemInt_Fast(PyObject *o, Py_ssize_t i, PyObject *v,
+                                               int is_list, int wraparound, int boundscheck, int unsafe_shared);
 
 /* TupleAndListFromArray.proto (used by fastcall) */
 #if CYTHON_COMPILING_IN_CPYTHON
@@ -2231,7 +2230,7 @@ static int __Pyx_State_RemoveModule(void*);
 /* Module declarations from "cython" */
 
 /* Module declarations from "asset_asrl.Legendre" */
-static PyObject *__pyx_f_10asset_asrl_8Legendre_AssociatedLegendre(PyObject *, int, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_10asset_asrl_8Legendre_AssociatedLegendreGradient(PyObject *, int, int __pyx_skip_dispatch); /*proto*/
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
 #define __Pyx_MODULE_NAME "asset_asrl.Legendre"
@@ -2242,7 +2241,7 @@ int __pyx_module_is_main_asset_asrl__Legendre = 0;
 /* #### Code section: global_var ### */
 /* #### Code section: string_decls ### */
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_10asset_asrl_8Legendre_AssociatedLegendre(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_sinphi, int __pyx_v_N); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_8Legendre_AssociatedLegendreGradient(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_sinphi, int __pyx_v_N); /* proto */
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 /* SmallCodeConfig */
@@ -2266,10 +2265,9 @@ typedef struct {
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_items;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_pop;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_values;
-  PyObject *__pyx_tuple[1];
   PyObject *__pyx_codeobj_tab[1];
   PyObject *__pyx_string_tab[23];
-  PyObject *__pyx_number_tab[3];
+  PyObject *__pyx_number_tab[2];
 /* #### Code section: module_state_contents ### */
 /* CommonTypesMetaclass.module_state_decls */
 PyTypeObject *__pyx_CommonTypesMetaclassType;
@@ -2312,7 +2310,7 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 /* #### Code section: constant_name_defines ### */
 #define __pyx_kp_u_ __pyx_string_tab[0]
 #define __pyx_kp_u_asset_asrl_Legendre_pyx __pyx_string_tab[1]
-#define __pyx_n_u_AssociatedLegendre __pyx_string_tab[2]
+#define __pyx_n_u_AssociatedLegendreGradient __pyx_string_tab[2]
 #define __pyx_n_u_N __pyx_string_tab[3]
 #define __pyx_n_u_Pyx_PyDict_NextRef __pyx_string_tab[4]
 #define __pyx_n_u_asset_asrl_Legendre __pyx_string_tab[5]
@@ -2332,10 +2330,9 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_sqrt __pyx_string_tab[19]
 #define __pyx_n_u_test __pyx_string_tab[20]
 #define __pyx_n_u_values __pyx_string_tab[21]
-#define __pyx_kp_b_iso88591_7_A_r_aq_Qb_Q_r_A_q_U_3aq_A_aq __pyx_string_tab[22]
+#define __pyx_kp_b_iso88591_AQb_1A_aq_q_6_r_A_aq_Qe1_auA_U __pyx_string_tab[22]
 #define __pyx_float_0_0 __pyx_number_tab[0]
 #define __pyx_float_1_0 __pyx_number_tab[1]
-#define __pyx_int_0 __pyx_number_tab[2]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
 static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
@@ -2350,10 +2347,9 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   __Pyx_State_RemoveModule(NULL);
   #endif
-  for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_tuple[i]); }
   for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
   for (int i=0; i<23; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
-  for (int i=0; i<3; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
+  for (int i=0; i<2; ++i) { Py_CLEAR(clear_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_clear_contents ### */
 /* CommonTypesMetaclass.module_state_clear */
 Py_CLEAR(clear_module_state->__pyx_CommonTypesMetaclassType);
@@ -2376,10 +2372,9 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_empty_tuple);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_empty_bytes);
   __Pyx_VISIT_CONST(traverse_module_state->__pyx_empty_unicode);
-  for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_tuple[i]); }
   for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
   for (int i=0; i<23; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
-  for (int i=0; i<3; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
+  for (int i=0; i<2; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_number_tab[i]); }
 /* #### Code section: module_state_traverse_contents ### */
 /* CommonTypesMetaclass.module_state_traverse */
 Py_VISIT(traverse_module_state->__pyx_CommonTypesMetaclassType);
@@ -2393,30 +2388,31 @@ return 0;
 #endif
 /* #### Code section: module_code ### */
 
-/* "asset_asrl/Legendre.pyx":27
+/* "asset_asrl/Legendre.pyx":24
  * 
  * 
- * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
- * @cython.wraparound(False)
- * cpdef dict AssociatedLegendre(
+ * cpdef tuple AssociatedLegendreGradient(             # <<<<<<<<<<<<<<
+ *     object sinphi,
+ *     int N
 */
 
-static PyObject *__pyx_pw_10asset_asrl_8Legendre_1AssociatedLegendre(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_10asset_asrl_8Legendre_1AssociatedLegendreGradient(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyObject *__pyx_f_10asset_asrl_8Legendre_AssociatedLegendre(PyObject *__pyx_v_sinphi, int __pyx_v_N, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_f_10asset_asrl_8Legendre_AssociatedLegendreGradient(PyObject *__pyx_v_sinphi, int __pyx_v_N, CYTHON_UNUSED int __pyx_skip_dispatch) {
   int __pyx_v_n;
   int __pyx_v_m;
+  int __pyx_v_idx;
+  long __pyx_v_size;
   PyObject *__pyx_v_P = NULL;
+  PyObject *__pyx_v_dP = NULL;
   PyObject *__pyx_v_zero = NULL;
   PyObject *__pyx_v_one = NULL;
   PyObject *__pyx_v_cosphi = NULL;
-  PyObject *__pyx_v_a = NULL;
-  PyObject *__pyx_v_b = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2424,72 +2420,107 @@ static PyObject *__pyx_f_10asset_asrl_8Legendre_AssociatedLegendre(PyObject *__p
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
   size_t __pyx_t_5;
-  int __pyx_t_6;
+  long __pyx_t_6;
   long __pyx_t_7;
-  long __pyx_t_8;
-  int __pyx_t_9;
+  int __pyx_t_8;
+  long __pyx_t_9;
   long __pyx_t_10;
-  long __pyx_t_11;
-  int __pyx_t_12;
+  int __pyx_t_11;
+  long __pyx_t_12;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("AssociatedLegendre", 0);
+  __Pyx_RefNannySetupContext("AssociatedLegendreGradient", 0);
 
-  /* "asset_asrl/Legendre.pyx":56
+  /* "asset_asrl/Legendre.pyx":34
  * 
  * 
- *     P = {}             # <<<<<<<<<<<<<<
+ *     size = (N+1)*(N+1)             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_v_size = ((__pyx_v_N + 1) * (__pyx_v_N + 1));
+
+  /* "asset_asrl/Legendre.pyx":37
+ * 
+ * 
+ *     P = [None]*size             # <<<<<<<<<<<<<<
+ *     dP = [None]*size
+ * 
+*/
+  __pyx_t_1 = PyList_New(1 * ((__pyx_v_size<0) ? 0:__pyx_v_size)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
+  { Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < __pyx_v_size; __pyx_temp++) {
+      __Pyx_INCREF(Py_None);
+      __Pyx_GIVEREF(Py_None);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_1, __pyx_temp, Py_None) != (0)) __PYX_ERR(0, 37, __pyx_L1_error);
+    }
+  }
   __pyx_v_P = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Legendre.pyx":65
- *     # ScalarFunction instances do not have a Constant method.  Build
- *     # constants algebraically so the recurrence remains an ASSET expression.
- *     zero = sinphi * 0.0             # <<<<<<<<<<<<<<
+  /* "asset_asrl/Legendre.pyx":38
+ * 
+ *     P = [None]*size
+ *     dP = [None]*size             # <<<<<<<<<<<<<<
+ * 
+ * 
+*/
+  __pyx_t_1 = PyList_New(1 * ((__pyx_v_size<0) ? 0:__pyx_v_size)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  { Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < __pyx_v_size; __pyx_temp++) {
+      __Pyx_INCREF(Py_None);
+      __Pyx_GIVEREF(Py_None);
+      if (__Pyx_PyList_SET_ITEM(__pyx_t_1, __pyx_temp, Py_None) != (0)) __PYX_ERR(0, 38, __pyx_L1_error);
+    }
+  }
+  __pyx_v_dP = ((PyObject*)__pyx_t_1);
+  __pyx_t_1 = 0;
+
+  /* "asset_asrl/Legendre.pyx":41
+ * 
+ * 
+ *     zero = sinphi*0.0             # <<<<<<<<<<<<<<
  *     one = zero + 1.0
  * 
 */
-  __pyx_t_1 = PyNumber_Multiply(__pyx_v_sinphi, __pyx_mstate_global->__pyx_float_0_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_sinphi, __pyx_mstate_global->__pyx_float_0_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_zero = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Legendre.pyx":66
- *     # constants algebraically so the recurrence remains an ASSET expression.
- *     zero = sinphi * 0.0
+  /* "asset_asrl/Legendre.pyx":42
+ * 
+ *     zero = sinphi*0.0
  *     one = zero + 1.0             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_1 = __Pyx_PyFloat_AddObjC(__pyx_v_zero, __pyx_mstate_global->__pyx_float_1_0, 1.0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyFloat_AddObjC(__pyx_v_zero, __pyx_mstate_global->__pyx_float_1_0, 1.0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_one = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Legendre.pyx":72
- *         one
- *         -
+  /* "asset_asrl/Legendre.pyx":47
+ *     cosphi = (
+ *         one -
  *         sinphi*sinphi             # <<<<<<<<<<<<<<
  *     ).sqrt()
  * 
 */
-  __pyx_t_3 = PyNumber_Multiply(__pyx_v_sinphi, __pyx_v_sinphi); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Multiply(__pyx_v_sinphi, __pyx_v_sinphi); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "asset_asrl/Legendre.pyx":71
+  /* "asset_asrl/Legendre.pyx":46
+ * 
  *     cosphi = (
- *         one
- *         -             # <<<<<<<<<<<<<<
+ *         one -             # <<<<<<<<<<<<<<
  *         sinphi*sinphi
  *     ).sqrt()
 */
-  __pyx_t_4 = PyNumber_Subtract(__pyx_v_one, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_t_4 = PyNumber_Subtract(__pyx_v_one, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_2 = __pyx_t_4;
@@ -2500,430 +2531,513 @@ static PyObject *__pyx_f_10asset_asrl_8Legendre_AssociatedLegendre(PyObject *__p
     __pyx_t_1 = __Pyx_PyObject_FastCallMethod((PyObject*)__pyx_mstate_global->__pyx_n_u_sqrt, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (1*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   }
   __pyx_v_cosphi = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/Legendre.pyx":81
+  /* "asset_asrl/Legendre.pyx":56
  *     #
  * 
- *     P[0,0] = one             # <<<<<<<<<<<<<<
+ *     P[0] = one             # <<<<<<<<<<<<<<
+ * 
+ *     dP[0] = zero
+*/
+  if (unlikely((__Pyx_SetItemInt(__pyx_v_P, 0, __pyx_v_one, long, 1, __Pyx_PyLong_From_long, 1, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference) < 0))) __PYX_ERR(0, 56, __pyx_L1_error)
+
+  /* "asset_asrl/Legendre.pyx":58
+ *     P[0] = one
+ * 
+ *     dP[0] = zero             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  if (unlikely((PyDict_SetItem(__pyx_v_P, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_one) < 0))) __PYX_ERR(0, 81, __pyx_L1_error)
+  if (unlikely((__Pyx_SetItemInt(__pyx_v_dP, 0, __pyx_v_zero, long, 1, __Pyx_PyLong_From_long, 1, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference) < 0))) __PYX_ERR(0, 58, __pyx_L1_error)
 
-  /* "asset_asrl/Legendre.pyx":85
- * 
- * 
- *     if N == 0:             # <<<<<<<<<<<<<<
- *         return P
- * 
-*/
-  __pyx_t_6 = (__pyx_v_N == 0);
-  if (__pyx_t_6) {
-
-    /* "asset_asrl/Legendre.pyx":86
- * 
- *     if N == 0:
- *         return P             # <<<<<<<<<<<<<<
- * 
- * 
-*/
-    __Pyx_XDECREF(__pyx_r);
-    __Pyx_INCREF(__pyx_v_P);
-    __pyx_r = __pyx_v_P;
-    goto __pyx_L0;
-
-    /* "asset_asrl/Legendre.pyx":85
- * 
- * 
- *     if N == 0:             # <<<<<<<<<<<<<<
- *         return P
- * 
-*/
-  }
-
-  /* "asset_asrl/Legendre.pyx":96
+  /* "asset_asrl/Legendre.pyx":66
  *     #
  * 
- *     for n in range(1, N+1):             # <<<<<<<<<<<<<<
+ *     for n in range(1,N+1):             # <<<<<<<<<<<<<<
  * 
- *         P[n,n] = (
+ *         idx = n*(N+1)+n
 */
-  __pyx_t_7 = (__pyx_v_N + 1);
-  __pyx_t_8 = __pyx_t_7;
-  for (__pyx_t_9 = 1; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
-    __pyx_v_n = __pyx_t_9;
+  __pyx_t_6 = (__pyx_v_N + 1);
+  __pyx_t_7 = __pyx_t_6;
+  for (__pyx_t_8 = 1; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
+    __pyx_v_n = __pyx_t_8;
 
-    /* "asset_asrl/Legendre.pyx":99
+    /* "asset_asrl/Legendre.pyx":68
+ *     for n in range(1,N+1):
  * 
- *         P[n,n] = (
+ *         idx = n*(N+1)+n             # <<<<<<<<<<<<<<
+ * 
+ *         P[idx] = (
+*/
+    __pyx_v_idx = ((__pyx_v_n * (__pyx_v_N + 1)) + __pyx_v_n);
+
+    /* "asset_asrl/Legendre.pyx":71
+ * 
+ *         P[idx] = (
  *             (2*n-1)             # <<<<<<<<<<<<<<
  *             *
  *             cosphi
 */
-    __pyx_t_1 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
 
-    /* "asset_asrl/Legendre.pyx":100
- *         P[n,n] = (
+    /* "asset_asrl/Legendre.pyx":72
+ *         P[idx] = (
  *             (2*n-1)
  *             *             # <<<<<<<<<<<<<<
  *             cosphi
  *             *
 */
-    __pyx_t_4 = PyNumber_Multiply(__pyx_t_1, __pyx_v_cosphi); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_Multiply(__pyx_t_1, __pyx_v_cosphi); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 72, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "asset_asrl/Legendre.pyx":75
+ *             cosphi
+ *             *
+ *             P[(n-1)*(N+1)+(n-1)]             # <<<<<<<<<<<<<<
+ *         )
+ * 
+*/
+    __pyx_t_9 = (((__pyx_v_n - 1) * (__pyx_v_N + 1)) + (__pyx_v_n - 1));
+
+    /* "asset_asrl/Legendre.pyx":74
+ *             *
+ *             cosphi
+ *             *             # <<<<<<<<<<<<<<
+ *             P[(n-1)*(N+1)+(n-1)]
+ *         )
+*/
+    __pyx_t_1 = PyNumber_Multiply(__pyx_t_4, __Pyx_PyList_GET_ITEM(__pyx_v_P, __pyx_t_9)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+    /* "asset_asrl/Legendre.pyx":70
+ *         idx = n*(N+1)+n
+ * 
+ *         P[idx] = (             # <<<<<<<<<<<<<<
+ *             (2*n-1)
+ *             *
+*/
+    if (unlikely((__Pyx_SetItemInt(__pyx_v_P, __pyx_v_idx, __pyx_t_1, int, 1, __Pyx_PyLong_From_int, 1, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference) < 0))) __PYX_ERR(0, 70, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "asset_asrl/Legendre.pyx":79
+ * 
+ *         dP[idx] = (
+ *             -n*sinphi*P[idx]/cosphi             # <<<<<<<<<<<<<<
+ *         )
+ * 
+*/
+    __pyx_t_1 = __Pyx_PyLong_From_int((-__pyx_v_n)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_4 = PyNumber_Multiply(__pyx_t_1, __pyx_v_sinphi); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = PyNumber_Multiply(__pyx_t_4, __Pyx_PyList_GET_ITEM(__pyx_v_P, __pyx_v_idx)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_v_cosphi); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "asset_asrl/Legendre.pyx":78
+ *         )
+ * 
+ *         dP[idx] = (             # <<<<<<<<<<<<<<
+ *             -n*sinphi*P[idx]/cosphi
+ *         )
+*/
+    if (unlikely((__Pyx_SetItemInt(__pyx_v_dP, __pyx_v_idx, __pyx_t_4, int, 1, __Pyx_PyLong_From_int, 1, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference) < 0))) __PYX_ERR(0, 78, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  }
+
+  /* "asset_asrl/Legendre.pyx":88
+ *     #
+ * 
+ *     for n in range(1,N+1):             # <<<<<<<<<<<<<<
+ * 
+ *         idx = n*(N+1)+(n-1)
+*/
+  __pyx_t_6 = (__pyx_v_N + 1);
+  __pyx_t_7 = __pyx_t_6;
+  for (__pyx_t_8 = 1; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
+    __pyx_v_n = __pyx_t_8;
+
+    /* "asset_asrl/Legendre.pyx":90
+ *     for n in range(1,N+1):
+ * 
+ *         idx = n*(N+1)+(n-1)             # <<<<<<<<<<<<<<
+ * 
+ *         P[idx] = (
+*/
+    __pyx_v_idx = ((__pyx_v_n * (__pyx_v_N + 1)) + (__pyx_v_n - 1));
+
+    /* "asset_asrl/Legendre.pyx":93
+ * 
+ *         P[idx] = (
+ *             (2*n-1)             # <<<<<<<<<<<<<<
+ *             *
+ *             sinphi
+*/
+    __pyx_t_4 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 93, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+
+    /* "asset_asrl/Legendre.pyx":94
+ *         P[idx] = (
+ *             (2*n-1)
+ *             *             # <<<<<<<<<<<<<<
+ *             sinphi
+ *             *
+*/
+    __pyx_t_1 = PyNumber_Multiply(__pyx_t_4, __pyx_v_sinphi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+    /* "asset_asrl/Legendre.pyx":97
+ *             sinphi
+ *             *
+ *             P[(n-1)*(N+1)+(n-1)]             # <<<<<<<<<<<<<<
+ *         )
+ * 
+*/
+    __pyx_t_9 = (((__pyx_v_n - 1) * (__pyx_v_N + 1)) + (__pyx_v_n - 1));
+
+    /* "asset_asrl/Legendre.pyx":96
+ *             *
+ *             sinphi
+ *             *             # <<<<<<<<<<<<<<
+ *             P[(n-1)*(N+1)+(n-1)]
+ *         )
+*/
+    __pyx_t_4 = PyNumber_Multiply(__pyx_t_1, __Pyx_PyList_GET_ITEM(__pyx_v_P, __pyx_t_9)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 96, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "asset_asrl/Legendre.pyx":92
+ *         idx = n*(N+1)+(n-1)
+ * 
+ *         P[idx] = (             # <<<<<<<<<<<<<<
+ *             (2*n-1)
+ *             *
+*/
+    if (unlikely((__Pyx_SetItemInt(__pyx_v_P, __pyx_v_idx, __pyx_t_4, int, 1, __Pyx_PyLong_From_int, 1, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference) < 0))) __PYX_ERR(0, 92, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
     /* "asset_asrl/Legendre.pyx":103
- *             cosphi
- *             *
- *             P[n-1,n-1]             # <<<<<<<<<<<<<<
- *         )
- * 
+ *         dP[idx] = (
+ *             (
+ *                 n*sinphi*P[idx]             # <<<<<<<<<<<<<<
+ *                 -
+ *                 (n+n-1)*P[(n-1)*(N+1)+(n-1)]
 */
-    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_1 = PyNumber_Multiply(__pyx_t_4, __pyx_v_sinphi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 103, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 103, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 103, __pyx_L1_error);
-    __pyx_t_1 = 0;
-    __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_P, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = PyNumber_Multiply(__pyx_t_1, __Pyx_PyList_GET_ITEM(__pyx_v_P, __pyx_v_idx)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "asset_asrl/Legendre.pyx":102
- *             *
- *             cosphi
- *             *             # <<<<<<<<<<<<<<
- *             P[n-1,n-1]
- *         )
+    /* "asset_asrl/Legendre.pyx":105
+ *                 n*sinphi*P[idx]
+ *                 -
+ *                 (n+n-1)*P[(n-1)*(N+1)+(n-1)]             # <<<<<<<<<<<<<<
+ *             )
+ *             /
 */
-    __pyx_t_3 = PyNumber_Multiply(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_1 = __Pyx_PyLong_From_long(((__pyx_v_n + __pyx_v_n) - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_9 = (((__pyx_v_n - 1) * (__pyx_v_N + 1)) + (__pyx_v_n - 1));
+    __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __Pyx_PyList_GET_ITEM(__pyx_v_P, __pyx_t_9)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "asset_asrl/Legendre.pyx":104
+ *             (
+ *                 n*sinphi*P[idx]
+ *                 -             # <<<<<<<<<<<<<<
+ *                 (n+n-1)*P[(n-1)*(N+1)+(n-1)]
+ *             )
+*/
+    __pyx_t_1 = PyNumber_Subtract(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "asset_asrl/Legendre.pyx":98
- *     for n in range(1, N+1):
- * 
- *         P[n,n] = (             # <<<<<<<<<<<<<<
- *             (2*n-1)
- *             *
-*/
-    __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 98, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 98, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_4);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_4) != (0)) __PYX_ERR(0, 98, __pyx_L1_error);
-    __pyx_t_2 = 0;
-    __pyx_t_4 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_P, __pyx_t_1, __pyx_t_3) < 0))) __PYX_ERR(0, 98, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  }
-
-  /* "asset_asrl/Legendre.pyx":114
- *     #
- * 
- *     for n in range(1, N+1):             # <<<<<<<<<<<<<<
- * 
- *         P[n,n-1] = (
-*/
-  __pyx_t_7 = (__pyx_v_N + 1);
-  __pyx_t_8 = __pyx_t_7;
-  for (__pyx_t_9 = 1; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
-    __pyx_v_n = __pyx_t_9;
-
-    /* "asset_asrl/Legendre.pyx":117
- * 
- *         P[n,n-1] = (
- *             (2*n-1)             # <<<<<<<<<<<<<<
- *             *
- *             sinphi
-*/
-    __pyx_t_3 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-
-    /* "asset_asrl/Legendre.pyx":118
- *         P[n,n-1] = (
- *             (2*n-1)
- *             *             # <<<<<<<<<<<<<<
- *             sinphi
- *             *
-*/
-    __pyx_t_1 = PyNumber_Multiply(__pyx_t_3, __pyx_v_sinphi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-    /* "asset_asrl/Legendre.pyx":121
- *             sinphi
- *             *
- *             P[n-1,n-1]             # <<<<<<<<<<<<<<
- *         )
- * 
-*/
-    __pyx_t_3 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 121, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 121, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 121, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_3);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 121, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_4);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_4) != (0)) __PYX_ERR(0, 121, __pyx_L1_error);
-    __pyx_t_3 = 0;
-    __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_P, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 121, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-    /* "asset_asrl/Legendre.pyx":120
- *             *
- *             sinphi
- *             *             # <<<<<<<<<<<<<<
- *             P[n-1,n-1]
+    /* "asset_asrl/Legendre.pyx":107
+ *                 (n+n-1)*P[(n-1)*(N+1)+(n-1)]
+ *             )
+ *             /             # <<<<<<<<<<<<<<
+ *             cosphi
  *         )
 */
-    __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_v_cosphi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "asset_asrl/Legendre.pyx":116
- *     for n in range(1, N+1):
+    /* "asset_asrl/Legendre.pyx":101
  * 
- *         P[n,n-1] = (             # <<<<<<<<<<<<<<
- *             (2*n-1)
- *             *
+ * 
+ *         dP[idx] = (             # <<<<<<<<<<<<<<
+ *             (
+ *                 n*sinphi*P[idx]
 */
-    __pyx_t_4 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 116, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 116, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GIVEREF(__pyx_t_4);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4) != (0)) __PYX_ERR(0, 116, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 116, __pyx_L1_error);
-    __pyx_t_4 = 0;
-    __pyx_t_1 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_P, __pyx_t_3, __pyx_t_2) < 0))) __PYX_ERR(0, 116, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely((__Pyx_SetItemInt(__pyx_v_dP, __pyx_v_idx, __pyx_t_2, int, 1, __Pyx_PyLong_From_int, 1, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference) < 0))) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
 
-  /* "asset_asrl/Legendre.pyx":132
+  /* "asset_asrl/Legendre.pyx":117
  *     #
  * 
- *     for n in range(2, N+1):             # <<<<<<<<<<<<<<
+ *     for n in range(2,N+1):             # <<<<<<<<<<<<<<
  * 
- *         for m in range(0, n-1):
+ *         for m in range(0,n-1):
 */
-  __pyx_t_7 = (__pyx_v_N + 1);
-  __pyx_t_8 = __pyx_t_7;
-  for (__pyx_t_9 = 2; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
-    __pyx_v_n = __pyx_t_9;
+  __pyx_t_6 = (__pyx_v_N + 1);
+  __pyx_t_7 = __pyx_t_6;
+  for (__pyx_t_8 = 2; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
+    __pyx_v_n = __pyx_t_8;
 
-    /* "asset_asrl/Legendre.pyx":134
- *     for n in range(2, N+1):
+    /* "asset_asrl/Legendre.pyx":119
+ *     for n in range(2,N+1):
  * 
- *         for m in range(0, n-1):             # <<<<<<<<<<<<<<
+ *         for m in range(0,n-1):             # <<<<<<<<<<<<<<
  * 
- *             a = (
+ *             idx = n*(N+1)+m
 */
-    __pyx_t_10 = (__pyx_v_n - 1);
-    __pyx_t_11 = __pyx_t_10;
-    for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
-      __pyx_v_m = __pyx_t_12;
+    __pyx_t_9 = (__pyx_v_n - 1);
+    __pyx_t_10 = __pyx_t_9;
+    for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
+      __pyx_v_m = __pyx_t_11;
+
+      /* "asset_asrl/Legendre.pyx":121
+ *         for m in range(0,n-1):
+ * 
+ *             idx = n*(N+1)+m             # <<<<<<<<<<<<<<
+ * 
+ * 
+*/
+      __pyx_v_idx = ((__pyx_v_n * (__pyx_v_N + 1)) + __pyx_v_m);
+
+      /* "asset_asrl/Legendre.pyx":127
+ * 
+ *                 (
+ *                     (2*n-1)             # <<<<<<<<<<<<<<
+ *                     *
+ *                     sinphi
+*/
+      __pyx_t_2 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+
+      /* "asset_asrl/Legendre.pyx":128
+ *                 (
+ *                     (2*n-1)
+ *                     *             # <<<<<<<<<<<<<<
+ *                     sinphi
+ *                     *
+*/
+      __pyx_t_1 = PyNumber_Multiply(__pyx_t_2, __pyx_v_sinphi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+      /* "asset_asrl/Legendre.pyx":131
+ *                     sinphi
+ *                     *
+ *                     P[(n-1)*(N+1)+m]             # <<<<<<<<<<<<<<
+ *                 )
+ * 
+*/
+      __pyx_t_12 = (((__pyx_v_n - 1) * (__pyx_v_N + 1)) + __pyx_v_m);
+
+      /* "asset_asrl/Legendre.pyx":130
+ *                     *
+ *                     sinphi
+ *                     *             # <<<<<<<<<<<<<<
+ *                     P[(n-1)*(N+1)+m]
+ *                 )
+*/
+      __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __Pyx_PyList_GET_ITEM(__pyx_v_P, __pyx_t_12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
       /* "asset_asrl/Legendre.pyx":137
  * 
- *             a = (
- *                 (2*n-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 sinphi
+ *                 (
+ *                     (n+m-1)             # <<<<<<<<<<<<<<
+ *                     *
+ *                     P[(n-2)*(N+1)+m]
 */
-      __pyx_t_2 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = __Pyx_PyLong_From_long(((__pyx_v_n + __pyx_v_m) - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 137, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+
+      /* "asset_asrl/Legendre.pyx":139
+ *                     (n+m-1)
+ *                     *
+ *                     P[(n-2)*(N+1)+m]             # <<<<<<<<<<<<<<
+ *                 )
+ * 
+*/
+      __pyx_t_12 = (((__pyx_v_n - 2) * (__pyx_v_N + 1)) + __pyx_v_m);
 
       /* "asset_asrl/Legendre.pyx":138
- *             a = (
- *                 (2*n-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 sinphi
- *                 *
+ *                 (
+ *                     (n+m-1)
+ *                     *             # <<<<<<<<<<<<<<
+ *                     P[(n-2)*(N+1)+m]
+ *                 )
 */
-      __pyx_t_3 = PyNumber_Multiply(__pyx_t_2, __pyx_v_sinphi); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 138, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-      /* "asset_asrl/Legendre.pyx":141
- *                 sinphi
- *                 *
- *                 P[n-1,m]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-      __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 141, __pyx_L1_error)
+      __pyx_t_4 = PyNumber_Multiply(__pyx_t_1, __Pyx_PyList_GET_ITEM(__pyx_v_P, __pyx_t_12)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 138, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_GIVEREF(__pyx_t_2);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 141, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 141, __pyx_L1_error);
-      __pyx_t_2 = 0;
-      __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_P, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-
-      /* "asset_asrl/Legendre.pyx":140
- *                 *
- *                 sinphi
- *                 *             # <<<<<<<<<<<<<<
- *                 P[n-1,m]
- *             )
-*/
-      __pyx_t_4 = PyNumber_Multiply(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 140, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_a, __pyx_t_4);
-      __pyx_t_4 = 0;
 
-      /* "asset_asrl/Legendre.pyx":146
+      /* "asset_asrl/Legendre.pyx":134
+ *                 )
  * 
- *             b = (
- *                 (n+m-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 P[n-2,m]
-*/
-      __pyx_t_4 = __Pyx_PyLong_From_long(((__pyx_v_n + __pyx_v_m) - 1)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 146, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-
-      /* "asset_asrl/Legendre.pyx":148
- *                 (n+m-1)
- *                 *
- *                 P[n-2,m]             # <<<<<<<<<<<<<<
- *             )
+ *                 -             # <<<<<<<<<<<<<<
  * 
+ *                 (
 */
-      __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
+      __pyx_t_1 = PyNumber_Subtract(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 148, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 148, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_3);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_3) != (0)) __PYX_ERR(0, 148, __pyx_L1_error);
-      __pyx_t_1 = 0;
-      __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_P, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 148, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-      /* "asset_asrl/Legendre.pyx":147
- *             b = (
- *                 (n+m-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 P[n-2,m]
- *             )
-*/
-      __pyx_t_2 = PyNumber_Multiply(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_b, __pyx_t_2);
-      __pyx_t_2 = 0;
 
-      /* "asset_asrl/Legendre.pyx":153
+      /* "asset_asrl/Legendre.pyx":142
+ *                 )
  * 
- *             P[n,m] = (
- *                 a-b             # <<<<<<<<<<<<<<
- *             )/(n-m)
- * 
-*/
-      __pyx_t_2 = PyNumber_Subtract(__pyx_v_a, __pyx_v_b); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-
-      /* "asset_asrl/Legendre.pyx":154
- *             P[n,m] = (
- *                 a-b
  *             )/(n-m)             # <<<<<<<<<<<<<<
  * 
  * 
 */
-      __pyx_t_3 = __Pyx_PyLong_From_int((__pyx_v_n - __pyx_v_m)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 154, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 154, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyLong_From_int((__pyx_v_n - __pyx_v_m)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-      /* "asset_asrl/Legendre.pyx":152
- * 
- * 
- *             P[n,m] = (             # <<<<<<<<<<<<<<
- *                 a-b
- *             )/(n-m)
-*/
-      __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 152, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 142, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_GIVEREF(__pyx_t_3);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3) != (0)) __PYX_ERR(0, 152, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_2);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 152, __pyx_L1_error);
-      __pyx_t_3 = 0;
-      __pyx_t_2 = 0;
-      if (unlikely((PyDict_SetItem(__pyx_v_P, __pyx_t_1, __pyx_t_4) < 0))) __PYX_ERR(0, 152, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+      /* "asset_asrl/Legendre.pyx":124
+ * 
+ * 
+ *             P[idx] = (             # <<<<<<<<<<<<<<
+ * 
+ *                 (
+*/
+      if (unlikely((__Pyx_SetItemInt(__pyx_v_P, __pyx_v_idx, __pyx_t_2, int, 1, __Pyx_PyLong_From_int, 1, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference) < 0))) __PYX_ERR(0, 124, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+      /* "asset_asrl/Legendre.pyx":148
+ * 
+ *                 (
+ *                     n*sinphi*P[idx]             # <<<<<<<<<<<<<<
+ *                     -
+ *                     (n+m)
+*/
+      __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_4 = PyNumber_Multiply(__pyx_t_2, __pyx_v_sinphi); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 148, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = PyNumber_Multiply(__pyx_t_4, __Pyx_PyList_GET_ITEM(__pyx_v_P, __pyx_v_idx)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 148, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+      /* "asset_asrl/Legendre.pyx":150
+ *                     n*sinphi*P[idx]
+ *                     -
+ *                     (n+m)             # <<<<<<<<<<<<<<
+ *                     *
+ *                     P[(n-1)*(N+1)+m]
+*/
+      __pyx_t_4 = __Pyx_PyLong_From_int((__pyx_v_n + __pyx_v_m)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 150, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+
+      /* "asset_asrl/Legendre.pyx":152
+ *                     (n+m)
+ *                     *
+ *                     P[(n-1)*(N+1)+m]             # <<<<<<<<<<<<<<
+ *                 )
+ * 
+*/
+      __pyx_t_12 = (((__pyx_v_n - 1) * (__pyx_v_N + 1)) + __pyx_v_m);
+
+      /* "asset_asrl/Legendre.pyx":151
+ *                     -
+ *                     (n+m)
+ *                     *             # <<<<<<<<<<<<<<
+ *                     P[(n-1)*(N+1)+m]
+ *                 )
+*/
+      __pyx_t_1 = PyNumber_Multiply(__pyx_t_4, __Pyx_PyList_GET_ITEM(__pyx_v_P, __pyx_t_12)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+      /* "asset_asrl/Legendre.pyx":149
+ *                 (
+ *                     n*sinphi*P[idx]
+ *                     -             # <<<<<<<<<<<<<<
+ *                     (n+m)
+ *                     *
+*/
+      __pyx_t_4 = PyNumber_Subtract(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 149, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+      /* "asset_asrl/Legendre.pyx":155
+ *                 )
+ * 
+ *                 /             # <<<<<<<<<<<<<<
+ * 
+ *                 cosphi
+*/
+      __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_t_4, __pyx_v_cosphi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+      /* "asset_asrl/Legendre.pyx":145
+ * 
+ * 
+ *             dP[idx] = (             # <<<<<<<<<<<<<<
+ * 
+ *                 (
+*/
+      if (unlikely((__Pyx_SetItemInt(__pyx_v_dP, __pyx_v_idx, __pyx_t_1, int, 1, __Pyx_PyLong_From_int, 1, 0, 0, 1, __Pyx_ReferenceSharing_OwnStrongReference) < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     }
   }
 
-  /* "asset_asrl/Legendre.pyx":158
+  /* "asset_asrl/Legendre.pyx":162
  * 
  * 
- *     return P             # <<<<<<<<<<<<<<
+ *     return P,dP             # <<<<<<<<<<<<<<
 */
   __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_P);
-  __pyx_r = __pyx_v_P;
+  __Pyx_GIVEREF(__pyx_v_P);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_P) != (0)) __PYX_ERR(0, 162, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_v_dP);
+  __Pyx_GIVEREF(__pyx_v_dP);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_dP) != (0)) __PYX_ERR(0, 162, __pyx_L1_error);
+  __pyx_r = ((PyObject*)__pyx_t_1);
+  __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "asset_asrl/Legendre.pyx":27
+  /* "asset_asrl/Legendre.pyx":24
  * 
  * 
- * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
- * @cython.wraparound(False)
- * cpdef dict AssociatedLegendre(
+ * cpdef tuple AssociatedLegendreGradient(             # <<<<<<<<<<<<<<
+ *     object sinphi,
+ *     int N
 */
 
   /* function exit code */
@@ -2932,31 +3046,29 @@ static PyObject *__pyx_f_10asset_asrl_8Legendre_AssociatedLegendre(PyObject *__p
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("asset_asrl.Legendre.AssociatedLegendre", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Legendre.AssociatedLegendreGradient", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_P);
+  __Pyx_XDECREF(__pyx_v_dP);
   __Pyx_XDECREF(__pyx_v_zero);
   __Pyx_XDECREF(__pyx_v_one);
   __Pyx_XDECREF(__pyx_v_cosphi);
-  __Pyx_XDECREF(__pyx_v_a);
-  __Pyx_XDECREF(__pyx_v_b);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_8Legendre_1AssociatedLegendre(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_10asset_asrl_8Legendre_1AssociatedLegendreGradient(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_10asset_asrl_8Legendre_AssociatedLegendre, "\n    Compute fully normalized associated Legendre functions.\n\n    Parameters\n    ----------\n    sinphi :\n        sin(latitude)\n\n    N :\n        Maximum degree\n\n    Returns\n    -------\n    P :\n        dictionary\n\n        P[n,m] = fully normalized Legendre function\n    ");
-static PyMethodDef __pyx_mdef_10asset_asrl_8Legendre_1AssociatedLegendre = {"AssociatedLegendre", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_8Legendre_1AssociatedLegendre, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_10asset_asrl_8Legendre_AssociatedLegendre};
-static PyObject *__pyx_pw_10asset_asrl_8Legendre_1AssociatedLegendre(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_10asset_asrl_8Legendre_1AssociatedLegendreGradient = {"AssociatedLegendreGradient", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_8Legendre_1AssociatedLegendreGradient, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10asset_asrl_8Legendre_1AssociatedLegendreGradient(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2975,7 +3087,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("AssociatedLegendre (wrapper)", 0);
+  __Pyx_RefNannySetupContext("AssociatedLegendreGradient (wrapper)", 0);
   #if !CYTHON_METH_FASTCALL
   #if CYTHON_ASSUME_SAFE_SIZE
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
@@ -2987,50 +3099,50 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_sinphi,&__pyx_mstate_global->__pyx_n_u_N,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 27, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 24, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 27, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 24, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 27, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 24, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "AssociatedLegendre", 0) < (0)) __PYX_ERR(0, 27, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "AssociatedLegendreGradient", 0) < (0)) __PYX_ERR(0, 24, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("AssociatedLegendre", 1, 2, 2, i); __PYX_ERR(0, 27, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("AssociatedLegendreGradient", 1, 2, 2, i); __PYX_ERR(0, 24, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 27, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 24, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 27, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 24, __pyx_L3_error)
     }
     __pyx_v_sinphi = values[0];
-    __pyx_v_N = __Pyx_PyLong_As_int(values[1]); if (unlikely((__pyx_v_N == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L3_error)
+    __pyx_v_N = __Pyx_PyLong_As_int(values[1]); if (unlikely((__pyx_v_N == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 26, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("AssociatedLegendre", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 27, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("AssociatedLegendreGradient", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 24, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("asset_asrl.Legendre.AssociatedLegendre", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Legendre.AssociatedLegendreGradient", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10asset_asrl_8Legendre_AssociatedLegendre(__pyx_self, __pyx_v_sinphi, __pyx_v_N);
+  __pyx_r = __pyx_pf_10asset_asrl_8Legendre_AssociatedLegendreGradient(__pyx_self, __pyx_v_sinphi, __pyx_v_N);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -3040,16 +3152,16 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10asset_asrl_8Legendre_AssociatedLegendre(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_sinphi, int __pyx_v_N) {
+static PyObject *__pyx_pf_10asset_asrl_8Legendre_AssociatedLegendreGradient(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_sinphi, int __pyx_v_N) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("AssociatedLegendre", 0);
+  __Pyx_RefNannySetupContext("AssociatedLegendreGradient", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10asset_asrl_8Legendre_AssociatedLegendre(__pyx_v_sinphi, __pyx_v_N, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10asset_asrl_8Legendre_AssociatedLegendreGradient(__pyx_v_sinphi, __pyx_v_N, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -3058,7 +3170,7 @@ static PyObject *__pyx_pf_10asset_asrl_8Legendre_AssociatedLegendre(CYTHON_UNUSE
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("asset_asrl.Legendre.AssociatedLegendre", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Legendre.AssociatedLegendreGradient", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3414,19 +3526,19 @@ __Pyx_RefNannySetupContext("PyInit_Legendre", 0);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "asset_asrl/Legendre.pyx":27
+  /* "asset_asrl/Legendre.pyx":24
  * 
  * 
- * @cython.boundscheck(False)             # <<<<<<<<<<<<<<
- * @cython.wraparound(False)
- * cpdef dict AssociatedLegendre(
+ * cpdef tuple AssociatedLegendreGradient(             # <<<<<<<<<<<<<<
+ *     object sinphi,
+ *     int N
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_8Legendre_1AssociatedLegendre, 0, __pyx_mstate_global->__pyx_n_u_AssociatedLegendre, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Legendre, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_8Legendre_1AssociatedLegendreGradient, 0, __pyx_mstate_global->__pyx_n_u_AssociatedLegendreGradient, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Legendre, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_AssociatedLegendre, __pyx_t_2) < (0)) __PYX_ERR(0, 27, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_AssociatedLegendreGradient, __pyx_t_2) < (0)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "asset_asrl/Legendre.pyx":1
@@ -3491,66 +3603,33 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_RefNannyDeclarations
   CYTHON_UNUSED_VAR(__pyx_mstate);
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
-
-  /* "asset_asrl/Legendre.pyx":81
- *     #
- * 
- *     P[0,0] = one             # <<<<<<<<<<<<<<
- * 
- * 
-*/
-  __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_0, __pyx_mstate_global->__pyx_int_0); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 81, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[0]);
-  __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[0]);
-  #if CYTHON_IMMORTAL_CONSTANTS
-  {
-    PyObject **table = __pyx_mstate->__pyx_tuple;
-    for (Py_ssize_t i=0; i<1; ++i) {
-      #if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
-      #if PY_VERSION_HEX < 0x030E0000
-      if (_Py_IsOwnedByCurrentThread(table[i]) && Py_REFCNT(table[i]) == 1)
-      #else
-      if (PyUnstable_Object_IsUniquelyReferenced(table[i]))
-      #endif
-      {
-        Py_SET_REFCNT(table[i], _Py_IMMORTAL_REFCNT_LOCAL);
-      }
-      #else
-      Py_SET_REFCNT(table[i], _Py_IMMORTAL_INITIAL_REFCNT);
-      #endif
-    }
-  }
-  #endif
   __Pyx_RefNannyFinishContext();
   return 0;
-  __pyx_L1_error:;
-  __Pyx_RefNannyFinishContext();
-  return -1;
 }
 /* #### Code section: init_constants ### */
 
 static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 9; } index[] = {{1},{23},{18},{1},{20},{19},{18},{18},{8},{13},{5},{8},{10},{8},{3},{12},{12},{10},{6},{4},{8},{6},{353}};
-    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (414 bytes) */
-const char* const cstring = "BZh91AY&SY\200\336\325\310\000\000R\377\343\367w\377\0002\001\250\220\266\005r\000\277\357\377`@@@@\000@@\000@\0000\001XZl4(i\251\264\247\246e'\264\247\250\332\215\032\030M\0145\000bi\352h5\004\332M\t\243M4\0322\000\000\000\000\000\tMSj\010\324\311\246\3242\032\000\032\000\001\246\206\232l\322\227\246\237&\315J\030Q\225\265\005m]p,\274\314\220\341n\021\005\244\242D\030\272\n\250\000\360\036w\022\333`\304\316\205C\260\\*jX@\207\335\036H!0_Pd\263\376{\311\007\032T\322M\317\030;\"Y\002\330t\346\313N6\3070P+\023;IL\201\346\233M\006\177\327\261\365+\201\007\202 \202uf\212\343l\3151\2535\330\300\322\016\000\314C\202\005\376\330\211C\036\313\315\214\226\321cJ\030)W\n\367\222\241\270\221\0378\025_\020\034\321\275\342\202\240p0\232\372\304\300\036C\020r9\261\024A\324\250\254\221\210\301\330\246\272\036\024\265\217ZTB\2620\352\212 \261\307\235S_\2360\351Y\004\\\240~F\2077[\234\270\200R\344\244\033\3507*\314\001U\t.\227\231\022\337\355\036\375\306A\337\032\001\351\033\366\232k\030~\355\000\305\341#\021\2412\376\310\330\021}\264\030\024~\315$\245\254\243c\007\321\264\202\242-\033D N4\254m\266\245\220&0g\302\030\332D4\320\017Qm\031jQ\326\026\247\010#\370\273\222)\302\204\204\006\366\256@";
-    PyObject *data = __Pyx_DecompressString(cstring, 414, 2);
+    const struct { const unsigned int length: 10; } index[] = {{1},{23},{26},{1},{20},{19},{18},{18},{8},{13},{5},{8},{10},{8},{3},{12},{12},{10},{6},{4},{8},{6},{634}};
+    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (544 bytes) */
+const char* const cstring = "BZh91AY&SY\230\330\222#\000\000\203\377\363\367\177\367\200#\001\261\000\246\205r\000\277\357\377`@@@@@@\000@@\000@\000@\001\334\013l\201\242$\304=A\211\35244\000\000\000\320\320\006\200\"\232#\365&\236\221\200\230\206\203\002b\014@h\310\003@\346\214\230\230\000\230\214\010\323\002\014F\t\223\000\214\022B\t4eO\322j~\205\r\r\000\000\000\017Q\246O\rR\372\030;[\032Z\326\003\316\272\272\321\376\003\203\357n\\\211\336'eU\220-Z\231\352Q\231\212\022\013\212R\037\262U\005Y\244P\254\206\215i\017\261M6b\265m\257C:\306\360\275d\016D-0E\247r\371\024\024\022\265\005\255n*\254)\034\347t\23103\027<\021\t\324n\351\373\274\024Sff\034\007T\217\217'\234\320\356\3315\236\217\317\247\217B\247C,\310-JpB\"\350TS\320\341\364e\327q\273\252\\e\275\263\004J\030\206\n\267\037\353p\345\225\025\r\377\253yF\275@kH\326\014\364i>\353\241\016\252\232\233y\226\211\267Ew\211\204\322k\324\021\223,|)\211K\356\001\005\027\003\313AU\235\345&\017^\360\"}\257\267N\\\0225\003H$2\021T\nu\261xL\020\002\020\254\246PD\032`\255\334~\330\261\003\302\343\363\262|xlV\031\314\250\252\026\006\032y\2541\276\350\236\300\341Wgo-m\310\001\226\345>\016\233\247A\233K\025\232\243T+\354\330\020\216#\022\270\021s\3525\216f~\024{\204F\371\373LVP:\022D'\340\303\204\340\345\254F\222\006v\201Ct|] \223/\261\357\311=\003h\234c#v\324\272[\265\261r5\315\22425\030\241\220e\210\034\332\206L0`\260X\014\275ZL\233\r)\202\360\272\366Z\0038g\254\356\271\244\336;s\367\205\230j\021\032SU\307w\215\022\222h0{-\2774\231V\226Ns\255\262\263\376.\344\212p\241!1\261$F";
+    PyObject *data = __Pyx_DecompressString(cstring, 544, 2);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (353 bytes) */
-const char* const cstring = "x\332\235P=O\3030\020M\020\251\322*i\233\362\261\267\022kQ\305\200\304\202\202`C\025Ab>\271\211\013\026\371\266\203\332-\343\215\036\363\3232\366'\344'\340\264\264H \026\254\363\371\356\371\335\273\263o\t\347T\000\341yx\371H_i\034\344t\232\256W.\347\211\317\210\240\301\036\235\003<\255Wj\3373_\300\234\256\3043]~WO\367<\302\327\261\317\222\251\237\344I!XL\271\037*\017,\006\221\023\237.\210\377\016\260,b\037\000\030\207\003\217\t\032q\200\210(\246ZQ\022\024!m\243\230D\352L\223\024 +H\270K\001\332\316\273XE\201\232\245\010\005gq\372\306x\226\013\000A\271\362\037$,(/\365\346F3\272\2507#\315\260\360ZN\244[\037\367\360\002s\3514\035\315\350\324fwk}$\230\325F\017\307\315P\301\245W.\320@\25715\303,s<A\2676\007\2305\247\255\234\201/r,\257$\221Y\245o\314.:8Q\004{+\"u\351\324\226}0\364\266\350\221\252\230I\2679\377[\240e\376_\304\302\007y\246\022^\215\253Y\345nT\2353\332\361\245W\017\235\203Ig\213\336I\242^g\367\177\261~\334\253\326\013\251\177\341\265=\330\r\327~\214\205\263O\371\276\325R";
-    PyObject *data = __Pyx_DecompressString(cstring, 353, 1);
+    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (479 bytes) */
+const char* const cstring = "x\332\235R\261\216\233@\020=\"\333\262\035|\361\242\363\245\246HJGv\2216BJ\224&:\005\244\324\253=X'(\030\014\273\234\354\216r\312-\267\244\274O\242\344\023\374\t\231\005\037i.:)hY\206\267o\336\233\031\355'&\004\227\224\211\"\371\360\215\377\344iT\360\365\341t\364\204\310\302\230I\036=\241_\013\026\305<\225w\224~?\035\361\375\034\207\222\336\361\243\014\370\356\257\312\372\211\317\304)\r\343l\035fEV\3128\345\"Lp\247qJe\301B~\317\302\337\224\356\3124\244\224\306\202\016\274X\362\275\240t\317\220\211\317>\213\312\204\233(e{\374\036\262\003\245y\311\222\376\227R\343\334\307\030EXK\231H\021\247\207_\261\310\013I\251\344\002\367\007\226\224\\T\326\371\346j\274\000\017|\270W\257\224\2536\312;O\256\3063\260`\005\014\362f4\003\002\357 W\226\301m\370\250\210r\233\321\034\261B\021\203M\232\251\r^3\275\356\370\3439\270\347%\242\225_q\330\264\243I\305\252\022<\203\315`\014?\320d\253|\305T\336v)\205\021\354\241vj\314\334f\321I)K\221\306^\014\013\202\016s.\351\205v\364F{\332\307\032f\257\301\205\215\341\370\230\371\320\313\353Qw\352\274\340\033 \323\322\344?\275\247\027\357vIP\357\275Q\322\256\3364K\322\020\247\237\347\305\241\317\010tQ\223\332\255\267uP\347\217\326#i;\375g\253\264\341\213Zun\235fk;\303i\007a\343X-v\214\301\355\333\256e\264onV\303\032\254\267\332\327\254\267F2q\236\311\370\007\367z\331O\303\230\2751\243\301`u\213E\354L\377H\314M:\"(\366\202)\316\350<7wh\013\376\037\252\313C\253";
+    PyObject *data = __Pyx_DecompressString(cstring, 479, 1);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (584 bytes) */
-const char* const bytes = "?asset_asrl/Legendre.pyxAssociatedLegendreN__Pyx_PyDict_NextRefasset_asrl.Legendreasyncio.coroutinescline_in_traceback__func___is_coroutineitems__main____module____name__pop__qualname____set_name__setdefaultsinphisqrt__test__values\200\001\360:\000\005\t\210\001\360\022\000\005\014\2107\220\"\220A\330\004\n\210%\210r\220\021\360\006\000\005\006\330\010\t\330\010\t\330\010\016\210a\210q\330\005\n\210!\360\020\000\005\006\200Q\200b\210\005\210Q\360\010\000\005\010\200r\210\023\210A\330\010\017\210q\360\024\000\005\t\210\005\210U\220!\2203\220a\220q\230\001\340\010\t\210\021\210\"\210A\330\r\016\210a\210q\220\001\220\021\330\014\r\330\014\r\330\014\r\330\014\r\210Q\210a\210q\220\002\220!\2201\220A\360\026\000\005\t\210\005\210U\220!\2203\220a\220q\230\001\340\010\t\210\021\210\"\210A\210Q\210a\330\r\016\210a\210q\220\001\220\021\330\014\r\330\014\r\330\014\r\330\014\r\210Q\210a\210q\220\002\220!\2201\220A\360\026\000\005\t\210\005\210U\220!\2203\220a\220q\230\001\340\010\014\210E\220\025\220a\220s\230!\2301\230A\340\014\r\330\021\022\220!\2201\220A\220Q\330\020\021\330\020\021\330\020\021\330\020\021\220\021\220!\2201\220B\220a\360\010\000\r\016\330\021\022\220!\2201\220A\220Q\330\020\021\330\020\021\220\021\220!\2201\220B\220a\360\010\000\r\016\210Q\210b\220\001\330\020\021\220\021\220!\330\r\017\210q\220\001\220\021\360\010\000\005\014\2101";
+    #else /* compression: none (873 bytes) */
+const char* const bytes = "?asset_asrl/Legendre.pyxAssociatedLegendreGradientN__Pyx_PyDict_NextRefasset_asrl.Legendreasyncio.coroutinescline_in_traceback__func___is_coroutineitems__main____module____name__pop__qualname____set_name__setdefaultsinphisqrt__test__values\200\001\360\024\000\005\r\210A\210Q\210b\220\002\220!\2201\220A\360\006\000\005\t\210\001\210\025\210a\210q\330\004\t\210\021\210%\210q\220\001\360\006\000\005\014\2106\220\021\220!\330\004\n\210%\210r\220\021\360\006\000\005\006\330\010\014\210A\330\010\016\210a\210q\330\005\n\210!\360\020\000\005\006\200Q\200e\2101\340\004\006\200a\200u\210A\360\020\000\005\t\210\005\210U\220!\2202\220Q\220a\220q\340\010\016\210a\210r\220\021\220!\2202\220Q\220a\340\010\t\210\021\210!\330\r\016\210a\210q\220\001\220\021\330\014\r\330\014\r\330\014\r\330\014\r\210R\210q\220\001\220\022\2202\220Q\220a\220r\230\022\2301\230A\230Q\360\006\000\t\013\210!\2101\330\014\r\210Q\210a\210v\220Q\220a\220q\230\004\230A\230Q\360\022\000\005\t\210\005\210U\220!\2202\220Q\220a\220q\340\010\016\210a\210r\220\021\220!\2202\220R\220q\230\001\230\021\340\010\t\210\021\210!\330\r\016\210a\210q\220\001\220\021\330\014\r\330\014\r\330\014\r\330\014\r\210R\210q\220\001\220\022\2202\220Q\220a\220r\230\022\2301\230A\230Q\360\010\000\t\013\210!\2101\340\020\021\220\021\220&\230\001\230\021\230!\2301\330\020\021\330\021\022\220!\2201\220A\220R\220q\230\001\230\022\2301\230A\230R\230r\240\021\240!\2402\240R\240q\250\001\250\021\340\014\r\330\014\r\360\022\000\005\t\210\005\210U\220!\2202\220Q\220a\220q\340\010\014\210E\220\025\220a\220r\230\021\230!\2301\340\014\022\220!\2202\220Q\220a\220r\230\021\230!\360\006\000\r\016\210Q\210a\360\006\000\026\027\220a\220q\230\001\230\021\330\024\025\330\024\025\330\024\025\330\024\025\220R\220q\230\001\230\022\2302\230Q\230a\230r\240\021\240!\360\006\000\021\022\360\006\000\026\027\220a\220q\230\001\230\021\330\024\025\330\024\025\220R\220q\230\001\230\022\2302\230Q\230a\230r\240\021\240!\360\006\000\016\020\210q\220\001\220\021\360""\006\000\r\017\210a\210q\360\006\000\025\026\220Q\220f\230A\230Q\230a\230q\330\024\025\330\025\026\220a\220q\330\024\025\330\024\025\220R\220q\230\001\230\022\2302\230Q\230a\230r\240\021\240!\360\006\000\021\022\340\020\021\360\n\000\005\014\2102\210Q";
     PyObject *data = NULL;
     CYTHON_UNUSED_VAR(__Pyx_DecompressString);
     #endif
@@ -3611,18 +3690,10 @@ const char* const bytes = "?asset_asrl/Legendre.pyxAssociatedLegendreN__Pyx_PyDi
       if (unlikely(!numbertab[i])) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
-  {
-    PyObject **numbertab = __pyx_mstate->__pyx_number_tab + 2;
-    int8_t const cint_constants_1[] = {0};
-    for (int i = 0; i < 1; i++) {
-      numbertab[i] = PyLong_FromLong(cint_constants_1[i - 0]);
-      if (unlikely(!numbertab[i])) __PYX_ERR(0, 1, __pyx_L1_error)
-    }
-  }
   #if CYTHON_IMMORTAL_CONSTANTS
   {
     PyObject **table = __pyx_mstate->__pyx_number_tab;
-    for (Py_ssize_t i=0; i<3; ++i) {
+    for (Py_ssize_t i=0; i<2; ++i) {
       #if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
       #if PY_VERSION_HEX < 0x030E0000
       if (_Py_IsOwnedByCurrentThread(table[i]) && Py_REFCNT(table[i]) == 1)
@@ -3666,9 +3737,9 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 27};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 24};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_sinphi, __pyx_mstate->__pyx_n_u_N};
-    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_Legendre_pyx, __pyx_mstate->__pyx_n_u_AssociatedLegendre, __pyx_mstate->__pyx_kp_b_iso88591_7_A_r_aq_Qb_Q_r_A_q_U_3aq_A_aq, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_Legendre_pyx, __pyx_mstate->__pyx_n_u_AssociatedLegendreGradient, __pyx_mstate->__pyx_kp_b_iso88591_AQb_1A_aq_q_6_r_A_aq_Qe1_auA_U, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;
@@ -3948,24 +4019,68 @@ static PyObject *__Pyx_PyObject_FastCallMethod(PyObject *name, PyObject *const *
 }
 #endif
 
-/* DictGetItem */
-#if !CYTHON_COMPILING_IN_PYPY
-static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key) {
-    PyObject *value;
-    if (unlikely(__Pyx_PyDict_GetItemRef(d, key, &value) == 0)) { // no value, no error
-        if (unlikely(PyTuple_Check(key))) {
-            PyObject* args = PyTuple_Pack(1, key);
-            if (likely(args)) {
-                PyErr_SetObject(PyExc_KeyError, args);
-                Py_DECREF(args);
+/* SetItemInt */
+static int __Pyx_SetItemInt_Generic(PyObject *o, PyObject *j, PyObject *v) {
+    int r;
+    if (unlikely(!j)) return -1;
+    r = PyObject_SetItem(o, j, v);
+    Py_DECREF(j);
+    return r;
+}
+static CYTHON_INLINE int __Pyx_SetItemInt_Fast(PyObject *o, Py_ssize_t i, PyObject *v, int is_list,
+                                               int wraparound, int boundscheck, int unsafe_shared) {
+    CYTHON_MAYBE_UNUSED_VAR(unsafe_shared);
+#if CYTHON_ASSUME_SAFE_MACROS && CYTHON_ASSUME_SAFE_SIZE && !CYTHON_AVOID_BORROWED_REFS
+    if (is_list || PyList_CheckExact(o)) {
+        Py_ssize_t n = (!wraparound) ? i : ((likely(i >= 0)) ? i : i + PyList_GET_SIZE(o));
+        if ((CYTHON_AVOID_THREAD_UNSAFE_BORROWED_REFS && !__Pyx_IS_UNIQUELY_REFERENCED(o, unsafe_shared))) {
+            Py_INCREF(v);
+            return PyList_SetItem(o, n, v);
+        } else if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o)))) {
+            PyObject* old;
+            Py_INCREF(v);
+            old = PyList_GET_ITEM(o, n);
+            PyList_SET_ITEM(o, n, v);
+            Py_DECREF(old);
+            return 0;
+        }
+    } else
+#endif
+#if CYTHON_USE_TYPE_SLOTS && !CYTHON_COMPILING_IN_PYPY
+    {
+        PyMappingMethods *mm = Py_TYPE(o)->tp_as_mapping;
+        PySequenceMethods *sm = Py_TYPE(o)->tp_as_sequence;
+        if (!is_list && mm && mm->mp_ass_subscript) {
+            int r;
+            PyObject *key = PyLong_FromSsize_t(i);
+            if (unlikely(!key)) return -1;
+            r = mm->mp_ass_subscript(o, key, v);
+            Py_DECREF(key);
+            return r;
+        }
+        if (is_list || likely(sm && sm->sq_ass_item)) {
+            if (wraparound && unlikely(i < 0) && likely(sm->sq_length)) {
+                Py_ssize_t l = sm->sq_length(o);
+                if (likely(l >= 0)) {
+                    i += l;
+                } else {
+                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
+                        return -1;
+                    PyErr_Clear();
+                }
             }
-        } else {
-            PyErr_SetObject(PyExc_KeyError, key);
+            return sm->sq_ass_item(o, i, v);
         }
     }
-    return value;
-}
+#else
+    if (is_list || !PyMapping_Check(o)) {
+        return PySequence_SetItem(o, i, v);
+    }
 #endif
+    (void)wraparound;
+    (void)boundscheck;
+    return __Pyx_SetItemInt_Generic(o, PyLong_FromSsize_t(i), v);
+}
 
 /* TupleAndListFromArray (used by fastcall) */
 #if !CYTHON_COMPILING_IN_CPYTHON && CYTHON_METH_FASTCALL
