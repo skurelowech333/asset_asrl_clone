@@ -1,8 +1,10 @@
 # ============================================================
 # FILE: GravitySphericalHarmonic.pyx
 #
-# Regular spherical harmonic gravity kernel
-# ASSET VectorFunction factory version
+# Classical spherical harmonic gravity kernel
+#
+# Direct trig evaluation
+# Baseline comparison against Pines recurrence
 #
 # ============================================================
 
@@ -18,13 +20,21 @@ import asset_asrl as ast
 cimport cython
 
 
+from pines_math import (
+    SphericalToCartesian
+)
+
+from Legendre import AssociatedLegendre
+
+
+
 vf = ast.VectorFunctions
 Args = vf.Arguments
 
 
 
 # ============================================================
-# SPHERICAL HARMONIC GRAVITY VF
+# CLASS
 # ============================================================
 
 cdef class SphericalHarmonicGravityVF:
@@ -44,9 +54,9 @@ cdef class SphericalHarmonicGravityVF:
 
 
 
-    # =====================================================
-    # CONSTRUCTOR
-    # =====================================================
+    # ========================================================
+    # Constructor
+    # ========================================================
 
     def __cinit__(
         self,
@@ -65,96 +75,336 @@ cdef class SphericalHarmonicGravityVF:
         self.Snm = Snm
 
 
-        self._acc_vf = (
-            self._build_acceleration()
-        )
+        self._acc_vf = self._build_acceleration()
 
-        self._ode_vf = (
-            self._build_ode()
-        )
+        self._ode_vf = self._build_ode()
 
 
 
-    # =====================================================
-    # ACCELERATION BUILDER
-    # =====================================================
+    # ========================================================
+    # Acceleration
+    # ========================================================
 
-    # ============================================================
-    # ACCELERATION BUILDER
-    # ============================================================
-    
     cdef object _build_acceleration(self):
-    
+
+
         X = Args(6)
-    
-        r = X.head3()
-    
-    
-        # ---------------------------------
-        # central gravity
+
+
+        rvec = X.head3()
+
+
+        x = rvec[0]
+        y = rvec[1]
+        z = rvec[2]
+
+
+        rxy = (
+            x*x+y*y
+        ).sqrt()
+
+
+        r = (
+            x*x+y*y+z*z
+        ).sqrt()
+
+
+
         #
-        # a = -mu*r/r^3
+        # spherical coordinates
         #
-        # ---------------------------------
-    
-        mu = X.Constant(self.mu)
-    
-        acc = (
-            -mu
-            *
-            r.normalized_power3()
+
+        sinphi = z/r
+
+        cosphi = rxy/r
+
+
+        sinlam = y/rxy
+
+        coslam = x/rxy
+
+
+
+        rho = (
+            X.Constant(self.radius)/r
         )
-    
-    
-        # ASSET scalar zero
-        correction = X.Constant(0.0)
-    
-    
-        for n in range(self.degree + 1):
-    
-            for m in range(n + 1):
-    
-                # placeholder harmonic coefficient
+
+
+
+        #
+        # longitude angle
+        #
+
+        lam = y.atan2(x)
+
+
+
+        #
+        # Legendre
+        #
+
+        P = AssociatedLegendre(
+            sinphi,
+            self.degree
+        )
+
+
+
+        zero = x*0.0
+
+        one = zero + 1.0
+
+
+        radial_sum = one
+
+        latitude_sum = zero
+
+        longitude_sum = zero
+
+
+
+        cdef int n
+        cdef int m
+
+
+        cdef object rho_n
+        cdef object trig
+        cdef object cp
+        cdef object sp
+        cdef object dP
+
+
+
+        #
+        # Direct spherical harmonic summation
+        #
+
+        for n in range(2,self.degree+1):
+
+
+            rho_n = rho**n
+
+
+            for m in range(n+1):
+
+
                 #
-                # make it symbolic-safe
+                # DIRECT TRIG
                 #
-                correction = correction + (
-                    X.Constant(float(self.Cnm[n,m]))
-                    *
-                    X.Constant(0.0)
+                # This is where Pines gains speed.
+                #
+
+                cp = (
+                    (m*lam).cos()
                 )
-    
-    
-        # convert scalar correction to vector
-        correction_vec = vf.stack(
+
+                sp = (
+                    (m*lam).sin()
+                )
+
+
+                trig = (
+
+                    X.Constant(
+                        float(self.Cnm[n,m])
+                    )
+                    *
+                    cp
+
+                    +
+
+                    X.Constant(
+                        float(self.Snm[n,m])
+                    )
+                    *
+                    sp
+                )
+
+
+
+                #
+                # derivative of P wrt latitude
+                #
+
+                if m == n:
+
+                    dP = (
+
+                        -n
+                        *
+                        sinphi
+                        *
+                        P[n,m]
+
+                        /
+
+                        cosphi
+
+                    )
+
+                else:
+
+                    dP = (
+
+                        (
+                            (n+m)
+                            *
+                            P[n-1,m]
+                        )
+
+                        -
+
+                        (
+                            n
+                            *
+                            sinphi
+                            *
+                            P[n,m]
+                        )
+
+                    ) / cosphi
+
+
+
+                radial_sum += (
+
+                    (n+1)
+                    *
+                    rho_n
+                    *
+                    P[n,m]
+                    *
+                    trig
+
+                )
+
+
+
+                latitude_sum += (
+
+                    rho_n
+                    *
+                    dP
+                    *
+                    trig
+
+                )
+
+
+
+                longitude_sum += (
+
+                    rho_n
+                    *
+                    P[n,m]
+                    *
+                    m
+
+                    *
+
+                    (
+
+                        X.Constant(
+                            float(self.Snm[n,m])
+                        )
+                        *
+                        cp
+
+                        -
+
+                        X.Constant(
+                            float(self.Cnm[n,m])
+                        )
+                        *
+                        sp
+
+                    )
+
+                )
+
+
+
+        mu_r2 = (
+
+            X.Constant(self.mu)
+
+            /
+
+            (r*r)
+
+        )
+
+
+
+        ar = (
+
+            -mu_r2
+            *
+            radial_sum
+
+        )
+
+
+        aph = (
+
+            mu_r2
+            *
+            latitude_sum
+
+        )
+
+
+        alam = (
+
+            mu_r2
+            *
+            longitude_sum
+
+            /
+
+            cosphi
+
+        )
+
+
+
+        ax,ay,az = SphericalToCartesian(
+
+            ar,
+            aph,
+            alam,
+
+            sinphi,
+            cosphi,
+
+            sinlam,
+            coslam
+
+        )
+
+
+
+        return vf.stack(
             [
-                correction,
-                correction,
-                correction
+                ax,
+                ay,
+                az
             ]
         )
-    
-    
-        acc = acc + correction_vec
-    
-    
-        return acc
-    
 
-    # =====================================================
+
+
+    # ========================================================
     # ODE
-    # =====================================================
+    # ========================================================
 
     cdef object _build_ode(self):
-
 
         X = Args(6)
 
         v = X.tail3()
 
-
         a = self._acc_vf
-
 
 
         return vf.stack(
@@ -171,14 +421,13 @@ cdef class SphericalHarmonicGravityVF:
 
 
 
-    # =====================================================
-    # PUBLIC API
-    # =====================================================
+    # ========================================================
+    # API
+    # ========================================================
 
     cpdef object build_accel(self):
 
         return self._acc_vf
-
 
 
     cpdef object vf(self):
@@ -186,17 +435,14 @@ cdef class SphericalHarmonicGravityVF:
         return self._acc_vf
 
 
-
     cpdef object ode(self):
 
         return self._ode_vf
 
 
-
     def __call__(self):
 
         return self._ode_vf
-
 
 
     def __repr__(self):

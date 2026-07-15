@@ -22,12 +22,16 @@ NSAMPLES = 10000
 plt.style.use("dark_background")
 
 def make_coefficients(N):
-    C, S = {}, {}
+    """Return dense, unnormalised C/S coefficient matrices.
 
-    for n in range(N + 1):
-        for m in range(n + 1):
-            C[n,m] = 1e-6
-            S[n,m] = 1e-6
+    The Pines kernel follows the package's unnormalised Legendre convention;
+    C[2, 0] = -J2 therefore gives the familiar J2 perturbation.
+    """
+    C = np.zeros((N + 1, N + 1), dtype=np.float64)
+    S = np.zeros((N + 1, N + 1), dtype=np.float64)
+
+    if N >= 2:
+        C[2, 0] = -1.08262668e-3
 
     return C, S
 
@@ -71,7 +75,7 @@ def build_regular():
     return SphericalHarmonicGravityVF(MU, R, C, S, DEGREE)
 
 def build_pines():
-    return PinesGravityVF(MU)
+    return PinesGravityVF(MU, R, C, S, DEGREE)
 
 def timed_build(func):
     t0 = time.perf_counter()
@@ -474,11 +478,18 @@ for deg in degrees:
     sh = SphericalHarmonicGravityVF(MU, R, Cdeg, Sdeg, deg)
     sh_accel = sh.build_accel()
 
-    t = timed_eval(sh_accel, states[0], 5000)
-    sh_degree_times.append(t * 1e6)
-    pines_degree_times.append(t_pin * 1e6)
+    pines_deg = PinesGravityVF(MU, R, Cdeg, Sdeg, deg)
+    pines_accel = pines_deg.build_accel()
 
-    print(f"Degree {deg}: {t*1e6:.3f} us")
+    sh_time = timed_eval(sh_accel, states[0], 5000)
+    pines_time = timed_eval(pines_accel, states[0], 5000)
+    sh_degree_times.append(sh_time * 1e6)
+    pines_degree_times.append(pines_time * 1e6)
+
+    print(
+        f"Degree {deg}: SH {sh_time*1e6:.3f} us, "
+        f"Pines {pines_time*1e6:.3f} us"
+    )
 
 fit = np.polyfit(np.log(degrees), np.log(sh_degree_times),1)
 order = fit[0]
