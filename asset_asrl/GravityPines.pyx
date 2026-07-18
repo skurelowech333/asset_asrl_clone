@@ -1,16 +1,13 @@
 # ============================================================
 # FILE: GravityPines.pyx
 #
-# Pines (1973) Cartesian gravity formulation
+# Pines (1973) Cartesian gravity kernel
 #
-# Uses:
-#       Vnm / Wnm Cartesian harmonic recursion
+# Cartesian formulation:
+#   U = mu/r * sum(Cnm Vnm + Snm Wnm)
 #
-# No:
-#       latitude
-#       longitude
-#       Legendre functions
-#       spherical derivatives
+# Acceleration:
+#   a = -grad(U)
 #
 # ============================================================
 
@@ -24,10 +21,10 @@
 
 import asset_asrl as ast
 
-cimport cython
-
 
 from PinesVW import BuildVW
+from PinesDerivatives import BuildDerivatives
+
 
 
 vf = ast.VectorFunctions
@@ -35,31 +32,16 @@ Args = vf.Arguments
 
 
 
-# ============================================================
-# PINES GRAVITY CLASS
-# ============================================================
-
 cdef class PinesGravityVF:
 
-
     cdef:
-
         double mu
         double radius
-
         int degree
-
         object Cnm
         object Snm
-
         object _acc_vf
         object _ode_vf
-
-
-
-    # ========================================================
-    # Constructor
-    # ========================================================
 
     def __cinit__(
         self,
@@ -67,8 +49,7 @@ cdef class PinesGravityVF:
         double radius,
         object Cnm,
         object Snm,
-        int degree
-    ):
+        int degree):
 
         self.mu = mu
         self.radius = radius
@@ -79,22 +60,57 @@ cdef class PinesGravityVF:
         self.degree = degree
 
 
-        self._acc_vf = self._build_acceleration()
+        self._acc_vf = (
+            self._build_acceleration()
+        )
 
-        self._ode_vf = self._build_ode()
+        self._ode_vf = (
+            self._build_ode()
+        )
 
 
 
-    # ========================================================
-    # Build Cartesian Pines acceleration
-    # ========================================================
+    #
+    # Sparse coefficient lookup
+    #
+
+    cdef double get_C(
+        self,
+        int n,
+        int m
+    ):
+
+        if (n,m) in self.Cnm:
+
+            return float(
+                self.Cnm[n,m]
+            )
+
+        return 0.0
+
+
+
+    cdef double get_S(
+        self,
+        int n,
+        int m
+    ):
+
+        if (n,m) in self.Snm:
+
+            return float(
+                self.Snm[n,m]
+            )
+
+        return 0.0
+
+
 
     cdef object _build_acceleration(self):
 
 
         cdef int n
         cdef int m
-
 
 
         X = Args(6)
@@ -106,20 +122,45 @@ cdef class PinesGravityVF:
 
 
 
+        r2 = (
+
+            x*x
+            +
+            y*y
+            +
+            z*z
+
+        )
+
+
+        r = r2.sqrt()
+
+
+
         #
-        # Pines Cartesian recursion
+        # Central gravity
         #
 
-        (
-            V,
-            W,
-            Vx,
-            Vy,
-            Vz,
-            Wx,
-            Wy,
-            Wz
-        ) = BuildVW(
+        mu_r3 = (
+
+            -self.mu
+            /
+            (r2*r)
+
+        )
+
+
+        ax = mu_r3*x
+        ay = mu_r3*y
+        az = mu_r3*z
+
+
+
+        #
+        # Pines Cartesian basis
+        #
+
+        V,W = BuildVW(
             x,
             y,
             z,
@@ -130,51 +171,58 @@ cdef class PinesGravityVF:
 
 
         #
-        # Initialize acceleration
+        # Cartesian gradients
         #
 
-        ax = X.Constant(0.0)
-        ay = X.Constant(0.0)
-        az = X.Constant(0.0)
+        Vx,Vy,Vz,Wx,Wy,Wz = BuildDerivatives(
+            V,
+            W,
+            x,
+            y,
+            z,
+            self.radius,
+            self.degree
+        )
 
 
 
         #
-        # Harmonic summation
+        # Harmonic acceleration
         #
+
+        scale = (
+
+            self.mu
+            /
+            self.radius
+
+        )
+
+
 
         for n in range(
             2,
-            self.degree + 1
+            self.degree+1
         ):
 
 
             for m in range(
                 0,
-                n + 1
+                n+1
             ):
 
 
                 C = X.Constant(
-                    float(
-                        self.Cnm[n,m]
-                    )
+                    self.get_C(n,m)
                 )
 
 
                 S = X.Constant(
-                    float(
-                        self.Snm[n,m]
-                    )
+                    self.get_S(n,m)
                 )
 
 
-
-                #
-                # Cartesian derivatives
-                #
-
-                ax += (
+                ax -= scale*(
 
                     C*Vx[n,m]
                     +
@@ -183,7 +231,7 @@ cdef class PinesGravityVF:
                 )
 
 
-                ay += (
+                ay -= scale*(
 
                     C*Vy[n,m]
                     +
@@ -192,7 +240,7 @@ cdef class PinesGravityVF:
                 )
 
 
-                az += (
+                az -= scale*(
 
                     C*Vz[n,m]
                     +
@@ -202,29 +250,15 @@ cdef class PinesGravityVF:
 
 
 
-        #
-        # Gravity scale
-        #
-
-        scale = X.Constant(
-            self.mu
-        )
-
-
-
         return vf.stack(
             [
-                scale*ax,
-                scale*ay,
-                scale*az
+                ax,
+                ay,
+                az
             ]
         )
 
 
-
-    # ========================================================
-    # ODE
-    # ========================================================
 
     cdef object _build_ode(self):
 
@@ -233,7 +267,6 @@ cdef class PinesGravityVF:
 
 
         v = X.tail3()
-
 
         a = self._acc_vf
 
@@ -254,10 +287,6 @@ cdef class PinesGravityVF:
         )
 
 
-
-    # ========================================================
-    # API
-    # ========================================================
 
     cpdef object vf(self):
 
@@ -287,6 +316,5 @@ cdef class PinesGravityVF:
 
         return (
             f"PinesGravityVF("
-            f"degree={self.degree}, "
-            f"mu={self.mu})"
+            f"degree={self.degree})"
         )

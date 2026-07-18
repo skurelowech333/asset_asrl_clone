@@ -2333,7 +2333,7 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_x __pyx_string_tab[21]
 #define __pyx_n_u_y __pyx_string_tab[22]
 #define __pyx_n_u_z __pyx_string_tab[23]
-#define __pyx_kp_b_iso88591_1AQ_r_A_A_A_Qb_Q_Qb_Q_ar_a_ar_a __pyx_string_tab[24]
+#define __pyx_kp_b_iso88591_1AQ_r_Qb_Q_Qb_Q_wc_r_Qb_Q_Qb_Q __pyx_string_tab[24]
 #define __pyx_float_0_0 __pyx_number_tab[0]
 #define __pyx_float_1_0 __pyx_number_tab[1]
 #define __pyx_int_0 __pyx_number_tab[2]
@@ -2395,7 +2395,7 @@ return 0;
 #endif
 /* #### Code section: module_code ### */
 
-/* "asset_asrl/PinesVW.pyx":26
+/* "asset_asrl/PinesVW.pyx":31
  * 
  * 
  * cpdef tuple BuildVW(             # <<<<<<<<<<<<<<
@@ -2415,12 +2415,6 @@ static PyObject *__pyx_f_10asset_asrl_7PinesVW_BuildVW(PyObject *__pyx_v_x, PyOb
   int __pyx_v_m;
   PyObject *__pyx_v_V = NULL;
   PyObject *__pyx_v_W = NULL;
-  PyObject *__pyx_v_Vx = NULL;
-  PyObject *__pyx_v_Vy = NULL;
-  PyObject *__pyx_v_Vz = NULL;
-  PyObject *__pyx_v_Wx = NULL;
-  PyObject *__pyx_v_Wy = NULL;
-  PyObject *__pyx_v_Wz = NULL;
   PyObject *__pyx_v_zero = NULL;
   PyObject *__pyx_v_one = NULL;
   PyObject *__pyx_v_X = NULL;
@@ -2437,471 +2431,201 @@ static PyObject *__pyx_f_10asset_asrl_7PinesVW_BuildVW(PyObject *__pyx_v_x, PyOb
   PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
   PyObject *__pyx_t_9 = NULL;
-  PyObject *__pyx_t_10 = NULL;
+  int __pyx_t_10;
   int __pyx_t_11;
   int __pyx_t_12;
-  int __pyx_t_13;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("BuildVW", 0);
 
-  /* "asset_asrl/PinesVW.pyx":39
- * 
+  /* "asset_asrl/PinesVW.pyx":41
+ *     cdef int m
  * 
  *     V = {}             # <<<<<<<<<<<<<<
  *     W = {}
  * 
 */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_V = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/PinesVW.pyx":40
+  /* "asset_asrl/PinesVW.pyx":42
  * 
  *     V = {}
  *     W = {}             # <<<<<<<<<<<<<<
  * 
- *     Vx = {}
+ *     zero = x*0.0
 */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_W = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/PinesVW.pyx":42
- *     W = {}
- * 
- *     Vx = {}             # <<<<<<<<<<<<<<
- *     Vy = {}
- *     Vz = {}
-*/
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_Vx = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/PinesVW.pyx":43
- * 
- *     Vx = {}
- *     Vy = {}             # <<<<<<<<<<<<<<
- *     Vz = {}
- * 
-*/
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_Vy = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
-
   /* "asset_asrl/PinesVW.pyx":44
- *     Vx = {}
- *     Vy = {}
- *     Vz = {}             # <<<<<<<<<<<<<<
- * 
- *     Wx = {}
-*/
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_Vz = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/PinesVW.pyx":46
- *     Vz = {}
- * 
- *     Wx = {}             # <<<<<<<<<<<<<<
- *     Wy = {}
- *     Wz = {}
-*/
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_Wx = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/PinesVW.pyx":47
- * 
- *     Wx = {}
- *     Wy = {}             # <<<<<<<<<<<<<<
- *     Wz = {}
- * 
-*/
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_Wy = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/PinesVW.pyx":48
- *     Wx = {}
- *     Wy = {}
- *     Wz = {}             # <<<<<<<<<<<<<<
- * 
- * 
-*/
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_v_Wz = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "asset_asrl/PinesVW.pyx":52
- * 
+ *     W = {}
  * 
  *     zero = x*0.0             # <<<<<<<<<<<<<<
  *     one = zero + 1.0
  * 
 */
-  __pyx_t_1 = PyNumber_Multiply(__pyx_v_x, __pyx_mstate_global->__pyx_float_0_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_x, __pyx_mstate_global->__pyx_float_0_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_zero = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/PinesVW.pyx":53
+  /* "asset_asrl/PinesVW.pyx":45
  * 
  *     zero = x*0.0
  *     one = zero + 1.0             # <<<<<<<<<<<<<<
  * 
- * 
+ *     #
 */
-  __pyx_t_1 = __Pyx_PyFloat_AddObjC(__pyx_v_zero, __pyx_mstate_global->__pyx_float_1_0, 1.0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyFloat_AddObjC(__pyx_v_zero, __pyx_mstate_global->__pyx_float_1_0, 1.0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_one = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/PinesVW.pyx":61
+  /* "asset_asrl/PinesVW.pyx":51
  *     #
  * 
- *     X = x / radius             # <<<<<<<<<<<<<<
- *     Y = y / radius
- *     Z = z / radius
+ *     X = x/radius             # <<<<<<<<<<<<<<
+ *     Y = y/radius
+ *     Z = z/radius
 */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_radius); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_radius); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyNumber_Divide(__pyx_v_x, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyNumber_Divide(__pyx_v_x, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_X = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "asset_asrl/PinesVW.pyx":62
+  /* "asset_asrl/PinesVW.pyx":52
  * 
- *     X = x / radius
- *     Y = y / radius             # <<<<<<<<<<<<<<
- *     Z = z / radius
+ *     X = x/radius
+ *     Y = y/radius             # <<<<<<<<<<<<<<
+ *     Z = z/radius
  * 
 */
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_radius); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_radius); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_y, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_v_y, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_Y = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "asset_asrl/PinesVW.pyx":63
- *     X = x / radius
- *     Y = y / radius
- *     Z = z / radius             # <<<<<<<<<<<<<<
+  /* "asset_asrl/PinesVW.pyx":53
+ *     X = x/radius
+ *     Y = y/radius
+ *     Z = z/radius             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_radius); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_radius); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyNumber_Divide(__pyx_v_z, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyNumber_Divide(__pyx_v_z, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_Z = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "asset_asrl/PinesVW.pyx":71
+  /* "asset_asrl/PinesVW.pyx":61
  *     #
  * 
  *     V[0,0] = one             # <<<<<<<<<<<<<<
  *     W[0,0] = zero
  * 
 */
-  if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_one) < 0))) __PYX_ERR(0, 71, __pyx_L1_error)
+  if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_one) < 0))) __PYX_ERR(0, 61, __pyx_L1_error)
 
-  /* "asset_asrl/PinesVW.pyx":72
+  /* "asset_asrl/PinesVW.pyx":62
  * 
  *     V[0,0] = one
  *     W[0,0] = zero             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_zero) < 0))) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_zero) < 0))) __PYX_ERR(0, 62, __pyx_L1_error)
 
-  /* "asset_asrl/PinesVW.pyx":76
- * 
- * 
- *     Vx[0,0] = zero             # <<<<<<<<<<<<<<
- *     Vy[0,0] = zero
- *     Vz[0,0] = zero
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Vx, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_zero) < 0))) __PYX_ERR(0, 76, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":77
- * 
- *     Vx[0,0] = zero
- *     Vy[0,0] = zero             # <<<<<<<<<<<<<<
- *     Vz[0,0] = zero
- * 
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Vy, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_zero) < 0))) __PYX_ERR(0, 77, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":78
- *     Vx[0,0] = zero
- *     Vy[0,0] = zero
- *     Vz[0,0] = zero             # <<<<<<<<<<<<<<
- * 
- *     Wx[0,0] = zero
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Vz, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_zero) < 0))) __PYX_ERR(0, 78, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":80
- *     Vz[0,0] = zero
- * 
- *     Wx[0,0] = zero             # <<<<<<<<<<<<<<
- *     Wy[0,0] = zero
- *     Wz[0,0] = zero
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Wx, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_zero) < 0))) __PYX_ERR(0, 80, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":81
- * 
- *     Wx[0,0] = zero
- *     Wy[0,0] = zero             # <<<<<<<<<<<<<<
- *     Wz[0,0] = zero
- * 
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Wy, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_zero) < 0))) __PYX_ERR(0, 81, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":82
- *     Wx[0,0] = zero
- *     Wy[0,0] = zero
- *     Wz[0,0] = zero             # <<<<<<<<<<<<<<
- * 
- * 
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Wz, __pyx_mstate_global->__pyx_tuple[0], __pyx_v_zero) < 0))) __PYX_ERR(0, 82, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":86
+  /* "asset_asrl/PinesVW.pyx":66
  * 
  * 
  *     if degree == 0:             # <<<<<<<<<<<<<<
  * 
- *         return (
+ *         return V,W
 */
   __pyx_t_3 = (__pyx_v_degree == 0);
   if (__pyx_t_3) {
 
-    /* "asset_asrl/PinesVW.pyx":88
+    /* "asset_asrl/PinesVW.pyx":68
  *     if degree == 0:
  * 
- *         return (             # <<<<<<<<<<<<<<
- *             V,W,
- *             Vx,Vy,Vz,
+ *         return V,W             # <<<<<<<<<<<<<<
+ * 
+ * 
 */
     __Pyx_XDECREF(__pyx_r);
-
-    /* "asset_asrl/PinesVW.pyx":89
- * 
- *         return (
- *             V,W,             # <<<<<<<<<<<<<<
- *             Vx,Vy,Vz,
- *             Wx,Wy,Wz
-*/
-    __pyx_t_2 = PyTuple_New(8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_v_V);
     __Pyx_GIVEREF(__pyx_v_V);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_V) != (0)) __PYX_ERR(0, 89, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_V) != (0)) __PYX_ERR(0, 68, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_W);
     __Pyx_GIVEREF(__pyx_v_W);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_W) != (0)) __PYX_ERR(0, 89, __pyx_L1_error);
-    __Pyx_INCREF(__pyx_v_Vx);
-    __Pyx_GIVEREF(__pyx_v_Vx);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 2, __pyx_v_Vx) != (0)) __PYX_ERR(0, 89, __pyx_L1_error);
-    __Pyx_INCREF(__pyx_v_Vy);
-    __Pyx_GIVEREF(__pyx_v_Vy);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 3, __pyx_v_Vy) != (0)) __PYX_ERR(0, 89, __pyx_L1_error);
-    __Pyx_INCREF(__pyx_v_Vz);
-    __Pyx_GIVEREF(__pyx_v_Vz);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 4, __pyx_v_Vz) != (0)) __PYX_ERR(0, 89, __pyx_L1_error);
-    __Pyx_INCREF(__pyx_v_Wx);
-    __Pyx_GIVEREF(__pyx_v_Wx);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 5, __pyx_v_Wx) != (0)) __PYX_ERR(0, 89, __pyx_L1_error);
-    __Pyx_INCREF(__pyx_v_Wy);
-    __Pyx_GIVEREF(__pyx_v_Wy);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 6, __pyx_v_Wy) != (0)) __PYX_ERR(0, 89, __pyx_L1_error);
-    __Pyx_INCREF(__pyx_v_Wz);
-    __Pyx_GIVEREF(__pyx_v_Wz);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 7, __pyx_v_Wz) != (0)) __PYX_ERR(0, 89, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_W) != (0)) __PYX_ERR(0, 68, __pyx_L1_error);
     __pyx_r = ((PyObject*)__pyx_t_2);
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "asset_asrl/PinesVW.pyx":86
+    /* "asset_asrl/PinesVW.pyx":66
  * 
  * 
  *     if degree == 0:             # <<<<<<<<<<<<<<
  * 
- *         return (
+ *         return V,W
 */
   }
 
-  /* "asset_asrl/PinesVW.pyx":100
+  /* "asset_asrl/PinesVW.pyx":76
  *     #
  * 
  *     V[1,0] = Z             # <<<<<<<<<<<<<<
  *     W[1,0] = zero
  * 
 */
-  if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_mstate_global->__pyx_tuple[1], __pyx_v_Z) < 0))) __PYX_ERR(0, 100, __pyx_L1_error)
+  if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_mstate_global->__pyx_tuple[1], __pyx_v_Z) < 0))) __PYX_ERR(0, 76, __pyx_L1_error)
 
-  /* "asset_asrl/PinesVW.pyx":101
+  /* "asset_asrl/PinesVW.pyx":77
  * 
  *     V[1,0] = Z
  *     W[1,0] = zero             # <<<<<<<<<<<<<<
  * 
- *     V[1,1] = X
+ * 
 */
-  if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_mstate_global->__pyx_tuple[1], __pyx_v_zero) < 0))) __PYX_ERR(0, 101, __pyx_L1_error)
+  if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_mstate_global->__pyx_tuple[1], __pyx_v_zero) < 0))) __PYX_ERR(0, 77, __pyx_L1_error)
 
-  /* "asset_asrl/PinesVW.pyx":103
- *     W[1,0] = zero
+  /* "asset_asrl/PinesVW.pyx":80
+ * 
  * 
  *     V[1,1] = X             # <<<<<<<<<<<<<<
  *     W[1,1] = Y
  * 
 */
-  if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_mstate_global->__pyx_tuple[2], __pyx_v_X) < 0))) __PYX_ERR(0, 103, __pyx_L1_error)
+  if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_mstate_global->__pyx_tuple[2], __pyx_v_X) < 0))) __PYX_ERR(0, 80, __pyx_L1_error)
 
-  /* "asset_asrl/PinesVW.pyx":104
+  /* "asset_asrl/PinesVW.pyx":81
  * 
  *     V[1,1] = X
  *     W[1,1] = Y             # <<<<<<<<<<<<<<
  * 
  * 
 */
-  if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_mstate_global->__pyx_tuple[2], __pyx_v_Y) < 0))) __PYX_ERR(0, 104, __pyx_L1_error)
+  if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_mstate_global->__pyx_tuple[2], __pyx_v_Y) < 0))) __PYX_ERR(0, 81, __pyx_L1_error)
 
-  /* "asset_asrl/PinesVW.pyx":112
- *     #
- * 
- *     Vx[1,0] = zero             # <<<<<<<<<<<<<<
- *     Vy[1,0] = zero
- *     Vz[1,0] = 1.0/radius
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Vx, __pyx_mstate_global->__pyx_tuple[1], __pyx_v_zero) < 0))) __PYX_ERR(0, 112, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":113
- * 
- *     Vx[1,0] = zero
- *     Vy[1,0] = zero             # <<<<<<<<<<<<<<
- *     Vz[1,0] = 1.0/radius
- * 
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Vy, __pyx_mstate_global->__pyx_tuple[1], __pyx_v_zero) < 0))) __PYX_ERR(0, 113, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":114
- *     Vx[1,0] = zero
- *     Vy[1,0] = zero
- *     Vz[1,0] = 1.0/radius             # <<<<<<<<<<<<<<
- * 
- * 
-*/
-  __pyx_t_2 = PyFloat_FromDouble((1.0 / __pyx_v_radius)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 114, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (unlikely((PyDict_SetItem(__pyx_v_Vz, __pyx_mstate_global->__pyx_tuple[1], __pyx_t_2) < 0))) __PYX_ERR(0, 114, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "asset_asrl/PinesVW.pyx":117
- * 
- * 
- *     Wx[1,0] = zero             # <<<<<<<<<<<<<<
- *     Wy[1,0] = zero
- *     Wz[1,0] = zero
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Wx, __pyx_mstate_global->__pyx_tuple[1], __pyx_v_zero) < 0))) __PYX_ERR(0, 117, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":118
- * 
- *     Wx[1,0] = zero
- *     Wy[1,0] = zero             # <<<<<<<<<<<<<<
- *     Wz[1,0] = zero
- * 
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Wy, __pyx_mstate_global->__pyx_tuple[1], __pyx_v_zero) < 0))) __PYX_ERR(0, 118, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":119
- *     Wx[1,0] = zero
- *     Wy[1,0] = zero
- *     Wz[1,0] = zero             # <<<<<<<<<<<<<<
- * 
- * 
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Wz, __pyx_mstate_global->__pyx_tuple[1], __pyx_v_zero) < 0))) __PYX_ERR(0, 119, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":123
- * 
- * 
- *     Vx[1,1] = 1.0/radius             # <<<<<<<<<<<<<<
- *     Vy[1,1] = zero
- *     Vz[1,1] = zero
-*/
-  __pyx_t_2 = PyFloat_FromDouble((1.0 / __pyx_v_radius)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (unlikely((PyDict_SetItem(__pyx_v_Vx, __pyx_mstate_global->__pyx_tuple[2], __pyx_t_2) < 0))) __PYX_ERR(0, 123, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "asset_asrl/PinesVW.pyx":124
- * 
- *     Vx[1,1] = 1.0/radius
- *     Vy[1,1] = zero             # <<<<<<<<<<<<<<
- *     Vz[1,1] = zero
- * 
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Vy, __pyx_mstate_global->__pyx_tuple[2], __pyx_v_zero) < 0))) __PYX_ERR(0, 124, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":125
- *     Vx[1,1] = 1.0/radius
- *     Vy[1,1] = zero
- *     Vz[1,1] = zero             # <<<<<<<<<<<<<<
- * 
- * 
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Vz, __pyx_mstate_global->__pyx_tuple[2], __pyx_v_zero) < 0))) __PYX_ERR(0, 125, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":128
- * 
- * 
- *     Wx[1,1] = zero             # <<<<<<<<<<<<<<
- *     Wy[1,1] = 1.0/radius
- *     Wz[1,1] = zero
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Wx, __pyx_mstate_global->__pyx_tuple[2], __pyx_v_zero) < 0))) __PYX_ERR(0, 128, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":129
- * 
- *     Wx[1,1] = zero
- *     Wy[1,1] = 1.0/radius             # <<<<<<<<<<<<<<
- *     Wz[1,1] = zero
- * 
-*/
-  __pyx_t_2 = PyFloat_FromDouble((1.0 / __pyx_v_radius)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (unlikely((PyDict_SetItem(__pyx_v_Wy, __pyx_mstate_global->__pyx_tuple[2], __pyx_t_2) < 0))) __PYX_ERR(0, 129, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "asset_asrl/PinesVW.pyx":130
- *     Wx[1,1] = zero
- *     Wy[1,1] = 1.0/radius
- *     Wz[1,1] = zero             # <<<<<<<<<<<<<<
- * 
- * 
-*/
-  if (unlikely((PyDict_SetItem(__pyx_v_Wz, __pyx_mstate_global->__pyx_tuple[2], __pyx_v_zero) < 0))) __PYX_ERR(0, 130, __pyx_L1_error)
-
-  /* "asset_asrl/PinesVW.pyx":138
+  /* "asset_asrl/PinesVW.pyx":91
  *     #
  * 
  *     for n in range(2,degree+1):             # <<<<<<<<<<<<<<
@@ -2913,1856 +2637,889 @@ static PyObject *__pyx_f_10asset_asrl_7PinesVW_BuildVW(PyObject *__pyx_v_x, PyOb
   for (__pyx_t_6 = 2; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
     __pyx_v_n = __pyx_t_6;
 
-    /* "asset_asrl/PinesVW.pyx":147
+    /* "asset_asrl/PinesVW.pyx":96
  *         V[n,n] = (
  * 
  *             (2*n-1)             # <<<<<<<<<<<<<<
+ * 
  *             *
- *             (
 */
-    __pyx_t_2 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
 
-    /* "asset_asrl/PinesVW.pyx":150
- *             *
+    /* "asset_asrl/PinesVW.pyx":101
+ * 
  *             (
  *                 X*V[n-1,n-1]             # <<<<<<<<<<<<<<
  *                 -
  *                 Y*W[n-1,n-1]
 */
-    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 150, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 150, __pyx_L1_error)
+    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 150, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 101, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 150, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 101, __pyx_L1_error);
     __pyx_t_1 = 0;
     __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 150, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = PyNumber_Multiply(__pyx_v_X, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 150, __pyx_L1_error)
+    __pyx_t_8 = PyNumber_Multiply(__pyx_v_X, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "asset_asrl/PinesVW.pyx":152
+    /* "asset_asrl/PinesVW.pyx":103
  *                 X*V[n-1,n-1]
  *                 -
  *                 Y*W[n-1,n-1]             # <<<<<<<<<<<<<<
  *             )
  * 
 */
-    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 152, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 152, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 152, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 103, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 152, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 103, __pyx_L1_error);
     __pyx_t_7 = 0;
     __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 152, __pyx_L1_error)
+    __pyx_t_9 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 103, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "asset_asrl/PinesVW.pyx":151
+    /* "asset_asrl/PinesVW.pyx":102
  *             (
  *                 X*V[n-1,n-1]
  *                 -             # <<<<<<<<<<<<<<
  *                 Y*W[n-1,n-1]
  *             )
 */
-    __pyx_t_1 = PyNumber_Subtract(__pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Subtract(__pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "asset_asrl/PinesVW.pyx":148
- * 
+    /* "asset_asrl/PinesVW.pyx":98
  *             (2*n-1)
+ * 
  *             *             # <<<<<<<<<<<<<<
+ * 
  *             (
- *                 X*V[n-1,n-1]
 */
-    __pyx_t_9 = PyNumber_Multiply(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 148, __pyx_L1_error)
+    __pyx_t_9 = PyNumber_Multiply(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 98, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "asset_asrl/PinesVW.pyx":145
- *         #
+    /* "asset_asrl/PinesVW.pyx":94
+ * 
  * 
  *         V[n,n] = (             # <<<<<<<<<<<<<<
  * 
  *             (2*n-1)
 */
-    __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 145, __pyx_L1_error)
+    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 145, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 94, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 145, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 94, __pyx_L1_error);
     __pyx_t_1 = 0;
     __pyx_t_2 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_t_8, __pyx_t_9) < 0))) __PYX_ERR(0, 145, __pyx_L1_error)
+    if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_t_8, __pyx_t_9) < 0))) __PYX_ERR(0, 94, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "asset_asrl/PinesVW.pyx":160
+    /* "asset_asrl/PinesVW.pyx":111
  *         W[n,n] = (
  * 
  *             (2*n-1)             # <<<<<<<<<<<<<<
+ * 
  *             *
- *             (
 */
-    __pyx_t_9 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 160, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
 
-    /* "asset_asrl/PinesVW.pyx":163
- *             *
+    /* "asset_asrl/PinesVW.pyx":116
+ * 
  *             (
  *                 X*W[n-1,n-1]             # <<<<<<<<<<<<<<
  *                 +
  *                 Y*V[n-1,n-1]
 */
-    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 163, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 116, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 163, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 116, __pyx_L1_error);
     __pyx_t_8 = 0;
     __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Multiply(__pyx_v_X, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Multiply(__pyx_v_X, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 116, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "asset_asrl/PinesVW.pyx":165
+    /* "asset_asrl/PinesVW.pyx":118
  *                 X*W[n-1,n-1]
  *                 +
  *                 Y*V[n-1,n-1]             # <<<<<<<<<<<<<<
  *             )
  * 
 */
-    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 165, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 118, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 165, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 118, __pyx_L1_error);
     __pyx_t_2 = 0;
     __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 165, __pyx_L1_error)
+    __pyx_t_7 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "asset_asrl/PinesVW.pyx":164
+    /* "asset_asrl/PinesVW.pyx":117
  *             (
  *                 X*W[n-1,n-1]
  *                 +             # <<<<<<<<<<<<<<
  *                 Y*V[n-1,n-1]
  *             )
 */
-    __pyx_t_8 = PyNumber_Add(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 164, __pyx_L1_error)
+    __pyx_t_8 = PyNumber_Add(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "asset_asrl/PinesVW.pyx":161
- * 
+    /* "asset_asrl/PinesVW.pyx":113
  *             (2*n-1)
+ * 
  *             *             # <<<<<<<<<<<<<<
+ * 
  *             (
- *                 X*W[n-1,n-1]
 */
-    __pyx_t_7 = PyNumber_Multiply(__pyx_t_9, __pyx_t_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 161, __pyx_L1_error)
+    __pyx_t_7 = PyNumber_Multiply(__pyx_t_9, __pyx_t_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "asset_asrl/PinesVW.pyx":158
+    /* "asset_asrl/PinesVW.pyx":109
  * 
  * 
  *         W[n,n] = (             # <<<<<<<<<<<<<<
  * 
  *             (2*n-1)
 */
-    __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 158, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 109, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 158, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 109, __pyx_L1_error);
     __pyx_t_8 = 0;
     __pyx_t_9 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_t_1, __pyx_t_7) < 0))) __PYX_ERR(0, 158, __pyx_L1_error)
+    if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_t_1, __pyx_t_7) < 0))) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":178
- *         Vx[n,n] = (
- * 
- *             (2*n-1)             # <<<<<<<<<<<<<<
- *             *
- *             (
-*/
-    __pyx_t_7 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 178, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-
-    /* "asset_asrl/PinesVW.pyx":181
- *             *
- *             (
- *                 (1/radius)*V[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 +
- *                 X*Vx[n-1,n-1]
-*/
-    __pyx_t_1 = PyFloat_FromDouble((1.0 / __pyx_v_radius)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 181, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 181, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 181, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 181, __pyx_L1_error);
-    __pyx_t_9 = 0;
-    __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 181, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":183
- *                 (1/radius)*V[n-1,n-1]
- *                 +
- *                 X*Vx[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 -
- *                 Y*Wx[n-1,n-1]
-*/
-    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 183, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 183, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 183, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 183, __pyx_L1_error);
-    __pyx_t_8 = 0;
-    __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_Vx, __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 183, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = PyNumber_Multiply(__pyx_v_X, __pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 183, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":182
- *             (
- *                 (1/radius)*V[n-1,n-1]
- *                 +             # <<<<<<<<<<<<<<
- *                 X*Vx[n-1,n-1]
- *                 -
-*/
-    __pyx_t_1 = PyNumber_Add(__pyx_t_2, __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 182, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":185
- *                 X*Vx[n-1,n-1]
- *                 -
- *                 Y*Wx[n-1,n-1]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-    __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 185, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 185, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 185, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 185, __pyx_L1_error);
-    __pyx_t_9 = 0;
-    __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_Wx, __pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 185, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 185, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":184
- *                 +
- *                 X*Vx[n-1,n-1]
- *                 -             # <<<<<<<<<<<<<<
- *                 Y*Wx[n-1,n-1]
- *             )
-*/
-    __pyx_t_2 = PyNumber_Subtract(__pyx_t_1, __pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 184, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":179
- * 
- *             (2*n-1)
- *             *             # <<<<<<<<<<<<<<
- *             (
- *                 (1/radius)*V[n-1,n-1]
-*/
-    __pyx_t_8 = PyNumber_Multiply(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 179, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":176
- *         #
- * 
- *         Vx[n,n] = (             # <<<<<<<<<<<<<<
- * 
- *             (2*n-1)
-*/
-    __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 176, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 176, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 176, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 176, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 176, __pyx_L1_error);
-    __pyx_t_2 = 0;
-    __pyx_t_7 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_Vx, __pyx_t_1, __pyx_t_8) < 0))) __PYX_ERR(0, 176, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":193
- *         Vy[n,n] = (
- * 
- *             (2*n-1)             # <<<<<<<<<<<<<<
- *             *
- *             (
-*/
-    __pyx_t_8 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 193, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-
-    /* "asset_asrl/PinesVW.pyx":196
- *             *
- *             (
- *                 X*Vy[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 -
- *                 (1/radius)*W[n-1,n-1]
-*/
-    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 196, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 196, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 196, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 196, __pyx_L1_error);
-    __pyx_t_1 = 0;
-    __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_Vy, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 196, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyNumber_Multiply(__pyx_v_X, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":198
- *                 X*Vy[n-1,n-1]
- *                 -
- *                 (1/radius)*W[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 -
- *                 Y*Wy[n-1,n-1]
-*/
-    __pyx_t_7 = PyFloat_FromDouble((1.0 / __pyx_v_radius)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 198, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 198, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 198, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 198, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 198, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 198, __pyx_L1_error);
-    __pyx_t_1 = 0;
-    __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_10); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 198, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __pyx_t_10 = PyNumber_Multiply(__pyx_t_7, __pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 198, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":197
- *             (
- *                 X*Vy[n-1,n-1]
- *                 -             # <<<<<<<<<<<<<<
- *                 (1/radius)*W[n-1,n-1]
- *                 -
-*/
-    __pyx_t_9 = PyNumber_Subtract(__pyx_t_2, __pyx_t_10); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 197, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":200
- *                 (1/radius)*W[n-1,n-1]
- *                 -
- *                 Y*Wy[n-1,n-1]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-    __pyx_t_10 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 200, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 200, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 200, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_GIVEREF(__pyx_t_10);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_10) != (0)) __PYX_ERR(0, 200, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 200, __pyx_L1_error);
-    __pyx_t_10 = 0;
-    __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_Wy, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 200, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 200, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":199
- *                 -
- *                 (1/radius)*W[n-1,n-1]
- *                 -             # <<<<<<<<<<<<<<
- *                 Y*Wy[n-1,n-1]
- *             )
-*/
-    __pyx_t_2 = PyNumber_Subtract(__pyx_t_9, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 199, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":194
- * 
- *             (2*n-1)
- *             *             # <<<<<<<<<<<<<<
- *             (
- *                 X*Vy[n-1,n-1]
-*/
-    __pyx_t_7 = PyNumber_Multiply(__pyx_t_8, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 194, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":191
- * 
- * 
- *         Vy[n,n] = (             # <<<<<<<<<<<<<<
- * 
- *             (2*n-1)
-*/
-    __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 191, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 191, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 191, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 191, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 191, __pyx_L1_error);
-    __pyx_t_2 = 0;
-    __pyx_t_8 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_Vy, __pyx_t_9, __pyx_t_7) < 0))) __PYX_ERR(0, 191, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":208
- *         Vz[n,n] = (
- * 
- *             (2*n-1)             # <<<<<<<<<<<<<<
- *             *
- *             (
-*/
-    __pyx_t_7 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 208, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-
-    /* "asset_asrl/PinesVW.pyx":211
- *             *
- *             (
- *                 X*Vz[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 -
- *                 Y*Wz[n-1,n-1]
-*/
-    __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 211, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 211, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 211, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 211, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 211, __pyx_L1_error);
-    __pyx_t_9 = 0;
-    __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_Vz, __pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 211, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyNumber_Multiply(__pyx_v_X, __pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 211, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":213
- *                 X*Vz[n-1,n-1]
- *                 -
- *                 Y*Wz[n-1,n-1]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 213, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 213, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 213, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 213, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 213, __pyx_L1_error);
-    __pyx_t_8 = 0;
-    __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_Wz, __pyx_t_10); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 213, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __pyx_t_10 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 213, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":212
- *             (
- *                 X*Vz[n-1,n-1]
- *                 -             # <<<<<<<<<<<<<<
- *                 Y*Wz[n-1,n-1]
- *             )
-*/
-    __pyx_t_9 = PyNumber_Subtract(__pyx_t_2, __pyx_t_10); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 212, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":209
- * 
- *             (2*n-1)
- *             *             # <<<<<<<<<<<<<<
- *             (
- *                 X*Vz[n-1,n-1]
-*/
-    __pyx_t_10 = PyNumber_Multiply(__pyx_t_7, __pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 209, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":206
- * 
- * 
- *         Vz[n,n] = (             # <<<<<<<<<<<<<<
- * 
- *             (2*n-1)
-*/
-    __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 206, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 206, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 206, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 206, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 206, __pyx_L1_error);
-    __pyx_t_9 = 0;
-    __pyx_t_7 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_Vz, __pyx_t_2, __pyx_t_10) < 0))) __PYX_ERR(0, 206, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":222
- *         Wx[n,n] = (
- * 
- *             (2*n-1)             # <<<<<<<<<<<<<<
- *             *
- *             (
-*/
-    __pyx_t_10 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 222, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-
-    /* "asset_asrl/PinesVW.pyx":225
- *             *
- *             (
- *                 (1/radius)*W[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 +
- *                 X*Wx[n-1,n-1]
-*/
-    __pyx_t_2 = PyFloat_FromDouble((1.0 / __pyx_v_radius)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 225, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 225, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 225, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 225, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 225, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 225, __pyx_L1_error);
-    __pyx_t_7 = 0;
-    __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 225, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = PyNumber_Multiply(__pyx_t_2, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 225, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":227
- *                 (1/radius)*W[n-1,n-1]
- *                 +
- *                 X*Wx[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 +
- *                 Y*Vx[n-1,n-1]
-*/
-    __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 227, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 227, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 227, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_2) != (0)) __PYX_ERR(0, 227, __pyx_L1_error);
-    __pyx_t_9 = 0;
-    __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_Wx, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = PyNumber_Multiply(__pyx_v_X, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 227, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":226
- *             (
- *                 (1/radius)*W[n-1,n-1]
- *                 +             # <<<<<<<<<<<<<<
- *                 X*Wx[n-1,n-1]
- *                 +
-*/
-    __pyx_t_2 = PyNumber_Add(__pyx_t_8, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":229
- *                 X*Wx[n-1,n-1]
- *                 +
- *                 Y*Vx[n-1,n-1]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 229, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 229, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 229, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 229, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 229, __pyx_L1_error);
-    __pyx_t_7 = 0;
-    __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_Vx, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 229, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 229, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":228
- *                 +
- *                 X*Wx[n-1,n-1]
- *                 +             # <<<<<<<<<<<<<<
- *                 Y*Vx[n-1,n-1]
- *             )
-*/
-    __pyx_t_8 = PyNumber_Add(__pyx_t_2, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 228, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":223
- * 
- *             (2*n-1)
- *             *             # <<<<<<<<<<<<<<
- *             (
- *                 (1/radius)*W[n-1,n-1]
-*/
-    __pyx_t_9 = PyNumber_Multiply(__pyx_t_10, __pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 223, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":220
- * 
- * 
- *         Wx[n,n] = (             # <<<<<<<<<<<<<<
- * 
- *             (2*n-1)
-*/
-    __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 220, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 220, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 220, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_10);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 220, __pyx_L1_error);
-    __pyx_t_8 = 0;
-    __pyx_t_10 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_Wx, __pyx_t_2, __pyx_t_9) < 0))) __PYX_ERR(0, 220, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":237
- *         Wy[n,n] = (
- * 
- *             (2*n-1)             # <<<<<<<<<<<<<<
- *             *
- *             (
-*/
-    __pyx_t_9 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 237, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-
-    /* "asset_asrl/PinesVW.pyx":240
- *             *
- *             (
- *                 X*Wy[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 +
- *                 (1/radius)*V[n-1,n-1]
-*/
-    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 240, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_10 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 240, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 240, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 240, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_10);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 240, __pyx_L1_error);
-    __pyx_t_2 = 0;
-    __pyx_t_10 = 0;
-    __pyx_t_10 = __Pyx_PyDict_GetItem(__pyx_v_Wy, __pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 240, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = PyNumber_Multiply(__pyx_v_X, __pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 240, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":242
- *                 X*Wy[n-1,n-1]
- *                 +
- *                 (1/radius)*V[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 +
- *                 Y*Vy[n-1,n-1]
-*/
-    __pyx_t_10 = PyFloat_FromDouble((1.0 / __pyx_v_radius)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 242, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 242, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 242, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 242, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 242, __pyx_L1_error);
-    __pyx_t_2 = 0;
-    __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 242, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Multiply(__pyx_t_10, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":241
- *             (
- *                 X*Wy[n-1,n-1]
- *                 +             # <<<<<<<<<<<<<<
- *                 (1/radius)*V[n-1,n-1]
- *                 +
-*/
-    __pyx_t_7 = PyNumber_Add(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 241, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":244
- *                 (1/radius)*V[n-1,n-1]
- *                 +
- *                 Y*Vy[n-1,n-1]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-    __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 244, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 244, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 244, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_GIVEREF(__pyx_t_1);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 244, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 244, __pyx_L1_error);
-    __pyx_t_1 = 0;
-    __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_Vy, __pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 244, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __pyx_t_10 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 244, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":243
- *                 +
- *                 (1/radius)*V[n-1,n-1]
- *                 +             # <<<<<<<<<<<<<<
- *                 Y*Vy[n-1,n-1]
- *             )
-*/
-    __pyx_t_8 = PyNumber_Add(__pyx_t_7, __pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 243, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":238
- * 
- *             (2*n-1)
- *             *             # <<<<<<<<<<<<<<
- *             (
- *                 X*Wy[n-1,n-1]
-*/
-    __pyx_t_10 = PyNumber_Multiply(__pyx_t_9, __pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 238, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":235
- * 
- * 
- *         Wy[n,n] = (             # <<<<<<<<<<<<<<
- * 
- *             (2*n-1)
-*/
-    __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 235, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 235, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 235, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_GIVEREF(__pyx_t_8);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 235, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 235, __pyx_L1_error);
-    __pyx_t_8 = 0;
-    __pyx_t_9 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_Wy, __pyx_t_7, __pyx_t_10) < 0))) __PYX_ERR(0, 235, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":252
- *         Wz[n,n] = (
- * 
- *             (2*n-1)             # <<<<<<<<<<<<<<
- *             *
- *             (
-*/
-    __pyx_t_10 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 252, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-
-    /* "asset_asrl/PinesVW.pyx":255
- *             *
- *             (
- *                 X*Wz[n-1,n-1]             # <<<<<<<<<<<<<<
- *                 +
- *                 Y*Vz[n-1,n-1]
-*/
-    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 255, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 255, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 255, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 255, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 255, __pyx_L1_error);
-    __pyx_t_7 = 0;
-    __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_Wz, __pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 255, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = PyNumber_Multiply(__pyx_v_X, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 255, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":257
- *                 X*Wz[n-1,n-1]
- *                 +
- *                 Y*Vz[n-1,n-1]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-    __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 257, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 257, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 257, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 257, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 257, __pyx_L1_error);
-    __pyx_t_9 = 0;
-    __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_Vz, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 257, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Multiply(__pyx_v_Y, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 257, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":256
- *             (
- *                 X*Wz[n-1,n-1]
- *                 +             # <<<<<<<<<<<<<<
- *                 Y*Vz[n-1,n-1]
- *             )
-*/
-    __pyx_t_7 = PyNumber_Add(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 256, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":253
- * 
- *             (2*n-1)
- *             *             # <<<<<<<<<<<<<<
- *             (
- *                 X*Wz[n-1,n-1]
-*/
-    __pyx_t_1 = PyNumber_Multiply(__pyx_t_10, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-    /* "asset_asrl/PinesVW.pyx":250
- * 
- * 
- *         Wz[n,n] = (             # <<<<<<<<<<<<<<
- * 
- *             (2*n-1)
-*/
-    __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 250, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 250, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_10);
-    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 250, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_8);
-    __Pyx_GIVEREF(__pyx_t_7);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 250, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_10);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 250, __pyx_L1_error);
-    __pyx_t_7 = 0;
-    __pyx_t_10 = 0;
-    if (unlikely((PyDict_SetItem(__pyx_v_Wz, __pyx_t_8, __pyx_t_1) < 0))) __PYX_ERR(0, 250, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
 
-  /* "asset_asrl/PinesVW.pyx":268
+  /* "asset_asrl/PinesVW.pyx":131
  *     #
  * 
  *     for n in range(2,degree+1):             # <<<<<<<<<<<<<<
  * 
- *         for m in range(0,n):
+ * 
 */
   __pyx_t_4 = (__pyx_v_degree + 1);
   __pyx_t_5 = __pyx_t_4;
   for (__pyx_t_6 = 2; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
     __pyx_v_n = __pyx_t_6;
 
-    /* "asset_asrl/PinesVW.pyx":270
- *     for n in range(2,degree+1):
+    /* "asset_asrl/PinesVW.pyx":134
+ * 
  * 
  *         for m in range(0,n):             # <<<<<<<<<<<<<<
  * 
  * 
 */
-    __pyx_t_11 = __pyx_v_n;
-    __pyx_t_12 = __pyx_t_11;
-    for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_12; __pyx_t_13+=1) {
-      __pyx_v_m = __pyx_t_13;
+    __pyx_t_10 = __pyx_v_n;
+    __pyx_t_11 = __pyx_t_10;
+    for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
+      __pyx_v_m = __pyx_t_12;
 
-      /* "asset_asrl/PinesVW.pyx":273
+      /* "asset_asrl/PinesVW.pyx":144
+ *             #
  * 
+ *             if (n-2,m) not in V:             # <<<<<<<<<<<<<<
  * 
- *             if (n-1,m) not in V:             # <<<<<<<<<<<<<<
- *                 continue
  * 
 */
-      __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 273, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 2)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 144, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 144, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 273, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 273, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
+      __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 144, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_9);
+      __Pyx_GIVEREF(__pyx_t_7);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 144, __pyx_L1_error);
       __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 273, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 273, __pyx_L1_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 144, __pyx_L1_error);
+      __pyx_t_7 = 0;
       __pyx_t_1 = 0;
-      __pyx_t_8 = 0;
-      __pyx_t_3 = (__Pyx_PyDict_ContainsTF(__pyx_t_10, __pyx_v_V, Py_NE)); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 273, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      __pyx_t_3 = (__Pyx_PyDict_ContainsTF(__pyx_t_9, __pyx_v_V, Py_NE)); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 144, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       if (__pyx_t_3) {
 
-        /* "asset_asrl/PinesVW.pyx":274
+        /* "asset_asrl/PinesVW.pyx":149
+ *                 V[n,m] = (
  * 
- *             if (n-1,m) not in V:
- *                 continue             # <<<<<<<<<<<<<<
+ *                     (2*n-1)             # <<<<<<<<<<<<<<
  * 
- * 
+ *                     *
 */
-        goto __pyx_L8_continue;
+        __pyx_t_9 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 149, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
 
-        /* "asset_asrl/PinesVW.pyx":273
+        /* "asset_asrl/PinesVW.pyx":151
+ *                     (2*n-1)
+ * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
+ *                     Z
+*/
+        __pyx_t_1 = PyNumber_Multiply(__pyx_t_9, __pyx_v_Z); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":157
+ *                     *
+ * 
+ *                     V[n-1,m]             # <<<<<<<<<<<<<<
+ * 
+ *                 )
+*/
+        __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 157, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 157, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 157, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_GIVEREF(__pyx_t_9);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 157, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_7);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 157, __pyx_L1_error);
+        __pyx_t_9 = 0;
+        __pyx_t_7 = 0;
+        __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_8); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 157, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":155
+ *                     Z
+ * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
+ *                     V[n-1,m]
+*/
+        __pyx_t_8 = PyNumber_Multiply(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 155, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":147
  * 
  * 
- *             if (n-1,m) not in V:             # <<<<<<<<<<<<<<
- *                 continue
+ *                 V[n,m] = (             # <<<<<<<<<<<<<<
+ * 
+ *                     (2*n-1)
+*/
+        __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 147, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __Pyx_GIVEREF(__pyx_t_7);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 147, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_1);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 147, __pyx_L1_error);
+        __pyx_t_7 = 0;
+        __pyx_t_1 = 0;
+        if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_t_9, __pyx_t_8) < 0))) __PYX_ERR(0, 147, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":164
+ *                 W[n,m] = (
+ * 
+ *                     (2*n-1)             # <<<<<<<<<<<<<<
+ * 
+ *                     *
+*/
+        __pyx_t_8 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+
+        /* "asset_asrl/PinesVW.pyx":166
+ *                     (2*n-1)
+ * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
+ *                     Z
+*/
+        __pyx_t_9 = PyNumber_Multiply(__pyx_t_8, __pyx_v_Z); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 166, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":172
+ *                     *
+ * 
+ *                     W[n-1,m]             # <<<<<<<<<<<<<<
+ * 
+ *                 )
+*/
+        __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 172, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 172, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_GIVEREF(__pyx_t_8);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 172, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_1);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 172, __pyx_L1_error);
+        __pyx_t_8 = 0;
+        __pyx_t_1 = 0;
+        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":170
+ *                     Z
+ * 
+ *                     *             # <<<<<<<<<<<<<<
+ * 
+ *                     W[n-1,m]
+*/
+        __pyx_t_7 = PyNumber_Multiply(__pyx_t_9, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 170, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":162
+ * 
+ * 
+ *                 W[n,m] = (             # <<<<<<<<<<<<<<
+ * 
+ *                     (2*n-1)
+*/
+        __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 162, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 162, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_GIVEREF(__pyx_t_1);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 162, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_9);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 162, __pyx_L1_error);
+        __pyx_t_1 = 0;
+        __pyx_t_9 = 0;
+        if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_t_8, __pyx_t_7) < 0))) __PYX_ERR(0, 162, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":144
+ *             #
+ * 
+ *             if (n-2,m) not in V:             # <<<<<<<<<<<<<<
+ * 
  * 
 */
+        goto __pyx_L10;
       }
 
-      /* "asset_asrl/PinesVW.pyx":279
- *             V[n,m] = (
- * 
- *                 (2*n-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 Z
-*/
-      __pyx_t_10 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 279, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-
-      /* "asset_asrl/PinesVW.pyx":280
- * 
- *                 (2*n-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 Z
- *                 *
-*/
-      __pyx_t_8 = PyNumber_Multiply(__pyx_t_10, __pyx_v_Z); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 280, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":283
- *                 Z
- *                 *
- *                 V[n-1,m]             # <<<<<<<<<<<<<<
- * 
- *             )
-*/
-      __pyx_t_10 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 283, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 283, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_10) != (0)) __PYX_ERR(0, 283, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 283, __pyx_L1_error);
-      __pyx_t_10 = 0;
-      __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":282
- *                 *
- *                 Z
- *                 *             # <<<<<<<<<<<<<<
- *                 V[n-1,m]
- * 
-*/
-      __pyx_t_7 = PyNumber_Multiply(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 282, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":277
+      /* "asset_asrl/PinesVW.pyx":181
  * 
  * 
- *             V[n,m] = (             # <<<<<<<<<<<<<<
+ *                 V[n,m] = (             # <<<<<<<<<<<<<<
  * 
- *                 (2*n-1)
+ *                     (
 */
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 277, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 277, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 277, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 277, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 277, __pyx_L1_error);
-      __pyx_t_1 = 0;
-      __pyx_t_8 = 0;
-      if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_t_10, __pyx_t_7) < 0))) __PYX_ERR(0, 277, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      /*else*/ {
 
-      /* "asset_asrl/PinesVW.pyx":289
- *             W[n,m] = (
+        /* "asset_asrl/PinesVW.pyx":184
  * 
- *                 (2*n-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 Z
+ *                     (
+ *                         (2*n-1)             # <<<<<<<<<<<<<<
+ *                         *
+ *                         Z
 */
-      __pyx_t_7 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 289, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_7 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 184, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
 
-      /* "asset_asrl/PinesVW.pyx":290
- * 
- *                 (2*n-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 Z
- *                 *
+        /* "asset_asrl/PinesVW.pyx":185
+ *                     (
+ *                         (2*n-1)
+ *                         *             # <<<<<<<<<<<<<<
+ *                         Z
+ *                         *
 */
-      __pyx_t_10 = PyNumber_Multiply(__pyx_t_7, __pyx_v_Z); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 290, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __pyx_t_8 = PyNumber_Multiply(__pyx_t_7, __pyx_v_Z); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 185, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "asset_asrl/PinesVW.pyx":293
- *                 Z
- *                 *
- *                 W[n-1,m]             # <<<<<<<<<<<<<<
- * 
- *             )
-*/
-      __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 293, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 293, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_GIVEREF(__pyx_t_7);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 293, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 293, __pyx_L1_error);
-      __pyx_t_7 = 0;
-      __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 293, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":292
- *                 *
- *                 Z
- *                 *             # <<<<<<<<<<<<<<
- *                 W[n-1,m]
+        /* "asset_asrl/PinesVW.pyx":188
+ *                         Z
+ *                         *
+ *                         V[n-1,m]             # <<<<<<<<<<<<<<
+ *                     )
  * 
 */
-      __pyx_t_1 = PyNumber_Multiply(__pyx_t_10, __pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 188, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 188, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_GIVEREF(__pyx_t_7);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 188, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_9);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 188, __pyx_L1_error);
+        __pyx_t_7 = 0;
+        __pyx_t_9 = 0;
+        __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 188, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "asset_asrl/PinesVW.pyx":287
- *             )
- * 
- *             W[n,m] = (             # <<<<<<<<<<<<<<
- * 
- *                 (2*n-1)
+        /* "asset_asrl/PinesVW.pyx":187
+ *                         *
+ *                         Z
+ *                         *             # <<<<<<<<<<<<<<
+ *                         V[n-1,m]
+ *                     )
 */
-      __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 287, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 287, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 287, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 287, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 287, __pyx_L1_error);
-      __pyx_t_8 = 0;
-      __pyx_t_10 = 0;
-      if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_t_7, __pyx_t_1) < 0))) __PYX_ERR(0, 287, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_1 = PyNumber_Multiply(__pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 187, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "asset_asrl/PinesVW.pyx":300
+        /* "asset_asrl/PinesVW.pyx":194
  * 
- *             Vx[n,m] = (
- *                 (2*n-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 Z
+ *                     (
+ *                         (n+m-1)             # <<<<<<<<<<<<<<
+ *                         *
+ *                         V[n-2,m]
 */
-      __pyx_t_1 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 300, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_9 = __Pyx_PyLong_From_long(((__pyx_v_n + __pyx_v_m) - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 194, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
 
-      /* "asset_asrl/PinesVW.pyx":301
- *             Vx[n,m] = (
- *                 (2*n-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 Z
- *                 *
-*/
-      __pyx_t_7 = PyNumber_Multiply(__pyx_t_1, __pyx_v_Z); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 301, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":304
- *                 Z
- *                 *
- *                 Vx[n-1,m]             # <<<<<<<<<<<<<<
- *             )
+        /* "asset_asrl/PinesVW.pyx":196
+ *                         (n+m-1)
+ *                         *
+ *                         V[n-2,m]             # <<<<<<<<<<<<<<
+ *                     )
  * 
 */
-      __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 304, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 304, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 304, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 304, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 304, __pyx_L1_error);
-      __pyx_t_1 = 0;
-      __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyDict_GetItem(__pyx_v_Vx, __pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 304, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 2)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 196, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 196, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 196, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_GIVEREF(__pyx_t_8);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 196, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_7);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 196, __pyx_L1_error);
+        __pyx_t_8 = 0;
+        __pyx_t_7 = 0;
+        __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 196, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "asset_asrl/PinesVW.pyx":303
- *                 *
- *                 Z
- *                 *             # <<<<<<<<<<<<<<
- *                 Vx[n-1,m]
- *             )
+        /* "asset_asrl/PinesVW.pyx":195
+ *                     (
+ *                         (n+m-1)
+ *                         *             # <<<<<<<<<<<<<<
+ *                         V[n-2,m]
+ *                     )
 */
-      __pyx_t_8 = PyNumber_Multiply(__pyx_t_7, __pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 303, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+        __pyx_t_2 = PyNumber_Multiply(__pyx_t_9, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "asset_asrl/PinesVW.pyx":299
+        /* "asset_asrl/PinesVW.pyx":191
+ *                     )
+ * 
+ *                     -             # <<<<<<<<<<<<<<
+ * 
+ *                     (
+*/
+        __pyx_t_7 = PyNumber_Subtract(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 191, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":181
  * 
  * 
- *             Vx[n,m] = (             # <<<<<<<<<<<<<<
- *                 (2*n-1)
- *                 *
-*/
-      __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 299, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 299, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 299, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_10) != (0)) __PYX_ERR(0, 299, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_7);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 299, __pyx_L1_error);
-      __pyx_t_10 = 0;
-      __pyx_t_7 = 0;
-      if (unlikely((PyDict_SetItem(__pyx_v_Vx, __pyx_t_1, __pyx_t_8) < 0))) __PYX_ERR(0, 299, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":308
+ *                 V[n,m] = (             # <<<<<<<<<<<<<<
  * 
- *             Vy[n,m] = (
- *                 (2*n-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 Z
+ *                     (
 */
-      __pyx_t_8 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 308, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
+        __pyx_t_2 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __Pyx_GIVEREF(__pyx_t_2);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 181, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_1);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 181, __pyx_L1_error);
+        __pyx_t_2 = 0;
+        __pyx_t_1 = 0;
+        if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_t_9, __pyx_t_7) < 0))) __PYX_ERR(0, 181, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "asset_asrl/PinesVW.pyx":309
- *             Vy[n,m] = (
- *                 (2*n-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 Z
- *                 *
-*/
-      __pyx_t_1 = PyNumber_Multiply(__pyx_t_8, __pyx_v_Z); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":312
- *                 Z
- *                 *
- *                 Vy[n-1,m]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-      __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 312, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 312, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 312, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 312, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_7);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 312, __pyx_L1_error);
-      __pyx_t_8 = 0;
-      __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_Vy, __pyx_t_10); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 312, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":311
- *                 *
- *                 Z
- *                 *             # <<<<<<<<<<<<<<
- *                 Vy[n-1,m]
- *             )
-*/
-      __pyx_t_10 = PyNumber_Multiply(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 311, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":307
- *             )
- * 
- *             Vy[n,m] = (             # <<<<<<<<<<<<<<
- *                 (2*n-1)
- *                 *
-*/
-      __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 307, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 307, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_GIVEREF(__pyx_t_7);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 307, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 307, __pyx_L1_error);
-      __pyx_t_7 = 0;
-      __pyx_t_1 = 0;
-      if (unlikely((PyDict_SetItem(__pyx_v_Vy, __pyx_t_8, __pyx_t_10) < 0))) __PYX_ERR(0, 307, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":316
- * 
- *             Vz[n,m] = (
- *                 (2*n-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 (
-*/
-      __pyx_t_10 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 316, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-
-      /* "asset_asrl/PinesVW.pyx":319
- *                 *
- *                 (
- *                     (1/radius)*V[n-1,m]             # <<<<<<<<<<<<<<
- *                     +
- *                     Z*Vz[n-1,m]
-*/
-      __pyx_t_8 = PyFloat_FromDouble((1.0 / __pyx_v_radius)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 319, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 319, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 319, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 319, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_7);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 319, __pyx_L1_error);
-      __pyx_t_1 = 0;
-      __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 319, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_9 = PyNumber_Multiply(__pyx_t_8, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 319, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":321
- *                     (1/radius)*V[n-1,m]
- *                     +
- *                     Z*Vz[n-1,m]             # <<<<<<<<<<<<<<
+        /* "asset_asrl/PinesVW.pyx":201
  *                 )
- *             )
+ * 
+ *                 V[n,m] /= (n-m)             # <<<<<<<<<<<<<<
+ * 
+ * 
 */
-      __pyx_t_7 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 321, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 321, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 321, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_GIVEREF(__pyx_t_7);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 321, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 321, __pyx_L1_error);
-      __pyx_t_7 = 0;
-      __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_Vz, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 321, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = PyNumber_Multiply(__pyx_v_Z, __pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 321, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 201, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 201, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 201, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_GIVEREF(__pyx_t_7);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_7) != (0)) __PYX_ERR(0, 201, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_9);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 201, __pyx_L1_error);
+        __pyx_t_7 = 0;
+        __pyx_t_9 = 0;
+        __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_V, __pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 201, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __pyx_t_7 = __Pyx_PyLong_From_int((__pyx_v_n - __pyx_v_m)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 201, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_2 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_9, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 201, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_t_1, __pyx_t_2) < 0))) __PYX_ERR(0, 201, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "asset_asrl/PinesVW.pyx":320
- *                 (
- *                     (1/radius)*V[n-1,m]
- *                     +             # <<<<<<<<<<<<<<
- *                     Z*Vz[n-1,m]
+        /* "asset_asrl/PinesVW.pyx":208
+ * 
+ *                     (
+ *                         (2*n-1)             # <<<<<<<<<<<<<<
+ *                         *
+ *                         Z
+*/
+        __pyx_t_1 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+
+        /* "asset_asrl/PinesVW.pyx":209
+ *                     (
+ *                         (2*n-1)
+ *                         *             # <<<<<<<<<<<<<<
+ *                         Z
+ *                         *
+*/
+        __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __pyx_v_Z); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 209, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":212
+ *                         Z
+ *                         *
+ *                         W[n-1,m]             # <<<<<<<<<<<<<<
+ *                     )
+ * 
+*/
+        __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 212, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 212, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 212, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __Pyx_GIVEREF(__pyx_t_1);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 212, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_7);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 212, __pyx_L1_error);
+        __pyx_t_1 = 0;
+        __pyx_t_7 = 0;
+        __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 212, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":211
+ *                         *
+ *                         Z
+ *                         *             # <<<<<<<<<<<<<<
+ *                         W[n-1,m]
+ *                     )
+*/
+        __pyx_t_9 = PyNumber_Multiply(__pyx_t_2, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 211, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":218
+ * 
+ *                     (
+ *                         (n+m-1)             # <<<<<<<<<<<<<<
+ *                         *
+ *                         W[n-2,m]
+*/
+        __pyx_t_7 = __Pyx_PyLong_From_long(((__pyx_v_n + __pyx_v_m) - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 218, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+
+        /* "asset_asrl/PinesVW.pyx":220
+ *                         (n+m-1)
+ *                         *
+ *                         W[n-2,m]             # <<<<<<<<<<<<<<
+ *                     )
+ * 
+*/
+        __pyx_t_2 = __Pyx_PyLong_From_long((__pyx_v_n - 2)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 220, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_GIVEREF(__pyx_t_2);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_2) != (0)) __PYX_ERR(0, 220, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_1);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 220, __pyx_L1_error);
+        __pyx_t_2 = 0;
+        __pyx_t_1 = 0;
+        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":219
+ *                     (
+ *                         (n+m-1)
+ *                         *             # <<<<<<<<<<<<<<
+ *                         W[n-2,m]
+ *                     )
+*/
+        __pyx_t_8 = PyNumber_Multiply(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 219, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":215
+ *                     )
+ * 
+ *                     -             # <<<<<<<<<<<<<<
+ * 
+ *                     (
+*/
+        __pyx_t_1 = PyNumber_Subtract(__pyx_t_9, __pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":205
+ * 
+ * 
+ *                 W[n,m] = (             # <<<<<<<<<<<<<<
+ * 
+ *                     (
+*/
+        __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 205, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 205, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 205, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_GIVEREF(__pyx_t_8);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 205, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_9);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 205, __pyx_L1_error);
+        __pyx_t_8 = 0;
+        __pyx_t_9 = 0;
+        if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_t_7, __pyx_t_1) < 0))) __PYX_ERR(0, 205, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+        /* "asset_asrl/PinesVW.pyx":225
  *                 )
-*/
-      __pyx_t_8 = PyNumber_Add(__pyx_t_9, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 320, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":317
- *             Vz[n,m] = (
- *                 (2*n-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 (
- *                     (1/radius)*V[n-1,m]
-*/
-      __pyx_t_1 = PyNumber_Multiply(__pyx_t_10, __pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 317, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":315
- *             )
  * 
- *             Vz[n,m] = (             # <<<<<<<<<<<<<<
- *                 (2*n-1)
- *                 *
-*/
-      __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 315, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 315, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 315, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 315, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 315, __pyx_L1_error);
-      __pyx_t_8 = 0;
-      __pyx_t_10 = 0;
-      if (unlikely((PyDict_SetItem(__pyx_v_Vz, __pyx_t_9, __pyx_t_1) < 0))) __PYX_ERR(0, 315, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":328
- * 
- *             Wx[n,m] = (
- *                 (2*n-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 Z
-*/
-      __pyx_t_1 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 328, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-
-      /* "asset_asrl/PinesVW.pyx":329
- *             Wx[n,m] = (
- *                 (2*n-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 Z
- *                 *
-*/
-      __pyx_t_9 = PyNumber_Multiply(__pyx_t_1, __pyx_v_Z); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 329, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":332
- *                 Z
- *                 *
- *                 Wx[n-1,m]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-      __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 332, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 332, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 332, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 332, __pyx_L1_error);
-      __pyx_t_1 = 0;
-      __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyDict_GetItem(__pyx_v_Wx, __pyx_t_8); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 332, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":331
- *                 *
- *                 Z
- *                 *             # <<<<<<<<<<<<<<
- *                 Wx[n-1,m]
- *             )
-*/
-      __pyx_t_8 = PyNumber_Multiply(__pyx_t_9, __pyx_t_10); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 331, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":327
+ *                 W[n,m] /= (n-m)             # <<<<<<<<<<<<<<
  * 
  * 
- *             Wx[n,m] = (             # <<<<<<<<<<<<<<
- *                 (2*n-1)
- *                 *
 */
-      __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 327, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 327, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 327, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_10) != (0)) __PYX_ERR(0, 327, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_9);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 327, __pyx_L1_error);
-      __pyx_t_10 = 0;
-      __pyx_t_9 = 0;
-      if (unlikely((PyDict_SetItem(__pyx_v_Wx, __pyx_t_1, __pyx_t_8) < 0))) __PYX_ERR(0, 327, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":336
- * 
- *             Wy[n,m] = (
- *                 (2*n-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 Z
-*/
-      __pyx_t_8 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 336, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-
-      /* "asset_asrl/PinesVW.pyx":337
- *             Wy[n,m] = (
- *                 (2*n-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 Z
- *                 *
-*/
-      __pyx_t_1 = PyNumber_Multiply(__pyx_t_8, __pyx_v_Z); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":340
- *                 Z
- *                 *
- *                 Wy[n-1,m]             # <<<<<<<<<<<<<<
- *             )
- * 
-*/
-      __pyx_t_8 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 340, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 340, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 340, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 340, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_9);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 340, __pyx_L1_error);
-      __pyx_t_8 = 0;
-      __pyx_t_9 = 0;
-      __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_Wy, __pyx_t_10); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 340, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":339
- *                 *
- *                 Z
- *                 *             # <<<<<<<<<<<<<<
- *                 Wy[n-1,m]
- *             )
-*/
-      __pyx_t_10 = PyNumber_Multiply(__pyx_t_1, __pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 339, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":335
- *             )
- * 
- *             Wy[n,m] = (             # <<<<<<<<<<<<<<
- *                 (2*n-1)
- *                 *
-*/
-      __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 335, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 335, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_GIVEREF(__pyx_t_9);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 335, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_1) != (0)) __PYX_ERR(0, 335, __pyx_L1_error);
-      __pyx_t_9 = 0;
-      __pyx_t_1 = 0;
-      if (unlikely((PyDict_SetItem(__pyx_v_Wy, __pyx_t_8, __pyx_t_10) < 0))) __PYX_ERR(0, 335, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":344
- * 
- *             Wz[n,m] = (
- *                 (2*n-1)             # <<<<<<<<<<<<<<
- *                 *
- *                 (
-*/
-      __pyx_t_10 = __Pyx_PyLong_From_long(((2 * __pyx_v_n) - 1)); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 344, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-
-      /* "asset_asrl/PinesVW.pyx":347
- *                 *
- *                 (
- *                     (1/radius)*W[n-1,m]             # <<<<<<<<<<<<<<
- *                     +
- *                     Z*Wz[n-1,m]
-*/
-      __pyx_t_8 = PyFloat_FromDouble((1.0 / __pyx_v_radius)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 347, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_1 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 347, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 347, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 347, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_GIVEREF(__pyx_t_1);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 347, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_9);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_9) != (0)) __PYX_ERR(0, 347, __pyx_L1_error);
-      __pyx_t_1 = 0;
-      __pyx_t_9 = 0;
-      __pyx_t_9 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_7); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 347, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = PyNumber_Multiply(__pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 347, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":349
- *                     (1/radius)*W[n-1,m]
- *                     +
- *                     Z*Wz[n-1,m]             # <<<<<<<<<<<<<<
- *                 )
- *             )
-*/
-      __pyx_t_9 = __Pyx_PyLong_From_long((__pyx_v_n - 1)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 349, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 349, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_GIVEREF(__pyx_t_9);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 349, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_8) != (0)) __PYX_ERR(0, 349, __pyx_L1_error);
-      __pyx_t_9 = 0;
-      __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_Wz, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 349, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = PyNumber_Multiply(__pyx_v_Z, __pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":348
- *                 (
- *                     (1/radius)*W[n-1,m]
- *                     +             # <<<<<<<<<<<<<<
- *                     Z*Wz[n-1,m]
- *                 )
-*/
-      __pyx_t_8 = PyNumber_Add(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 348, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":345
- *             Wz[n,m] = (
- *                 (2*n-1)
- *                 *             # <<<<<<<<<<<<<<
- *                 (
- *                     (1/radius)*W[n-1,m]
-*/
-      __pyx_t_1 = PyNumber_Multiply(__pyx_t_10, __pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 345, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-
-      /* "asset_asrl/PinesVW.pyx":343
- *             )
- * 
- *             Wz[n,m] = (             # <<<<<<<<<<<<<<
- *                 (2*n-1)
- *                 *
-*/
-      __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 343, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_10 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 343, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 343, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_GIVEREF(__pyx_t_8);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 343, __pyx_L1_error);
-      __Pyx_GIVEREF(__pyx_t_10);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_10) != (0)) __PYX_ERR(0, 343, __pyx_L1_error);
-      __pyx_t_8 = 0;
-      __pyx_t_10 = 0;
-      if (unlikely((PyDict_SetItem(__pyx_v_Wz, __pyx_t_7, __pyx_t_1) < 0))) __PYX_ERR(0, 343, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_L8_continue:;
+        __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_m); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 225, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 225, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_9);
+        __Pyx_GIVEREF(__pyx_t_1);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1) != (0)) __PYX_ERR(0, 225, __pyx_L1_error);
+        __Pyx_GIVEREF(__pyx_t_7);
+        if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_7) != (0)) __PYX_ERR(0, 225, __pyx_L1_error);
+        __pyx_t_1 = 0;
+        __pyx_t_7 = 0;
+        __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_W, __pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 225, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_1 = __Pyx_PyLong_From_int((__pyx_v_n - __pyx_v_m)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_8 = __Pyx_PyNumber_InPlaceDivide(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 225, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_8);
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_t_9, __pyx_t_8) < 0))) __PYX_ERR(0, 225, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+      }
+      __pyx_L10:;
     }
   }
 
-  /* "asset_asrl/PinesVW.pyx":355
+  /* "asset_asrl/PinesVW.pyx":233
+ *     #
+ * 
+ *     for n in range(2,degree+1):             # <<<<<<<<<<<<<<
+ * 
+ *         if (n,0) not in V:
+*/
+  __pyx_t_4 = (__pyx_v_degree + 1);
+  __pyx_t_5 = __pyx_t_4;
+  for (__pyx_t_6 = 2; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
+    __pyx_v_n = __pyx_t_6;
+
+    /* "asset_asrl/PinesVW.pyx":235
+ *     for n in range(2,degree+1):
+ * 
+ *         if (n,0) not in V:             # <<<<<<<<<<<<<<
+ * 
+ *             V[n,0] = zero
+*/
+    __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 235, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_9);
+    __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 235, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_8);
+    __Pyx_GIVEREF(__pyx_t_9);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 235, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_mstate_global->__pyx_int_0);
+    __Pyx_GIVEREF(__pyx_mstate_global->__pyx_int_0);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_mstate_global->__pyx_int_0) != (0)) __PYX_ERR(0, 235, __pyx_L1_error);
+    __pyx_t_9 = 0;
+    __pyx_t_3 = (__Pyx_PyDict_ContainsTF(__pyx_t_8, __pyx_v_V, Py_NE)); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 235, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+    if (__pyx_t_3) {
+
+      /* "asset_asrl/PinesVW.pyx":237
+ *         if (n,0) not in V:
+ * 
+ *             V[n,0] = zero             # <<<<<<<<<<<<<<
+ *             W[n,0] = zero
+ * 
+*/
+      __pyx_t_8 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 237, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 237, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_9);
+      __Pyx_GIVEREF(__pyx_t_8);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_8) != (0)) __PYX_ERR(0, 237, __pyx_L1_error);
+      __Pyx_INCREF(__pyx_mstate_global->__pyx_int_0);
+      __Pyx_GIVEREF(__pyx_mstate_global->__pyx_int_0);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_mstate_global->__pyx_int_0) != (0)) __PYX_ERR(0, 237, __pyx_L1_error);
+      __pyx_t_8 = 0;
+      if (unlikely((PyDict_SetItem(__pyx_v_V, __pyx_t_9, __pyx_v_zero) < 0))) __PYX_ERR(0, 237, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+
+      /* "asset_asrl/PinesVW.pyx":238
+ * 
+ *             V[n,0] = zero
+ *             W[n,0] = zero             # <<<<<<<<<<<<<<
  * 
  * 
- *     return (             # <<<<<<<<<<<<<<
- *         V,
- *         W,
+*/
+      __pyx_t_9 = __Pyx_PyLong_From_int(__pyx_v_n); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 238, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_9);
+      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 238, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_8);
+      __Pyx_GIVEREF(__pyx_t_9);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_9) != (0)) __PYX_ERR(0, 238, __pyx_L1_error);
+      __Pyx_INCREF(__pyx_mstate_global->__pyx_int_0);
+      __Pyx_GIVEREF(__pyx_mstate_global->__pyx_int_0);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_mstate_global->__pyx_int_0) != (0)) __PYX_ERR(0, 238, __pyx_L1_error);
+      __pyx_t_9 = 0;
+      if (unlikely((PyDict_SetItem(__pyx_v_W, __pyx_t_8, __pyx_v_zero) < 0))) __PYX_ERR(0, 238, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+
+      /* "asset_asrl/PinesVW.pyx":235
+ *     for n in range(2,degree+1):
+ * 
+ *         if (n,0) not in V:             # <<<<<<<<<<<<<<
+ * 
+ *             V[n,0] = zero
+*/
+    }
+  }
+
+  /* "asset_asrl/PinesVW.pyx":242
+ * 
+ * 
+ *     return V,W             # <<<<<<<<<<<<<<
 */
   __Pyx_XDECREF(__pyx_r);
-
-  /* "asset_asrl/PinesVW.pyx":356
- * 
- *     return (
- *         V,             # <<<<<<<<<<<<<<
- *         W,
- *         Vx,
-*/
-  __pyx_t_1 = PyTuple_New(8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 356, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 242, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
   __Pyx_INCREF(__pyx_v_V);
   __Pyx_GIVEREF(__pyx_v_V);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_V) != (0)) __PYX_ERR(0, 356, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_v_V) != (0)) __PYX_ERR(0, 242, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_W);
   __Pyx_GIVEREF(__pyx_v_W);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_W) != (0)) __PYX_ERR(0, 356, __pyx_L1_error);
-  __Pyx_INCREF(__pyx_v_Vx);
-  __Pyx_GIVEREF(__pyx_v_Vx);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_Vx) != (0)) __PYX_ERR(0, 356, __pyx_L1_error);
-  __Pyx_INCREF(__pyx_v_Vy);
-  __Pyx_GIVEREF(__pyx_v_Vy);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_v_Vy) != (0)) __PYX_ERR(0, 356, __pyx_L1_error);
-  __Pyx_INCREF(__pyx_v_Vz);
-  __Pyx_GIVEREF(__pyx_v_Vz);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_v_Vz) != (0)) __PYX_ERR(0, 356, __pyx_L1_error);
-  __Pyx_INCREF(__pyx_v_Wx);
-  __Pyx_GIVEREF(__pyx_v_Wx);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 5, __pyx_v_Wx) != (0)) __PYX_ERR(0, 356, __pyx_L1_error);
-  __Pyx_INCREF(__pyx_v_Wy);
-  __Pyx_GIVEREF(__pyx_v_Wy);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 6, __pyx_v_Wy) != (0)) __PYX_ERR(0, 356, __pyx_L1_error);
-  __Pyx_INCREF(__pyx_v_Wz);
-  __Pyx_GIVEREF(__pyx_v_Wz);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 7, __pyx_v_Wz) != (0)) __PYX_ERR(0, 356, __pyx_L1_error);
-  __pyx_r = ((PyObject*)__pyx_t_1);
-  __pyx_t_1 = 0;
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_v_W) != (0)) __PYX_ERR(0, 242, __pyx_L1_error);
+  __pyx_r = ((PyObject*)__pyx_t_8);
+  __pyx_t_8 = 0;
   goto __pyx_L0;
 
-  /* "asset_asrl/PinesVW.pyx":26
+  /* "asset_asrl/PinesVW.pyx":31
  * 
  * 
  * cpdef tuple BuildVW(             # <<<<<<<<<<<<<<
@@ -4777,18 +3534,11 @@ static PyObject *__pyx_f_10asset_asrl_7PinesVW_BuildVW(PyObject *__pyx_v_x, PyOb
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_XDECREF(__pyx_t_10);
   __Pyx_AddTraceback("asset_asrl.PinesVW.BuildVW", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_V);
   __Pyx_XDECREF(__pyx_v_W);
-  __Pyx_XDECREF(__pyx_v_Vx);
-  __Pyx_XDECREF(__pyx_v_Vy);
-  __Pyx_XDECREF(__pyx_v_Vz);
-  __Pyx_XDECREF(__pyx_v_Wx);
-  __Pyx_XDECREF(__pyx_v_Wy);
-  __Pyx_XDECREF(__pyx_v_Wz);
   __Pyx_XDECREF(__pyx_v_zero);
   __Pyx_XDECREF(__pyx_v_one);
   __Pyx_XDECREF(__pyx_v_X);
@@ -4842,60 +3592,60 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_x,&__pyx_mstate_global->__pyx_n_u_y,&__pyx_mstate_global->__pyx_n_u_z,&__pyx_mstate_global->__pyx_n_u_radius,&__pyx_mstate_global->__pyx_n_u_degree,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 26, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len < 0)) __PYX_ERR(0, 31, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  5:
         values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 26, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 31, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  4:
         values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 26, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 31, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  3:
         values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 26, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 31, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 26, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 31, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 26, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 31, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "BuildVW", 0) < (0)) __PYX_ERR(0, 26, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "BuildVW", 0) < (0)) __PYX_ERR(0, 31, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 5; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("BuildVW", 1, 5, 5, i); __PYX_ERR(0, 26, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("BuildVW", 1, 5, 5, i); __PYX_ERR(0, 31, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 5)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 26, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 31, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 26, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 31, __pyx_L3_error)
       values[2] = __Pyx_ArgRef_FASTCALL(__pyx_args, 2);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 26, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[2])) __PYX_ERR(0, 31, __pyx_L3_error)
       values[3] = __Pyx_ArgRef_FASTCALL(__pyx_args, 3);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 26, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[3])) __PYX_ERR(0, 31, __pyx_L3_error)
       values[4] = __Pyx_ArgRef_FASTCALL(__pyx_args, 4);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 26, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[4])) __PYX_ERR(0, 31, __pyx_L3_error)
     }
     __pyx_v_x = values[0];
     __pyx_v_y = values[1];
     __pyx_v_z = values[2];
-    __pyx_v_radius = __Pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_radius == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L3_error)
-    __pyx_v_degree = __Pyx_PyLong_As_int(values[4]); if (unlikely((__pyx_v_degree == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L3_error)
+    __pyx_v_radius = __Pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_radius == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
+    __pyx_v_degree = __Pyx_PyLong_As_int(values[4]); if (unlikely((__pyx_v_degree == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 36, __pyx_L3_error)
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("BuildVW", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 26, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("BuildVW", 1, 5, 5, __pyx_nargs); __PYX_ERR(0, 31, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4925,7 +3675,7 @@ static PyObject *__pyx_pf_10asset_asrl_7PinesVW_BuildVW(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("BuildVW", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10asset_asrl_7PinesVW_BuildVW(__pyx_v_x, __pyx_v_y, __pyx_v_z, __pyx_v_radius, __pyx_v_degree, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10asset_asrl_7PinesVW_BuildVW(__pyx_v_x, __pyx_v_y, __pyx_v_z, __pyx_v_radius, __pyx_v_degree, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5290,19 +4040,19 @@ __Pyx_RefNannySetupContext("PyInit_PinesVW", 0);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "asset_asrl/PinesVW.pyx":26
+  /* "asset_asrl/PinesVW.pyx":31
  * 
  * 
  * cpdef tuple BuildVW(             # <<<<<<<<<<<<<<
  *     object x,
  *     object y,
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_7PinesVW_1BuildVW, 0, __pyx_mstate_global->__pyx_n_u_BuildVW, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_PinesVW, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_7PinesVW_1BuildVW, 0, __pyx_mstate_global->__pyx_n_u_BuildVW, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_PinesVW, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_2);
   #endif
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_BuildVW, __pyx_t_2) < (0)) __PYX_ERR(0, 26, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_BuildVW, __pyx_t_2) < (0)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "asset_asrl/PinesVW.pyx":1
@@ -5368,36 +4118,36 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "asset_asrl/PinesVW.pyx":71
+  /* "asset_asrl/PinesVW.pyx":61
  *     #
  * 
  *     V[0,0] = one             # <<<<<<<<<<<<<<
  *     W[0,0] = zero
  * 
 */
-  __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_0, __pyx_mstate_global->__pyx_int_0); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_0, __pyx_mstate_global->__pyx_int_0); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 61, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[0]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[0]);
 
-  /* "asset_asrl/PinesVW.pyx":100
+  /* "asset_asrl/PinesVW.pyx":76
  *     #
  * 
  *     V[1,0] = Z             # <<<<<<<<<<<<<<
  *     W[1,0] = zero
  * 
 */
-  __pyx_mstate_global->__pyx_tuple[1] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_1, __pyx_mstate_global->__pyx_int_0); if (unlikely(!__pyx_mstate_global->__pyx_tuple[1])) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[1] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_1, __pyx_mstate_global->__pyx_int_0); if (unlikely(!__pyx_mstate_global->__pyx_tuple[1])) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[1]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
 
-  /* "asset_asrl/PinesVW.pyx":103
- *     W[1,0] = zero
+  /* "asset_asrl/PinesVW.pyx":80
+ * 
  * 
  *     V[1,1] = X             # <<<<<<<<<<<<<<
  *     W[1,1] = Y
  * 
 */
-  __pyx_mstate_global->__pyx_tuple[2] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_1, __pyx_mstate_global->__pyx_int_1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[2])) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_mstate_global->__pyx_tuple[2] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_1, __pyx_mstate_global->__pyx_int_1); if (unlikely(!__pyx_mstate_global->__pyx_tuple[2])) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[2]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[2]);
   #if CYTHON_IMMORTAL_CONSTANTS
@@ -5430,25 +4180,25 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 11; } index[] = {{1},{22},{7},{20},{18},{18},{18},{6},{8},{13},{5},{8},{10},{8},{3},{12},{6},{12},{10},{8},{6},{1},{1},{1},{1584}};
-    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (626 bytes) */
-const char* const cstring = "BZh91AY&SY\240\021\n\372\000\001E\177\363\367\377\367\0202\001\260\200\276\001s\200\277\257\377\360@@@@@\000\000@@\000@\000@\002\267\005X`l%\020\207\250F\223\332\232\217\"\r\000\000\000\000\003F\200I\005S\365M\250h\030\200\000\r\000\000\000\0064A\306L\2311\030\230\0012`\231\0004a\030\002\030\002\244\210BF\233I\215 \000\003@\003CF\232\001\352\036\246vm\234\212\241\234\271\027\0323\250\211zL\216\216B\372\014\002\254\254\202\267X\261&i%*4\244\3360\033\007\002\361)-\030\214\227\302d:\027.\226\034+Rf\031\244c\216L\302\244\334\031:\210\265%,`\314\224T\210\245%)\264\307y\r\264\215\3047\023\022\343\002JJZ\326\230^\371\372\303\022\214\346\206Hu\331\251\231\330V\t\200\232\020\332KK*\252\257\026\211\\\277_u\257\202\030\246C\002\201@\344\016\026\245\301)\007\031\206l0\261F\225\333\256j\nJ\020\316X\260\332X]Z\360,\327\313WrM\014\266\3554\323\363\315\315W\320\367\231\332\300<\303\020\302\243`\372k\365\341\242\241{\317-\364\004\026\304\255$\256\t\321\005Pp\270 #\207\211>UZ\351\273\356`\323\2633d\205\373\022\365\332\037ZD)T[\253\017\232\010\257\304\230!Se\026\2505\347\324a\241\3649fT\342iGS$\273\022\t\034\224\024\2265\253h\030\314A\030f\264cD@dI\220F\014%U\347>r\222\300x\263\232\325\3314\240\3158\277\222\345\272\366F\210\321\212\\_\253\032\342td\376\352:C\304r\321T\225O\352n\241\307\346\252\247\022Y\364Rw\020\346Ng\032\261\370\375\223\363\370\213\375\033\263]~\322\213\217\322|\221j\215\345M\233\3515\344\323\342\034\013'\024\242k\206\244\275\177\260?\204\246\305\213;\265U\023\204MD\341B\265\023\242\240\324\337%\377\2172\351\310j\222l\337N\2117\322\266\032P\322}\224\223u4\232]G@\255\264\3519\307=\316M\244\316\3173^\244\252c\241\221\217nN\355\305\262\315rR\234\361L\222\200\343\223\000\255\220\242\251*R,\"\221\211,Q\354\203R\007g\232\201\317g\253\344\204\222+\177\213\271\"\234(HP\010\205}\000";
-    PyObject *data = __Pyx_DecompressString(cstring, 626, 2);
+    const struct { const unsigned int length: 10; } index[] = {{1},{22},{7},{20},{18},{18},{18},{6},{8},{13},{5},{8},{10},{8},{3},{12},{6},{12},{10},{8},{6},{1},{1},{1},{708}};
+    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (526 bytes) */
+const char* const cstring = "BZh91AY&SY\t\004y\227\000\000\240\377\343\367\177\367\3702\001\260\000\276\201s\200\277\257\377\360@@@@\000@@\000@\000@\001\360*9\202QA\242OS\301\252~\251\264\201\223@4\000\0324h\r\017L\223A\"@T\3154\247\223I\3514\320\000\032\000\000\321\246\201\262\020sL\214\206L\020\321\204\301\032h\321\210\032d\310\300\000A)$h\0000\232&h\010\323\000&F\000\000\030\246%m\227D\336\271\322\216ma\246\220H^\203b\332\271\305\003\347gB]9\304iUAc\374\013Rj\244QUB&\267\211\220R\354\2460Z\332\003YK\253\205@\312\212j0H\314\004\020\240c\267\000\r`\"\346\242\254]p\214\240\273 \255P\326\024K \031\206\r\214\204\237'\347\343\022\230Q\n!{\242\002IA\004\014\350\224\202]2\203\203\213\212\t\360\211\224\023\007`\202 \215\255m\344t\\j\345p\205\235\237\336^W-\310\346p\356\02192LUvf\\\366\350b0\257,\317k\rA\310M\256$\004\001r\265Zd\252\310\215\267[\035\370%ra\277\325\331\302O+O\177@sd4\277\3453\317\033\354\0363\276\022\304\335\311,\220\354\327~\365\"HY\275\010\215\301\250H::\226\242\360R\375\267H\206\014\244\325\236g\342.\r\007\305\303;Y\010E\024b\350ewd\301\035\004w\350\250\226m\205\274\363a\323\342\230\323\020\235\370\324U\304#\311\346\231\017\004\027.O\337\301\357J\324\2253\250\237$\346\234;\245\237tp\2163\017\212\016R\342\306!\350K\204\010\244G\221\034\007\0219\215\203c\211\344\240.\240i\007\330\006Oj\036\006\204i\360`G\324\2452\020\035Q`m\004hG]\006\021rR\304rFaHc'jC \335\024\020M\235\243R\336$MnL\2547'x\224\277\342\356H\247\n\022\001 \2172\340";
+    PyObject *data = __Pyx_DecompressString(cstring, 526, 2);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (542 bytes) */
-const char* const cstring = "x\332\355T;o\3330\020\266\n\313\265S\3311\203\332C7\005\350\352\302^:\026N\223\265\210\002\324\031\tZf\n\241\362K\217\304\356\244\361F\216\034\375\2638\352'\350'\364h9~\2442\322\240\035:T\220\250\323\361\273\357\276;\234\370\211\205!\217(\013\003\377\303\2657\341\341\340\2663[..b\317\037\rn)\275^.\360\271\364\334\210~\341\213\350\206\337\355\002:\233\000\026.'\2567\355\270\323`\032G\332\347\372\270RoB\243\200\271|\310\334\357#\376-\340\234\322\273x\342RJ\275\220n\321^\304\307!\245c\206x\274\306\323Q\354smM\330\030\337\263\351\214\322y\314\374\3743`#/F\270\026\221{\320\032\241\254\330\217(\215x\210\353=\363c\036.\226?\022#{W2k`\250r\025\214\264\\\003\242\266\313\223\317\254Z2-\350B\037\034U>\201\367\020\010\2225u\364+8\207\276f84\364f%q\222!\230:\304|45\321\353\204%\001\264\200\251r\245\300L\013\275{\246\346\250&\017\340\n\222Vk\312j\340\256u\n\241\2607\257\354\2548y\2723\367%5\237\223\204\211\220\264\362\254\362\375\342\3261G`\305LO#\362\376\232\360U\330\242'\006\262+\373Y\243T;\001\242\033\234\326\261l\230\013C\020e\325\323&\321\321\242+\372\302\021CiH\"m\325$\252\310\237Y\177\205\245]\252\275\001\033z\330\327C\026r\206\330\217\322\326\212\245#\231\014Vde\257\272[\246\3635\017\023\201\346\221G\375Zgq\206c,/\315\374\362\014\205,\215\377\235\330\260\264\177\031\331\264j\301\225h\345\030\234\374:\321\304\030\370Y<H\206,\332\327\000\007\206\302\310\373\265\236\262<\303\301\354]\010\375\203\375>\326*\325O\261\020<\251T!\366\321w#\346Z\303\037c\323V\033\253\304\242\344|e\254\273\335[9\352m\013\357\335_#{\322\371\247\225\231\025\205gj\321\375\023\215~\220\206";
-    PyObject *data = __Pyx_DecompressString(cstring, 542, 1);
+    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (440 bytes) */
+const char* const cstring = "x\332\265\222\315n\323@\020\307c\024WnH [5\005\312)\221\270\006\245/\200\034\250\270\241\032\211\3648\332\330[d\341\330\211?\332\204S\216s\234\343>\232\217~\204<Bg\035\352\202\332\036\220\300Z\257\307\263\277\375\317\177?>\310,S9\310,\215\336_\204\261\312f\227\343\345f=-\302(\230]\002\\l\326\374~\n\375\034\276\250u\376U]\335O\030\377\232 \263M\354\207\311\330O\322\244\310M\316\217\270\2070\206<\225\276\232K\377G\240\276\247J\001\\\025\261\017\000a\006\r\035\346j\221\001,$\363\374,\222\240\210\224\211b\271\340\3572Y\002\254\n\031\355\177S\031\204\005\343\306\304>\303Q\300\266\212(\007\310U\306\375\265\214\n\225\2557?\267\326\356\270e\037\242U\266\035\264\252\366s\234\240\213^\331\356\340;LI\354\272\365(\n\034\326\304\037\301\256\337\262\017\266\336v\216\266\231b\337\205;\247e;\333\033\364IT\316\313Z\346)\362\340\211|m\312\306o4\2443\232\351\211v\031=\354p\325\021\272U\357\005J\\\221\305\372\335\036\017\210#\022LN\310%\217\346\332\322B\017\313\276\340\3660\317+\3727:\247\217Z\354\3419\rHR\252\005/\242'\2148\215\350#\335hyWaDn58ahe\244\252\343A\323X\336d\237\261|\347/\330\243\206\345\022\247o\365\320\270\321^\371\372M\323\214e\316Nk\027\203\223G\270\337\210\246\366\347=\300\007\372\237\013\364\037lf\345tq\312W\350\225\266\370p\320\3039\331\344\225\367\241\271e]<C\357\026\203qJ[";
+    PyObject *data = __Pyx_DecompressString(cstring, 440, 1);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (1806 bytes) */
-const char* const bytes = "?asset_asrl/PinesVW.pyxBuildVW__Pyx_PyDict_NextRefasset_asrl.PinesVWasyncio.coroutinescline_in_tracebackdegree__func___is_coroutineitems__main____module____name__pop__qualname__radius__set_name__setdefault__test__valuesxyz\200\001\360\032\000\005\t\210\001\330\004\010\210\001\340\004\t\210\021\330\004\t\210\021\330\004\t\210\021\340\004\t\210\021\330\004\t\210\021\330\004\t\210\021\360\010\000\005\014\2101\210A\210Q\330\004\n\210%\210r\220\021\360\020\000\005\t\210\002\210\"\210A\330\004\010\210\002\210\"\210A\330\004\010\210\002\210\"\210A\360\020\000\005\006\200Q\200b\210\005\210Q\330\004\005\200Q\200b\210\005\210Q\360\010\000\005\007\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210a\340\004\006\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210a\360\010\000\005\010\200w\210c\220\021\340\010\t\330\014\016\210a\330\014\017\210s\220!\330\014\017\210s\220!\360\022\000\005\006\200Q\200b\210\005\210Q\330\004\005\200Q\200b\210\005\210Q\340\004\005\200Q\200b\210\005\210Q\330\004\005\200Q\200b\210\005\210Q\360\020\000\005\007\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210c\220\021\220!\360\006\000\005\007\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210a\360\010\000\005\007\200a\200r\210\025\210c\220\021\220!\330\004\006\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210a\360\006\000\005\007\200a\200r\210\025\210a\330\004\006\200a\200r\210\025\210c\220\021\220!\330\004\006\200a\200r\210\025\210a\360\020\000\005\t\210\005\210U\220!\2202\220V\2301\230A\360\016\000\t\n\210\021\210\"\210A\340\r\016\210a\210q\220\001\220\021\330\014\r\340\020\021\220\021\220!\2201\220A\220Q\220b\230\001\230\021\230!\330\020\021\330\020\021\220\021\220!\2201\220A\220Q\220b\230\001\230\021\230!\360\014\000\t\n\210\021\210\"\210A\340\r\016\210a\210q\220\001\220\021\330\014\r\340\020\021\220\021\220!\2201\220A\220Q\220b""\230\001\230\021\230!\330\020\021\330\020\021\220\021\220!\2201\220A\220Q\220b\230\001\230\021\230!\360\026\000\t\013\210!\2102\210Q\340\r\016\210a\210q\220\001\220\021\330\014\r\340\021\022\220!\2207\230!\2301\230A\230Q\230a\230r\240\021\240!\2401\330\020\021\330\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\330\020\021\330\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\360\014\000\t\013\210!\2102\210Q\340\r\016\210a\210q\220\001\220\021\330\014\r\340\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\330\020\021\330\021\022\220!\2207\230!\2301\230A\230Q\230a\230r\240\021\240!\2401\330\020\021\330\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\360\014\000\t\013\210!\2102\210Q\340\r\016\210a\210q\220\001\220\021\330\014\r\340\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\330\020\021\330\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\360\016\000\t\013\210!\2102\210Q\340\r\016\210a\210q\220\001\220\021\330\014\r\340\021\022\220!\2207\230!\2301\230A\230Q\230a\230r\240\021\240!\2401\330\020\021\330\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\330\020\021\330\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\360\014\000\t\013\210!\2102\210Q\340\r\016\210a\210q\220\001\220\021\330\014\r\340\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\330\020\021\330\021\022\220!\2207\230!\2301\230A\230Q\230a\230r\240\021\240!\2401\330\020\021\330\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\360\014\000\t\013\210!\2102\210Q\340\r\016\210a\210q\220\001\220\021\330\014\r\340\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\330\020\021\330\020\021\220\021\220\"\220A\220Q\220a\220r\230\021\230!\2301\360\026\000\005\t\210\005\210U\220!\2202\220V\2301\230A\340\010\014\210E\220\025\220a\220r\230\021\360\006\000\r\021\220\001\220\021\220\"\220C\220w\230a\330\020\021\360\006\000\r\016\210Q\210b\220\001\340\021\022\220!\2201\220A\220Q\330\020\021\330\020\021""\330\020\021\330\020\021\220\021\220!\2201\220B\220a\360\010\000\r\016\210Q\210b\220\001\340\021\022\220!\2201\220A\220Q\330\020\021\330\020\021\330\020\021\330\020\021\220\021\220!\2201\220B\220a\360\014\000\r\017\210a\210r\220\021\330\021\022\220!\2201\220A\220Q\330\020\021\330\020\021\330\020\021\330\020\022\220!\2201\220A\220R\220q\360\006\000\r\017\210a\210r\220\021\330\021\022\220!\2201\220A\220Q\330\020\021\330\020\021\330\020\021\330\020\022\220!\2201\220A\220R\220q\360\006\000\r\017\210a\210r\220\021\330\021\022\220!\2201\220A\220Q\330\020\021\340\025\026\220a\220w\230a\230q\240\001\240\021\240!\2402\240Q\330\024\025\330\024\025\220Q\220b\230\001\230\021\230!\2302\230Q\360\014\000\r\017\210a\210r\220\021\330\021\022\220!\2201\220A\220Q\330\020\021\330\020\021\330\020\021\330\020\022\220!\2201\220A\220R\220q\360\006\000\r\017\210a\210r\220\021\330\021\022\220!\2201\220A\220Q\330\020\021\330\020\021\330\020\021\330\020\022\220!\2201\220A\220R\220q\360\006\000\r\017\210a\210r\220\021\330\021\022\220!\2201\220A\220Q\330\020\021\340\025\026\220a\220w\230a\230q\240\001\240\021\240!\2402\240Q\330\024\025\330\024\025\220Q\220b\230\001\230\021\230!\2302\230Q\360\014\000\005\006\330\010\t\330\010\t\330\010\t\330\010\t\330\010\t\330\010\t\330\010\t\330\010\t";
+    #else /* compression: none (930 bytes) */
+const char* const bytes = "?asset_asrl/PinesVW.pyxBuildVW__Pyx_PyDict_NextRefasset_asrl.PinesVWasyncio.coroutinescline_in_tracebackdegree__func___is_coroutineitems__main____module____name__pop__qualname__radius__set_name__setdefault__test__valuesxyz\200\001\360\024\000\005\t\210\001\330\004\010\210\001\340\004\013\2101\210A\210Q\330\004\n\210%\210r\220\021\360\014\000\005\t\210\001\210\021\210!\330\004\010\210\001\210\021\210!\330\004\010\210\001\210\021\210!\360\020\000\005\006\200Q\200b\210\005\210Q\330\004\005\200Q\200b\210\005\210Q\360\010\000\005\010\200w\210c\220\021\340\010\017\210r\220\021\360\020\000\005\006\200Q\200b\210\005\210Q\330\004\005\200Q\200b\210\005\210Q\360\006\000\005\006\200Q\200b\210\005\210Q\330\004\005\200Q\200b\210\005\210Q\360\024\000\005\t\210\005\210U\220!\2202\220V\2301\230A\360\006\000\t\n\210\021\210\"\210A\340\r\016\210a\210q\220\001\220\021\340\014\r\360\006\000\021\022\220\021\220!\2201\220A\220Q\220b\230\001\230\021\230!\330\020\021\330\020\021\220\021\220!\2201\220A\220Q\220b\230\001\230\021\230!\360\014\000\t\n\210\021\210\"\210A\340\r\016\210a\210q\220\001\220\021\340\014\r\360\006\000\021\022\220\021\220!\2201\220A\220Q\220b\230\001\230\021\230!\330\020\021\330\020\021\220\021\220!\2201\220A\220Q\220b\230\001\230\021\230!\360\032\000\005\t\210\005\210U\220!\2202\220V\2301\230A\360\006\000\t\r\210E\220\025\220a\220r\230\021\360\024\000\r\021\220\001\220\021\220\"\220C\220w\230a\360\006\000\021\022\220\021\220\"\220A\340\025\026\220a\220q\230\001\230\021\340\024\025\340\024\025\340\024\025\340\024\025\220Q\220a\220q\230\002\230!\360\n\000\021\022\220\021\220\"\220A\340\025\026\220a\220q\230\001\230\021\340\024\025\340\024\025\340\024\025\340\024\025\220Q\220a\220q\230\002\230!\360\022\000\021\022\220\021\220\"\220A\360\006\000\032\033\230!\2301\230A\230Q\330\030\031\330\030\031\330\030\031\330\030\031\230\021\230!\2301\230B\230a\360\006\000\025\026\360\006\000\032\033\230!\2301\230A\230Q\330\030\031\330\030\031\230\021\230!\2301\230B\230a\360\n\000\021""\022\220\021\220\"\220G\2301\230A\230Q\360\010\000\021\022\220\021\220\"\220A\360\006\000\032\033\230!\2301\230A\230Q\330\030\031\330\030\031\330\030\031\330\030\031\230\021\230!\2301\230B\230a\360\006\000\025\026\360\006\000\032\033\230!\2301\230A\230Q\330\030\031\330\030\031\230\021\230!\2301\230B\230a\360\n\000\021\022\220\021\220\"\220G\2301\230A\230Q\360\020\000\005\t\210\005\210U\220!\2202\220V\2301\230A\340\010\014\210B\210c\220\027\230\001\340\014\r\210Q\210b\220\005\220Q\330\014\r\210Q\210b\220\005\220Q\360\010\000\005\014\2102\210Q";
     PyObject *data = NULL;
     CYTHON_UNUSED_VAR(__Pyx_DecompressString);
     #endif
@@ -5564,9 +4314,9 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 26};
+    const __Pyx_PyCode_New_function_description descr = {5, 0, 0, 5, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 31};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_x, __pyx_mstate->__pyx_n_u_y, __pyx_mstate->__pyx_n_u_z, __pyx_mstate->__pyx_n_u_radius, __pyx_mstate->__pyx_n_u_degree};
-    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_PinesVW_pyx, __pyx_mstate->__pyx_n_u_BuildVW, __pyx_mstate->__pyx_kp_b_iso88591_1AQ_r_A_A_A_Qb_Q_Qb_Q_ar_a_ar_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_asset_asrl_PinesVW_pyx, __pyx_mstate->__pyx_n_u_BuildVW, __pyx_mstate->__pyx_kp_b_iso88591_1AQ_r_Qb_Q_Qb_Q_wc_r_Qb_Q_Qb_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;

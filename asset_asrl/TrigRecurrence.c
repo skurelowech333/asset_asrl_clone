@@ -4,9 +4,10 @@
 {
     "distutils": {
         "extra_compile_args": [
-            "-O3"
+            "/O2"
         ],
         "include_dirs": [
+            "C:\\Users\\Sarah\\Documents\\Research\\new\\ASSET\\env\\Include",
             "C:\\Users\\Sarah\\Documents\\Research\\new\\ASSET\\env\\Lib\\site-packages\\numpy\\_core\\include"
         ],
         "name": "asset_asrl.TrigRecurrence",

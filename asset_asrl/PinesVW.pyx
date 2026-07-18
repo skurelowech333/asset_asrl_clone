@@ -3,11 +3,16 @@
 #
 # Pines (1973) Cartesian harmonic recursion
 #
-# Returns:
+# Generates:
 #
-#   V,W
-#   Vx,Vy,Vz
-#   Wx,Wy,Wz
+#       V(n,m)
+#       W(n,m)
+#
+# Normalized Cartesian coordinates:
+#
+#       X=x/R
+#       Y=y/R
+#       Z=z/R
 #
 # ============================================================
 
@@ -28,44 +33,29 @@ cpdef tuple BuildVW(
     object y,
     object z,
     double radius,
-    int degree
-):
-
+    int degree):
 
     cdef int n
     cdef int m
 
-
     V = {}
     W = {}
 
-    Vx = {}
-    Vy = {}
-    Vz = {}
-
-    Wx = {}
-    Wy = {}
-    Wz = {}
-
-
-
     zero = x*0.0
     one = zero + 1.0
-
-
 
     #
     # normalized coordinates
     #
 
-    X = x / radius
-    Y = y / radius
-    Z = z / radius
+    X = x/radius
+    Y = y/radius
+    Z = z/radius
 
 
 
     #
-    # degree zero
+    # n=0
     #
 
     V[0,0] = one
@@ -73,32 +63,19 @@ cpdef tuple BuildVW(
 
 
 
-    Vx[0,0] = zero
-    Vy[0,0] = zero
-    Vz[0,0] = zero
-
-    Wx[0,0] = zero
-    Wy[0,0] = zero
-    Wz[0,0] = zero
-
-
-
     if degree == 0:
 
-        return (
-            V,W,
-            Vx,Vy,Vz,
-            Wx,Wy,Wz
-        )
+        return V,W
 
 
 
     #
-    # degree one
+    # n=1
     #
 
     V[1,0] = Z
     W[1,0] = zero
+
 
     V[1,1] = X
     W[1,1] = Y
@@ -106,46 +83,20 @@ cpdef tuple BuildVW(
 
 
     #
-    # first derivatives
+    # Sectorial recursion
     #
-
-    Vx[1,0] = zero
-    Vy[1,0] = zero
-    Vz[1,0] = 1.0/radius
-
-
-    Wx[1,0] = zero
-    Wy[1,0] = zero
-    Wz[1,0] = zero
-
-
-
-    Vx[1,1] = 1.0/radius
-    Vy[1,1] = zero
-    Vz[1,1] = zero
-
-
-    Wx[1,1] = zero
-    Wy[1,1] = 1.0/radius
-    Wz[1,1] = zero
-
-
-
-    #
-    # Pines recursion
+    # m=n
     #
 
     for n in range(2,degree+1):
 
 
-        #
-        # sectorial
-        #
-
         V[n,n] = (
 
             (2*n-1)
+
             *
+
             (
                 X*V[n-1,n-1]
                 -
@@ -158,7 +109,9 @@ cpdef tuple BuildVW(
         W[n,n] = (
 
             (2*n-1)
+
             *
+
             (
                 X*W[n-1,n-1]
                 +
@@ -169,196 +122,121 @@ cpdef tuple BuildVW(
 
 
 
-        #
-        # derivatives of sectorial terms
-        #
-
-        Vx[n,n] = (
-
-            (2*n-1)
-            *
-            (
-                (1/radius)*V[n-1,n-1]
-                +
-                X*Vx[n-1,n-1]
-                -
-                Y*Wx[n-1,n-1]
-            )
-
-        )
-
-
-        Vy[n,n] = (
-
-            (2*n-1)
-            *
-            (
-                X*Vy[n-1,n-1]
-                -
-                (1/radius)*W[n-1,n-1]
-                -
-                Y*Wy[n-1,n-1]
-            )
-
-        )
-
-
-        Vz[n,n] = (
-
-            (2*n-1)
-            *
-            (
-                X*Vz[n-1,n-1]
-                -
-                Y*Wz[n-1,n-1]
-            )
-
-        )
-
-
-
-        Wx[n,n] = (
-
-            (2*n-1)
-            *
-            (
-                (1/radius)*W[n-1,n-1]
-                +
-                X*Wx[n-1,n-1]
-                +
-                Y*Vx[n-1,n-1]
-            )
-
-        )
-
-
-        Wy[n,n] = (
-
-            (2*n-1)
-            *
-            (
-                X*Wy[n-1,n-1]
-                +
-                (1/radius)*V[n-1,n-1]
-                +
-                Y*Vy[n-1,n-1]
-            )
-
-        )
-
-
-        Wz[n,n] = (
-
-            (2*n-1)
-            *
-            (
-                X*Wz[n-1,n-1]
-                +
-                Y*Vz[n-1,n-1]
-            )
-
-        )
-
-
-
     #
-    # tesseral terms
+    # Tesseral recursion
+    #
+    # 0 <= m < n
     #
 
     for n in range(2,degree+1):
 
+
         for m in range(0,n):
 
 
-            if (n-1,m) not in V:
-                continue
+
+            #
+            # first off diagonal
+            #
+            # n-1,m does not exist
+            #
+
+            if (n-2,m) not in V:
 
 
-            V[n,m] = (
+                V[n,m] = (
 
-                (2*n-1)
-                *
-                Z
-                *
-                V[n-1,m]
+                    (2*n-1)
 
-            )
+                    *
 
-            W[n,m] = (
+                    Z
 
-                (2*n-1)
-                *
-                Z
-                *
-                W[n-1,m]
+                    *
 
-            )
+                    V[n-1,m]
 
-
-
-            Vx[n,m] = (
-                (2*n-1)
-                *
-                Z
-                *
-                Vx[n-1,m]
-            )
-
-            Vy[n,m] = (
-                (2*n-1)
-                *
-                Z
-                *
-                Vy[n-1,m]
-            )
-
-            Vz[n,m] = (
-                (2*n-1)
-                *
-                (
-                    (1/radius)*V[n-1,m]
-                    +
-                    Z*Vz[n-1,m]
                 )
-            )
 
 
+                W[n,m] = (
 
-            Wx[n,m] = (
-                (2*n-1)
-                *
-                Z
-                *
-                Wx[n-1,m]
-            )
+                    (2*n-1)
 
-            Wy[n,m] = (
-                (2*n-1)
-                *
-                Z
-                *
-                Wy[n-1,m]
-            )
+                    *
 
-            Wz[n,m] = (
-                (2*n-1)
-                *
-                (
-                    (1/radius)*W[n-1,m]
-                    +
-                    Z*Wz[n-1,m]
+                    Z
+
+                    *
+
+                    W[n-1,m]
+
                 )
-            )
 
 
 
-    return (
-        V,
-        W,
-        Vx,
-        Vy,
-        Vz,
-        Wx,
-        Wy,
-        Wz
-    )
+            else:
+
+
+                V[n,m] = (
+
+                    (
+                        (2*n-1)
+                        *
+                        Z
+                        *
+                        V[n-1,m]
+                    )
+
+                    -
+
+                    (
+                        (n+m-1)
+                        *
+                        V[n-2,m]
+                    )
+
+                )
+
+                V[n,m] /= (n-m)
+
+
+
+                W[n,m] = (
+
+                    (
+                        (2*n-1)
+                        *
+                        Z
+                        *
+                        W[n-1,m]
+                    )
+
+                    -
+
+                    (
+                        (n+m-1)
+                        *
+                        W[n-2,m]
+                    )
+
+                )
+
+                W[n,m] /= (n-m)
+
+
+
+    #
+    # Restore missing diagonal zero terms
+    #
+
+    for n in range(2,degree+1):
+
+        if (n,0) not in V:
+
+            V[n,0] = zero
+            W[n,0] = zero
+
+
+
+    return V,W

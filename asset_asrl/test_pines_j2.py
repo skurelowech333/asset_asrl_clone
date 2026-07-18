@@ -2,14 +2,21 @@
 # FILE: test_pines_j2.py
 #
 # Validate:
-#   1. Classical spherical harmonic J2
-#   2. Pines Cartesian J2
-#   3. Analytical J2 acceleration
+#
+#   1. Analytical J2 acceleration
+#   2. Classical spherical harmonic J2
+#   3. Pines Cartesian J2
+#
+# Plots:
+#
+#   - acceleration magnitude comparison
+#   - error comparison
 #
 # ============================================================
 
 
 import numpy as np
+import matplotlib.pyplot as plt
 import asset_asrl as ast
 
 
@@ -17,13 +24,9 @@ from GravitySphericalHarmonic import (
     SphericalHarmonicGravityVF
 )
 
-from GravityPinesJ2Only import (
+from GravityPines import (
     PinesGravityVF
 )
-
-
-
-vf = ast.VectorFunctions
 
 
 
@@ -34,8 +37,6 @@ vf = ast.VectorFunctions
 MU = 398600.435507
 
 R = 6378.137
-
-
 
 J2 = 1.08262668e-3
 
@@ -54,19 +55,11 @@ def j2_coefficients():
 
 
 
-    #
-    # zero all coefficients
-    #
-
     C[2,0] = -J2 / np.sqrt(5)
 
     S[2,0] = 0.0
 
 
-
-    #
-    # required zero terms
-    #
 
     for n in range(3):
 
@@ -75,6 +68,7 @@ def j2_coefficients():
             if (n,m) not in C:
 
                 C[n,m] = 0.0
+
 
             if (n,m) not in S:
 
@@ -97,14 +91,12 @@ def j2_acceleration(r):
 
 
     r2 = np.dot(
-        r,r
+        r,
+        r
     )
 
 
     rmag = np.sqrt(r2)
-
-
-    z2 = z*z
 
 
 
@@ -132,7 +124,7 @@ def j2_acceleration(r):
 
     zx = (
 
-        5*z2/r2
+        5*z*z/r2
         -
         1
 
@@ -141,7 +133,7 @@ def j2_acceleration(r):
 
     zz = (
 
-        5*z2/r2
+        5*z*z/r2
         -
         3
 
@@ -170,19 +162,17 @@ def j2_acceleration(r):
 # ============================================================
 # ASSET evaluator
 # ============================================================
-def eval_acc(model, state):
 
-    state = np.asarray(
-        state,
-        dtype=np.float64
-    )
+def eval_acc(model,state):
 
 
-    vf = model.vf()
+    result = model.vf().compute(
 
+        np.asarray(
+            state,
+            dtype=float
+        )
 
-    result = vf.compute(
-        state
     )
 
 
@@ -190,6 +180,247 @@ def eval_acc(model, state):
         result,
         dtype=float
     )
+
+
+
+# ============================================================
+# Acceleration comparison plot
+# ============================================================
+
+def plot_acceleration_comparison(
+        labels,
+        truth,
+        sh,
+        pines
+):
+
+
+    plt.style.use(
+        "dark_background"
+    )
+
+
+    fig,ax = plt.subplots(
+        figsize=(11,6)
+    )
+
+
+
+    x = np.arange(
+        len(labels)
+    )
+
+
+    truth_mag = np.linalg.norm(
+        truth,
+        axis=1
+    )
+
+
+    sh_mag = np.linalg.norm(
+        sh,
+        axis=1
+    )
+
+
+    pines_mag = np.linalg.norm(
+        pines,
+        axis=1
+    )
+
+
+
+    ax.plot(
+        x,
+        truth_mag,
+        marker="o",
+        linewidth=3,
+        markersize=9,
+        label="Analytical J2"
+    )
+
+
+    ax.plot(
+        x,
+        sh_mag,
+        marker="s",
+        linewidth=3,
+        markersize=9,
+        label="Spherical Harmonic"
+    )
+
+
+    ax.plot(
+        x,
+        pines_mag,
+        marker="^",
+        linewidth=3,
+        markersize=9,
+        label="Pines Cartesian"
+    )
+
+
+
+    ax.set_xticks(
+        x
+    )
+
+
+    ax.set_xticklabels(
+        labels
+    )
+
+
+    ax.set_ylabel(
+        "Acceleration Magnitude (km/s²)",
+        fontsize=14
+    )
+
+
+    ax.set_xlabel(
+        "Test Position",
+        fontsize=14
+    )
+
+
+    ax.set_title(
+        "J2 Acceleration Validation",
+        fontsize=18,
+        weight="bold"
+    )
+
+
+    ax.grid(
+        True,
+        alpha=0.25
+    )
+
+
+    ax.legend()
+
+
+    plt.tight_layout()
+
+
+    plt.savefig(
+        "j2_acceleration_comparison.png",
+        dpi=300
+    )
+
+
+    plt.show()
+
+
+
+# ============================================================
+# Error plot
+# ============================================================
+
+def plot_error_comparison(
+        labels,
+        sh_error,
+        pines_error,
+        difference
+):
+
+
+    plt.style.use(
+        "dark_background"
+    )
+
+
+    fig,ax = plt.subplots(
+        figsize=(11,6)
+    )
+
+
+    x=np.arange(
+        len(labels)
+    )
+
+
+
+    ax.semilogy(
+        x,
+        sh_error,
+        marker="o",
+        linewidth=3,
+        markersize=9,
+        label="SH Error"
+    )
+
+
+    ax.semilogy(
+        x,
+        pines_error,
+        marker="s",
+        linewidth=3,
+        markersize=9,
+        label="Pines Error"
+    )
+
+
+    ax.semilogy(
+        x,
+        difference,
+        marker="^",
+        linewidth=3,
+        markersize=9,
+        label="SH-Pines"
+    )
+
+
+
+    ax.set_xticks(
+        x
+    )
+
+
+    ax.set_xticklabels(
+        labels
+    )
+
+
+    ax.set_ylabel(
+        "Error (km/s²)",
+        fontsize=14
+    )
+
+
+    ax.set_xlabel(
+        "Test Position",
+        fontsize=14
+    )
+
+
+    ax.set_title(
+        "J2 Kernel Error Comparison",
+        fontsize=18,
+        weight="bold"
+    )
+
+
+    ax.grid(
+        True,
+        which="both",
+        alpha=0.25
+    )
+
+
+    ax.legend()
+
+
+    plt.tight_layout()
+
+
+    plt.savefig(
+        "j2_error_comparison.png",
+        dpi=300
+    )
+
+
+    plt.show()
+
 
 
 # ============================================================
@@ -207,39 +438,29 @@ def main():
 
 
 
-    print()
     print("Building models...")
-    print()
 
 
 
     sh = SphericalHarmonicGravityVF(
-
         MU,
         R,
         C,
         S,
         degree
-
     )
 
 
 
     pines = PinesGravityVF(
-
         MU,
         R,
         C,
         S,
         degree
-
     )
 
 
-
-    #
-    # Test states
-    #
 
     states = [
 
@@ -249,9 +470,8 @@ def main():
             0,
             0,
             7.5,
-            1.0
+            1
         ],
-
 
         [
             7000,
@@ -261,7 +481,6 @@ def main():
             7.5,
             0
         ],
-
 
         [
             8000,
@@ -276,88 +495,130 @@ def main():
 
 
 
+    labels=[]
+
+    truth_values=[]
+
+    sh_values=[]
+
+    pines_values=[]
+
+    sh_errors=[]
+
+    pines_errors=[]
+
+    differences=[]
+
+
+
     print("="*60)
     print("J2 VALIDATION")
     print("="*60)
 
 
 
-    for state in states:
+    for i,state in enumerate(states):
 
 
-        r = np.asarray(
+        r=np.asarray(
             state[:3]
         )
 
 
-        truth = j2_acceleration(
+        truth=j2_acceleration(
             r
         )
 
 
-        sh_acc = eval_acc(
+        sh_acc=eval_acc(
             sh,
             state
         )
 
 
-        pines_acc = eval_acc(
+        pines_acc=eval_acc(
             pines,
             state
         )
 
 
 
-        print()
-        print("Position:")
-        print(r)
+        truth_values.append(
+            truth
+        )
 
 
-        print()
-        print("Analytical J2:")
-        print(truth)
+        sh_values.append(
+            sh_acc
+        )
 
 
-        print()
-        print("SH:")
-        print(sh_acc)
-
-
-        print()
-        print("Pines:")
-        print(pines_acc)
+        pines_values.append(
+            pines_acc
+        )
 
 
 
-        print()
-        print("SH error:")
-        print(
+        sh_errors.append(
             np.linalg.norm(
                 sh_acc-truth
             )
         )
 
 
-        print("Pines error:")
-        print(
+        pines_errors.append(
             np.linalg.norm(
                 pines_acc-truth
             )
         )
 
 
-        print("SH-Pines:")
-        print(
+        differences.append(
             np.linalg.norm(
                 sh_acc-pines_acc
             )
         )
 
-        print("-"*60)
+
+
+        labels.append(
+            f"R{i+1}"
+        )
 
 
 
+        print()
+        print("Position:",r)
 
-if __name__ == "__main__":
+        print("Truth:",truth)
+
+        print("SH:",sh_acc)
+
+        print("Pines:",pines_acc)
+
+
+
+    plot_acceleration_comparison(
+
+        labels,
+        np.array(truth_values),
+        np.array(sh_values),
+        np.array(pines_values)
+
+    )
+
+
+    plot_error_comparison(
+
+        labels,
+        sh_errors,
+        pines_errors,
+        differences
+
+    )
+
+
+
+if __name__=="__main__":
 
     main()

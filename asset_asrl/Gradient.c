@@ -4,17 +4,18 @@
 {
     "distutils": {
         "extra_compile_args": [
-            "-O3"
+            "/O2"
         ],
         "include_dirs": [
+            "C:\\Users\\Sarah\\Documents\\Research\\new\\ASSET\\env\\Include",
             "C:\\Users\\Sarah\\Documents\\Research\\new\\ASSET\\env\\Lib\\site-packages\\numpy\\_core\\include"
         ],
-        "name": "asset_asrl.Forces.Gradient",
+        "name": "asset_asrl.Gradient",
         "sources": [
             "asset_asrl\\Gradient.pyx"
         ]
     },
-    "module_name": "asset_asrl.Forces.Gradient"
+    "module_name": "asset_asrl.Gradient"
 }
 END: Cython Metadata */
 
@@ -1132,8 +1133,8 @@ static int __Pyx_init_co_variables(void) {
   #endif
 #endif
 
-#define __PYX_HAVE__asset_asrl__Forces__Gradient
-#define __PYX_HAVE_API__asset_asrl__Forces__Gradient
+#define __PYX_HAVE__asset_asrl__Gradient
+#define __PYX_HAVE_API__asset_asrl__Gradient
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -2257,18 +2258,18 @@ static int __Pyx_State_RemoveModule(void*);
 #define __PYX_TYPE_MODULE_PREFIX __PYX_ABI_MODULE_NAME "."
 
 
-/* Module declarations from "asset_asrl.Forces.Gradient" */
+/* Module declarations from "asset_asrl.Gradient" */
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "asset_asrl.Forces.Gradient"
-extern int __pyx_module_is_main_asset_asrl__Forces__Gradient;
-int __pyx_module_is_main_asset_asrl__Forces__Gradient = 0;
+#define __Pyx_MODULE_NAME "asset_asrl.Gradient"
+extern int __pyx_module_is_main_asset_asrl__Gradient;
+int __pyx_module_is_main_asset_asrl__Gradient = 0;
 
-/* Implementation of "asset_asrl.Forces.Gradient" */
+/* Implementation of "asset_asrl.Gradient" */
 /* #### Code section: global_var ### */
 /* #### Code section: string_decls ### */
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_10asset_asrl_6Forces_8Gradient_Gradient3(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_scalar, PyObject *__pyx_v_x); /* proto */
+static PyObject *__pyx_pf_10asset_asrl_8Gradient_Gradient3(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_scalar, PyObject *__pyx_v_x); /* proto */
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 /* SmallCodeConfig */
@@ -2340,7 +2341,7 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #define __pyx_n_u_Pyx_PyDict_NextRef __pyx_string_tab[3]
 #define __pyx_n_u_VectorFunctions __pyx_string_tab[4]
 #define __pyx_n_u_asset_asrl __pyx_string_tab[5]
-#define __pyx_n_u_asset_asrl_Forces_Gradient __pyx_string_tab[6]
+#define __pyx_n_u_asset_asrl_Gradient __pyx_string_tab[6]
 #define __pyx_n_u_ast __pyx_string_tab[7]
 #define __pyx_n_u_asyncio_coroutines __pyx_string_tab[8]
 #define __pyx_n_u_cline_in_traceback __pyx_string_tab[9]
@@ -2424,15 +2425,15 @@ return 0;
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10asset_asrl_6Forces_8Gradient_1Gradient3(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_10asset_asrl_8Gradient_1Gradient3(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_10asset_asrl_6Forces_8Gradient_1Gradient3 = {"Gradient3", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_6Forces_8Gradient_1Gradient3, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_10asset_asrl_6Forces_8Gradient_1Gradient3(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_10asset_asrl_8Gradient_1Gradient3 = {"Gradient3", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_10asset_asrl_8Gradient_1Gradient3, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_10asset_asrl_8Gradient_1Gradient3(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2502,11 +2503,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("asset_asrl.Forces.Gradient.Gradient3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Gradient.Gradient3", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10asset_asrl_6Forces_8Gradient_Gradient3(__pyx_self, __pyx_v_scalar, __pyx_v_x);
+  __pyx_r = __pyx_pf_10asset_asrl_8Gradient_Gradient3(__pyx_self, __pyx_v_scalar, __pyx_v_x);
 
   /* function exit code */
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
@@ -2516,7 +2517,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10asset_asrl_6Forces_8Gradient_Gradient3(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_scalar, PyObject *__pyx_v_x) {
+static PyObject *__pyx_pf_10asset_asrl_8Gradient_Gradient3(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_scalar, PyObject *__pyx_v_x) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2722,7 +2723,7 @@ static PyObject *__pyx_pf_10asset_asrl_6Forces_8Gradient_Gradient3(CYTHON_UNUSED
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_9);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("asset_asrl.Forces.Gradient.Gradient3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("asset_asrl.Gradient.Gradient3", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -3055,13 +3056,13 @@ __Pyx_RefNannySetupContext("PyInit_Gradient", 0);
   if (__Pyx_InitConstants(__pyx_mstate) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   stringtab_initialized = 1;
   if (__Pyx_InitGlobals() < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
-  if (__pyx_module_is_main_asset_asrl__Forces__Gradient) {
+  if (__pyx_module_is_main_asset_asrl__Gradient) {
     if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_name, __pyx_mstate_global->__pyx_n_u_main) < (0)) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "asset_asrl.Forces.Gradient")) {
-      if (unlikely((PyDict_SetItemString(modules, "asset_asrl.Forces.Gradient", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "asset_asrl.Gradient")) {
+      if (unlikely((PyDict_SetItemString(modules, "asset_asrl.Gradient", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   /*--- Builtin init code ---*/
@@ -3112,7 +3113,7 @@ __Pyx_RefNannySetupContext("PyInit_Gradient", 0);
  *     scalar,
  *     x
 */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_6Forces_8Gradient_1Gradient3, 0, __pyx_mstate_global->__pyx_n_u_Gradient3, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Forces_Gradient, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_10asset_asrl_8Gradient_1Gradient3, 0, __pyx_mstate_global->__pyx_n_u_Gradient3, NULL, __pyx_mstate_global->__pyx_n_u_asset_asrl_Gradient, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   #if CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030E0000
   PyUnstable_Object_EnableDeferredRefcount(__pyx_t_3);
@@ -3138,7 +3139,7 @@ __Pyx_RefNannySetupContext("PyInit_Gradient", 0);
   __Pyx_XDECREF(__pyx_t_3);
   if (__pyx_m) {
     if (__pyx_mstate->__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init asset_asrl.Forces.Gradient", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init asset_asrl.Gradient", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -3152,7 +3153,7 @@ __Pyx_RefNannySetupContext("PyInit_Gradient", 0);
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init asset_asrl.Forces.Gradient");
+    PyErr_SetString(PyExc_ImportError, "init asset_asrl.Gradient");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -3191,25 +3192,25 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
   {
-    const struct { const unsigned int length: 6; } index[] = {{1},{23},{9},{20},{15},{10},{26},{3},{18},{18},{4},{8},{13},{5},{8},{10},{8},{3},{12},{6},{12},{10},{5},{8},{6},{2},{1},{61}};
-    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (269 bytes) */
-const char* const cstring = "BZh91AY&SY@3VU\000\000\016\337\342\342u\000\001\270\000\245\201q\000\277/\377`@@@@\000@@\0000\000\315H\215A\032hj6\246\320\200\000\r\006\315P\300h\310h0\200h\006\232\000\001\246\220L\246\236\247\250\320\320\000\r\000\310&\300\276\252L4\212)\0351\361\355R\006\020k\340\260we\201\251\242\001\201\270\324\262S\0226\221o\237\020mM\270\314\333H\016{Ha\t\022\366zT\272\237\277\240\231\242\206\313\364\211\312\205\344\345$\224\333\3453\032\300\375\216xc\343\031.\232\304\352T,\005\035b\310!\266\337\371\304PmR\023,\213\005a\346lb\227\024\261\367\302\305\317\336\\\225\320\213Y\325+\2440\010S\244\254\350\370\214\314\204JR\317\026\275\024D#\"\252\\7J\207\000ZV\020\302\036\026\257\310\272\2556\330L\256\342t\346\273\322\376\362\210\240q\220\324\020\014#\0223\376.\344\212p\241 \200f\254\252";
-    PyObject *data = __Pyx_DecompressString(cstring, 269, 2);
+    const struct { const unsigned int length: 6; } index[] = {{1},{23},{9},{20},{15},{10},{19},{3},{18},{18},{4},{8},{13},{5},{8},{10},{8},{3},{12},{6},{12},{10},{5},{8},{6},{2},{1},{61}};
+    #if (CYTHON_COMPRESS_STRINGS) == 2 /* compression: bz2 (267 bytes) */
+const char* const cstring = "BZh91AY&SY\240\t\247B\000\000\016_\342\342u\000\001\270\000\245\201q\000\277/\377`@@@@\000@@\0000\000\315H\215MM'\221=#\322z\230\206\200\r\000\323\315P\300h\310h0\200h\006\232\000\001\246\220L\247\246\246\200\310\000\000\006\215'\270\276\315&!\206\322:a\354\344\020)\027\275a1\265.\240@0Q\347*\312f\030\275E\357\307x7\353m5\037\222\001\317i\014!\"^\317J\226\313\365\320K\"\207\2452\025N\206\332j#m\262\237#X+\275\317\014|c%\322\340g\007\202\216\300\370)\260\263\027\021i^\212\213\tdX,\01751\212\\S\243\351\013\027?qrWB-gL\351\023\024^\316V\373\376\245h\321)Y\t\275\024D#\"\252\\6N\207\000ZV\020\250<.\033\216IY\373\000c\254*\262\"\355:\360\224CG\031\raA\002\275\022'\361w$S\205\t\n\000\232t ";
+    PyObject *data = __Pyx_DecompressString(cstring, 267, 2);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (222 bytes) */
-const char* const cstring = "x\332}NAN\303@\014\204\003RA\025O\t\n<\000!U\355\255\002\016\275Z\306\361J\253nv\303\332[%7\2169\346\230\247\365\031<\001#(\275a\331\236\031k4\362#\212\260\002J\016w\233\214\215\347\250U7\364'\376\000\360<\3646+O\n[\356\365\225\335\216IS^\227H\352S\224s\304\231U\353\224\211\245:\345\240X\017\221|\252(\345T\324G\026\n\266\301G\320\214\304oH\373\306;\007\340,\031\000\274\300\237\327+\267\002\320\242\271\255\332\324\224\300\337,bk\330\245\016\340\275`\370\221B\0300\033\3327\277\027\326\206\035\226\240\366\010\355\001\224E\001\016\030\n\313\301\365\037\227\2377\027W\313\361~\334M\365qq}\\\336\216<\325\323f\256\347\247\371\345\177\371\005n\346\201\"";
-    PyObject *data = __Pyx_DecompressString(cstring, 222, 1);
+    #elif (CYTHON_COMPRESS_STRINGS) != 0 /* compression: zlib (218 bytes) */
+const char* const cstring = "x\332}NAN\303@\014\204\003\022EU\237\022\024x\000BB\364\206\200C\257\226q\274\322\252\233\335t\355\255\222[\2179\346\230\247\365\031<\001#(\275a\331\236\031k4\362\003\212\260\002J\016\267\353\214\215\347\250U7\364'~\017\360:\3646O\236\024^\270\327wv\033&M\371\271DR\237\242\234#\316\254:\005\240X\017\221|\252(\345T\324G\026\n\266\301G\320\214\304\037H\333\306;\007\340,\022\000\274\300\237\327+\267\002\320\242\271\255\332\324\224\300\337,bk\330\245\016`W0\374H!\014\230\r\355\215\337\013k\303\016KP{\204\266\000\312\242\000{\014\205e\357\372\303\345\347\315\305\325r\274\0337S}\274^\034\227\253\221\247zZ\317\365\3748\277\375/\277\000\"\234~\222";
+    PyObject *data = __Pyx_DecompressString(cstring, 218, 1);
     if (unlikely(!data)) __PYX_ERR(0, 1, __pyx_L1_error)
     const char* const bytes = __Pyx_PyBytes_AsString(data);
     #if !CYTHON_ASSUME_SAFE_MACROS
     if (likely(bytes)); else { Py_DECREF(data); __PYX_ERR(0, 1, __pyx_L1_error) }
     #endif
-    #else /* compression: none (325 bytes) */
-const char* const bytes = "?asset_asrl/Gradient.pyxGradient3__Pyx_PyDict_NextRefVectorFunctionsasset_asrlasset_asrl.Forces.Gradientastasyncio.coroutinescline_in_tracebackdiff__func___is_coroutineitems__main____module____name__pop__qualname__scalar__set_name__setdefaultstack__test__valuesvfx\200\001\360\n\000\005\014\2102\210V\2201\330\010\t\330\014\016\210e\2201\220G\2301\230A\230Q\330\014\016\210e\2201\220G\2301\230A\230Q\330\014\016\210e\2201\220G\2301\230A\230Q";
+    #else /* compression: none (318 bytes) */
+const char* const bytes = "?asset_asrl/Gradient.pyxGradient3__Pyx_PyDict_NextRefVectorFunctionsasset_asrlasset_asrl.Gradientastasyncio.coroutinescline_in_tracebackdiff__func___is_coroutineitems__main____module____name__pop__qualname__scalar__set_name__setdefaultstack__test__valuesvfx\200\001\360\n\000\005\014\2102\210V\2201\330\010\t\330\014\016\210e\2201\220G\2301\230A\230Q\330\014\016\210e\2201\220G\2301\230A\230Q\330\014\016\210e\2201\220G\2301\230A\230Q";
     PyObject *data = NULL;
     CYTHON_UNUSED_VAR(__Pyx_DecompressString);
     #endif
