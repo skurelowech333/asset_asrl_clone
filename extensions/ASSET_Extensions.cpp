@@ -1,4 +1,5 @@
 #include "ASSET_Extensions.h"
+#include "SphericalHarmonicGravity.h"
 
 namespace ASSET {
 
@@ -166,5 +167,36 @@ void ASSET::ExtensionsBuild(FunctionRegistry& reg, py::module& extmod)
 	reg.Build_Register<CR3BPAD>(extmod, "cpp_cr3bp_ad");
 	reg.Build_Register<ModifiedDynamicsAD>(extmod, "ModifiedDynamicsAD");
 
-	
+	// SphericalHarmonicGravity: C++ ASSET node for high-degree gravity
+	// Returns a GenericFunction<6,3>: [x,y,z,vx,vy,vz] -> [ax,ay,az]
+	// Full AutodiffFwd support: ASSET can compute Jacobians natively.
+	extmod.def("SphericalHarmonicGravity",
+		[](double mu,
+		   double radius,
+		   const std::vector<double>& C,
+		   const std::vector<double>& S,
+		   int degree) {
+			return GenericFunction<-1, -1>(
+				SphericalHarmonicGravity(mu, radius, C, S, degree)
+			);
+		},
+		py::arg("mu"),
+		py::arg("radius"),
+		py::arg("C"),
+		py::arg("S"),
+		py::arg("degree"),
+		"Spherical harmonic gravity acceleration as an ASSET VectorFunction.\n\n"
+		"Parameters\n"
+		"----------\n"
+		"mu     : gravitational parameter (km^3/s^2)\n"
+		"radius : reference radius (km)\n"
+		"C      : flat coefficient array, index = n*(degree+1)+m\n"
+		"S      : flat coefficient array, index = n*(degree+1)+m\n"
+		"degree : maximum harmonic degree\n\n"
+		"Returns\n"
+		"-------\n"
+		"GenericFunction  6D input [x,y,z,vx,vy,vz] -> 3D output [ax,ay,az]\n"
+		"Full ASSET autodiff / Jacobian / optimal-control support."
+	);
+
 }

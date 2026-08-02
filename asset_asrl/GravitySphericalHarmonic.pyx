@@ -1,14 +1,20 @@
 # ============================================================
 # FILE: GravitySphericalHarmonic.pyx
 #
-# Classical spherical harmonic gravity kernel
+# Classical spherical harmonic gravity — C++ ASSET node
 #
-# Fair comparison with Pines:
-#   - Same Legendre
-#   - Same coefficients
-#   - Same normalization
-#   - Same trig recurrence
-#   - Same spherical conversion
+# The heavy computation is done by the C++ SphericalHarmonicGravity
+# VectorFunction node registered in asset_asrl.Extensions.
+# Using AutodiffFwd, ASSET can propagate dual numbers through the
+# C++ kernel to obtain analytic Jacobians, enabling:
+#
+#   ✅ ASSET automatic differentiation
+#   ✅ ASSET Jacobians / sparsity propagation
+#   ✅ ASSET optimal control derivatives
+#   ✅ ASSET ODE integration
+#
+# The pure-ASSET graph loop (degree iterations creating ASSET
+# nodes) has been removed; at degree 20-50 it caused hangs.
 #
 # ============================================================
 
@@ -20,17 +26,11 @@
 # cython: nonecheck=False
 
 
+import numpy as np
 import asset_asrl as ast
+import asset_asrl.Extensions  # initialises ast.Extensions from asset.Extensions C++ submodule
 
 cimport cython
-
-
-from Legendre import AssociatedLegendreGradient
-from pines_math import (
-    HarmonicTrig,
-    SphericalToCartesian
-)
-
 
 
 vf = ast.VectorFunctions
@@ -39,7 +39,7 @@ Args = vf.Arguments
 
 
 # ============================================================
-# CLASSICAL SPHERICAL HARMONIC
+# CLASSICAL SPHERICAL HARMONIC (C++ node backend)
 # ============================================================
 
 
@@ -91,317 +91,43 @@ cdef class SphericalHarmonicGravityVF:
 
     # ========================================================
     # Acceleration
+    #
+    # Converts Cnm / Snm (2-D array-like indexed as [n, m])
+    # to flat vectors and calls the C++ ASSET node.
     # ========================================================
 
 
     cdef object _build_acceleration(self):
 
-
         cdef int n
         cdef int m
-        cdef int idx
+        cdef int N1 = self.degree + 1
 
 
-        X = Args(6)
+        C_flat = np.zeros(N1 * N1, dtype=np.float64)
+        S_flat = np.zeros(N1 * N1, dtype=np.float64)
 
 
-        rvec = X.head3()
+        for n in range(N1):
+
+            for m in range(n + 1):
+
+                C_flat[n * N1 + m] = float(self.Cnm[n, m])
+                S_flat[n * N1 + m] = float(self.Snm[n, m])
 
 
-        x = rvec[0]
-        y = rvec[1]
-        z = rvec[2]
-
-
-
-        #
-        # Geometry
-        #
-
-        r2 = (
-            x*x
-            +
-            y*y
-            +
-            z*z
-        )
-
-
-        r = r2.sqrt()
-
-
-        inv_r = 1.0/r
-
-
-
-        xy = (
-            x*x
-            +
-            y*y
-        ).sqrt()
-
-
-
-        inv_xy = 1.0/xy
-
-
-
-        sinphi = z*inv_r
-
-        cosphi = xy*inv_r
-
-
-        coslam = x*inv_xy
-
-        sinlam = y*inv_xy
-
-
-
-        rho = (
-            self.radius
-            *
-            inv_r
-        )
-
-
-
-        #
-        # Same trig recurrence as Pines
-        #
-
-        Ctrig,Strig = HarmonicTrig(
-            coslam,
-            sinlam,
+        return ast.Extensions.SphericalHarmonicGravity(
+            self.mu,
+            self.radius,
+            C_flat.tolist(),
+            S_flat.tolist(),
             self.degree
-        )
-
-
-
-        #
-        # Same Legendre
-        #
-
-        P,dP = AssociatedLegendreGradient(
-            sinphi,
-            self.degree
-        )
-
-
-
-        #
-        # rho powers
-        #
-
-        rho_power = [
-            None
-        ]*(self.degree+1)
-
-
-        one = X.Constant(1.0)
-
-
-        rho_power[0] = one
-
-
-        for n in range(1,self.degree+1):
-
-            rho_power[n] = (
-                rho_power[n-1]
-                *
-                rho
-            )
-
-
-
-        #
-        # harmonic sums
-        #
-
-        radial_sum = one
-
-        latitude_sum = X.Constant(0.0)
-
-        longitude_sum = X.Constant(0.0)
-
-
-
-        N1 = self.degree+1
-
-
-
-        #
-        # classical harmonic loop
-        #
-
-        for n in range(2,self.degree+1):
-
-
-            for m in range(n+1):
-
-
-                idx = (
-                    n*N1
-                    +
-                    m
-                )
-
-
-                Pnm = P[idx]
-
-                dPnm = dP[idx]
-
-
-
-                C = X.Constant(
-                    float(
-                        self.Cnm[n,m]
-                    )
-                )
-
-
-                S = X.Constant(
-                    float(
-                        self.Snm[n,m]
-                    )
-                )
-
-
-
-                trig = (
-
-                    C*Ctrig[m]
-
-                    +
-
-                    S*Strig[m]
-
-                )
-
-
-
-                dtrig = (
-
-                    m*
-
-                    (
-                        S*Ctrig[m]
-                        -
-                        C*Strig[m]
-                    )
-
-                )
-
-
-
-                term = (
-
-                    rho_power[n]
-                    *
-                    Pnm
-                    *
-                    trig
-
-                )
-
-
-
-                radial_sum += (
-
-                    (n+1)
-                    *
-                    term
-
-                )
-
-
-
-                latitude_sum += (
-
-                    rho_power[n]
-                    *
-                    dPnm
-                    *
-                    trig
-
-                )
-
-
-
-                longitude_sum += (
-
-                    rho_power[n]
-                    *
-                    Pnm
-                    *
-                    dtrig
-
-                )
-
-
-
-        #
-        # Convert acceleration
-        #
-
-        mu_r2 = (
-
-            X.Constant(self.mu)
-            /
-            r2
-
-        )
-
-
-        ar = (
-            -mu_r2
-            *
-            radial_sum
-        )
-
-
-        aph = (
-            mu_r2
-            *
-            latitude_sum
-        )
-
-
-        alam = (
-
-            mu_r2
-            *
-            longitude_sum
-            /
-            cosphi
-
-        )
-
-
-
-        ax,ay,az = SphericalToCartesian(
-            ar,
-            aph,
-            alam,
-            sinphi,
-            cosphi,
-            sinlam,
-            coslam
-        )
-
-
-
-        return vf.stack(
-            [
-                ax,
-                ay,
-                az
-            ]
         )
 
 
 
     # ========================================================
-    # ODE
+    # ODE  [x, y, z, vx, vy, vz] -> [vx, vy, vz, ax, ay, az]
     # ========================================================
 
 
