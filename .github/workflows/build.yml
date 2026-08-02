@@ -1,0 +1,175 @@
+# =============================================================================
+# GitHub Actions — Build ASSET and publish compiled artifacts
+#
+# What this does
+# --------------
+#   1. Checks out the repo with all git submodules.
+#   2. Installs Intel oneAPI MKL and Clang-15 on Ubuntu 22.04.
+#   3. Configures and compiles the C++ asset module with CMake.
+#   4. Packages a Python wheel via the pypiwheel CMake target.
+#   5. Uploads the wheel + raw .so as a downloadable workflow artifact
+#      (visible in the "Actions" tab → this run → "Artifacts" section).
+#   6. Commits the built files to a `dist/` directory on the same branch
+#      so you can just `git pull` to get the compiled binary.
+#
+# Triggers
+# --------
+#   • Every push to any branch.
+#   • Manual run via "Run workflow" button in the Actions tab.
+#
+# To pull the compiled artifacts locally after the workflow finishes:
+#   git pull
+#   # The built wheel and .so are in dist/
+#   pip install dist/*.whl   # or use the .so directly
+#
+# =============================================================================
+
+name: Build ASSET
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    name: Build (Ubuntu 22.04 / Clang-15 / Python 3.10)
+    runs-on: ubuntu-22.04
+
+    permissions:
+      contents: write   # needed to push the dist/ commit back
+
+    env:
+      BUILD_DIR: build
+      PYTHON_VERSION: "3.10"
+
+    steps:
+      # -----------------------------------------------------------------------
+      # 1. Checkout — include all submodules (pybind11, fmt, eigen, autodiff)
+      # -----------------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0          # full history so we can push back
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # -----------------------------------------------------------------------
+      # 2. Set up Python
+      # -----------------------------------------------------------------------
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Python build dependencies
+        run: pip install numpy wheel setuptools
+
+      # -----------------------------------------------------------------------
+      # 3. Install Clang-15 and build tools
+      # -----------------------------------------------------------------------
+      - name: Install Clang-15 and build tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            clang-15 clang++-15 lld-15 \
+            cmake ninja-build \
+            libiomp-dev
+
+      # -----------------------------------------------------------------------
+      # 4. Install Intel oneAPI MKL
+      #    Uses the official Intel apt repository for Ubuntu 22.04.
+      # -----------------------------------------------------------------------
+      - name: Install Intel oneAPI MKL
+        run: |
+          wget -qO- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
+            | sudo gpg --dearmor -o /usr/share/keyrings/intel-oneapi-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/intel-oneapi-archive-keyring.gpg] \
+            https://apt.repos.intel.com/oneapi all main" \
+            | sudo tee /etc/apt/sources.list.d/oneAPI.list
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            intel-oneapi-mkl-devel
+
+      # -----------------------------------------------------------------------
+      # 5. Configure with CMake
+      # -----------------------------------------------------------------------
+      - name: Configure CMake
+        run: |
+          source /opt/intel/oneapi/setvars.sh
+          cmake -S . -B ${{ env.BUILD_DIR }} \
+            -G Ninja \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_C_COMPILER=clang-15 \
+            -DCMAKE_CXX_COMPILER=clang++-15 \
+            -DBUILD_ASSET_WHEEL=TRUE \
+            -DBUILD_SHARED_LIBS=TRUE \
+            -DPIP_INSTALL=TRUE
+        env:
+          MKLROOT: /opt/intel/oneapi/mkl/latest
+
+      # -----------------------------------------------------------------------
+      # 6. Compile
+      # -----------------------------------------------------------------------
+      - name: Build asset module
+        run: |
+          source /opt/intel/oneapi/setvars.sh
+          cmake --build ${{ env.BUILD_DIR }} --target asset -j$(nproc)
+        env:
+          MKLROOT: /opt/intel/oneapi/mkl/latest
+
+      # -----------------------------------------------------------------------
+      # 7. Package wheel (pypiwheel CMake target)
+      # -----------------------------------------------------------------------
+      - name: Build Python wheel
+        run: |
+          source /opt/intel/oneapi/setvars.sh
+          cmake --build ${{ env.BUILD_DIR }} --target pypiwheel -j$(nproc)
+        env:
+          MKLROOT: /opt/intel/oneapi/mkl/latest
+
+      # -----------------------------------------------------------------------
+      # 8. Collect artifacts into dist/
+      # -----------------------------------------------------------------------
+      - name: Collect artifacts
+        run: |
+          mkdir -p dist
+          # Copy wheel(s)
+          find ${{ env.BUILD_DIR }}/pypiwheel -name "*.whl" -exec cp {} dist/ \;
+          # Copy the raw .so for users who prefer direct placement
+          find ${{ env.BUILD_DIR }} -maxdepth 1 -name "asset.cpython-*.so" \
+            -exec cp {} dist/ \;
+          echo "--- dist/ contents ---"
+          ls -lh dist/
+
+      # -----------------------------------------------------------------------
+      # 9. Upload artifacts to GitHub Actions (downloadable from the UI)
+      # -----------------------------------------------------------------------
+      - name: Upload wheel artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: asset-linux-py${{ env.PYTHON_VERSION }}-${{ github.sha }}
+          path: dist/
+          retention-days: 90
+          if-no-files-found: error
+
+      # -----------------------------------------------------------------------
+      # 10. Commit dist/ back to the branch so users can `git pull`
+      #
+      #     The commit message includes [skip ci] to prevent an infinite
+      #     build loop.
+      # -----------------------------------------------------------------------
+      - name: Commit compiled artifacts to dist/
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/
+          # Only commit when there are actual changes to dist/
+          if git diff --staged --quiet; then
+            echo "No changes in dist/ — skipping commit."
+          else
+            SHORT_SHA=$(git rev-parse --short HEAD)
+            git commit -m "chore: compiled artifacts for ${SHORT_SHA} [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          fi

@@ -37,6 +37,23 @@ vf = ast.VectorFunctions
 Args = vf.Arguments
 
 
+# ============================================================
+# Early check: verify the C++ extension is available.
+# If the asset module has not been recompiled with the
+# SphericalHarmonicGravity registration (extensions/
+# ASSET_Extensions.cpp) this raises a clear error instead
+# of a confusing AttributeError deep in _build_acceleration.
+# ============================================================
+
+if not hasattr(ast.Extensions, 'SphericalHarmonicGravity'):
+    raise RuntimeError(
+        "SphericalHarmonicGravity C++ node is not registered in asset.Extensions.\n"
+        "The 'asset' C++ module must be rebuilt after adding the extension in\n"
+        "extensions/ASSET_Extensions.cpp and extensions/SphericalHarmonicGravity.h.\n"
+        "Run cmake --build <build_dir> and reinstall, then retry."
+    )
+
+
 
 # ============================================================
 # CLASSICAL SPHERICAL HARMONIC (C++ node backend)
