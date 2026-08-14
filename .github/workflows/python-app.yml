@@ -33,11 +33,18 @@ jobs:
           | sudo tee /etc/apt/sources.list.d/oneAPI.list
         sudo apt-get update -qq
         sudo apt-get install -y --no-install-recommends intel-oneapi-mkl-devel
-    - name: Install dependencies
+    - name: Initialize submodules
       run: |
+        git submodule sync --recursive
+        git submodule update --init --recursive
+    - name: Install dependencies
+      env:
+        MKLROOT: /opt/intel/oneapi/mkl/latest
+      run: |
+        source /opt/intel/oneapi/setvars.sh
         python -m pip install --upgrade pip
         pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f requirements.txt ]; then pip install --no-build-isolation -r requirements.txt; fi
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
