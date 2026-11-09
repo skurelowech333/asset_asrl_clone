@@ -8,11 +8,18 @@ include_directories(${PROJECT_SOURCE_DIR}/src/TypeDefs)
 include_directories(${PROJECT_SOURCE_DIR}/src/Utils)
 include_directories(${PROJECT_SOURCE_DIR}/src/VectorFunctions)
 include_directories(${PROJECT_SOURCE_DIR}/src/Integrators)
+include_directories(${PROJECT_SOURCE_DIR}/src/Astro)
 
 add_library(asset_extensions STATIC 
 ASSET_Extensions.h
 ASSET_Extensions.cpp
-SphericalHarmonicGravity.h)
+SphericalHarmonicGravity.h
+${PROJECT_SOURCE_DIR}/src/Astro/PinesGravityModel.cpp
+${PROJECT_SOURCE_DIR}/src/Astro/PinesGravityModel.h
+${PROJECT_SOURCE_DIR}/src/Astro/PinesGravity.h
+${PROJECT_SOURCE_DIR}/src/Astro/SpicePxform.h
+${PROJECT_SOURCE_DIR}/src/Astro/ForceField3.h
+${PROJECT_SOURCE_DIR}/src/Astro/SpiceForceFrame.h)
 
 add_dependencies(asset_extensions pch)
 target_include_directories(asset_extensions PRIVATE ${INCLUDE_DIRS})

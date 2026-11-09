@@ -21,6 +21,8 @@ propagate_modified = _asset.Astro.propagate_modified
 
 from .AstroFrames import CR3BPFrame
 
+from asset_asrl.Extensions import SpiceForceFrame
+
 if __name__ == "__main__":
     mlist = inspect.getmembers(_asset.Astro)
     for m in mlist:print(m[0],'= _asset.Astro.'+str(m[0]))

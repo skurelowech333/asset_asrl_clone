@@ -1,5 +1,8 @@
 #include "ASSET_Extensions.h"
 #include "SphericalHarmonicGravity.h"
+#include "Astro/SpicePxform.h"
+#include "Astro/SpiceForceFrame.h"
+#include "Astro/PinesGravity.h"
 
 namespace ASSET {
 
@@ -166,6 +169,24 @@ void ASSET::ExtensionsBuild(FunctionRegistry& reg, py::module& extmod)
 
 	reg.Build_Register<CR3BPAD>(extmod, "cpp_cr3bp_ad");
 	reg.Build_Register<ModifiedDynamicsAD>(extmod, "ModifiedDynamicsAD");
+
+	// SPICE frame transformations as native ASSET VectorFunctions.
+	// Requires CSPICE (linked via CSPICE_LIBRARY at CMake time).
+	extmod.def("SpiceLoadKernels",
+		[](const std::vector<std::string>& files) {
+			spice_detail::configure_spice_errors();
+			for (const auto& f : files)
+				spice_detail::load_kernel(f);
+		},
+		py::arg("files"),
+		"Load SPICE kernel files (furnsh) into the global kernel pool.");
+
+	reg.Build_Register<SpicePxform>(extmod, "SpicePxform");
+	reg.Build_Register<SpicePxformApply>(extmod, "SpicePxformApply");
+	py::class_<ForceField3>(extmod, "ForceField3",
+		"Abstract 3->3 position force field, the base of fusable kernels such as PinesGravity.");
+	BuildPinesGravity(reg, extmod);
+	reg.Build_Register<SpiceForceFrame>(extmod, "SpiceForceFrame");
 
 	// SphericalHarmonicGravity: C++ ASSET node for high-degree gravity
 	// Returns a GenericFunction<6,3>: [x,y,z,vx,vy,vz] -> [ax,ay,az]
