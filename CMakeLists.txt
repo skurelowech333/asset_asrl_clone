@@ -216,16 +216,36 @@ endif()
 #  include(FindPythonEnv)
 #endif()
 
-# Set up submodule dependencies
+# Pinned third-party dependencies, fetched at configure time
+include(FetchContent)
+set(FETCHCONTENT_QUIET OFF)
+
+FetchContent_Declare(pybind11
+  GIT_REPOSITORY https://github.com/pybind/pybind11.git
+  GIT_TAG c68d56a943c7796cffc4853f3bedc7262b7c5da0)
+FetchContent_Declare(fmt
+  GIT_REPOSITORY https://github.com/fmtlib/fmt.git
+  GIT_TAG dcdec038abe9d042cf8494c4e371bd73c04cb114)
+FetchContent_Declare(autodiff
+  GIT_REPOSITORY https://github.com/autodiff/autodiff.git
+  GIT_TAG 2e2f3a2b16afcd9c04e76c8a689e9fd23ff78679)
+
+# Header-only; only the sources are needed
+FetchContent_GetProperties(autodiff)
+if(NOT autodiff_POPULATED)
+  FetchContent_Populate(autodiff)
+endif()
+
+# Eigen is still a git submodule (dep/eigen) until its source is available outside GitLab
 include_directories(dep/eigen)
-include_directories(dep/fmt/include)
-include_directories(dep/autodiff)
+include_directories(${autodiff_SOURCE_DIR})
 
 find_package(Python ${PYVERSION_EXACT} COMPONENTS Interpreter Development REQUIRED)
 
 set(PYBIND11_CPP_STANDARD -std=c++17)
 set(PYBIND11_FINDPYTHON ON)
-add_subdirectory(dep)
+FetchContent_MakeAvailable(pybind11 fmt)
+include_directories(${fmt_SOURCE_DIR}/include)
 
 # Set up external dependencies
 find_package(Threads REQUIRED)
