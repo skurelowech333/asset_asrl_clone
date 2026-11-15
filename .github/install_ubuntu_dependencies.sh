@@ -2,7 +2,11 @@
 sudo apt update
 
 # Install Compiler
-sudo apt install $COMPILER
+# Versions missing from the distro archive (e.g. clang-18 on jammy) come from apt.llvm.org.
+sudo apt install -y $COMPILER || {
+  curl -fsSL https://apt.llvm.org/llvm.sh | sudo bash -s -- "${COMPILER#*-}"
+  sudo apt install -y $COMPILER
+}
 $COMPILER -v
 echo "CC=$COMPILER" >>$GITHUB_ENV
 COMPILER_NAME=${COMPILER%-*}
