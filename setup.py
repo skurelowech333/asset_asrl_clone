@@ -5,12 +5,27 @@ import re
 import sys
 import platform
 import subprocess
+from pathlib import Path
 
 from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
-from distutils.version import LooseVersion
 
 import multiprocessing
+
+ROOT = Path(__file__).resolve().parent
+
+
+def read_version():
+    # CMakeLists.txt is the single source of truth for the project version.
+    text = (ROOT / "CMakeLists.txt").read_text()
+    match = re.search(r"project\(ASSET VERSION ([\d.]+)", text)
+    if match is None:
+        raise RuntimeError("Could not find ASSET version in CMakeLists.txt")
+    return match.group(1)
+
+
+def version_tuple(version):
+    return tuple(int(part) for part in re.findall(r"\d+", version))
 
 
 class CMakeExtension(Extension):
@@ -30,10 +45,10 @@ class CMakeBuild(build_ext):
             )
 
         if platform.system() == "Windows":
-            cmake_version = LooseVersion(
+            cmake_version = version_tuple(
                 re.search(r"version\s*([\d.]+)", out.decode()).group(1)
             )
-            if cmake_version < "3.1.0":
+            if cmake_version < (3, 1, 0):
                 raise RuntimeError("CMake >= 3.1.0 is required on Windows")
 
         for ext in self.extensions:
@@ -87,10 +102,7 @@ class CMakeBuild(build_ext):
 
 
 setup(
-    name="asset_asrl",
-    version="0.0.1",
-    author="Alabama ASRL",
-    description="High-speed, extensible, object-oriented trajectory design and optimization",
+    version=read_version(),
     long_description="",
     ext_modules=[CMakeExtension("asset")],
     cmdclass=dict(build_ext=CMakeBuild),
