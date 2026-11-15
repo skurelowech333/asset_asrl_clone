@@ -1,7 +1,2 @@
 numpy
-pybind11
-sphinx
-furo
 spiceypy
-breathe
-exhale
