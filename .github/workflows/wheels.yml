@@ -2,6 +2,8 @@ name: wheels
 
 on:
   workflow_dispatch:
+  push:
+    branches: [modernize-build-and-ci]
 
 permissions:
   contents: read
